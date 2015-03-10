@@ -1,0 +1,87 @@
+/** Object **/
+
+object {
+    box-shadow: 0 0 1em #ddd;
+}
+
+object:hover {
+    box-shadow: 0 0 1em #F77;
+    border-color: #FBB;
+}
+
+object.draggable {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+
+    cursor: move;
+}
+
+/** Marble **/
+
+object.marble {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background-color: #BCC;
+    position: absolute;
+}
+
+/** Fieldsets **/
+
+fieldset.relative {
+    position: relative;
+}
+
+fieldset.fieldset-program {
+    width: 800px;
+    height: 600px;
+}
+
+
+
+/** Tiles **/
+
+table.tile-grid {
+    border-collapse: collapse;
+}
+
+.tile-grid {
+
+}
+
+.tile-grid .tile-row {
+    height: 64px;
+}
+
+.tile-grid .tile {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 0.5em #EAEAEC double;
+    padding: 6px;
+    /* border-radius: 1px; */
+}
+
+.tile.left { border-left-color: #00F; }
+.tile.right { border-right-color: #00F; }
+.tile.down { border-bottom-color: #00F; }
+.tile.up { border-top-color: #00F; }
+
+
+.tile.up.left { 
+    border-top-left-radius:1em; 
+}
+.tile.up.right { 
+    border-top-right-radius:1em; 
+}
+.tile.down.left { 
+    border-bottom-left-radius:1em; 
+}
+.tile.down.right { 
+    border-bottom-right-radius:1em; 
+}

@@ -1,0 +1,9 @@
+[submodule "CPath"]
+	path = CPath
+	url = https://ari.asulin@code.google.com/p/clevertree-cpath/
+[submodule "Site/libs/openpgp"]
+	path = Site/libs/openpgp
+	url = https://github.com/singpolyma/openpgp-php.git
+[submodule "Site/libs/wrench"]
+	path = Site/libs/wrench
+	url = https://github.com/varspool/Wrench.git

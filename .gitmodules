@@ -1,0 +1,6 @@
+[submodule "CPath"]
+	path = CPath
+	url = https://code.google.com/p/clevertree-cpath/
+[submodule "Site/libs/wrench"]
+	path = Site/libs/wrench
+	url = https://github.com/varspool/Wrench.git
