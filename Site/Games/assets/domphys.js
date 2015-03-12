@@ -27,6 +27,71 @@
         element.className += ' ' + className + ':' + value;
     };
 
+    var lastDragObject = null;
+    var initObject = function(element) {
+        if(typeof element.domphys !== 'undefined')
+            return;
+        element.domphys = true;
+
+        //setPosition(element, getPosition(element));
+        var onDrag = function(e) {
+            var isPhysBox = false;
+            if(this.classList.contains('physbox')) {
+                isPhysBox = true;
+            } else if (this.classList.contains('draggable') || this.getAttribute('draggable')) {
+                lastDragObject = e.target;
+            } else {
+                return false;
+
+            }
+//             console.log(e.type);
+            element.dataset.drag = e.type;
+            switch(e.type) {
+                case 'dragstart': 
+//                     lastDragObject = element;
+                    break;
+                case 'dragover':
+                    e.stopPropagation();
+//                         e.dataTransfer.dropEffect = 'move';  
+                    if(isPhysBox) {
+//                         e.target.dr/agObject = element;
+                        e.preventDefault();
+                    }
+                    break;
+                case 'dragenter': 
+                    e.target.classList.remove('dragleave');
+                    e.target.classList.add('dragenter');
+                break;
+                case 'dragleave':
+                    e.target.classList.remove('dragenter');
+                    e.target.classList.add('dragleave');
+                break;
+                case 'drop':
+                    e.target.classList.remove('dragleave');
+                    e.target.classList.remove('dragenter');
+                    e.target.classList.add('drop');
+                    console.log(lastDragObject, e);
+                    if(lastDragObject !== null) {
+                        e.target.appendChild(lastDragObject);
+                        lastDragObject.dataset.remove('x');
+                        lastDragObject.dataset.remove('y');
+                    }
+                    lastDragObject = null;
+                    break;
+                case 'dragend': 
+                    lastDragObject = null;
+                    break;
+                default: break;
+            }
+        };
+        element.addEventListener('dragstart', onDrag, false);
+        element.addEventListener('dragover', onDrag, false);
+        element.addEventListener('dragenter', onDrag, false);
+        element.addEventListener('dragleave', onDrag, false);
+        element.addEventListener('drop', onDrag, false);
+        element.addEventListener('dragend', onDrag, false);
+    };
+
     var getArea = function(element) {
         var w = parseFloat(element.dataset.width) || element.offsetWidth;
         var h = parseFloat(element.dataset.height) || element.offsetHeight;
@@ -73,8 +138,8 @@
         var def = DEFAULT_GRAVITY;
 //         if(!element.dataset.vx)
 //             def = 0;
-        var ax = parseFloat(element.dataset.ax) || def / 2;
-        var ay = parseFloat(element.dataset.ay) || def;
+        var ax = parseFloat(element.dataset.ax) || element.parentNode.dataset.ax || def / 2;
+        var ay = parseFloat(element.dataset.ay) || element.parentNode.dataset.ay || def;
         return new Vector(ax, ay);
     };
 
@@ -284,42 +349,49 @@
         var time = new Date();
         var totalElapsedTime = time - lastRender;
         lastRender = time;
-        var physbox = document.getElementsByClassName('physbox');
-        var objects = physbox[0].children;
-        physbox[0].getEl
-        for(var i=0; i<objects.length; i++) {
-            var object = objects[i];
+        var physboxes = document.getElementsByClassName('physbox');
+        for(var pi=0; pi<physboxes.length; pi++) {
 
-            var v = getVelocity(object);
-            var p = getPosition(object);
-            p.x += v.x;
-            p.y += v.y;
-            setPosition(object, p);
+            var physbox = physboxes[pi];
+            var objects = physbox.getElementsByClassName('physitem');
 
-            var hasCollision = false;
-            for(var k=0; k<objects.length; k++) {
-                if(object !== objects[k])
-                    hasCollision = testCollision(object, objects[k]) || hasCollision;
+            initObject(physbox);
+
+            for(var i=0; i<objects.length; i++) {
+                var object = objects[i];
+                initObject(object);
+
+                var v = getVelocity(object);
+                var p = getPosition(object);
+                p.x += v.x;
+                p.y += v.y;
+                setPosition(object, p);
+
+                var hasCollision = false;
+                for(var k=0; k<objects.length; k++) {
+                    if(object !== objects[k])
+                        hasCollision = testCollision(object, objects[k]) || hasCollision;
+                }
+                hasCollision = testRectContainment(object, object.parentNode) || hasCollision;
+
+        //             if(!hasCollision) {
+                var a = getAcceleration(object);
+                v = getVelocity(object);
+                    if(a.x || a.y) {
+                    v.x += a.x;
+                    v.y += a.y;
+                    setVelocity(object, v);
+                }
+        //             }
             }
-            hasCollision = testRectContainment(object, object.parentNode) || hasCollision;
 
-//             if(!hasCollision) {
-            var a = getAcceleration(object);
-            v = getVelocity(object);
-                if(a.x || a.y) {
-                v.x += a.x;
-                v.y += a.y;
-                setVelocity(object, v);
+            for(i=0; i<objects.length; i++) {
+                renderElement(objects[i]);
             }
-//             }
-        }
-
-        for(i=0; i<objects.length; i++) {
-            renderElement(objects[i]);
         }
 
         if(totalElapsedTime > RENDER_INTERVAL) {
-//             console.log(totalElapsedTime);
+    //             console.log(totalElapsedTime);
             setTimeout(doRender, 1);
         } else {
             setTimeout(doRender, RENDER_INTERVAL - totalElapsedTime);

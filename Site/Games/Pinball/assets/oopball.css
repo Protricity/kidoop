@@ -2,16 +2,16 @@
 
 /** Marble **/
 
-marble {
+marble, .marble {
     width: 64px;
     height: 64px;
     border-radius: 32px;
     /* background-color: #BCC; */
-    position: absolute;
     background-image: url("img/marble.png");
     box-shadow: 0 0.5em 1em #777;
 }
 
+.marble:hover,
 marble:hover {
     box-shadow: 0 0.5em 2em #C77;
     border-color: #FBB;

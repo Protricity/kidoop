@@ -57,36 +57,37 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 			new HTMLElement('fieldset', 'legend-oopball-container inline',
 				new HTMLElement('legend', 'legend-oopball-container', self::TITLE),
 
-                new HTMLElement('fieldset', 'fieldset-input object',
-                    new HTMLElement('legend', 'legend-object-input', "Input")
+                new HTMLElement('fieldset', 'fieldset-input physbox',
+                    new HTMLElement('legend', 'legend-object-input fixed', "Input")
                 ),
 
                 $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program physbox',
-                    new HTMLElement('legend', 'legend-program', "Program"),
+                    new Attributes('data-ax', 1),
+                    new Attributes('data-ay', 0.5),
+                    new HTMLElement('legend', 'legend-program fixed', "Program"),
 
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
-                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', -1, 'data-ax', 1)),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
 
                     new HTMLElement('fieldset', 'fieldset-obstacle',
                         new HTMLElement('legend', 'legend-obstacle', "Obstacle")
                     )
                 ),
 
-                new HTMLElement('fieldset', 'fieldset-output relative',
-                    new HTMLElement('legend', 'legend-output', "Output"),
-                    new HTMLElement('object', 'marble ax:-120 draggable')
+                new HTMLElement('fieldset', 'fieldset-output physbox',
+                    new Attributes('data-ay', 1),
+                    new HTMLElement('legend', 'legend-output fixed', "Output"),
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', 4, 'data-ax', 1))
                 ),
 
-                new HTMLElement('fieldset', 'fieldset-result relative',
-                    new HTMLElement('legend', 'legend-result', "Result")
+                new HTMLElement('fieldset', 'fieldset-result physbox',
+                    new Attributes('data-ax', -1),
+                    new HTMLElement('legend', 'legend-result fixed', "Result")
                 )
 			)
         );

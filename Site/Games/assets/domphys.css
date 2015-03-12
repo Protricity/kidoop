@@ -1,10 +1,16 @@
 /** Physbox **/
 
 .physbox {
+    min-width: 50em;
+    min-height: 5em;
     position: relative;
 }
 
-.draggable {
+.physbox.dragenter {
+    background-color: #583;
+}
+
+[draggable] {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
