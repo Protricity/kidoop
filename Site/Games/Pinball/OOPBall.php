@@ -10,6 +10,7 @@ namespace Site\Games\Pinball;
 use CPath\Render\Helpers\RenderIndents as RI;
 use CPath\Build\IBuildable;
 use CPath\Build\IBuildRequest;
+use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Element\Form\HTMLForm;
 use CPath\Render\HTML\Element\HTMLElement;
 use CPath\Render\HTML\Header\HTMLHeaderScript;
@@ -29,6 +30,7 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
     const FORM_METHOD = 'POST';
     const FORM_PATH = '/oopball';
 	const FORM_NAME = __CLASS__;
+    const DEFAULT_GRAVITY = 1;
     private $gridCountX;
     private $gridCountY;
 
@@ -48,6 +50,7 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 		$Form = new HTMLForm(self::FORM_METHOD, self::FORM_PATH, self::FORM_NAME,
 			new HTMLMetaTag(HTMLMetaTag::META_TITLE, self::TITLE),
             new HTMLHeaderScript(dirname(__DIR__) . '\assets\domphys.js'),
+            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domphys.css'),
             new HTMLHeaderScript(__DIR__ . '\assets\oopball.js'),
 			new HTMLHeaderStyleSheet(__DIR__ . '\assets\oopball.css'),
 
@@ -58,24 +61,23 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
                     new HTMLElement('legend', 'legend-object-input', "Input")
                 ),
 
-                $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program relative',
+                $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program physbox',
                     new HTMLElement('legend', 'legend-program', "Program"),
 
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble ax:250 draggable'),
-                    new HTMLElement('object', 'marble vy:1 draggable')
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', 1, 'data-ax', 1)),
+                    new HTMLElement('marble', 'draggable', new Attributes('data-collision', 'circle', 'data-ay', -1, 'data-ax', 1)),
 
+                    new HTMLElement('fieldset', 'fieldset-obstacle',
+                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
+                    )
                 ),
 
                 new HTMLElement('fieldset', 'fieldset-output relative',

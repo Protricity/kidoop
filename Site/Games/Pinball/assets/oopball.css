@@ -1,34 +1,20 @@
-/** Object **/
 
-object {
-    box-shadow: 0 0 1em #ddd;
-}
-
-object:hover {
-    box-shadow: 0 0 1em #F77;
-    border-color: #FBB;
-}
-
-object.draggable {
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    /* Required to make elements draggable in old WebKit */
-    -khtml-user-drag: element;
-    -webkit-user-drag: element;
-
-    cursor: move;
-}
 
 /** Marble **/
 
-object.marble {
+marble {
     width: 64px;
     height: 64px;
     border-radius: 32px;
-    background-color: #BCC;
+    /* background-color: #BCC; */
     position: absolute;
+    background-image: url("img/marble.png");
+    box-shadow: 0 0.5em 1em #777;
+}
+
+marble:hover {
+    box-shadow: 0 0.5em 2em #C77;
+    border-color: #FBB;
 }
 
 /** Fieldsets **/
@@ -40,6 +26,8 @@ fieldset.relative {
 fieldset.fieldset-program {
     width: 800px;
     height: 600px;
+    padding: 19px;
+    /* margin: 16px; */
 }
 
 
