@@ -12,6 +12,22 @@
     var RENDER_INTERVAL = 50;
     var RESTITUTION = 3;
 
+    var triggerCollisionEvent = function (element, element2) {
+        var event = new CustomEvent(
+            "collision",
+            {
+                detail:
+                {
+                    element1: element,
+                    element2: element2,
+                    time: new Date()
+                },
+                bubbles: true,
+                cancelable: true
+            });
+
+        element.dispatchEvent(event);
+    };
 
     var getClassValue = function(element, className) {
         var regex = new RegExp("\\b" + className + ":([0-9.-]+)\\b");
@@ -25,71 +41,6 @@
         var regex = new RegExp("\s*\\b" + className + ":([0-9.-]+)\\b", 'g');
         element.className = element.className.replace(regex, '');
         element.className += ' ' + className + ':' + value;
-    };
-
-    var lastDragObject = null;
-    var initObject = function(element) {
-        if(typeof element.domphys !== 'undefined')
-            return;
-        element.domphys = true;
-
-        //setPosition(element, getPosition(element));
-        var onDrag = function(e) {
-            var isPhysBox = false;
-            if(this.classList.contains('physbox')) {
-                isPhysBox = true;
-            } else if (this.classList.contains('draggable') || this.getAttribute('draggable')) {
-                lastDragObject = e.target;
-            } else {
-                return false;
-
-            }
-//             console.log(e.type);
-            element.dataset.drag = e.type;
-            switch(e.type) {
-                case 'dragstart': 
-//                     lastDragObject = element;
-                    break;
-                case 'dragover':
-                    e.stopPropagation();
-//                         e.dataTransfer.dropEffect = 'move';  
-                    if(isPhysBox) {
-//                         e.target.dr/agObject = element;
-                        e.preventDefault();
-                    }
-                    break;
-                case 'dragenter': 
-                    e.target.classList.remove('dragleave');
-                    e.target.classList.add('dragenter');
-                break;
-                case 'dragleave':
-                    e.target.classList.remove('dragenter');
-                    e.target.classList.add('dragleave');
-                break;
-                case 'drop':
-                    e.target.classList.remove('dragleave');
-                    e.target.classList.remove('dragenter');
-                    e.target.classList.add('drop');
-                    console.log(lastDragObject, e);
-                    if(lastDragObject !== null) {
-                        e.target.appendChild(lastDragObject);
-                        lastDragObject.dataset.remove('x');
-                        lastDragObject.dataset.remove('y');
-                    }
-                    lastDragObject = null;
-                    break;
-                case 'dragend': 
-                    lastDragObject = null;
-                    break;
-                default: break;
-            }
-        };
-        element.addEventListener('dragstart', onDrag, false);
-        element.addEventListener('dragover', onDrag, false);
-        element.addEventListener('dragenter', onDrag, false);
-        element.addEventListener('dragleave', onDrag, false);
-        element.addEventListener('drop', onDrag, false);
-        element.addEventListener('dragend', onDrag, false);
     };
 
     var getArea = function(element) {
@@ -214,6 +165,8 @@
                 collision = true;
             }
         }
+        if(collision)
+            triggerCollisionEvent(elm1, elm2);
         return collision;
     };
 
@@ -267,10 +220,14 @@
         var v = (v1.subtractVector(v2));
         var vn = v.dot(mtd.normalize());
 
+        var collision = false;
         // sphere intersecting but moving away from each other already
         if (vn > 0.0) {
+            setPosition(elm1, p1);
+            setPosition(elm2, p2);
 
         } else {
+            collision = true;
             // collision impulse
             var i = (-(1.0 + RESTITUTION) * vn) / (im1 + im2);
             var impulse = mtd.multiply(i);
@@ -284,11 +241,13 @@
 
             setVelocity(elm1, v1);
             setVelocity(elm2, v2);
+            setPosition(elm1, p1);
+            setPosition(elm2, p2);
         }
 
-        setPosition(elm1, p1);
-        setPosition(elm2, p2);
-        return true;
+        if(collision)
+            triggerCollisionEvent(elm1, elm2);
+        return collision;
     };
 
     var testRectContainment = function(element, parent) {
@@ -355,11 +314,8 @@
             var physbox = physboxes[pi];
             var objects = physbox.getElementsByClassName('physitem');
 
-            initObject(physbox);
-
             for(var i=0; i<objects.length; i++) {
                 var object = objects[i];
-                initObject(object);
 
                 var v = getVelocity(object);
                 var p = getPosition(object);
