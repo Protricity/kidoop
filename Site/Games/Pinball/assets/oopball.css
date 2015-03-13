@@ -17,6 +17,22 @@ marble:hover {
     border-color: #FBB;
 }
 
+/** Warp **/
+
+.warp {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    /* background-color: #BCC; */
+    background-image: url("img/warp.png");
+    box-shadow: 0 0.5em 1em #777;
+}
+
+.warp:hover {
+    box-shadow: 0 0.5em 2em #C77;
+    border-color: #FBB;
+}
+
 /** Fieldsets **/
 
 fieldset.relative {
