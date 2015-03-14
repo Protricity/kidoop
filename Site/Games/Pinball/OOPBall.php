@@ -70,7 +70,7 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
                     new Attributes('data-ay', 0.5),
                     new HTMLElement('legend', 'legend-program fixed', "Program"),
 
-                    new HTMLElement('div', 'marble warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
@@ -91,7 +91,7 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
                 ),
 
                 new HTMLElement('fieldset', 'fieldset-result physbox',
-                    new HTMLElement('div', 'marble warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
                     new Attributes('data-ax', -1),
                     new HTMLElement('legend', 'legend-result fixed', "Result")
                 )

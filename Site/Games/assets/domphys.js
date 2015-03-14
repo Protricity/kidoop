@@ -324,9 +324,10 @@
                 setPosition(object, p);
 
                 var hasCollision = false;
-                for(var k=0; k<objects.length; k++) {
-                    if(object !== objects[k])
-                        hasCollision = testCollision(object, objects[k]) || hasCollision;
+                var siblings = object.parentNode.children;
+                for(var k=0; k<siblings.length; k++) {
+                    if(siblings !== siblings[k])
+                        hasCollision = testCollision(object, siblings[k]) || hasCollision;
                 }
                 hasCollision = testRectContainment(object, object.parentNode) || hasCollision;
 

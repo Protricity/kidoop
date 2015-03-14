@@ -15,3 +15,13 @@
 
     cursor: move;
 }
+
+
+
+[draggable]:hover {
+    -webkit-filter: drop-shadow(0 0 15px rgba(100,50,0,1));
+    filter: drop-shadow(2px 2px 2px rgba(100,50,0,1));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
+    Color='#730')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#A44')";
+}

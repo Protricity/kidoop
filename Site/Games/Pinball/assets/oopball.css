@@ -4,34 +4,35 @@
 
 marble, .marble {
     width: 64px;
-    height: 64px;
-    border-radius: 32px;
-    /* background-color: #BCC; */
-    background-image: url("img/marble.png");
-    box-shadow: 0 0.5em 1em #777;
-}
+    height: 62px;
+    background: url("img/sprites.png") -2px -2px;
 
-.marble:hover,
-marble:hover {
-    box-shadow: 0 0.5em 2em #C77;
-    border-color: #FBB;
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+    filter: url(../../assets/shadow.svg#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
+    Color='#444')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
+
 }
 
 /** Warp **/
 
 .warp {
-    width: 64px;
-    height: 64px;
-    border-radius: 32px;
-    /* background-color: #BCC; */
-    background-image: url("img/warp.png");
-    box-shadow: 0 0.5em 1em #777;
+    border-width: 0;
+    width: 59px;
+    height: 39px;
+    background: url("img/sprites.png") -3px 51px;
+
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+    filter: url(../../assets/shadow.svg#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
+    Color='#444')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
+
 }
 
-.warp:hover {
-    box-shadow: 0 0.5em 2em #C77;
-    border-color: #FBB;
-}
 
 /** Fieldsets **/
 
