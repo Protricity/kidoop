@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src='/kidoop/CPath/Render/HTML/Header/assets/jquery.min.js'></script>
+    <script src='/kidoop/CPath/Render/HTML/Template/assets/default-template.js'></script>
+    <link rel='stylesheet' href='/kidoop/CPath/Render/HTML/Template/assets/default-template.css' />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="path" content="/oopball">
+    <meta name="domain-path" content="kidoop/">
+    <link rel='stylesheet' href='/kidoop/CPath/Route/HTML/assets/navigator.css' />
+    <meta name="title" content="OOPBall">
+    <script src='/kidoop/Site/Games/assets/domwarp.js'></script>
+    <link rel='stylesheet' href='/kidoop/Site/Games/assets/domwarp.css' />
+    <script src='/kidoop/Site/Games/assets/domdrag.js'></script>
+    <link rel='stylesheet' href='/kidoop/Site/Games/assets/domdrag.css' />
+    <script src='/kidoop/Site/Games/assets/domphys.js'></script>
+    <link rel='stylesheet' href='/kidoop/Site/Games/assets/domphys.css' />
+    <script src='/kidoop/Site/Games/Pinball/assets/oopball.js'></script>
+    <link rel='stylesheet' href='/kidoop/Site/Games/Pinball/assets/oopball.css' />
+    <meta name="title" content="OOPBall">
+</head>
+<body>
+<section class="header">
+    <h1 class="header-title"></h1>GET /oopball
+</section>
+<section class="content">
+    <div class="navbar">
+        <h3 class="navbar-title">/oopball</h3>
+        <div>
+            <a class="login-only" href="http://localhost/kidoop/home/">My Account</a>
+            <a class="no-login" href="http://localhost/kidoop/login/">Login</a>
+            <a class="no-login" href="http://localhost/kidoop/register/">Register</a>
+            <a class="focus" href="http://localhost/kidoop/oopball">OOPBall</a>
+            <a class="no-login" href="http://localhost/kidoop/blog/">Blog</a>
+            <a class="login-only" href="http://localhost/kidoop/logout/">Logout</a>
+        </div>
+    </div>
+    <form action="/kidoop/oopball" method="POST" name="Site\Games\Pinball\OOPBall">
+        <fieldset class="legend-oopball-container inline">
+            <legend class="legend-oopball-container">OOPBall</legend>
+            <fieldset class="fieldset-infobox inline">
+                <legend class="legend-infobox fixed">InfoBox</legend></fieldset>
+            <fieldset class="fieldset-input physbox">
+                <legend class="legend-object-input fixed">Element Information</legend></fieldset>
+            <fieldset data-ax="3" data-ay="8" class="fieldset-program physbox">
+                <legend class="legend-program fixed">Program</legend>
+                <div draggable="true" data-collision="circle" class="marble physitem"></div>
+                <div draggable="true" data-collision="circle" class="marble physitem"></div>
+                <div draggable="true" data-collision="circle" class="marble physitem"></div>
+                <div draggable="true" data-collision="circle" data-ax="1" class="marble physitem"></div>
+                <div draggable="true" data-collision="circle" class="marble physitem"></div>
+                <div draggable="true" data-collision="circle" class="warp physitem"></div>
+                <fieldset class="fieldset-obstacle inline">
+                    <legend class="legend-obstacle">Obstacle</legend></fieldset>
+            </fieldset>
+            <fieldset data-ay="1" class="fieldset-output physbox">
+                <legend class="legend-output fixed">Output</legend>
+                <div draggable="true" data-collision="circle" class="marble"></div>
+                <div draggable="true" data-collision="circle" class="marble"></div>
+                <div draggable="true" data-collision="circle" class="marble"></div>
+                <div draggable="true" data-collision="circle" data-ax="-4" class="marble physitem"></div>
+            </fieldset>
+            <fieldset data-ax="-1" class="fieldset-result physbox">
+                <div draggable="true" data-collision="circle" class="warp physitem"></div></fieldset>
+        </fieldset></form>
+</section>
+<section class="footer"></section>
+</body>
+</html>
