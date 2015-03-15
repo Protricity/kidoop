@@ -1,6 +1,6 @@
 [submodule "CPath"]
 	path = CPath
-	url = https://code.google.com/p/clevertree-cpath/
+	url = ssh://git@github.com/Protricity/cpath.git
 [submodule "Site/libs/wrench"]
 	path = Site/libs/wrench
 	url = https://github.com/varspool/Wrench.git
