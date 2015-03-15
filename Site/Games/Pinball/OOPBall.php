@@ -11,6 +11,7 @@ use CPath\Render\Helpers\RenderIndents as RI;
 use CPath\Build\IBuildable;
 use CPath\Build\IBuildRequest;
 use CPath\Render\HTML\Attribute\Attributes;
+use CPath\Render\HTML\Attribute\ClassAttributes;
 use CPath\Render\HTML\Element\Form\HTMLForm;
 use CPath\Render\HTML\Element\HTMLElement;
 use CPath\Render\HTML\Header\HTMLHeaderScript;
@@ -21,6 +22,7 @@ use CPath\Request\IRequest;
 use CPath\Response\IResponse;
 use CPath\Route\IRoutable;
 use CPath\Route\RouteBuilder;
+use Site\Classes\Traits\InfoBox\InfoBoxTraitAttributes;
 use Site\SiteMap;
 
 class OOPBall implements IExecutable, IBuildable, IRoutable
@@ -62,33 +64,40 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 			new HTMLElement('fieldset', 'legend-oopball-container inline',
 				new HTMLElement('legend', 'legend-oopball-container', self::TITLE),
 
+                new HTMLElement('fieldset', 'fieldset-infobox inline',
+                    new HTMLElement('legend', 'legend-infobox fixed', "InfoBox")
+                ),
+
                 new HTMLElement('fieldset', 'fieldset-input physbox',
-                    new HTMLElement('legend', 'legend-object-input fixed', "Input")
+                    new HTMLElement('legend', 'legend-object-input fixed', "Element Information")
                 ),
 
                 $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program physbox',
                     new Attributes('data-ax', 3),
                     new Attributes('data-ay', 8),
                     new HTMLElement('legend', 'legend-program fixed', "Program"),
+                    new HTMLElement('div', 'marble physitem',
+                        new Attributes('draggable', 'true', 'data-collision', 'circle')
+                    ),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', 1)),
                     new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-//                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-//                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+//
+                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
 
-                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle'))
-
-//                    new HTMLElement('fieldset', 'fieldset-obstacle inline',
-//                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
-//                    )
+                    new HTMLElement('fieldset', 'fieldset-obstacle inline',
+                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
+                    )
                 ),
 
                 new HTMLElement('fieldset', 'fieldset-output physbox',
                     new Attributes('data-ay', 1),
                     new HTMLElement('legend', 'legend-output fixed', "Output"),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', 4, 'data-ax', 1))
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', -4))
                 ),
 
                 new HTMLElement('fieldset', 'fieldset-result physbox',
@@ -146,3 +155,4 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 		$RouteBuilder->writeRoute('ANY ' . self::FORM_PATH, __CLASS__, IRequest::NAVIGATION_ROUTE, "OOPBall");
 	}
 }
+

@@ -44,10 +44,7 @@
                     lastDragObject = e.target;
                     e.target.lastClickOffset = [e.offsetX, e.offsetY];
                     e.target.lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
-//                     e.target.lastDragLocation = [e.layerX, e.layerY];
-                    console.log(e.type, [e.target], e.target.lastDragLocation);
-//                     console.log(e.type, [e.target], e.target.lastClickOffset);
-//                     e.target.lastDragLocation = [e.layerX, e.layerY];
+                    //console.log(e.type, [e.target], e.target.lastDragLocation);
                     break;
                 case 'dragover':
                     e.stopPropagation();

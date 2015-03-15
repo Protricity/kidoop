@@ -207,7 +207,6 @@
             setPosition(elm2, p2);
 
         } else {
-            collision = true;
             // collision impulse
             var i = (-(1.0 + RESTITUTION) * vn) / (im1 + im2);
             var impulse = mtd.multiply(i);
@@ -228,7 +227,7 @@
         triggerCollisionEvent(elm1, elm2);
         triggerCollisionEvent(elm2, elm1);
 
-        return collision;
+        return true;
     };
 
     var testRectContainment = function(element, parent) {
