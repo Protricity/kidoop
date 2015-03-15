@@ -3,44 +3,23 @@
  * User: Ari
  */
 (function(){
+    const CLASS_PHYSITEM = 'physitem';
 
-    var DEFAULT_GRAVITY = 0; // 0.7;
-    var WALL_BOUNCE_COOEFICIENT = 0.60;
+    var DEFAULT_GRAVITY = 0.3; // 0.7;
+    var WALL_BOUNCE_COOEFICIENT = 0.90;
     var BALL_BOUNCE_COOEFICIENT = 0.45;
-    var FRAME_TIME = 10;
 
-    var RENDER_INTERVAL = 50;
+    var RENDER_INTERVAL = 30;
     var RESTITUTION = 3;
 
     var triggerCollisionEvent = function (element, element2) {
-        var event = new CustomEvent(
-            "collision",
-            {
-                detail:
-                {
-                    element1: element,
-                    element2: element2,
-                    time: new Date()
-                },
-                bubbles: true,
-                cancelable: true
-            });
-
-        element.dispatchEvent(event);
-    };
-
-    var getClassValue = function(element, className) {
-        var regex = new RegExp("\\b" + className + ":([0-9.-]+)\\b");
-        var match = element.className.match(regex);
-        if(!match)
-            return 0;
-        return parseFloat(match[1]);
-    };
-
-    var setClassValue = function(element, className, value) {
-        var regex = new RegExp("\s*\\b" + className + ":([0-9.-]+)\\b", 'g');
-        element.className = element.className.replace(regex, '');
-        element.className += ' ' + className + ':' + value;
+        element.dispatchEvent(new CustomEvent("collision", {
+            detail: {
+                with: element2
+            },
+            bubbles: true,
+            cancelable: true
+        }));
     };
 
     var getArea = function(element) {
@@ -59,7 +38,6 @@
         return element.dataset.mass || element.offsetWidth * element.offsetHeight;
     };
 
-
     var getPosition = function(element) {
         var x = parseFloat(element.dataset.x) || element.offsetLeft;
         var y = parseFloat(element.dataset.y) || element.offsetTop;
@@ -67,11 +45,10 @@
     };
 
     var setPosition = function(element, vector) {
-//         if(element.lastVector && vector.getDistance(element.lastVector) < 1)
-//             return;
-//         element.lastVector = vector;
-        element.dataset.x = parseInt(vector.x * 10) / 10;
-        element.dataset.y = parseInt(vector.y * 10) / 10;
+        if(!element.classList.contains(CLASS_PHYSITEM))
+            return;
+        element.dataset.x = Math.round((vector.x) * 10) / 10;
+        element.dataset.y = Math.round((vector.y) * 10) / 10;
     };
 
     var getVelocity = function(element) {
@@ -81,8 +58,10 @@
     };
 
     var setVelocity = function(element, vector) {
-        element.dataset.vx = parseInt(vector.x * 10) / 10;
-        element.dataset.vy = parseInt(vector.y * 10) / 10;
+        if(!element.classList.contains(CLASS_PHYSITEM))
+            return;
+        element.dataset.vx = Math.round(vector.x * 100) / 100;
+        element.dataset.vy = Math.round(vector.y * 100) / 100;
     };
 
     var getAcceleration = function(element) {
@@ -95,16 +74,18 @@
     };
 
     var setAcceleration = function(element, vector) {
-        element.dataset.ax = parseInt(vector.x * 10) / 10;
-        element.dataset.ay = parseInt(vector.y * 10) / 10;
+        if(!element.classList.contains(CLASS_PHYSITEM))
+            return;
+        element.dataset.ax = Math.round(vector.x * 10) / 10;
+        element.dataset.ay = Math.round(vector.y * 10) / 10;
     };
 
     var renderElement = function(element) {
         var pos = getPosition(element);
         element.style.left = Math.round(pos.x) + 'px';
         element.style.top = Math.round(pos.y) + 'px';
-        if(!element.style.position)
-            element.style.position = 'absolute';
+         if(!element.style.position)
+             element.style.position = 'absolute';
     };
 
     var testCollision = function(elm1, elm2) {
@@ -220,7 +201,6 @@
         var v = (v1.subtractVector(v2));
         var vn = v.dot(mtd.normalize());
 
-        var collision = false;
         // sphere intersecting but moving away from each other already
         if (vn > 0.0) {
             setPosition(elm1, p1);
@@ -245,8 +225,9 @@
             setPosition(elm2, p2);
         }
 
-        if(collision)
-            triggerCollisionEvent(elm1, elm2);
+        triggerCollisionEvent(elm1, elm2);
+        triggerCollisionEvent(elm2, elm1);
+
         return collision;
     };
 
@@ -326,20 +307,18 @@
                 var hasCollision = false;
                 var siblings = object.parentNode.children;
                 for(var k=0; k<siblings.length; k++) {
-                    if(siblings !== siblings[k])
+                    if(object !== siblings[k])
                         hasCollision = testCollision(object, siblings[k]) || hasCollision;
                 }
                 hasCollision = testRectContainment(object, object.parentNode) || hasCollision;
 
-        //             if(!hasCollision) {
                 var a = getAcceleration(object);
                 v = getVelocity(object);
-                    if(a.x || a.y) {
-                    v.x += a.x;
-                    v.y += a.y;
+                if(a.x || a.y) {
+                    v.x += a.x * (totalElapsedTime / 1000);
+                    v.y += a.y * (totalElapsedTime / 1000);
                     setVelocity(object, v);
                 }
-        //             }
             }
 
             for(i=0; i<objects.length; i++) {

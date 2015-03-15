@@ -25,6 +25,7 @@ use Site\SiteMap;
 
 class OOPBall implements IExecutable, IBuildable, IRoutable
 {
+    const CLASS_PHYSITEM = 'physitem';
 	const TITLE = 'OOPBall';
 
     const FORM_METHOD = 'POST';
@@ -66,22 +67,22 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
                 ),
 
                 $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program physbox',
-                    new Attributes('data-ax', 0.5),
-                    new Attributes('data-ay', 0.5),
+                    new Attributes('data-ax', 3),
+                    new Attributes('data-ay', 8),
                     new HTMLElement('legend', 'legend-program fixed', "Program"),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+//                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+//                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
 
-                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
+                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle'))
 
-                    new HTMLElement('fieldset', 'fieldset-obstacle',
-                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
-                    )
+//                    new HTMLElement('fieldset', 'fieldset-obstacle inline',
+//                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
+//                    )
                 ),
 
                 new HTMLElement('fieldset', 'fieldset-output physbox',
@@ -92,8 +93,8 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 
                 new HTMLElement('fieldset', 'fieldset-result physbox',
                     new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new Attributes('data-ax', -1),
-                    new HTMLElement('legend', 'legend-result fixed', "Result")
+                    new Attributes('data-ax', -1)
+//                    new HTMLElement('legend', 'legend-result', "Result")
                 )
 			)
         );

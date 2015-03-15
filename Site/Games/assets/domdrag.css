@@ -1,7 +1,7 @@
 /** Draggable **/
 
 .physbox.dragenter {
-    background-color: #583;
+    background-color: #CCF;
 }
 
 [draggable] {
@@ -15,7 +15,6 @@
 
     cursor: move;
 }
-
 
 
 [draggable]:hover {

@@ -4,35 +4,56 @@
  */
 (function(){
 
+    var dropAt = function(elm, dropElm, x, y, fromX, fromY) {
+        dropElm.dataset.x = x || 0;
+        dropElm.dataset.y = y || 0;
+        dropElm.style.left = Math.round(x) + 'px';
+        dropElm.style.top = Math.round(y) + 'px';
+        if(!dropElm.style.position)
+            dropElm.style.position = 'absolute';
+        elm.appendChild(dropElm);
+        console.log("Dropped ", x, y, [dropElm]);
+
+        if(typeof fromX !== 'undefined') { 
+            dropElm.dataset.vx = (x - fromX) / 10;
+            dropElm.dataset.vy = (y - fromY) / 10;
+        }
+    };
+
     var lastDragObject = null;
     var initObject = function(element) {
-        if(typeof element.domdrag !== 'undefined')
+        if(typeof element.dropAt !== 'undefined')
             return;
-        element.domdrag = true;
+        element.dropAt = function(container, x, y) { return dropAt(null, container, this, x, y); };
 
-        //setPosition(element, getPosition(element));
         var onDrag = function(e) {
             var isPhysBox = false;
             if(this.classList.contains('physbox')) {
                 isPhysBox = true;
             } else if (this.classList.contains('draggable') || this.getAttribute('draggable')) {
-                lastDragObject = e.target;
-                console.log("Dragging: ", lastDragObject);
+
+
             } else {
                 return false;
 
             }
-//             console.log(e.type);
+
             element.dataset.drag = e.type;
             switch(e.type) {
-                case 'dragstart': 
-//                     lastDragObject = element;
+                case 'dragstart':
+                    lastDragObject = e.target;
+                    e.target.lastClickOffset = [e.offsetX, e.offsetY];
+                    e.target.lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
+//                     e.target.lastDragLocation = [e.layerX, e.layerY];
+                    console.log(e.type, [e.target], e.target.lastDragLocation);
+//                     console.log(e.type, [e.target], e.target.lastClickOffset);
+//                     e.target.lastDragLocation = [e.layerX, e.layerY];
                     break;
                 case 'dragover':
                     e.stopPropagation();
-//                         e.dataTransfer.dropEffect = 'move';  
+                    e.target.lastDragOver = [e.target.offsetLeft, e.target.offsetTop];
+                    //e.dataTransfer.dropEffect = 'move';
                     if(isPhysBox) {
-//                         e.target.dr/agObject = element;
                         e.preventDefault();
                     }
                     break;
@@ -42,22 +63,22 @@
                 break;
                 case 'dragleave':
                     e.target.classList.remove('dragenter');
-                    e.target.classList.add('dragleave');
+                    //e.target.classList.add('dragleave');
                 break;
                 case 'drop':
                     e.target.classList.remove('dragleave');
                     e.target.classList.remove('dragenter');
                     e.target.classList.add('drop');
-                    console.log("Dropping: ", lastDragObject, e);
-                    if(lastDragObject !== null) {
-                        lastDragObject.dataset.x = null;
-                        lastDragObject.dataset.y = null;
-                        e.target.appendChild(lastDragObject);
-                    }
-                    lastDragObject = null;
+                    if(lastDragObject) {
+                        dropAt(e.target, lastDragObject, 
+                            e.offsetX - lastDragObject.lastClickOffset[0], 
+                            e.offsetY - lastDragObject.lastClickOffset[1],
+                            lastDragObject.lastDragStart[0] - lastDragObject.lastClickOffset[0],
+                            lastDragObject.lastDragStart[1] - lastDragObject.lastClickOffset[1]);
+                        lastDragObject = null;
+                   }
                     break;
                 case 'dragend': 
-                    lastDragObject = null;
                     break;
                 default: break;
             }
