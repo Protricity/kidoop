@@ -1,0 +1,9 @@
+/** Physics **/
+
+.physics {
+    min-width: 50em;
+    min-height: 5em;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

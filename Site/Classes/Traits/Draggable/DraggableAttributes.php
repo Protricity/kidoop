@@ -5,18 +5,19 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Classes\Traits\InfoBox;
+namespace Site\Classes\Traits\Draggable;
 
-use CPath\Render\HTML\Attribute\ClassAttributes;
+use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Header\IHeaderWriter;
 use CPath\Render\HTML\Header\IHTMLSupportHeaders;
 use CPath\Request\IRequest;
 
-class InfoBoxTraitAttributes extends ClassAttributes implements IHTMLSupportHeaders
+class DraggableAttributes extends Attributes implements IHTMLSupportHeaders
 {
-    const CLASS_NAME = 'infobox';
+//    const CLASS_NAME = 'draggable';
+    const CLASS_DROP_CONTAINER = 'drop-container';
     public function __construct() {
-        parent::__construct(self::CLASS_NAME);
+        parent::__construct('draggable', 'true');
     }
 
     /**
@@ -26,6 +27,7 @@ class InfoBoxTraitAttributes extends ClassAttributes implements IHTMLSupportHead
      * @return void
      */
     function writeHeaders(IRequest $Request, IHeaderWriter $Head) {
+        parent::writeHeaders($Request, $Head);
         $Head->writeScript(__DIR__ . '/assets/draggable.js');
         $Head->writeStyleSheet(__DIR__ . '/assets/draggable.css');
     }

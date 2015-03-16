@@ -1,42 +1,5 @@
 
 
-/** Marble **/
-
-marble, .marble {
-    display: inline-block;
-    width: 64px;
-    height: 62px;
-    background: url("img/sprites.png") -2px -2px;
-
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-    filter: url(../../assets/shadow.svg#drop-shadow);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
-    Color='#444')";
-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
-
-}
-
-/** Warp **/
-
-.warp {
-    /*background-color: #555;*/
-    display: inline-block;
-    border-width: 0;
-    width: 60px;
-    height: 39px;
-    background: url("img/sprites.png") -67px -77px;
-
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-    filter: url(../../assets/shadow.svg#drop-shadow);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
-    Color='#444')";
-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
-
-}
-
-
 /** Fieldsets **/
 
 fieldset.relative {

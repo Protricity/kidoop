@@ -22,7 +22,12 @@ use CPath\Request\IRequest;
 use CPath\Response\IResponse;
 use CPath\Route\IRoutable;
 use CPath\Route\RouteBuilder;
+use Site\Classes\Traits\Draggable\DraggableAttributes;
 use Site\Classes\Traits\InfoBox\InfoBoxTraitAttributes;
+use Site\Classes\Objects\Marble\MarbleElement;
+use Site\Classes\Objects\Warp\WarpElement;
+use Site\Classes\Traits\Physics\PhysicsAttributes;
+use Site\Classes\Traits\Physics\PhysicsContainer;
 use Site\SiteMap;
 
 class OOPBall implements IExecutable, IBuildable, IRoutable
@@ -52,60 +57,70 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 
 		$Form = new HTMLForm(self::FORM_METHOD, self::FORM_PATH, self::FORM_NAME,
 			new HTMLMetaTag(HTMLMetaTag::META_TITLE, self::TITLE),
-            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domwarp.js'),
-            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domwarp.css'),
-            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domdrag.js'),
-            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domdrag.css'),
-            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domphys.js'),
-            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domphys.css'),
+
+//            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domwarp.js'),
+//            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domwarp.css'),
+//            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domdrag.js'),
+//            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domdrag.css'),
+//            new HTMLHeaderScript(dirname(__DIR__) . '\assets\domphys.js'),
+//            new HTMLHeaderStyleSheet(dirname(__DIR__) . '\assets\domphys.css'),
             new HTMLHeaderScript(__DIR__ . '\assets\oopball.js'),
 			new HTMLHeaderStyleSheet(__DIR__ . '\assets\oopball.css'),
 
-			new HTMLElement('fieldset', 'legend-oopball-container inline',
-				new HTMLElement('legend', 'legend-oopball-container', self::TITLE),
+            new HTMLElement('fieldset', 'fieldset-oopball inline',
+                new HTMLElement('legend', 'legend-oopball', self::TITLE),
 
                 new HTMLElement('fieldset', 'fieldset-infobox inline',
                     new HTMLElement('legend', 'legend-infobox fixed', "InfoBox")
                 ),
 
-                new HTMLElement('fieldset', 'fieldset-input physbox',
-                    new HTMLElement('legend', 'legend-object-input fixed', "Element Information")
-                ),
-
-                $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program physbox',
-                    new Attributes('data-ax', 3),
-                    new Attributes('data-ay', 8),
-                    new HTMLElement('legend', 'legend-program fixed', "Program"),
-                    new HTMLElement('div', 'marble physitem',
-                        new Attributes('draggable', 'true', 'data-collision', 'circle')
-                    ),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', 1)),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-//
-                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-
-                    new HTMLElement('fieldset', 'fieldset-obstacle inline',
-                        new HTMLElement('legend', 'legend-obstacle', "Obstacle")
+                new HTMLElement('fieldset', 'fieldset-input',
+                    new HTMLElement('legend', 'legend-object-input fixed', "Input"),
+                    "Choose a marble",
+                    new PhysicsContainer('oopball-input', 1, 1,
+                        new MarbleElement(), // true, new Attributes('data-ax', 1)
+                        new MarbleElement(),
+                        new MarbleElement(),
+                        new MarbleElement()
                     )
                 ),
 
-                new HTMLElement('fieldset', 'fieldset-output physbox',
-                    new Attributes('data-ay', 1),
-                    new HTMLElement('legend', 'legend-output fixed', "Output"),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new HTMLElement('div', 'marble physitem', new Attributes('draggable', 'true', 'data-collision', 'circle', 'data-ax', -4))
+                $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program',
+                    new HTMLElement('legend', 'legend-program fixed', "Program"),
+                    "Try to get the marble into the middle warp",
+                    new PhysicsContainer('oopball-program ' . DraggableAttributes::CLASS_DROP_CONTAINER, 3, 8,
+                        new WarpElement('oopball-input'),
+                        new WarpElement('oopball-output',
+                            new Attributes('data-ax', 0, 'data-ay', 0)
+                        )
+                    )
                 ),
 
-                new HTMLElement('fieldset', 'fieldset-result physbox',
-                    new HTMLElement('div', 'warp physitem', new Attributes('draggable', 'true', 'data-collision', 'circle')),
-                    new Attributes('data-ax', -1)
-//                    new HTMLElement('legend', 'legend-result', "Result")
+                new HTMLElement('fieldset', 'fieldset-output',
+                    new HTMLElement('legend', 'legend-output', "Output"),
+                    "Place 4 objects in Output container to win round",
+                    new PhysicsContainer('oopball-output', 3
+//                        new WarpElement('oopball-input')
+                    )
                 )
-			)
+
+//                new HTMLElement('fieldset', 'fieldset-output',
+//                    new HTMLElement('legend', 'legend-output fixed', "Output"),
+//                    new PhysicsContainer('oopball-output', 0, 1,
+//                        new MarbleElement(),
+//                        new MarbleElement(),
+//                        new MarbleElement(),
+//                        new MarbleElement(true, new Attributes('data-ax', -4))
+//                    )
+//                ),
+//
+//                new HTMLElement('fieldset', 'fieldset-result',
+//                    new HTMLElement('legend', 'legend-result', "Result"),
+//                    new PhysicsContainer('oopball-result', 0, -1,
+//                        new WarpElement()
+//                    )
+//                )
+            )
         );
 
 
