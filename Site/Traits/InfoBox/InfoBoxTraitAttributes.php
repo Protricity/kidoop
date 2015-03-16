@@ -5,7 +5,7 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Classes\Traits\InfoBox;
+namespace Site\Traits\InfoBox;
 
 use CPath\Render\HTML\Attribute\ClassAttributes;
 use CPath\Render\HTML\Header\IHeaderWriter;

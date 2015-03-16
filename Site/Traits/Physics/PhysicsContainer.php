@@ -5,11 +5,11 @@
  * Date: 3/15/2015
  * Time: 2:35 PM
  */
-namespace Site\Classes\Traits\Physics;
+namespace Site\Traits\Physics;
 
 use CPath\Render\HTML\Element\HTMLElement;
-use Site\Classes\Traits\Draggable\DraggableAttributes;
-use Site\Classes\Traits\Physics\PhysicsAttributes;
+use Site\Traits\Draggable\DraggableAttributes;
+use Site\Traits\Physics\PhysicsAttributes;
 
 class PhysicsContainer extends HTMLElement
 {

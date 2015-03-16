@@ -22,12 +22,12 @@ use CPath\Request\IRequest;
 use CPath\Response\IResponse;
 use CPath\Route\IRoutable;
 use CPath\Route\RouteBuilder;
-use Site\Classes\Traits\Draggable\DraggableAttributes;
-use Site\Classes\Traits\InfoBox\InfoBoxTraitAttributes;
-use Site\Classes\Objects\Marble\MarbleElement;
-use Site\Classes\Objects\Warp\WarpElement;
-use Site\Classes\Traits\Physics\PhysicsAttributes;
-use Site\Classes\Traits\Physics\PhysicsContainer;
+use Site\Traits\Draggable\DraggableAttributes;
+use Site\Traits\InfoBox\InfoBoxTraitAttributes;
+use Site\Objects\Marble\MarbleElement;
+use Site\Objects\Warp\WarpElement;
+use Site\Traits\Physics\PhysicsAttributes;
+use Site\Traits\Physics\PhysicsContainer;
 use Site\SiteMap;
 
 class OOPBall implements IExecutable, IBuildable, IRoutable
@@ -78,10 +78,12 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
                     new HTMLElement('legend', 'legend-object-input fixed', "Input"),
                     "Choose a marble",
                     new PhysicsContainer('oopball-input', 1, 1,
-                        new MarbleElement(), // true, new Attributes('data-ax', 1)
-                        new MarbleElement(),
-                        new MarbleElement(),
-                        new MarbleElement()
+                        new MarbleElement(true, 'class="red"'), // true, new Attributes('data-ax', 1)
+                        new MarbleElement(true, 'class="lightblue"'),
+                        new MarbleElement(true, 'class="darkblue"'),
+                        new MarbleElement(true, 'class="green"'),
+                        new MarbleElement(true, 'class="purple"'),
+                        new MarbleElement(true, 'class="yellow"')
                     )
                 ),
 

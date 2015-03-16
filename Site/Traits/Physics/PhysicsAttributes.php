@@ -5,7 +5,7 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Classes\Traits\Physics;
+namespace Site\Traits\Physics;
 
 use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Header\IHeaderWriter;

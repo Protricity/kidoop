@@ -5,7 +5,7 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Classes\Traits\Draggable;
+namespace Site\Traits\Draggable;
 
 use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Header\IHeaderWriter;

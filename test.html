@@ -1,69 +1,71 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<head>
     <script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>
     <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
     <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="path" content="/oopball">
-    <meta name="domain-path" content="/">
+    <meta name="domain-path" content="kidoop/">
     <link rel='stylesheet' href='CPath/Route/HTML/assets/navigator.css' />
-    <script src='Site/Classes/Traits/Draggable/assets/draggable.js'></script>
-    <link rel='stylesheet' href='Site/Classes/Traits/Draggable/assets/draggable.css' />
-    <link rel='stylesheet' href='Site/Classes/Objects/Marble/assets/marble.css' />
-    <script src='Site/Classes/Traits/Physics/assets/physics.js'></script>
-    <link rel='stylesheet' href='Site/Classes/Traits/Physics/assets/physics.css' />
-    <script src='Site/Classes/Objects/Warp/assets/warp.js'></script>
-    <link rel='stylesheet' href='Site/Classes/Objects/Warp/assets/warp.css' />
+    <script src='Site/Traits/Draggable/assets/draggable.js'></script>
+    <link rel='stylesheet' href='Site/Traits/Draggable/assets/draggable.css' />
+    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
+    <script src='Site/Traits/Physics/assets/physics.js'></script>
+    <link rel='stylesheet' href='Site/Traits/Physics/assets/physics.css' />
+    <script src='Site/Objects/Warp/assets/warp.js'></script>
+    <link rel='stylesheet' href='Site/Objects/Warp/assets/warp.css' />
     <meta name="title" content="OOPBall">
     <script src='Site/Games/Pinball/assets/oopball.js'></script>
     <link rel='stylesheet' href='Site/Games/Pinball/assets/oopball.css' />
     <meta name="title" content="OOPBall">
-  </head>
-  <body>
-    <section class="header">
-      <h1 class="header-title"></h1>GET /oopball
-    </section>
-    <section class="content">
-      <div class="navbar">
+</head>
+<body>
+<section class="header">
+    <h1 class="header-title"></h1>GET /oopball
+</section>
+<section class="content">
+    <div class="navbar">
         <h3 class="navbar-title">/oopball</h3>
         <div>
-        <a class="login-only" href="http://kidoop.com/home/">My Account</a>
-        <a class="no-login" href="http://kidoop.com/login/">Login</a>
-        <a class="no-login" href="http://kidoop.com/register/">Register</a>
-        <a class="focus" href="http://kidoop.com/oopball">OOPBall</a>
-        <a class="no-login" href="http://kidoop.com/blog/">Blog</a>
-        <a class="login-only" href="http://kidoop.com/logout/">Logout</a>
+            <a class="login-only" href="http://localhosthome/">My Account</a>
+            <a class="no-login" href="http://localhostlogin/">Login</a>
+            <a class="no-login" href="http://localhostregister/">Register</a>
+            <a class="focus" href="http://localhostoopball">OOPBall</a>
+            <a class="no-login" href="http://localhostblog/">Blog</a>
+            <a class="login-only" href="http://localhostlogout/">Logout</a>
         </div>
-      </div>
-      <form action="/oopball" method="POST" name="Site\Games\Pinball\OOPBall">
+    </div>
+    <form action="oopball" method="POST" name="Site\Games\Pinball\OOPBall">
         <fieldset class="fieldset-oopball inline">
-          <legend class="legend-oopball">OOPBall</legend>
-          <fieldset class="fieldset-infobox inline">
-            <legend class="legend-infobox fixed">InfoBox</legend></fieldset>
-          <fieldset class="fieldset-input">
-            <legend class="legend-object-input fixed">Input</legend>Choose a marble
-            <div class="oopball-input physics" data-ax="1" data-ay="1">
-              <marble data-collision="circle" draggable="true"></marble>
-              <marble data-collision="circle" draggable="true"></marble>
-              <marble data-collision="circle" draggable="true"></marble>
-              <marble data-collision="circle" draggable="true"></marble>
-            </div>
-          </fieldset>
-          <fieldset class="fieldset-program">
-            <legend class="legend-program fixed">Program</legend>Try to get the marble into the middle warp
-            <div class="oopball-program drop-container physics" data-ax="3" data-ay="8">
-              <warp data-collision="circle" data-target="oopball-input" draggable="true"></warp>
-              <warp data-collision="circle" data-target="oopball-output" data-ax="0" data-ay="0" draggable="true"></warp>
-            </div>
-          </fieldset>
-          <fieldset class="fieldset-output">
-            <legend class="legend-output">Output</legend>Place 4 objects in Output container to win round
-            <div class="oopball-output physics" data-ax="3"></div>
-          </fieldset>
+            <legend class="legend-oopball">OOPBall</legend>
+            <fieldset class="fieldset-infobox inline">
+                <legend class="legend-infobox fixed">InfoBox</legend></fieldset>
+            <fieldset class="fieldset-input">
+                <legend class="legend-object-input fixed">Input</legend>Choose a marble
+                <div class="oopball-input physics" data-ax="1" data-ay="1">
+                    <marble data-collision="circle" class="red" draggable="true"></marble>
+                    <marble data-collision="circle" class="lightblue" draggable="true"></marble>
+                    <marble data-collision="circle" class="darkblue" draggable="true"></marble>
+                    <marble data-collision="circle" class="green" draggable="true"></marble>
+                    <marble data-collision="circle" class="purple" draggable="true"></marble>
+                    <marble data-collision="circle" class="yellow" draggable="true"></marble>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset-program">
+                <legend class="legend-program fixed">Program</legend>Try to get the marble into the middle warp
+                <div class="oopball-program drop-container physics" data-ax="3" data-ay="8">
+                    <warp data-collision="circle" data-target="oopball-input" draggable="true"></warp>
+                    <warp data-collision="circle" data-target="oopball-output" data-ax="0" data-ay="0" draggable="true"></warp>
+                </div>
+            </fieldset>
+            <fieldset class="fieldset-output">
+                <legend class="legend-output">Output</legend>Place 4 objects in Output container to win round
+                <div class="oopball-output physics" data-ax="3"></div>
+            </fieldset>
         </fieldset></form>
-    </section>
-    <section class="footer"></section>
-  </body>
+</section>
+<section class="footer"></section>
+</body>
 </html>
