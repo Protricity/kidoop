@@ -9,10 +9,10 @@
         var target = e.target;
         var warp = e.detail.with;
 
-        if(warp.nodeName.toLowerCase() !== 'warp')
+        if(warp.classList.contains('warp'))
             return false;
 
-        if(target.nodeName.toLowerCase() === 'warp' || !target.classList.contains(WARP_ITEM_CLASS))
+        if(!target.classList.contains(WARP_ITEM_CLASS))
             return false;
 
         var targetClass = warp.dataset.target;
