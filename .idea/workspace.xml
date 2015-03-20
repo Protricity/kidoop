@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\domdrag.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\domdrag.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\domphys.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\domphys.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\domwarp.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Site\Games\assets\shadow.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" afterPath="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <ignored path="kidoop.iws" />
@@ -69,38 +76,28 @@
       <file leaf-file-name="level1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5" vertical-offset="1014" max-vertical-offset="1683">
-              <caret line="65" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="7" />
+            <state vertical-scroll-proportion="-9.846154" vertical-offset="611" max-vertical-offset="1683">
+              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.119929455" vertical-offset="0" max-vertical-offset="1666">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.5" vertical-offset="593" max-vertical-offset="1666">
+              <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="level1.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="level1.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.68802696" vertical-offset="0" max-vertical-offset="593">
               <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="domdrag.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Site/Games/assets/domdrag.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2108">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="49" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -237,9 +234,9 @@
         <option value="$PROJECT_DIR$/Site/Traits/Physics/assets/physics.js" />
         <option value="$PROJECT_DIR$/Site/Traits/Collision/assets/collision.js" />
         <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
-        <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
         <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" />
         <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
       </list>
     </option>
   </component>
@@ -885,28 +882,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kidoop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kidoop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Games" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -999,7 +974,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1014" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1008,7 +983,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26354167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26091588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26091588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43601358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1120,32 +1095,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/shadow.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Site/Games/Pinball/assets/shadow.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="962">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/domwarp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/domphys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="7276">
-          <caret line="229" column="19" selection-start-line="229" selection-start-column="19" selection-end-line="229" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1193,20 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="39.23077" vertical-offset="1020" max-vertical-offset="1802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/domdrag.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/domphys.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1427,26 +1366,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/assets/domdrag.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2108">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="49" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="563" max-vertical-offset="2210">
           <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1459,18 +1382,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html">
+    <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5" vertical-offset="1014" max-vertical-offset="1683">
-          <caret line="65" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="7" />
+        <state vertical-scroll-proportion="-4.5" vertical-offset="593" max-vertical-offset="1666">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
+    <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.119929455" vertical-offset="0" max-vertical-offset="1666">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.68802696" vertical-offset="0" max-vertical-offset="593">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.846154" vertical-offset="611" max-vertical-offset="1683">
+          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
           <folding />
         </state>
       </provider>

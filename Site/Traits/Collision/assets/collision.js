@@ -114,36 +114,35 @@
         }
 
 
-        if(collision) {
-            var newPos = new Vector(0,0);
-
-            var dirx = circlePos.x < rectPos.x + rectArea.x / 2 ? -1 : 1;
-            newPos.x = dirx === -1 ? rectPos.x - circleArea.x : rectPos.x + rectArea.x;
-
-            var diry = circlePos.y < rectPos.y + rectArea.y / 2 ? -1 : 1;
-            newPos.y = diry === -1 ? rectPos.y - circleArea.y : rectPos.y + rectArea.y;
-
-            if(Math.abs(newPos.x - circlePos.x) < Math.abs(newPos.y - circlePos.y)) {
-                circlePos.x = newPos.x;
-                v1.x = dirx * Math.abs(v1.x);
-            } else {
-                circlePos.y = newPos.y;
-                v1.y = diry * Math.abs(v1.y);
-            }
-            v1 = v1.multiply(WALL_BOUNCE_COOEFICIENT);
-            setPosition(circleElm, circlePos);
-        }
         var cornerDistanceSq =
             Math.pow(circleDistance.x - w, 2) +
             Math.pow(circleDistance.y - h, 2);
 
         if(!collision) {
             collision = (cornerDistanceSq <= (Math.pow(circleRadius, 2)));
-            v1 = v1.multiply(-0.5);
+           //v1 = v1.multiply(-0.5);
         }
 
         if(!collision)
             return false;
+            
+        var newPos = new Vector(0,0);
+
+        var dirx = circlePos.x < rectPos.x + rectArea.x / 2 ? -1 : 1;
+        newPos.x = dirx === -1 ? rectPos.x - circleArea.x : rectPos.x + rectArea.x;
+
+        var diry = circlePos.y < rectPos.y + rectArea.y / 2 ? -1 : 1;
+        newPos.y = diry === -1 ? rectPos.y - circleArea.y : rectPos.y + rectArea.y;
+
+        if(Math.abs(newPos.x - circlePos.x) < Math.abs(newPos.y - circlePos.y)) {
+            circlePos.x = newPos.x;
+            v1.x = dirx * Math.abs(v1.x);
+        } else {
+            circlePos.y = newPos.y;
+            v1.y = diry * Math.abs(v1.y);
+        }
+        v1 = v1.multiply(WALL_BOUNCE_COOEFICIENT);
+        setPosition(circleElm, circlePos);
 
         // change in momentum
 

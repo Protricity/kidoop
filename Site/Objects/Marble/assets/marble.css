@@ -17,7 +17,7 @@ filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#44
 }
 
 marble.red {
-    background: url("img/sprites.png") 0 0;
+    background: url("img/sprites.png") -1px 0px;
 }
 
 marble.purple {
@@ -25,7 +25,7 @@ marble.purple {
 }
 
 marble.lightblue {
-    background: url("img/sprites.png") -128px 0;
+    background: url("img/sprites.png") -129px 0;
 }
 
 marble.green {

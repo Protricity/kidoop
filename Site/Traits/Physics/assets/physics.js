@@ -6,8 +6,7 @@
     var ITEM_CLASS = 'physics';
 
     var DEFAULT_GRAVITY = 1; // 0.7;
-    var WALL_BOUNCE_COOEFICIENT = 0.90;
-    var BALL_BOUNCE_COOEFICIENT = 0.65;
+    var WALL_BOUNCE_COOEFICIENT = 0.70;
 
     var RENDER_INTERVAL = 30;
     var RESTITUTION = 3;

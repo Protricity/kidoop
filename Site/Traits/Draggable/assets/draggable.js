@@ -17,8 +17,8 @@
         console.log("Dropped ", x, y, [dropElm]);
 
         if(typeof fromX !== 'undefined') {
-            dropElm.dataset.vx = (x - fromX) / 20;
-            dropElm.dataset.vy = (y - fromY) / 20;
+            dropElm.dataset.vx = (x - fromX) / 80;
+            dropElm.dataset.vy = (y - fromY) / 80;
         }
     };
 
