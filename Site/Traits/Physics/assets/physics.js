@@ -3,16 +3,16 @@
  * User: Ari
  */
 (function(){
-    const CLASS_PHYSICS = 'physics';
+    var ITEM_CLASS = 'physics';
 
-    var DEFAULT_GRAVITY = 0.3; // 0.7;
+    var DEFAULT_GRAVITY = 1; // 0.7;
     var WALL_BOUNCE_COOEFICIENT = 0.90;
-    var BALL_BOUNCE_COOEFICIENT = 0.45;
+    var BALL_BOUNCE_COOEFICIENT = 0.65;
 
     var RENDER_INTERVAL = 30;
     var RESTITUTION = 3;
 
-    var colesce = function(arg1, arg2, arg3) {
+    var coalesce = function(arg1, arg2, arg3) {
         for(var i=0; i<arguments.length; i++) {
             if(typeof arguments[i] === 'undefined' || arguments[i] === null)
                 continue;
@@ -49,8 +49,8 @@
     };
 
     var getPosition = function(element) {
-        var x = parseFloat(colesce(element.dataset.x, element.offsetLeft));
-        var y = parseFloat(colesce(element.dataset.y, element.offsetTop));
+        var x = parseFloat(coalesce(element.dataset.x, element.offsetLeft));
+        var y = parseFloat(coalesce(element.dataset.y, element.offsetTop));
         return new Vector(x, y);
     };
 
@@ -62,25 +62,29 @@
     };
 
     var getVelocity = function(element) {
-        var vx = parseFloat(colesce(element.dataset.vx, 0)); // getClassValue(element, 'vx');
-        var vy = parseFloat(colesce(element.dataset.vy, 0)); // getClassValue(element, 'vy');
+        var vx = parseFloat(coalesce(element.dataset.vx, 0)); // getClassValue(element, 'vx');
+        var vy = parseFloat(coalesce(element.dataset.vy, 0)); // getClassValue(element, 'vy');
         return new Vector(vx, vy);
     };
 
     var setVelocity = function(element, vector) {
-//         if(!element.classList.contains(CLASS_PHYSICS))
-//             return;
-        element.dataset.vx = Math.round(vector.x * 100) / 100;
-        element.dataset.vy = Math.round(vector.y * 100) / 100;
+        var vx = Math.round(vector.x * 100) / 100;
+        var vy = Math.round(vector.y * 100) / 100;
+        if(element.dataset.vx != vx) element.dataset.vx = vx;
+        if(element.dataset.vy != vy) element.dataset.vy = vy;
     };
 
     var getAcceleration = function(element) {
         var def = DEFAULT_GRAVITY;
 //         if(!element.dataset.vx)
 //             def = 0;
-        var ax = parseFloat(colesce(element.dataset.ax, element.parentNode.dataset.ax, def));
-        var ay = parseFloat(colesce(element.dataset.ay, element.parentNode.dataset.ay, def));
-        return new Vector(ax, ay);
+        var ax = (coalesce(element.dataset.ax, element.parentNode.dataset.ax, def));
+        var ay = (coalesce(element.dataset.ay, element.parentNode.dataset.ay, def));
+        if(ax === 'center')
+            ax = (element.offsetLeft > element.parentNode.offsetWidth / 2) ? -def : def;
+        if(ay === 'center')
+            ay = (element.offsetTop> element.parentNode.offsetHeight / 2) ? -def : def;
+        return new Vector(parseFloat(ax), parseFloat(ay));
     };
 
     var setAcceleration = function(element, vector) {
@@ -94,150 +98,46 @@
         var pos = getPosition(element);
         element.style.left = Math.round(pos.x) + 'px';
         element.style.top = Math.round(pos.y) + 'px';
-         if(!element.style.position)
-             element.style.position = 'absolute';
-    };
-
-    var testCollision = function(elm1, elm2) {
-         if(elm1.dataset.collision === 'circle') {
-             if(elm2.dataset.collision === 'circle') {
-                 return testCircleCollision(elm1, elm2);
-             }
-         }
-        return testCircleCollision(elm1, elm2);
+         //if(!element.style.position)
+         //    element.style.position = 'absolute';
     };
 
     var testRectCollision = function(elm1, elm2) {
-        var v;
-        var R1 = getRect(elm1);
-        var R2 = getRect(elm2);
-        var collision = false;
-        if(R1.position.x < R2.position.x && R1.position.x + R1.area.x > R2.position.x) {
-            if (R1.position.y < R2.position.y && R1.position.y + R1.area.y > R2.position.y) {
-                R1.position.x = R2.position.x - R1.area.x;
-                v = getVelocity(elm1);
-                v.x = -Math.abs(v.x);
-                v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-                setPosition(elm1, R1.position);
-                setVelocity(elm1, v);
+        var p1 = getPosition(elm1);
+        var a1 = getArea(elm1);
+        var p2 = getPosition(elm2);
+        var a2 = getArea(elm2);
 
-                v = getVelocity(elm2);
-                v.x = Math.abs(v.x);
-                v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-                    
-                if (R1.position.x < 0) {
-                    R1.position.x = 0;
-                    R2.position.x = R1.position.x + R1.area.x;
-                    setPosition(elm2, R2.position);
-                }
-                setPosition(elm1, R1.position);
-                setVelocity(elm2, v);
+        var outside =
+            (p2.x > p1.x + a1.x)
+            || (p2.x + a2.x < p1.x)
+            || (p2.y > p1.y + a1.y)
+            || (p2.y + a2.y < p1.y);
 
-                if(R1.position.x < R2.position.x && R1.position.x + R1.area.x > R2.position.x) {
-                    R1.position.y = R2.position.y - R1.area.y;
-                    if (R1.position.y >= 0) {
-                        v = getVelocity(elm1);
-                        v.y = -Math.abs(v.y);
-                        v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-                        setPosition(elm1, R1.position);
-                        setVelocity(elm1, v);
+        if(!outside) {
+            var event = new CustomEvent("collision", {
+                detail: { with: elm2 },
+                bubbles: true,
+                cancelable: true
+            });
+            elm1.dispatchEvent(event);
+            //console.log("Rect Collision: ", [elm1, elm2]);
+            //if(!event.defaultPrevented || true) {
+                var p1 = getPosition(elm1);
+                var p2 = getPosition(elm2);
 
-                    } else {
-                        v = getVelocity(elm2);
-                        v.y = Math.abs(v.y);
-                        v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-                        R1.position.y = 0;
-                        R2.position.y = R1.position.y + R1.area.y;
-                        setPosition(elm2, R2.position);
-                        setPosition(elm1, R1.position);
-                        setVelocity(elm2, v);
+                if (p1.x > p2.x && p1.x < p2.x + a2.x) {
+                    if (p1.y > p2.y && p1.y < p2.y + a2.y) {
+                        //make blocks not move
+//                         p1.x = p2.x + a2.x;
+//                         setPosition(elm1, p1);
+//                         renderElement(elm1);
                     }
                 }
-                collision = true;
-            }
+            //}
+            return true;
         }
-        if(collision)
-            triggerCollisionEvent(elm1, elm2);
-        return collision;
-    };
-
-    var isCollidingCircles = function(elm1, elm2) {
-        var R1 = getRect(elm1);
-        var R2 = getRect(elm2);
-        var p1 = R1.position;
-        var p2 = R2.position;
-
-        var xd = p1.x - p2.x;
-        var yd = p1.y - p2.y;
-
-        var sumRadius = R1.area.x/2 + R2.area.x/2;
-        var sqrRadius = sumRadius * sumRadius;
-
-        var distSqr = (xd * xd) + (yd * yd);
-
-        return (distSqr <= sqrRadius)
-    };
-
-    var testCircleCollision = function(elm1, elm2) {
-        if(elm1 === elm2)
-            return false;
-
-        if(!isCollidingCircles(elm1, elm2))
-            return false;
-
-        var a1 = getArea(elm1);
-        var a2 = getArea(elm2);
-        var p1 = getPosition(elm1);
-        var p2 = getPosition(elm2);
-        var v1 = getVelocity(elm1);
-        var v2 = getVelocity(elm2);
-
-        // get the mtd
-        var delta = (p1.subtractVector(p2));
-        var distance = delta.getLength();
-        // minimum translation distance to push balls apart after intersecting
-        var mtd = delta.multiply(((a1.x / 2 + a2.x / 2)-distance)/distance);
-
-        // resolve intersection --
-        // inverse mass quantities
-        var im1 = 1 / getMass(elm1);
-        var im2 = 1 / getMass(elm2);
-
-        // push-pull them apart based off their mass
-        p1 = p1.addVector(mtd.multiply(im1 / (im1 + im2)));
-        p2 = p2.subtractVector(mtd.multiply(im2 / (im1 + im2)));
-
-        // impact speed
-        var v = (v1.subtractVector(v2));
-        var vn = v.dot(mtd.normalize());
-
-        // sphere intersecting but moving away from each other already
-        if (vn > 0.0) {
-            setPosition(elm1, p1);
-            setPosition(elm2, p2);
-
-        } else {
-            // collision impulse
-            var i = (-(1.0 + RESTITUTION) * vn) / (im1 + im2);
-            var impulse = mtd.multiply(i);
-
-            // change in momentum
-            v1 = v1.addVector(impulse.multiply(im1));
-            v1 = v1.multiply(BALL_BOUNCE_COOEFICIENT);
-
-            v2 = v2.subtractVector(impulse.multiply(im2));
-            v2 = v2.multiply(BALL_BOUNCE_COOEFICIENT);
-
-            setVelocity(elm1, v1);
-            setVelocity(elm2, v2);
-            setPosition(elm1, p1);
-            setPosition(elm2, p2);
-        }
-
-        triggerCollisionEvent(elm1, elm2);
-        triggerCollisionEvent(elm2, elm1);
-
-        return true;
+        return false;
     };
 
     var testRectContainment = function(element, parent) {
@@ -288,67 +188,78 @@
         return collision;
     };
 
-
-    var doReady = function() {
-        doRender();
-    };
-
     var lastRender = new Date();
+    var paused = false;
+    var timeout = null;
     var doRender = function() {
         var time = new Date();
         var totalElapsedTime = time - lastRender;
+        if(totalElapsedTime > 1000)
+            totalElapsedTime = RENDER_INTERVAL;
         lastRender = time;
-        var physboxes = document.getElementsByClassName(CLASS_PHYSICS);
-        for(var pi=0; pi<physboxes.length; pi++) {
+        var objects = document.getElementsByClassName(ITEM_CLASS);
 
-            var physbox = physboxes[pi];
-            var objects = physbox.children;
+        for(var i=0; i<objects.length; i++) {
+            var object = objects[i];
 
-            for(var i=0; i<objects.length; i++) {
-                var object = objects[i];
-
-                var v = getVelocity(object);
-                var p = getPosition(object);
-                p.x += v.x;
-                p.y += v.y;
-                setPosition(object, p);
-
-                var hasCollision = false;
-                var siblings = objects; // object.parentNode.children;
-                for(var k=0; k<siblings.length; k++) {
-                    if(object !== siblings[k])
-                        hasCollision = testCollision(object, siblings[k]) || hasCollision;
-                }
-                hasCollision = testRectContainment(object, object.parentNode) || hasCollision;
-
-                var a = getAcceleration(object);
-                v = getVelocity(object);
-                if(a.x || a.y) {
-                    v.x += a.x * (totalElapsedTime / 1000);
-                    v.y += a.y * (totalElapsedTime / 1000);
-                    setVelocity(object, v);
-                }
+            var v = getVelocity(object);
+            var a = getAcceleration(object);
+            if(a.x || a.y) {
+                v.x += a.x * (totalElapsedTime / 1000);
+                v.y += a.y * (totalElapsedTime / 1000);
+                setVelocity(object, v);
             }
 
-            for(i=0; i<objects.length; i++) {
-                renderElement(objects[i]);
-            }
+            var siblings = object.parentNode.children;
+            for(var k=0; k<siblings.length; k++)
+                if(object !== siblings[k])
+                    testRectCollision(object, siblings[k]);
+            testRectContainment(object, object.parentNode);
+
+            var v = getVelocity(object);
+            var p = getPosition(object);
+            p.x += v.x;
+            p.y += v.y;
+            setPosition(object, p);
+
+            renderElement(objects[i]);
+
         }
 
+        if(paused)
+            return;
+
+        clearTimeout(timeout);
         if(totalElapsedTime > RENDER_INTERVAL) {
-    //             console.log(totalElapsedTime);
-            setTimeout(doRender, 1);
+            timeout = setTimeout(doRender, 1);
         } else {
-            setTimeout(doRender, RENDER_INTERVAL - totalElapsedTime);
+            timeout = setTimeout(doRender, RENDER_INTERVAL - totalElapsedTime);
         }
     };
 
-    jQuery(document).ready(function() {
-        jQuery('body')
-            .on('render', doRender)
-            .on('ready', doReady);
-        setTimeout(doReady, 100);
+    var onReady = function() {
+        if(typeof document.physics_js !== 'undefined')
+            return;
+
+        document.physics_js = true;
+
+        if(!paused)
+            doRender();
+    };
+
+    document.addEventListener('DOMContentLoaded', onReady);
+    document.addEventListener('ready', onReady);
+    document.addEventListener('render', doRender);
+    document.addEventListener('pause', function() {
+        paused = true;
     });
+    document.addEventListener('resume', function() {
+        if(paused) {
+            paused = false;
+            doRender();
+        }
+    });
+
 
     var Vector = function (x,y) {
         this.x = parseFloat(x) || 0;

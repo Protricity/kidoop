@@ -1,12 +1,16 @@
 /** Draggable **/
 
+.drop-container {
+    position: relative;
+}
+
 .drop-container.dragenter {
     background-color: #CCF;
 }
 .dragenter {
     background-color: #F44;
     opacity: 0.5;
-    border-radius: 5em;
+    border-radius: 1em;
 }
 
 [draggable] {
@@ -21,11 +25,19 @@
     cursor: move;
 }
 
-
 [draggable]:hover {
     -webkit-filter: drop-shadow(0 0 15px rgba(100,50,0,1));
-    filter: drop-shadow(2px 2px 2px rgba(100,50,0,1));
+    filter: drop-shadow(0 0 15px rgba(100,50,0,1));
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
     Color='#730')";
+filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#A44')";
+}
+
+
+[draggable].dragging {
+    -webkit-filter: drop-shadow(0 0 30px rgba(0,150,250,1));
+    filter: drop-shadow(0 0 30px rgba(0,150,250,1));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
+    Color='#08F')";
 filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#A44')";
 }

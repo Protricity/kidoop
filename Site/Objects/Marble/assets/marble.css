@@ -21,21 +21,27 @@ marble.red {
 }
 
 marble.purple {
-    background: url("img/sprites.png") -65px 0;
+    background: url("img/sprites.png") -64px 0;
 }
 
 marble.lightblue {
-    background: url("img/sprites.png") -130px 0;
+    background: url("img/sprites.png") -128px 0;
 }
 
 marble.green {
-    background: url("img/sprites.png") -196px 0;
-}
-
-marble.yellow {
-    background: url("img/sprites.png") -326px 0;
+    background: url("img/sprites.png") -192px 0;
 }
 
 marble.darkblue {
-    background: url("img/sprites.png") -260px 0;
+    background: url("img/sprites.png") -256px 0;
+}
+
+marble.yellow {
+    background: url("img/sprites.png") -320px 0;
+}
+
+/** Position **/
+
+.drop-container marble {
+    position: absolute;
 }

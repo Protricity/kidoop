@@ -14,10 +14,12 @@ use CPath\Request\IRequest;
 
 class PhysicsAttributes extends Attributes implements IHTMLSupportHeaders
 {
-    const CLASS_NAME = 'physics';
+//    const CONTAINER_CLASS = 'physics';
+    const ITEM_CLASS = 'physics';
+
     public function __construct($x=null, $y=null, $vx=null, $vy=null, $ax=null, $ay=null) {
         parent::__construct();
-        $this->addClass(self::CLASS_NAME);
+        $this->addClass(self::ITEM_CLASS);
         $x === null ?: $this->setX($x);
         $y === null ?: $this->setY($y);
         $vx === null ?: $this->setVX($vx);

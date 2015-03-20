@@ -6,7 +6,7 @@ fieldset.relative {
     position: relative;
 }
 
-fieldset.fieldset-program {
+.oopball-program {
     width: 800px;
     height: 600px;
     padding: 19px;

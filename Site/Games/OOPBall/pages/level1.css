@@ -1,0 +1,25 @@
+.level1 .glass-1 {
+    left: 10em;
+    top: 6em;
+    width: 40em;
+    height: 30em;
+    z-index: 1;
+}
+
+.level1 .block-1 { left: 11em; top: 7em; width: 16em; height: 10em; }
+.level1 .block-2 { left: 33em; top: 7em; width: 16em; height: 10em; }
+.level1 .block-3 { left: 11em; top: 25em; width: 16em; height: 10em; }
+.level1 .block-4 { left: 33em; top: 25em; width: 16em; height: 10em; }
+
+.level1 .warp-output {
+    left: 28em;
+    top: 19em;
+}
+
+.level1 .oopball-input,
+.level1 .oopball-output,
+.level1 .oopball-program
+{
+    position: relative;
+    min-height: 16em;
+}

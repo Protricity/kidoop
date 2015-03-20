@@ -40,11 +40,19 @@
 
             element.dataset.drag = e.type;
             switch(e.type) {
+                case 'dragclick':
+                case 'click':
+                    var dragstarts = document.getElementsByClassName('dragclick');
+                    if(e.shiftKey !== true)
+                        for(var dci=0; dci<dragstarts.length; dci++)
+                            dragstarts[dci].classList.remove'dragclick');
+                    e.target.classList.add('dragclick');
+                    break;
                 case 'dragstart':
                     lastDragObject = e.target;
                     e.target.lastClickOffset = [e.offsetX, e.offsetY];
                     e.target.lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
-                    //console.log(e.type, [e.target], e.target.lastDragLocation);
+//                     console.log(e.type, [e.target], e.target.lastDragLocation);
                     break;
                 case 'dragover':
                     e.stopPropagation();
@@ -85,6 +93,7 @@
         element.addEventListener('dragenter', onDrag, false);
         element.addEventListener('dragleave', onDrag, false);
         element.addEventListener('drop', onDrag, false);
+        element.addEventListener('dragend', onDrag, false);
         element.addEventListener('dragend', onDrag, false);
     };
 
