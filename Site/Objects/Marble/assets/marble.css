@@ -1,11 +1,11 @@
 
 /** Marble **/
 
-.marble {
+marble, .marble {
     display: inline-block;
     width: 64px;
     height: 64px;
-    background: url("img/sprites.png") -2px -2px;
+    background: url("img/sprites.png") 0px 0px;
 
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
@@ -16,32 +16,33 @@ filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#44
 
 }
 
-.marble.red {
-    background: url("img/sprites.png") -1px 0px;
+marble.red, .marble.red {
+    background: url("img/sprites.png") -0px 0px;
 }
 
-.marble.purple {
+marble.purple, .marble.purple {
     background: url("img/sprites.png") -64px 0;
 }
 
-.marble.lightblue {
+marble.lightblue, .marble.lightblue {
     background: url("img/sprites.png") -129px 0;
 }
 
-.marble.green {
+marble.green, .marble.green {
     background: url("img/sprites.png") -192px 0;
 }
 
-.marble.darkblue {
+marble.darkblue, .marble.darkblue {
     background: url("img/sprites.png") -256px 0;
 }
 
-.marble.yellow {
+marble.yellow, .marble.yellow {
     background: url("img/sprites.png") -320px 0;
 }
 
 /** Position **/
 
+.drop-container marble,
 .drop-container .marble {
     position: absolute;
 }

@@ -9,7 +9,7 @@
         var target = e.target;
         var warp = e.detail.with;
 
-        if(warp.classList.contains('warp'))
+        if(!warp.classList.contains('warp') && warp.nodeName.toLowerCase() !== 'warp')
             return false;
 
         if(!target.classList.contains(WARP_ITEM_CLASS))
@@ -17,17 +17,23 @@
 
         var targetClass = warp.dataset.target;
         if(!targetClass)
-            return console.error("Warp target not found: " + targetClass);
+            throw new Error("Warp target not found: " + targetClass);
 
         var targetElm = document.getElementsByClassName(targetClass);
         if(!targetElm.length)
-            return console.error("Warp not found by class: " + targetClass);
+            throw new Error("Warp not found by class: " + targetClass);
         targetElm = targetElm[0];
 
         targetElm.appendChild(target);
-        target.dispatchEvent(new CustomEvent("warp", { detail: {
-            warp: targetElm
-        }}));
+        target.dispatchEvent(new CustomEvent("warp",
+            {
+                bubbles: true,
+                cancelable: true,
+                detail: {
+                    warp: targetElm
+                }
+            }
+        ));
         target.dataset.x = 0;
         target.dataset.y = 0;
     };

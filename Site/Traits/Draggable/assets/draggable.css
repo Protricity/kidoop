@@ -2,6 +2,7 @@
 
 .drop-container {
     position: relative;
+    cursor: pointer;
 }
 
 .drop-container.dragenter {

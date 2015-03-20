@@ -1,7 +1,7 @@
 
 /** Glass **/
 
-.block {
+block, .block {
     /*background-color: #555;*/
     display: inline-block;
     border-width: 0;
@@ -20,6 +20,7 @@
 
 /** Position **/
 
+.drop-container block,
 .drop-container .block {
     position: absolute;
     background-size: cover;

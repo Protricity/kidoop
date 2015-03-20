@@ -16,10 +16,12 @@
         elm.appendChild(dropElm);
         console.log("Dropped ", x, y, [dropElm]);
 
-        if(typeof fromX !== 'undefined') {
-            dropElm.dataset.vx = (x - fromX) / 80;
-            dropElm.dataset.vy = (y - fromY) / 80;
-        }
+//         if(typeof fromX !== 'undefined') {
+//             dropElm.dataset.vx = (x - fromX) / 80;
+//             dropElm.dataset.vy = (y - fromY) / 80;
+//         }
+         dropElm.dataset.vx = 0;
+         dropElm.dataset.vy = 0;
     };
 
     var lastDragObject, lastClickOffset, lastDragStart, lastDragOver;

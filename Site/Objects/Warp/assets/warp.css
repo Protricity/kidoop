@@ -1,7 +1,7 @@
 
 /** Warp **/
 
-.warp {
+warp, .warp {
     /*background-color: #555;*/
     display: inline-block;
     border-width: 0;
@@ -20,6 +20,7 @@
 
 /** Position **/
 
+.drop-container warp,
 .drop-container .warp {
     position: absolute;
 }
