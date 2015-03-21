@@ -28,7 +28,7 @@
     var onDrag = function(e) {
         var isDraggable = !!e.target.getAttribute('draggable');
         var isDroppable = e.target.classList.contains(CLASS_DROP_CONTAINER);
-        console.log("Drag ", [e.target, isDraggable]);
+        console.log("Drag ", [e.type, e.target, isDraggable]);
 
         switch(e.type) {
             case 'dragging':
@@ -74,13 +74,20 @@
                         dragging.classList.remove('dragging');
                     }
                 }
+
+                draggings.length === 0
+                ? document.body.classList.remove('contains-dragging')
+                : document.body.classList.add('contains-dragging');
+
                 break;
 
             case 'dragstart':
 //                 lastDragObject = e.target;
                 lastClickOffset = [e.offsetX, e.offsetY];
                 lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
-                e.target.classList.add('dragging');
+                if(isDraggable) {
+                    e.target.classList.add('dragging');
+                }
                 break;
 
             case 'dragover':

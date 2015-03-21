@@ -1,19 +1,19 @@
 .level1 .glass-1 {
-    left: 10em;
-    top: 6em;
+    left: 11em;
+    top: 9em;
     width: 40em;
-    height: 30em;
+    height: 29em;
     z-index: 1;
 }
 
-.level1 .block-1 { left: 11em; top: 7em; width: 16em; height: 10em; }
-.level1 .block-2 { left: 33em; top: 7em; width: 16em; height: 10em; }
-.level1 .block-3 { left: 11em; top: 25em; width: 16em; height: 10em; }
-.level1 .block-4 { left: 33em; top: 25em; width: 16em; height: 10em; }
+.level1 .block-1 { left: 12em; top: 10em; width: 14em; height: 9em; }
+.level1 .block-2 { left: 36em; top: 10em; width: 14em; height: 9em; }
+.level1 .block-3 { left: 12em; top: 28em; width: 14em; height: 9em; }
+.level1 .block-4 { left: 36em; top: 28em; width: 14em; height: 9em; }
 
 .level1 .warp-output {
-    left: 28em;
-    top: 19em;
+    left: 29em;
+    top: 22em;
 }
 
 .level1 .oopball-input,
@@ -25,5 +25,6 @@
 }
 
 .level1 .win {
-    background-color: #F73;
+    background-color: #577;
+    border-radius: 1em;
 }

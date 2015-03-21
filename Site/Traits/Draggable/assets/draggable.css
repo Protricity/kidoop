@@ -2,7 +2,12 @@
 
 .drop-container {
     position: relative;
+}
+
+.contains-dragging .drop-container {
     cursor: pointer;
+    background-color: #CCD;
+    border-radius: 32px;
 }
 
 .drop-container.dragenter {
