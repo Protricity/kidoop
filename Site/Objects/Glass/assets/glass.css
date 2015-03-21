@@ -3,6 +3,7 @@
 
 glass, .glass {
     /*background-color: #555;*/
+    padding: 1em;
     display: inline-block;
     border-width: 0;
     width: 400px;

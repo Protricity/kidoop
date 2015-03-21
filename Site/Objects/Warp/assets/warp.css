@@ -4,6 +4,9 @@
 warp, .warp {
     /*background-color: #555;*/
     display: inline-block;
+    text-indent: 64px;
+    line-height: 32px;
+    white-space: nowrap;
     border-width: 0;
     width: 60px;
     height: 39px;

@@ -1,9 +1,10 @@
 .level1 .glass-1 {
     left: 11em;
     top: 9em;
-    width: 40em;
-    height: 29em;
+    width: 38em;
+    height: 27em;
     z-index: 1;
+    padding: 1em;
 }
 
 .level1 .block-1 { left: 12em; top: 10em; width: 14em; height: 9em; }
@@ -25,6 +26,6 @@
 }
 
 .level1 .win {
-    background-color: #577;
+    background-color: #0AF;
     border-radius: 1em;
 }

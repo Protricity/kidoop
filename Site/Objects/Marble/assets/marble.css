@@ -2,6 +2,10 @@
 /** Marble **/
 
 marble, .marble {
+    text-indent: 71px;    line-height: 32px;
+    white-space: nowrap;
+    font-size: small;
+    color: #777;
     display: inline-block;
     width: 64px;
     height: 64px;
