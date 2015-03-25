@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <base href="../../../../" />
-    <link rel='stylesheet' href='Site/Games/OOPBall/pages/level1.css' />
+    <base href="../" />
     <script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>
     <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
     <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
@@ -14,7 +13,6 @@
 
     <script src='Site/Traits/Draggable/assets/draggable.js'></script>
     <link rel='stylesheet' href='Site/Traits/Draggable/assets/draggable.css' />
-    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
 
     <script src='Site/Traits/Physics/assets/physics.js'></script>
     <link rel='stylesheet' href='Site/Traits/Physics/assets/physics.css' />
@@ -25,31 +23,22 @@
     <script src='Site/Objects/Warp/assets/warp.js'></script>
     <link rel='stylesheet' href='Site/Objects/Warp/assets/warp.css' />
 
+    <script src='Site/Objects/Marble/assets/marble.js'></script>
+    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
+
     <script src='Site/Objects/Glass/assets/glass.js'></script>
     <link rel='stylesheet' href='Site/Objects/Glass/assets/glass.css' />
 
     <script src='Site/Objects/Block/assets/block.js'></script>
     <link rel='stylesheet' href='Site/Objects/Block/assets/block.css' />
 
+    <script src='pages/level1.js'></script>
+    <link rel='stylesheet' href='pages/level1.css' />
+
     <meta name="title" content="OOPBall">
     <script src='Site/Games/Pinball/assets/oopball.js'></script>
     <link rel='stylesheet' href='Site/Games/Pinball/assets/oopball.css' />
     <meta name="title" content="OOPBall">
-
-    <script>
-        // Game Constants
-        var WIN_COUNT = 6;
-
-        // Game Logic
-        var onDrop = function(e) {
-            var Output = document.getElementsByClassName('oopball-output')[0];
-            var win = Output.children.length >= WIN_COUNT;
-            win ? Output.classList.add('win')
-                : Output.classList.remove('win');
-        };
-
-        document.addEventListener('warp', onDrop);
-    </script>
 </head>
 <body>
 <section class="header">
@@ -78,29 +67,34 @@
             <fieldset class="fieldset-input">
                 <legend class="legend-object-input fixed">Input</legend>Choose a marble
                 <div class="oopball-input drop-container" data-ax="1" data-ay="1">
-                    <marble class="darkblue collision circle physics warp-item" draggable="true" data-ax="-1" data-ay="-4"></marble>
-                    <marble class="red collision circle physics warp-item" draggable="true" data-ax="-1" data-ay="4"></marble>
-                    <marble class="lightblue collision circle physics warp-item" draggable="true" data-ax="1" data-ay="-4"></marble>
-                    <marble class="green collision circle physics warp-item" draggable="true" data-ax="4" data-ay="-1"></marble>
-                    <marble class="purple collision circle physics warp-item" draggable="true" data-ax="center" data-ay="center"></marble>
-                    <marble class="yellow collision circle physics warp-item" draggable="true" data-ax="-4" data-ay="1"></marble>
+                    <marble class="darkblue collision circle physics warp-item" draggable="true" data-ax="-1" data-ay="-4">Gravity Up</marble>
+                    <marble class="red collision circle physics warp-item" draggable="true" data-ax="-1" data-ay="4">Gravity Down</marble>
+                    <marble class="lightblue collision circle physics warp-item" draggable="true" data-ax="center" data-ay="-4">Gravity Center Up</marble>
+                    <marble class="green collision circle physics warp-item" draggable="true" data-ax="4" data-ay="-1">Gravity Right</marble>
+                    <marble class="purple collision circle physics warp-item" draggable="true" data-ax="center" data-ay="center">Gravity Center</marble>
+                    <marble class="yellow collision circle physics warp-item" draggable="true" data-ax="-4" data-ay="1">Gravity Left</marble>
                 </div>
             </fieldset>
             <fieldset class="fieldset-program">
-                <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle warp hole
-                <div class="oopball-program drop-container" data-ax="2" data-ay="4">
-                    <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
-                    <warp data-target="oopball-output" class="collision circle warp-output" data-ax="center" data-ay="center"></warp>
-                    <glass class="drop-container glass-1"></glass>
-                    <block class="collision block-1"></block>
-                    <block class="collision block-2"></block>
-                    <block class="collision block-3"></block>
-                    <block class="collision block-4"></block>
+                <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle <b>Warp Hole</b><br/>
+                <div class="oopball-program" data-ax="2" data-ay="4">
+                    <div class="layer-1">
+                        <glass class="drop-container glass-1">Glass Container</glass>
+                    </div>
+                    <div class="layer-2 drop-container">
+                        <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
+                        <warp data-target="oopball-output" class="circle warp-output" data-ax="center" data-ay="center">Warp Hole</warp>
+                        <block class="block-1"></block>
+                        <block class="block-2"></block>
+                        <block class="block-3"></block>
+                        <block class="block-4"></block>
+                    </div>
                 </div>
             </fieldset>
             <fieldset class="fieldset-output">
-                <legend class="legend-output">Output</legend>Get all 6 objects into this Output container to win the round
-                <div class="oopball-output" data-ax="1"></div>
+                <legend class="legend-output">Output</legend>
+                Get all 6 objects into this <b>Output Container</b> to win the round<br/>
+                <glass class="oopball-output" data-ax="1">Output Container</glass>
             </fieldset>
         </fieldset></form>
 </section>

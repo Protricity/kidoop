@@ -6,13 +6,13 @@
     var WARP_ITEM_CLASS = 'warp-item';
 
     var onCollision = function(e) {
-        var target = e.target;
-        var warp = e.detail.with;
+        var warp = e.target;
+        var target = e.detail.withElement;
 
-        if(!warp.classList.contains('warp') && warp.nodeName.toLowerCase() !== 'warp')
+        if(!target)
             return false;
 
-        if(!target.classList.contains(WARP_ITEM_CLASS))
+        if(!warp.classList.contains('warp') && warp.nodeName.toLowerCase() !== 'warp')
             return false;
 
         var targetClass = warp.dataset.target;
@@ -24,6 +24,7 @@
             throw new Error("Warp not found by class: " + targetClass);
         targetElm = targetElm[0];
 
+        e.preventDefault();
         targetElm.appendChild(target);
         target.dispatchEvent(new CustomEvent("warp",
             {
@@ -34,8 +35,8 @@
                 }
             }
         ));
-        target.dataset.x = 0;
-        target.dataset.y = 0;
+        target.style.left = 0;
+        target.style.top = 0;
     };
 
     if(typeof document.warp_js !== 'undefined')

@@ -5,6 +5,7 @@
     height: 27em;
     z-index: 1;
     padding: 1em;
+    /* position: absolute; */
 }
 
 .level1 .block-1 { left: 12em; top: 10em; width: 14em; height: 9em; }
@@ -17,8 +18,19 @@
     top: 22em;
 }
 
+.level1 .layer-1,
+.level1 .layer-2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* .level1 fieldset, */
 .level1 .oopball-input,
 .level1 .oopball-output,
+.level1 .oopball-program-overlay,
 .level1 .oopball-program
 {
     position: relative;
