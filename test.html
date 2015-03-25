@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel='stylesheet' href='Site/Games/OOPBall/pages/level1.css' />
+    <link rel='stylesheet' href='pages/level1.css' />
     <script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>
     <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
     <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
@@ -13,13 +13,15 @@
 
     <script src='Site/Traits/Draggable/assets/draggable.js'></script>
     <link rel='stylesheet' href='Site/Traits/Draggable/assets/draggable.css' />
-    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
 
     <script src='Site/Traits/Physics/assets/physics.js'></script>
     <link rel='stylesheet' href='Site/Traits/Physics/assets/physics.css' />
 
     <script src='Site/Traits/Collision/assets/collision.js'></script>
     <link rel='stylesheet' href='Site/Traits/Collision/assets/collision.css' />
+
+    <script src='Site/Objects/Marble/assets/marble.js'></script>
+    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
 
     <script src='Site/Objects/Warp/assets/warp.js'></script>
     <link rel='stylesheet' href='Site/Objects/Warp/assets/warp.css' />
@@ -48,6 +50,14 @@
         };
 
         document.addEventListener('warp', onDrop);
+
+        var doRender = function() {
+            var renderEvent = new CustomEvent('render');
+            document.dispatchEvent(renderEvent);
+        };
+        setInterval(doRender, 30);
+
+        document.addEventListener('DOMContentLoaded', doRender);
     </script>
 </head>
 <body>
@@ -87,10 +97,10 @@
             </fieldset>
             <fieldset class="fieldset-program">
                 <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle <b>Warp Hole</b><br/>
+                <glass class="drop-container glass-1">Glass Container</glass>
                 <div class="oopball-program drop-container" data-ax="2" data-ay="4">
                     <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
                     <warp data-target="oopball-output" class="collision circle warp-output" data-ax="center" data-ay="center">Warp Hole</warp>
-                    <glass class="drop-container glass-1">Glass Container</glass>
                     <block class="collision block-1"></block>
                     <block class="collision block-2"></block>
                     <block class="collision block-3"></block>

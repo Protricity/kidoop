@@ -245,10 +245,10 @@
         if(!paused)
             doRender();
     };
-
-    document.addEventListener('DOMContentLoaded', onReady);
-    document.addEventListener('ready', onReady);
-    document.addEventListener('render', doRender);
+    //
+    //document.addEventListener('DOMContentLoaded', onReady);
+    //document.addEventListener('ready', onReady);
+//     document.addEventListener('render', doRender);
     document.addEventListener('pause', function() {
         paused = true;
     });
