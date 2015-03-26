@@ -7,6 +7,8 @@
  * Date: 4/06/11 */
 namespace Site;
 
+use CPath\Render\HTML\Template\DefaultCPathTemplate;
+
 define('CONFIG_CONTENT_PATH', dirname(__DIR__));
 
 class Config {

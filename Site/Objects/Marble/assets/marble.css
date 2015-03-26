@@ -2,14 +2,16 @@
 /** Marble **/
 
 marble, .marble {
-    text-indent: 71px;    line-height: 32px;
+    text-indent: 71px;    position: absolute;
+    line-height: 32px;
     white-space: nowrap;
     font-size: small;
     color: #777;
     display: inline-block;
-    width: 64px;
-    height: 64px;
-    background: url("img/sprites.png") 0px 0px;
+    width: 4em;
+    height: 4em;
+    font-size:16px;
+    background: url("img/sprites.png") 0 0;
 
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
@@ -24,27 +26,33 @@ filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#44
 }
 
 marble.red, .marble.red {
-    background: url("img/sprites.png") -0px 0px;
+    background: url("img/sprites.png") -0 0;
+    background-size: 32em 4em;
 }
 
 marble.purple, .marble.purple {
-    background: url("img/sprites.png") -64px 0;
+    background: url("img/sprites.png") -4em 0;
+    background-size: 32em 4em;
 }
 
 marble.lightblue, .marble.lightblue {
-    background: url("img/sprites.png") -129px 0;
+    background: url("img/sprites.png") -8em 0;
+    background-size: 32em 4em;
 }
 
 marble.green, .marble.green {
-    background: url("img/sprites.png") -192px 0;
+    background: url("img/sprites.png") -12em 0;
+    background-size: 32em 4em;
 }
 
 marble.darkblue, .marble.darkblue {
-    background: url("img/sprites.png") -256px 0;
+    background: url("img/sprites.png") -16em 0;
+    background-size: 32em 4em;
 }
 
 marble.yellow, .marble.yellow {
-    background: url("img/sprites.png") -320px 0;
+    background: url("img/sprites.png") -20em 0;
+    background-size: 32em 4em;
 }
 
 /** Position **/

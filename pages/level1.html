@@ -6,6 +6,9 @@
     <script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>
     <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
     <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
+
+    <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="path" content="/oopball">
     <meta name="domain-path" content="kidoop/">
@@ -39,18 +42,18 @@
 </head>
 <body>
 <section class="header">
-    <h1 class="header-title"></h1>GET /oopball
+    <h1 class="header-title"></h1>
 </section>
 <section class="content">
     <div class="navbar">
-        <h3 class="navbar-title">/oopball</h3>
+        <!--<h3 class="navbar-title">/oopball</h3>-->
         <div>
-            <a class="login-only" href="#home/">My Account</a>
-            <a class="no-login" href="#login/">Login</a>
-            <a class="no-login" href="#register/">Register</a>
-            <a class="focus" href="#oopball">OOPBall</a>
-            <a class="no-login" href="#blog/">Blog</a>
-            <a class="login-only" href="#logout/">Logout</a>
+            <!--<a class="login-only" href="#home/">My Account</a>-->
+            <!--<a class="no-login" href="#login/">Login</a>-->
+            <!--<a class="no-login" href="#register/">Register</a>-->
+            <!--<a class="focus" href="#oopball">OOPBall</a>-->
+            <!--<a class="no-login" href="#blog/">Blog</a>-->
+            <!--<a class="login-only" href="#logout/">Logout</a>-->
         </div>
     </div>
     <form action="oopball" method="POST" name="Site\Games\Pinball\OOPBall">
@@ -64,8 +67,8 @@
             <fieldset class="fieldset-input">
                 <legend class="legend-object-input fixed">Input</legend>Choose a marble
                 <div class="oopball-input drop-container" data-ax="1" data-ay="1">
-                    <marble class="darkblue" draggable="true" data-ax="-1" data-ay="-4">Gravity Up</marble>
-                    <marble class="red" draggable="true" data-ax="-1" data-ay="4">Gravity Down</marble>
+                    <marble class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px">Gravity Up</marble>
+                    <marble class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px">Gravity Down</marble>
                     <marble class="lightblue" draggable="true" data-ax="center" data-ay="-4">Gravity Center Up</marble>
                     <marble class="green" draggable="true" data-ax="4" data-ay="-1">Gravity Right</marble>
                     <marble class="purple" draggable="true" data-ax="center" data-ay="center">Gravity Center</marble>

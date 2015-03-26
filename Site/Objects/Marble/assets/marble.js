@@ -216,9 +216,11 @@
         var p2 = getPosition(elm2);
         var a1 = getArea(elm1);
         var a2 = getArea(elm2);
+        var pc1 = p1.addVector(a1.multiply(.5));
+        var pc2 = p2.addVector(a2.multiply(.5));
 
-        var xd = p1.x - p2.x;
-        var yd = p1.y - p2.y;
+        var xd = (pc1.x) - (pc2.x);
+        var yd = (pc1.y) - (pc2.y);
 
         var sumRadius = a1.x/2 + a2.x/2;
         var sqrRadius = sumRadius * sumRadius;
@@ -232,7 +234,7 @@
         var v2 = getVelocity(elm2);
 
         // get the mtd
-        var delta = (p1.subtractVector(p2));
+        var delta = (pc1.subtractVector(pc2));
         var distance = delta.getLength();
         // minimum translation distance to push balls apart after intersecting
         var mtd = delta.multiply(((a1.x / 2 + a2.x / 2)-distance)/distance);
@@ -268,7 +270,9 @@
         // sphere intersecting but moving away from each other already
         if (vn > 0.0) {
             setPosition(elm1, p1);
-            setPosition(elm2, p2);
+            if (/marble/i.test(elm2.nodeName)) {
+                setPosition(elm2, p2);
+            }
 
         } else {
             // collision impulse

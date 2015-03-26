@@ -1,0 +1,26 @@
+/** Body **/
+
+body {
+    font-family: monospace;
+    background-color: #393D85;
+}
+
+/** Page Layout **/
+
+section, .section {
+    margin: 0 1.5pt 1pt 1.5pt;
+    border: 1pt solid #ccc;
+    padding: 15pt;
+    background-color: #537EB4;
+}
+
+.header {
+    background-image: url('img/kidoop.png');
+    height: 108px;
+}
+
+.content {
+}
+
+.footer {
+}

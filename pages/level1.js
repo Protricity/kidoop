@@ -24,6 +24,11 @@
     };
     var renderInterval = setInterval(doRender, 30);
 
-    document.addEventListener('pause', function() { clearInterval(renderInterval); });
-    document.addEventListener('resume', function() { clearInterval(renderInterval); setInterval(doRender, 30)});
+    document.addEventListener('pause', function() { 
+        clearInterval(renderInterval); 
+    });
+    document.addEventListener('resume', function() { 
+        clearInterval(renderInterval); 
+        renderInterval = setInterval(doRender, 30)
+    });
 })();
