@@ -57,9 +57,20 @@
         var p = getPosition(marble);
         p = p.addVector(v);
         setPosition(marble, p);
+        render(marble);
     };
 
     document.addEventListener('render', renderElement);
+
+    var dropElement = function (e, marble) {
+        marble = marble || e.target || this;
+        if(!/marble/i.test(marble.nodeName))
+            return;
+
+        marble.pos = null;
+    };
+
+    document.addEventListener('drop-at', dropElement);
 
     // Physics Methods
 
@@ -85,14 +96,24 @@
     };
 
     var getPosition = function(element) {
+        if(element.pos)
+            return element.pos;
         var x = parseFloat(element.style.left || element.offsetLeft);
         var y = parseFloat(element.style.top || element.offsetTop);
         return new Vector(x, y);
     };
 
+    var render = function(element) {
+        if(element.pos) {
+            element.style.left = Math.round(element.pos.x) + 'px';
+            element.style.top = Math.round(element.pos.y) + 'px';
+        }
+    };
+
     var setPosition = function(element, vector) {
-        element.style.left = (Math.round((vector.x) * 10) / 10) + 'px';
-        element.style.top = (Math.round((vector.y) * 10) / 10) + 'px';
+        element.pos = vector;
+//         element.style.left = Math.round(vector.x) + 'px';
+//         element.style.top = Math.round(vector.y) + 'px';
     };
 
     var getVelocity = function(element) {
