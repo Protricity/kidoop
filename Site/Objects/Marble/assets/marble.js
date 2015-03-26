@@ -7,7 +7,7 @@
 
     var DEFAULT_GRAVITY = 2; // 0.7;
     var WALL_BOUNCE_COOEFICIENT = 0.70;
-    var BALL_BOUNCE_COOEFICIENT = 0.3;
+    var BALL_BOUNCE_COOEFICIENT = 0.5;
 
     var RESTITUTION = 3;
     var RENDER_INTERVAL = 30;
@@ -203,10 +203,10 @@
         setPosition(circleElm, circlePos);
         setVelocity(circleElm, v1);
 
-        var v2 = getVelocity(rectElm);
-        v2 = v1.multiply(-1);
-        v2 = v2.multiply(WALL_BOUNCE_COOEFICIENT);
-        setVelocity(rectElm, v2);
+        //var v2 = getVelocity(rectElm);
+        //var v2 = v1.multiply(-1);
+        //v2 = v2.multiply(WALL_BOUNCE_COOEFICIENT);
+        //setVelocity(rectElm, v2);
         return true;
     };
 
@@ -285,8 +285,10 @@
             setVelocity(elm1, v1);
             setPosition(elm1, p1);
 
-            setVelocity(elm2, v2);
-            setPosition(elm2, p2);
+            if (/marble/i.test(elm2.nodeName)) {
+                setVelocity(elm2, v2);
+                setPosition(elm2, p2);
+            }
         }
         return true;
     };

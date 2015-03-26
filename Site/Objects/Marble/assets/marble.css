@@ -18,6 +18,9 @@ marble, .marble {
     Color='#444')";
 filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
 
+    -ms-transform: rotate(5deg); /* IE 9 */
+    -webkit-transform: rotate(5deg); /* Safari */
+    transform: rotate(5deg);
 }
 
 marble.red, .marble.red {

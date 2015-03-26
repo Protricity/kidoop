@@ -11,8 +11,8 @@
         dropElm.dataset.y = y || 0;
         dropElm.style.left = Math.round(x) + 'px';
         dropElm.style.top = Math.round(y) + 'px';
-        if(!dropElm.style.position)
-            dropElm.style.position = 'absolute';
+        //if(!dropElm.style.position)
+        //    dropElm.style.position = 'absolute';
         elm.appendChild(dropElm);
         console.log("Dropped ", x, y, [dropElm]);
 
