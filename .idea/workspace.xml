@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" afterPath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +69,11 @@
       <file leaf-file-name="glass.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="629">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="646">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <marker date="1427305014631" expanded="true" signature="30:628" placeholder="{...}" />
-                <marker date="1427305014631" expanded="true" signature="695:750" placeholder="{...}" />
+                <marker date="1427319553849" expanded="true" signature="30:664" placeholder="{...}" />
+                <marker date="1427319553849" expanded="true" signature="731:786" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,8 +82,8 @@
       <file leaf-file-name="level1.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/level1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54745764" vertical-offset="0" max-vertical-offset="1785">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4898305" vertical-offset="918" max-vertical-offset="1785">
+              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -96,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/pages/level1.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -295,6 +292,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,20 +765,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="629">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="646">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <marker date="1427305014631" expanded="true" signature="30:628" placeholder="{...}" />
-            <marker date="1427305014631" expanded="true" signature="695:750" placeholder="{...}" />
+            <marker date="1427319553849" expanded="true" signature="30:664" placeholder="{...}" />
+            <marker date="1427319553849" expanded="true" signature="731:786" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/level1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,10 +840,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/level1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54745764" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4898305" vertical-offset="918" max-vertical-offset="1785">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
           <folding />
         </state>
       </provider>
