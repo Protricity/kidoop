@@ -107,6 +107,28 @@
         if(element.pos) {
             element.style.left = Math.round(element.pos.x) + 'px';
             element.style.top = Math.round(element.pos.y) + 'px';
+            var stats = element.getElementsByClassName('stats-marble');
+            if(stats.length === 0) {
+                stats[0] = document.createElement('ul');
+                element.appendChild(stats[0]);
+                stats[0].classList.add('stats');
+                stats[0].classList.add('stats-marble');
+            }
+            var html = "<li><span class='title'>" + element.nodeName + "</span></li>" // element.getAttribute('class')
+                + "<li><span class='stat'>x:</span> " + Math.round(element.pos.x) + "</li>"
+                + "<li><span class='stat'>y:</span> " + Math.round(element.pos.y) + "</li>";
+
+            if(typeof element.dataset.vx !== 'undefined') {
+                html += "<li><span class='stat'>vx:</span> " + Math.round(element.dataset.vx * 10) / 10 + "</li>";
+                html += "<li><span class='stat'>vy:</span> " + Math.round(element.dataset.vy * 10) / 10 + "</li>";
+            }
+
+            if(typeof element.dataset.ax !== 'undefined') {
+                html += "<li><span class='stat'>ax:</span> " + (element.dataset.ax) + "</li>";
+                html += "<li><span class='stat'>ay:</span> " + (element.dataset.ay) + "</li>";
+            }
+
+            stats[0].innerHTML = html;
         }
     };
 

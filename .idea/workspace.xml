@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" afterPath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" afterPath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,10 +83,10 @@
       <file leaf-file-name="kidoop-template.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="561">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1071">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding>
-                <marker date="1427389120807" expanded="true" signature="244:311" placeholder="{...}" />
+                <marker date="1427398412797" expanded="true" signature="244:311" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -93,8 +95,18 @@
       <file leaf-file-name="DefaultCPathTemplate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/DefaultCPathTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="3128">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="493" max-vertical-offset="3128">
               <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="61" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default-template.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1853">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,8 +115,8 @@
       <file leaf-file-name="level1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/level1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1836">
-              <caret line="19" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
+            <state vertical-scroll-proportion="-0.3026316" vertical-offset="912" max-vertical-offset="1836">
+              <caret line="55" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -123,27 +135,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="marble.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="marble.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9010477" vertical-offset="586" max-vertical-offset="2941">
-              <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1482" max-vertical-offset="3315">
+              <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
               <folding>
-                <element signature="e#4859#7535#0" expanded="false" />
-                <element signature="e#7589#10172#0" expanded="false" />
-                <element signature="e#10232#11849#0" expanded="false" />
-                <element signature="e#12007#14510#0" expanded="false" />
+                <element signature="e#6105#8781#0" expanded="false" />
+                <element signature="e#8835#11418#0" expanded="false" />
+                <element signature="e#11478#13095#0" expanded="false" />
+                <element signature="e#13253#15756#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="marble.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1156">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="68" max-vertical-offset="1819">
+            <state vertical-scroll-proportion="0.08163265" vertical-offset="0" max-vertical-offset="1819">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,7 +221,6 @@
         <option value="$PROJECT_DIR$/Site/Games/Pinball/assets/shadow.svg" />
         <option value="$PROJECT_DIR$/Site/Objects/Block/assets/block.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.css" />
-        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css" />
         <option value="$PROJECT_DIR$/Site/Traits/Physics/assets/physics.js" />
         <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
@@ -207,11 +231,12 @@
         <option value="$PROJECT_DIR$/Site/Config.php" />
         <option value="$PROJECT_DIR$/Site/Template/DefaultTemplate.php" />
         <option value="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
-        <option value="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
-        <option value="$PROJECT_DIR$/pages/level1.html" />
-        <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
+        <option value="$PROJECT_DIR$/pages/level1.html" />
         <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
+        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
+        <option value="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
+        <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
   </component>
@@ -893,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="969">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="646">
@@ -919,6 +937,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="6817">
           <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="38" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,6 +967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -967,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44299674" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/DefaultCPathTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="3128">
@@ -983,31 +995,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
+    <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="561">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <marker date="1427389120807" expanded="true" signature="244:311" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/level1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1836">
-          <caret line="19" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="68" max-vertical-offset="1819">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1853">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1022,13 +1013,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9010477" vertical-offset="586" max-vertical-offset="2941">
-          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1482" max-vertical-offset="3315">
+          <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
           <folding>
-            <element signature="e#4859#7535#0" expanded="false" />
-            <element signature="e#7589#10172#0" expanded="false" />
-            <element signature="e#10232#11849#0" expanded="false" />
-            <element signature="e#12007#14510#0" expanded="false" />
+            <element signature="e#6105#8781#0" expanded="false" />
+            <element signature="e#8835#11418#0" expanded="false" />
+            <element signature="e#11478#13095#0" expanded="false" />
+            <element signature="e#13253#15756#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1156">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1071">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding>
+            <marker date="1427398412797" expanded="true" signature="244:311" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/level1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3026316" vertical-offset="912" max-vertical-offset="1836">
+          <caret line="55" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08163265" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
