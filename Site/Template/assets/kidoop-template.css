@@ -16,8 +16,10 @@ section, .section {
 
 .header {
     background-image: url('img/kidoop.png');
-    height: 108px;
+    height: 110px;
     background-repeat: no-repeat;
+    background-position-y: -32px;
+    background-position-x: -24px;
 }
 
 .content {
