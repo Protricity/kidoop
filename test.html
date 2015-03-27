@@ -55,47 +55,45 @@
             <!--<a class="login-only" href="#logout/">Logout</a>-->
         </div>
     </div>
-    <form action="oopball" method="POST" name="Site\Games\Pinball\OOPBall">
-        <fieldset class="fieldset-oopball level1 inline">
-            <legend class="legend-oopball">OOPBall</legend>
-            <fieldset class="fieldset-infobox inline">
-                <legend class="legend-infobox fixed">InfoBox</legend>
-                <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
-                <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
-            </fieldset>
-            <fieldset class="fieldset-input">
-                <legend class="legend-object-input fixed">Input</legend>Choose a marble
-                <div class="oopball-input drop-container" data-ax="1" data-ay="1">
-                    <marble class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marble>
-                    <marble class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marble>
-                    <marble class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marble>
-                    <marble class="green" draggable="true" data-ax="4" data-ay="-1"></marble>
-                    <marble class="purple" draggable="true" data-ax="center" data-ay="center"></marble>
-                    <marble class="yellow" draggable="true" data-ax="-4" data-ay="1"></marble>
+    <form action="oopball" class="level1" method="POST" name="Site\Games\Pinball\OOPBall">
+        <fieldset class="fieldset-infobox inline">
+            <legend class="legend-infobox fixed">InfoBox</legend>
+            <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
+            <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
+        </fieldset>
+        <fieldset class="fieldset-input">
+            <legend class="legend-object-input fixed">Input</legend>Choose a marble
+            <div class="oopball-input drop-container" data-ax="1" data-ay="1">
+                <marble class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marble>
+                <marble class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marble>
+                <marble class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marble>
+                <marble class="green" draggable="true" data-ax="4" data-ay="-1"></marble>
+                <marble class="purple" draggable="true" data-ax="center" data-ay="center"></marble>
+                <marble class="yellow" draggable="true" data-ax="-4" data-ay="1"></marble>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset-program">
+            <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle <b>Warp Hole</b><br/>
+            <div class="oopball-program" data-ax="2" data-ay="4">
+                <div class="layer-1">
+                    <glass class="drop-container glass-1">Glass Container</glass>
                 </div>
-            </fieldset>
-            <fieldset class="fieldset-program">
-                <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle <b>Warp Hole</b><br/>
-                <div class="oopball-program" data-ax="2" data-ay="4">
-                    <div class="layer-1">
-                        <glass class="drop-container glass-1">Glass Container</glass>
-                    </div>
-                    <div class="layer-2 drop-container">
-                        <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
-                        <warp data-target="oopball-output" class="circle warp-output" data-ax="center" data-ay="center"><ul class="stats"><li>Warp Hole</li></ul></warp>
-                        <block class="block-1"></block>
-                        <block class="block-2"></block>
-                        <block class="block-3"></block>
-                        <block class="block-4"></block>
-                    </div>
+                <div class="layer-2 drop-container">
+                    <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
+                    <warp data-target="oopball-output" class="circle warp-output" data-ax="center" data-ay="center"><ul class="stats"><li>Warp Hole</li></ul></warp>
+                    <block class="block-1"></block>
+                    <block class="block-2"></block>
+                    <block class="block-3"></block>
+                    <block class="block-4"></block>
                 </div>
-            </fieldset>
-            <fieldset class="fieldset-output">
-                <legend class="legend-output">Output</legend>
-                Get all 6 objects into this <b>Output Container</b> to win the round<br/>
-                <glass class="oopball-output" data-ax="1">Output Container</glass>
-            </fieldset>
-        </fieldset></form>
+            </div>
+        </fieldset>
+        <fieldset class="fieldset-output">
+            <legend class="legend-output">Output</legend>
+            Get all 6 objects into this <b>Output Container</b> to win the round<br/>
+            <glass class="oopball-output" data-ax="1">Output Container</glass>
+        </fieldset>
+    </form>
 </section>
 <section class="footer"></section>
 </body>

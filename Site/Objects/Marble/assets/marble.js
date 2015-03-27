@@ -114,7 +114,7 @@
                 stats[0].classList.add('stats');
                 stats[0].classList.add('stats-marble');
             }
-            var html = "<li><span class='title'>" + element.nodeName + "</span></li>" // element.getAttribute('class')
+            var html = "<li><span class='title'>" + element.nodeName + ' ' + element.getAttribute('class') + "</span></li>" // element.getAttribute('class')
                 + "<li><span class='stat'>x:</span> " + Math.round(element.pos.x) + "</li>"
                 + "<li><span class='stat'>y:</span> " + Math.round(element.pos.y) + "</li>";
 
