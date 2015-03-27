@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" afterPath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
-    </list>
+    <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="" />
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />

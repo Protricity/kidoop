@@ -9,9 +9,9 @@ body {
 
 section, .section {
     margin: 0 1.5pt 1pt 1.5pt;
-    border: 1pt solid #ccc;
+    border: 1pt none #ccc;
     padding: 15pt;
-    background-color: #537EB4;
+    background-color: transparent;
 }
 
 .header {
@@ -21,6 +21,11 @@ section, .section {
 }
 
 .content {
+    background-color: #537EB4;
+    border: 1pt solid #ccc;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
 }
 
 .footer {
