@@ -57,9 +57,20 @@
         var p = getPosition(marble);
         p = p.addVector(v);
         setPosition(marble, p);
+        render(marble);
     };
 
     document.addEventListener('render', renderElement);
+
+    var dropElement = function (e, marble) {
+        marble = marble || e.target || this;
+        if(!/marble/i.test(marble.nodeName))
+            return;
+
+        marble.pos = null;
+    };
+
+    document.addEventListener('drop-at', dropElement);
 
     // Physics Methods
 
@@ -85,14 +96,46 @@
     };
 
     var getPosition = function(element) {
+        if(element.pos)
+            return element.pos;
         var x = parseFloat(element.style.left || element.offsetLeft);
         var y = parseFloat(element.style.top || element.offsetTop);
         return new Vector(x, y);
     };
 
+    var render = function(element) {
+        if(element.pos) {
+            element.style.left = Math.round(element.pos.x) + 'px';
+            element.style.top = Math.round(element.pos.y) + 'px';
+            var stats = element.getElementsByClassName('stats-marble');
+            if(stats.length === 0) {
+                stats[0] = document.createElement('ul');
+                element.appendChild(stats[0]);
+                stats[0].classList.add('stats');
+                stats[0].classList.add('stats-marble');
+            }
+            var html = "<li><span class='title'>" + element.nodeName + "</span></li>" // element.getAttribute('class')
+                + "<li><span class='stat'>x:</span> " + Math.round(element.pos.x) + "</li>"
+                + "<li><span class='stat'>y:</span> " + Math.round(element.pos.y) + "</li>";
+
+            if(typeof element.dataset.vx !== 'undefined') {
+                html += "<li><span class='stat'>vx:</span> " + Math.round(element.dataset.vx * 10) / 10 + "</li>";
+                html += "<li><span class='stat'>vy:</span> " + Math.round(element.dataset.vy * 10) / 10 + "</li>";
+            }
+
+            if(typeof element.dataset.ax !== 'undefined') {
+                html += "<li><span class='stat'>ax:</span> " + (element.dataset.ax) + "</li>";
+                html += "<li><span class='stat'>ay:</span> " + (element.dataset.ay) + "</li>";
+            }
+
+            stats[0].innerHTML = html;
+        }
+    };
+
     var setPosition = function(element, vector) {
-        element.style.left = (Math.round((vector.x) * 10) / 10) + 'px';
-        element.style.top = (Math.round((vector.y) * 10) / 10) + 'px';
+        element.pos = vector;
+//         element.style.left = Math.round(vector.x) + 'px';
+//         element.style.top = Math.round(vector.y) + 'px';
     };
 
     var getVelocity = function(element) {

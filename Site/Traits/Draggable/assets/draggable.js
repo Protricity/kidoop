@@ -7,8 +7,8 @@
 
     //var body;
     var dropAt = function(elm, dropElm, x, y, fromX, fromY) {
-        dropElm.dataset.x = x || 0;
-        dropElm.dataset.y = y || 0;
+        //dropElm.dataset.x = x || 0;
+        //dropElm.dataset.y = y || 0;
         dropElm.style.left = Math.round(x) + 'px';
         dropElm.style.top = Math.round(y) + 'px';
         //if(!dropElm.style.position)
@@ -16,12 +16,24 @@
         elm.appendChild(dropElm);
         console.log("Dropped ", x, y, [dropElm]);
 
+        var dropAtEvent = new CustomEvent('drop-at', {
+            detail: {
+                x: x,
+                y: y,
+                fromX: fromX,
+                fromY: fromY
+            },
+            bubbles: true,
+            cancelable: true
+        });
+        dropElm.dispatchEvent(dropAtEvent);
+
 //         if(typeof fromX !== 'undefined') {
 //             dropElm.dataset.vx = (x - fromX) / 80;
 //             dropElm.dataset.vy = (y - fromY) / 80;
 //         }
-         dropElm.dataset.vx = 0;
-         dropElm.dataset.vy = 0;
+//         dropElm.dataset.vx = 0;
+//         dropElm.dataset.vy = 0;
     };
 
     var lastDragObject, lastClickOffset, lastDragStart, lastDragOver;

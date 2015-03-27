@@ -9,9 +9,9 @@ body {
 
 section, .section {
     margin: 0 1.5pt 1pt 1.5pt;
-    border: 1pt solid #ccc;
+    border: 1pt none #ccc;
     padding: 15pt;
-    background-color: #537EB4;
+    background-color: transparent;
 }
 
 .header {
@@ -21,7 +21,43 @@ section, .section {
 }
 
 .content {
+    background-color: #537EB4;
+    border: 1pt solid #ccc;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
 }
 
 .footer {
+}
+
+
+/** Stats **/
+
+.stats {
+    padding: 0.4em;
+    font-size: 8pt;
+    color: #DDD;
+    margin-top: -3em;
+    float: left;
+    display: none;
+    pointer-events: none;
+}
+
+*:hover > .stats {
+    display: block;
+/*     background-color: #888; */
+}
+
+.stats li {
+}
+
+.stats .title {
+    font-weight: bold;
+    color: #000;
+}
+
+.stats .stat {
+    font-weight: bold;
+    color: #333;
 }

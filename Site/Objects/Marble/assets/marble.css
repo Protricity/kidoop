@@ -2,11 +2,11 @@
 /** Marble **/
 
 marble, .marble {
-    text-indent: 71px;    position: absolute;
-    line-height: 32px;
+    position: absolute;
+    text-indent: 4.2em;    
+    /* line-height: 32px; */
     white-space: nowrap;
-    font-size: small;
-    color: #777;
+    color: #225;
     display: inline-block;
     width: 4em;
     height: 4em;
@@ -21,8 +21,8 @@ marble, .marble {
 filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
 
     -ms-transform: rotate(5deg); /* IE 9 */
-    -webkit-transform: rotate(5deg); /* Safari */
-    transform: rotate(5deg);
+    /* -webkit-transform: rotate(5deg); */ /* Safari */
+    /* transform: rotate(5deg); */
 }
 
 marble.red, .marble.red {

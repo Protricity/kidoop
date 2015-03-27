@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Site/Template/DefaultTemplate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath" afterPath="$PROJECT_DIR$/CPath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/img/sprites.png" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/img/sprites.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Config.php" afterPath="$PROJECT_DIR$/Site/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" afterPath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.js" afterPath="$PROJECT_DIR$/pages/level1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marble/assets/img/sprites.xcf" afterPath="$PROJECT_DIR$/Site/Objects/Marble/assets/img/sprites.xcf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="" />
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -81,7 +67,7 @@
       <file leaf-file-name="DefaultTemplate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Template/DefaultTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="340">
               <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
               <folding />
             </state>
@@ -91,9 +77,11 @@
       <file leaf-file-name="kidoop-template.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1071">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+              <folding>
+                <marker date="1427398412797" expanded="true" signature="244:311" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +89,18 @@
       <file leaf-file-name="DefaultCPathTemplate.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/DefaultCPathTemplate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="3128">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="493" max-vertical-offset="3128">
               <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="61" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default-template.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1853">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,8 +109,8 @@
       <file leaf-file-name="level1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/level1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1836">
-              <caret line="19" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
+            <state vertical-scroll-proportion="-0.3026316" vertical-offset="912" max-vertical-offset="1836">
+              <caret line="55" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -121,14 +119,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="draggable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="marble.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-44.56" vertical-offset="3544" max-vertical-offset="6239">
-              <caret line="274" column="13" selection-start-line="274" selection-start-column="13" selection-end-line="274" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1482" max-vertical-offset="3315">
+              <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
               <folding>
-                <element signature="e#11458#13961#0" expanded="false" />
+                <element signature="e#6105#8781#0" expanded="false" />
+                <element signature="e#8835#11418#0" expanded="false" />
+                <element signature="e#11478#13095#0" expanded="false" />
+                <element signature="e#13253#15756#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marble.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1156">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,9 +157,12 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11564626" vertical-offset="0" max-vertical-offset="1819">
+            <state vertical-scroll-proportion="0.08163265" vertical-offset="0" max-vertical-offset="1819">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -191,7 +215,6 @@
         <option value="$PROJECT_DIR$/Site/Games/Pinball/assets/shadow.svg" />
         <option value="$PROJECT_DIR$/Site/Objects/Block/assets/block.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.css" />
-        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css" />
         <option value="$PROJECT_DIR$/Site/Traits/Physics/assets/physics.js" />
         <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
@@ -199,13 +222,14 @@
         <option value="$PROJECT_DIR$/pages/level1.css" />
         <option value="$PROJECT_DIR$/pages/level1.js" />
         <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" />
-        <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
         <option value="$PROJECT_DIR$/Site/Config.php" />
         <option value="$PROJECT_DIR$/Site/Template/DefaultTemplate.php" />
         <option value="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
-        <option value="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
-        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
+        <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
         <option value="$PROJECT_DIR$/pages/level1.html" />
+        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js" />
+        <option value="$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css" />
+        <option value="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
         <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
@@ -278,6 +302,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Draggable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Draggable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,17 +563,20 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -492,9 +585,6 @@
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -526,11 +616,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2751982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26354167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2625133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26517573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -538,6 +627,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2751982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43601358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -812,7 +902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="578">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -820,15 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="561">
           <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="969">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,10 +916,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="646">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <marker date="1427319553849" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427319553849" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="884">
           <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,19 +950,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.56" vertical-offset="41" max-vertical-offset="2363">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
           <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,50 +975,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Template/DefaultTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="340">
           <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44299674" vertical-offset="0" max-vertical-offset="1853">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/DefaultCPathTemplate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="3128">
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="3128">
           <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="61" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
+    <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1853">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.56" vertical-offset="3544" max-vertical-offset="6239">
-          <caret line="274" column="13" selection-start-line="274" selection-start-column="13" selection-end-line="274" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1482" max-vertical-offset="3315">
+          <caret line="127" column="50" selection-start-line="127" selection-start-column="50" selection-end-line="127" selection-end-column="50" />
           <folding>
-            <element signature="e#11458#13961#0" expanded="false" />
+            <element signature="e#6105#8781#0" expanded="false" />
+            <element signature="e#8835#11418#0" expanded="false" />
+            <element signature="e#11478#13095#0" expanded="false" />
+            <element signature="e#13253#15756#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Objects/Marble/assets/marble.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="1156">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Template/assets/kidoop-template.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1071">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+          <folding>
+            <marker date="1427398412797" expanded="true" signature="244:311" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1836">
-          <caret line="19" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
+        <state vertical-scroll-proportion="-0.3026316" vertical-offset="912" max-vertical-offset="1836">
+          <caret line="55" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -962,9 +1049,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11564626" vertical-offset="0" max-vertical-offset="1819">
+        <state vertical-scroll-proportion="0.08163265" vertical-offset="0" max-vertical-offset="1819">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#marble#0;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#marble#1;n#div#0;n#fieldset#1;n#fieldset#0;n#form#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
