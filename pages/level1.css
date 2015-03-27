@@ -2,23 +2,23 @@
 }
 
 .level1 .glass-1 {
-    left: 11em;
+    left: 13em;
     top: 9em;
-    width: 38em;
-    height: 27em;
+    width: 36em;
+    height: 26em;
     z-index: 1;
     padding: 1em;
     /* position: absolute; */
 }
 
-.level1 .block-1 { left: 12em; top: 10em; width: 14em; height: 9em; }
-.level1 .block-2 { left: 36em; top: 10em; width: 14em; height: 9em; }
-.level1 .block-3 { left: 12em; top: 28em; width: 14em; height: 9em; }
-.level1 .block-4 { left: 36em; top: 28em; width: 14em; height: 9em; }
+.level1 .block-1 { left: 14em; top: 10em; width: 12em; height: 8em; }
+.level1 .block-2 { left: 38em; top: 10em; width: 12em; height: 8em; }
+.level1 .block-3 { left: 14em; top: 28em; width: 12em; height: 8em; }
+.level1 .block-4 { left: 38em; top: 28em; width: 12em; height: 8em; }
 
 .level1 .warp-output {
-    left: 29em;
-    top: 22em;
+    left: 349px;
+    top: 250px;
 }
 
 .level1 .layer-1,
@@ -30,6 +30,17 @@
     height: 100%;
 }
 
+.level1 .oopball-program {
+    width: 800px;
+    height: 600px;
+    padding: 19px;
+}
+
+.level1 .oopball-input {
+    width: 500px;
+/*     height: 50px; */
+}
+
 /* .level1 fieldset, */
 .level1 .oopball-input,
 .level1 .oopball-output,
@@ -37,7 +48,7 @@
 .level1 .oopball-program
 {
     position: relative;
-    min-height: 16em;
+    min-height: 8em;
 }
 
 .level1 .win {

@@ -5,69 +5,106 @@
 (function(){
     var TYPE_CIRCLE = 'circle';
 
-    var DEFAULT_GRAVITY = 2; // 0.7;
+    var DEFAULT_GRAVITY = 10; // 0.7;
     var WALL_BOUNCE_COOEFICIENT = 0.70;
     var BALL_BOUNCE_COOEFICIENT = 0.5;
 
     var RESTITUTION = 3;
     var RENDER_INTERVAL = 30;
 
+    // Include
 
-    var renderElement = function(e, marble) {
-        marble = marble || e.target || this;
-        if(marble === document) {
-            var marbles = document.getElementsByTagName('marble');
-            for(var i=0; i<marbles.length; i++)
-                renderElement(e, marbles[i]);
+    var include = function(src) {
+        if(/\.js$/i.test(src)) {
+            var scripts = document.head.getElementsByTagName('script');
+            for(var si=0; si<scripts.length; si++)
+                if(scripts[si].getAttribute('src') == src)
+                    return false;
+
+            var script = document.createElement('script');
+            script.setAttribute('src', src);
+            document.head.appendChild(script);
+            return true;
+
+        } else if (/\.css$/i.test(src)) {
+            var links = document.head.getElementsByTagName('link');
+            for(var li=0; li<links.length; li++)
+                if(links[li].getAttribute('href') == src)
+                    return false;
+
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', src);
+            document.head.appendChild(link);
+            return true;
+        } else {
+            throw new Error("Invalid SRC: " + src);
+        }
+    };
+
+    // Methods
+
+    var isCircle = function(element) {
+        return element.classList.contains('circle') || /^circle$/i.test(element.nodeName);
+    };
+
+    var renderElement = function(e, circle) {
+        circle = circle || e.target || this;
+        if(circle === document) {
+            var circles = document.getElementsByTagName('circle');
+            for(var i=0; i<circles.length; i++)
+                renderElement(e, circles[i]);
+            circles = document.getElementsByClassName('circle');
+            for(i=0; i<circles.length; i++)
+                renderElement(e, circles[i]);
             e.preventDefault();
             return;
         }
-        if(!/marble/i.test(marble.nodeName))
+        if(!circle.classList.contains('circle')
+            && !/^circle$/i.test(circle.nodeName))
             return;
 
         e.preventDefault();
 
         var time = new Date();
-        var totalElapsedTime = time - (marble.lastRender || new Date());
+        var totalElapsedTime = time - (circle.lastRender || new Date());
         if(totalElapsedTime > RENDER_INTERVAL || totalElapsedTime < 0)
             totalElapsedTime = RENDER_INTERVAL;
-        marble.lastRender = time;
+        circle.lastRender = time;
 
-        var v = getVelocity(marble);
-        var a = getAcceleration(marble);
+        var v = getVelocity(circle);
+        var a = getAcceleration(circle);
         if(a.x || a.y) {
             v = v.addVector(a.multiply(totalElapsedTime / 1000));
-            setVelocity(marble, v);
+            setVelocity(circle, v);
         }
 
-        var siblings = marble.parentNode.children;
+        var siblings = circle.parentNode.children;
         for(var k=0; k<siblings.length; k++) {
             var sibling = siblings[k];
-            if (marble === sibling)
+            if (circle === sibling)
                 continue;
-            if (sibling.classList.contains(TYPE_CIRCLE))
-                testCircleCollision(marble, sibling);
-            else if (/marble/i.test(sibling.nodeName))
-                testCircleCollision(marble, sibling);
+            if (isCircle(sibling))
+                testCircleCollision(circle, sibling);
             else
-                testCircleRectCollision(marble, sibling);
+                testCircleRectCollision(circle, sibling);
         }
-        testRectContainment(marble, marble.parentNode);
+        testRectContainment(circle, circle.parentNode);
 
-        var p = getPosition(marble);
+        var p = getPosition(circle);
         p = p.addVector(v);
-        setPosition(marble, p);
-        render(marble);
+        setPosition(circle, p);
+        render(circle);
     };
 
     document.addEventListener('render', renderElement);
 
-    var dropElement = function (e, marble) {
-        marble = marble || e.target || this;
-        if(!/marble/i.test(marble.nodeName))
+    var dropElement = function (e, circle) {
+        circle = circle || e.target || this;
+        if(!isCircle(circle))
             return;
 
-        marble.pos = null;
+        circle.pos = null;
     };
 
     document.addEventListener('drop-at', dropElement);
@@ -107,12 +144,12 @@
         if(element.pos) {
             element.style.left = Math.round(element.pos.x) + 'px';
             element.style.top = Math.round(element.pos.y) + 'px';
-            var stats = element.getElementsByClassName('stats-marble');
+            var stats = element.getElementsByClassName('stats-circle');
             if(stats.length === 0) {
                 stats[0] = document.createElement('ul');
                 element.appendChild(stats[0]);
                 stats[0].classList.add('stats');
-                stats[0].classList.add('stats-marble');
+                stats[0].classList.add('stats-circle');
             }
             var html = "<li><span class='title'>" + element.nodeName + ' ' + element.getAttribute('class') + "</span></li>" // element.getAttribute('class')
                 + "<li><span class='stat'>x:</span> " + Math.round(element.pos.x) + "</li>"
@@ -313,7 +350,7 @@
         // sphere intersecting but moving away from each other already
         if (vn > 0.0) {
             setPosition(elm1, p1);
-            if (/marble/i.test(elm2.nodeName)) {
+            if (isCircle(elm2)) {
                 setPosition(elm2, p2);
             }
 
@@ -332,7 +369,7 @@
             setVelocity(elm1, v1);
             setPosition(elm1, p1);
 
-            if (/marble/i.test(elm2.nodeName)) {
+            if (isCircle(elm2)) {
                 setVelocity(elm2, v2);
                 setPosition(elm2, p2);
             }

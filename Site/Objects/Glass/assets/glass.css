@@ -11,7 +11,7 @@ glass, .glass {
     height: 400px;
     background: url("img/glass.png");
 
-    /* opacity: 0.5; */
+    opacity: .7;
 
     background-repeat: round;
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
@@ -20,7 +20,7 @@ glass, .glass {
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
 
-    /* transform: rotate(70deg); */
+    /* transform: rotate(-203deg); */
 }
 
 

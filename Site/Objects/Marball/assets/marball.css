@@ -1,7 +1,7 @@
 
-/** Marble **/
+/** Marball **/
 
-marble, .marble {
+marball, .marball {
     position: absolute;
     text-indent: 4.2em;    
     /* line-height: 32px; */
@@ -25,39 +25,39 @@ filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#44
     /* transform: rotate(5deg); */
 }
 
-marble.red, .marble.red {
+marball.red, .marball.red {
     background: url("img/sprites.png") -0 0;
     background-size: 32em 4em;
 }
 
-marble.purple, .marble.purple {
+marball.purple, .marball.purple {
     background: url("img/sprites.png") -4em 0;
     background-size: 32em 4em;
 }
 
-marble.lightblue, .marble.lightblue {
+marball.lightblue, .marball.lightblue {
     background: url("img/sprites.png") -8em 0;
     background-size: 32em 4em;
 }
 
-marble.green, .marble.green {
+marball.green, .marball.green {
     background: url("img/sprites.png") -12em 0;
     background-size: 32em 4em;
 }
 
-marble.darkblue, .marble.darkblue {
+marball.darkblue, .marball.darkblue {
     background: url("img/sprites.png") -16em 0;
     background-size: 32em 4em;
 }
 
-marble.yellow, .marble.yellow {
+marball.yellow, .marball.yellow {
     background: url("img/sprites.png") -20em 0;
     background-size: 32em 4em;
 }
 
 /** Position **/
 
-.drop-container marble,
-.drop-container .marble {
+.drop-container marball,
+.drop-container .marball {
     position: absolute;
 }

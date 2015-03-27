@@ -24,7 +24,7 @@ use CPath\Route\IRoutable;
 use CPath\Route\RouteBuilder;
 use Site\Traits\Draggable\DraggableAttributes;
 use Site\Traits\InfoBox\InfoBoxTraitAttributes;
-use Site\Objects\Marble\MarbleElement;
+use Site\Objects\Marball\MarballElement;
 use Site\Objects\Warp\WarpElement;
 use Site\Traits\Physics\PhysicsAttributes;
 use Site\Traits\Physics\PhysicsContainer;
@@ -76,20 +76,20 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 
                 new HTMLElement('fieldset', 'fieldset-input',
                     new HTMLElement('legend', 'legend-object-input fixed', "Input"),
-                    "Choose a marble",
+                    "Choose a Marball",
                     new PhysicsContainer('oopball-input', 1, 1,
-                        new MarbleElement(true, 'class="red"'), // true, new Attributes('data-ax', 1)
-                        new MarbleElement(true, 'class="lightblue"'),
-                        new MarbleElement(true, 'class="darkblue"'),
-                        new MarbleElement(true, 'class="green"'),
-                        new MarbleElement(true, 'class="purple"'),
-                        new MarbleElement(true, 'class="yellow"')
+                        new MarballElement(true, 'class="red"'), // true, new Attributes('data-ax', 1)
+                        new MarballElement(true, 'class="lightblue"'),
+                        new MarballElement(true, 'class="darkblue"'),
+                        new MarballElement(true, 'class="green"'),
+                        new MarballElement(true, 'class="purple"'),
+                        new MarballElement(true, 'class="yellow"')
                     )
                 ),
 
                 $FieldSetProgram = new HTMLElement('fieldset', 'fieldset-program',
                     new HTMLElement('legend', 'legend-program fixed', "Program"),
-                    "Try to get the marble into the middle warp",
+                    "Try to get the marball into the middle warp",
                     new PhysicsContainer('oopball-program ' . DraggableAttributes::CLASS_DROP_CONTAINER, 3, 8,
                         new WarpElement('oopball-input'),
                         new WarpElement('oopball-output',
@@ -109,10 +109,10 @@ class OOPBall implements IExecutable, IBuildable, IRoutable
 //                new HTMLElement('fieldset', 'fieldset-output',
 //                    new HTMLElement('legend', 'legend-output fixed', "Output"),
 //                    new PhysicsContainer('oopball-output', 0, 1,
-//                        new MarbleElement(),
-//                        new MarbleElement(),
-//                        new MarbleElement(),
-//                        new MarbleElement(true, new Attributes('data-ax', -4))
+//                        new MarballElement(),
+//                        new MarballElement(),
+//                        new MarballElement(),
+//                        new MarballElement(true, new Attributes('data-ax', -4))
 //                    )
 //                ),
 //

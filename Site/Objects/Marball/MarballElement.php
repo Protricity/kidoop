@@ -5,7 +5,7 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Objects\Marble;
+namespace Site\Objects\Marball;
 
 use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Attribute\ClassAttributes;
@@ -19,9 +19,9 @@ use Site\Traits\Collision\CollisionAttributes;
 use Site\Traits\Draggable\DraggableAttributes;
 use Site\Traits\Physics\PhysicsAttributes;
 
-class MarbleElement extends AbstractHTMLElement
+class MarballElement extends AbstractHTMLElement
 {
-    const ELEMENT_TYPE = 'marble';
+    const ELEMENT_TYPE = 'marball';
 //    private $physattr;
 
     /**
@@ -50,8 +50,8 @@ class MarbleElement extends AbstractHTMLElement
 
     function writeHeaders(IRequest $Request, IHeaderWriter $Head) {
         parent::writeHeaders($Request, $Head);
-//        $Head->writeScript(__DIR__ . '/assets/marble.js');
-        $Head->writeStyleSheet(__DIR__ . '/assets/marble.css');
+//        $Head->writeScript(__DIR__ . '/assets/marball.js');
+        $Head->writeStyleSheet(__DIR__ . '/assets/marball.css');
     }
 
 

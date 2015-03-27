@@ -2,15 +2,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>
-    <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
-    <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
-
-    <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
-
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="path" content="/oopball">
     <meta name="domain-path" content="kidoop/">
+
+    <!--<script src='CPath/Render/HTML/Header/assets/jquery.min.js'></script>-->
+    <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
+    <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
+    <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
+
+
     <link rel='stylesheet' href='CPath/Route/HTML/assets/navigator.css' />
 
     <script src='Site/Traits/Draggable/assets/draggable.js'></script>
@@ -22,8 +23,8 @@
     <script src='Site/Objects/Warp/assets/warp.js'></script>
     <link rel='stylesheet' href='Site/Objects/Warp/assets/warp.css' />
 
-    <script src='Site/Objects/Marble/assets/marble.js'></script>
-    <link rel='stylesheet' href='Site/Objects/Marble/assets/marble.css' />
+    <script src='Site/Objects/Marball/assets/marball.js'></script>
+    <link rel='stylesheet' href='Site/Objects/Marball/assets/marball.css' />
 
     <script src='Site/Objects/Glass/assets/glass.js'></script>
     <link rel='stylesheet' href='Site/Objects/Glass/assets/glass.css' />
@@ -62,25 +63,25 @@
             <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
         </fieldset>
         <fieldset class="fieldset-input">
-            <legend class="legend-object-input fixed">Input</legend>Choose a marble
+            <legend class="legend-object-input fixed">Input</legend>Choose a marball
             <div class="oopball-input drop-container" data-ax="1" data-ay="1">
-                <marble class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marble>
-                <marble class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marble>
-                <marble class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marble>
-                <marble class="green" draggable="true" data-ax="4" data-ay="-1"></marble>
-                <marble class="purple" draggable="true" data-ax="center" data-ay="center"></marble>
-                <marble class="yellow" draggable="true" data-ax="-4" data-ay="1"></marble>
+                <marball class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marball>
+                <marball class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marball>
+                <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
+                <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
+                <marball class="purple" draggable="true" data-ax="center" data-ay="center"></marball>
+                <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
             </div>
         </fieldset>
         <fieldset class="fieldset-program inline">
-            <legend class="legend-program fixed">Program</legend>Try to get a marble into the middle <b>Warp Hole</b><br/>
+            <legend class="legend-program fixed">Program</legend>Try to get a marball into the middle <b>Warp Hole</b><br/>
             <div class="oopball-program" data-ax="2" data-ay="4">
                 <div class="layer-1">
                     <glass class="drop-container glass-1">Glass Container</glass>
                 </div>
                 <div class="layer-2 drop-container">
                     <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
-                    <warp data-target="oopball-output" class="circle warp-output" data-ax="center" data-ay="center"><ul class="stats"><li>Warp Hole</li></ul></warp>
+                    <warp data-target="oopball-output" class="circle warp-output large" data-ax="center" data-ay="center"><ul class="stats"><li>Warp Hole</li></ul></warp>
                     <block class="block-1"></block>
                     <block class="block-2"></block>
                     <block class="block-3"></block>
