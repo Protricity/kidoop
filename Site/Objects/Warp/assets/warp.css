@@ -5,7 +5,7 @@ warp, .warp {
     display: inline-block;
     white-space: nowrap;
     width: 4em;
-    height: 4em;
+    height: 2.5em;
     background: url("img/warp.png");
 
     background-size: 4em;
@@ -18,7 +18,7 @@ warp, .warp {
 }
 
 warp.large, .warp.large {
-    font-size: 23px;
+    font-size: 24px;
 }
 
 

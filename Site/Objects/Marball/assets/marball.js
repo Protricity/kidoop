@@ -44,16 +44,16 @@
 
     // Methods
 
-    var marbles = null;
-    var renderMarble = function(e) {
-        if(marbles === null)
-            marbles = document.getElementsByTagName('marball');
-        for(var i=0; i<marbles.length; i++)
-            if(!marbles[i].classList.contains('circle'))
-                marbles[i].classList.add('circle');
+    var marballs = null;
+    var initMarball = function(e) {
+        if(marballs === null)
+            marballs = document.getElementsByTagName('marball');
+        for(var i=0; i<marballs.length; i++)
+            if(!marballs[i].classList.contains('circle'))
+                marballs[i].classList.add('circle');
         
     };
-
-    document.addEventListener('render', renderMarble);
+    document.addEventListener('init', initMarball);
+    setTimeout(initMarball, 1000);
 
 })();

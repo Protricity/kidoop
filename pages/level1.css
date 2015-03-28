@@ -1,26 +1,41 @@
 .level1 {
+    position: relative;
+    height: 71em;
 }
 
 .level1 .glass-1 {
     left: 13em;
-    top: 9em;
+    top: 11em;
     width: 36em;
     height: 26em;
     z-index: 1;
+
     padding: 1em;
-    /* position: absolute; */
+    position: absolute;
 }
 
-.level1 .block-1 { left: 14em; top: 10em; width: 12em; height: 8em; }
-.level1 .block-2 { left: 38em; top: 10em; width: 12em; height: 8em; }
-.level1 .block-3 { left: 14em; top: 28em; width: 12em; height: 8em; }
-.level1 .block-4 { left: 38em; top: 28em; width: 12em; height: 8em; }
+.level1 .glass-2 {
+    left: 16em;
+    top: 47em;
+    width: 30em;
+    height: 20em;
+    position: absolute;
+}
+
+.level1 .block-1 { left: 14em; top: 12em; width: 12em; height: 8em; }
+.level1 .block-2 { left: 38em; top: 12em; width: 12em; height: 8em; }
+.level1 .block-3 { left: 14em; top: 30em; width: 12em; height: 8em; }
+.level1 .block-4 { left: 38em; top: 30em; width: 12em; height: 8em; }
 
 .level1 .warp-output {
-    left: 349px;
-    top: 250px;
+    left: 371px;
+    top: 296px;
 }
 
+.level1 .layer-container {
+    height: 47em;
+    position: relative;
+}
 .level1 .layer-1,
 .level1 .layer-2 {
     position: absolute;
@@ -31,24 +46,16 @@
 }
 
 .level1 .oopball-program {
-    width: 800px;
-    height: 600px;
-    padding: 19px;
+    /* height: 47em; */
 }
 
 .level1 .oopball-input {
-    width: 500px;
-/*     height: 50px; */
+    width: 22em;
+    height: 19em;
 }
 
-/* .level1 fieldset, */
-.level1 .oopball-input,
-.level1 .oopball-output,
-.level1 .oopball-program-overlay,
-.level1 .oopball-program
-{
-    position: relative;
-    min-height: 8em;
+.level1 .infobox {
+    float:right;
 }
 
 .level1 .win {

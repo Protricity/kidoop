@@ -27,6 +27,7 @@
             cancelable: true
         });
         dropElm.dispatchEvent(dropAtEvent);
+        dropElm.dispatchEvent(new CustomEvent('init', {bubbles: true}));
 
 //         if(typeof fromX !== 'undefined') {
 //             dropElm.dataset.vx = (x - fromX) / 80;

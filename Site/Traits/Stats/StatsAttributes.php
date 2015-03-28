@@ -5,18 +5,23 @@
  * Date: 3/14/2015
  * Time: 10:14 PM
  */
-namespace Site\Traits\InfoBox;
+namespace Site\Traits\Collision;
 
-use CPath\Render\HTML\Attribute\ClassAttributes;
+use CPath\Render\HTML\Attribute\Attributes;
 use CPath\Render\HTML\Header\IHeaderWriter;
 use CPath\Render\HTML\Header\IHTMLSupportHeaders;
 use CPath\Request\IRequest;
 
-class InfoBoxTraitAttributes extends ClassAttributes implements IHTMLSupportHeaders
+class CollisionAttributes extends Attributes implements IHTMLSupportHeaders
 {
-    const CLASS_NAME = 'infobox';
+    const COLLISION_CLASS = 'collision';
+    const TYPE_SQUARE = 'collision square';
+    const TYPE_CIRCLE = 'collision circle';
+
     public function __construct() {
-        parent::__construct(self::CLASS_NAME);
+        parent::__construct();
+        $this->addClass(self::COLLISION_CLASS);
+        $this->addClass($type);
     }
 
     /**
@@ -26,8 +31,8 @@ class InfoBoxTraitAttributes extends ClassAttributes implements IHTMLSupportHead
      * @return void
      */
     function writeHeaders(IRequest $Request, IHeaderWriter $Head) {
-        $Head->writeScript(__DIR__ . '/assets/draggable.js');
-        $Head->writeStyleSheet(__DIR__ . '/assets/draggable.css');
+        $Head->writeScript(__DIR__ . '/assets/collision.js');
+        $Head->writeStyleSheet(__DIR__ . '/assets/collision.css');
     }
 }
 

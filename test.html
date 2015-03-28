@@ -20,47 +20,36 @@
 <section class="header">
     <h1 class="header-title"></h1>
 </section>
-<section class="content">
-    <form action="oopball" class="level1" method="POST" name="Site\Games\Pinball\OOPBall">
-        <fieldset class="fieldset-infobox inline">
+<section class="content level1">
+    <glass class="drop-container glass-1">Glass Container</glass>
+    <div class="oopball-program drop-container" data-ax="2" data-ay="4">
+
+        <fieldset class="infobox inline">
             <legend class="legend-infobox fixed">InfoBox</legend>
             <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
             <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
+            <br/> Choose a marball
+            <br/> Drop it into the warp
+            <br/> (under the glass)
         </fieldset>
-        <fieldset class="fieldset-input">
-            <legend class="legend-object-input fixed">Input</legend>Choose a marball
-            <div class="oopball-input drop-container" data-ax="1" data-ay="1">
-                <marball class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marball>
-                <marball class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marball>
-                <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
-                <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
-                <marball class="purple" draggable="true" data-ax="center" data-ay="center"></marball>
-                <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
-            </div>
-        </fieldset>
-        <fieldset class="fieldset-program inline">
-            <legend class="legend-program fixed">Program</legend>Try to get a marball into the middle <b>Warp Hole</b><br/>
-            <div class="oopball-program" data-ax="2" data-ay="4">
-                <div class="layer-1">
-                    <glass class="drop-container glass-1">Glass Container</glass>
-                </div>
-                <div class="layer-2 drop-container">
-                    <!--<warp data-target="oopball-input" class="warp-input physics" draggable="true"></warp>-->
-                    <warp data-target="oopball-output" class="circle warp-output large" data-ax="center" data-ay="center"><ul class="stats"><li>Warp Hole</li></ul></warp>
-                    <block class="block-1"></block>
-                    <block class="block-2"></block>
-                    <block class="block-3"></block>
-                    <block class="block-4"></block>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset class="fieldset-output inline">
-            <legend class="legend-output">Output</legend>
+        <marball class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marball>
+        <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
+        <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
+        <marball class="purple" draggable="true" data-ax="center" data-ay="center"></marball>
+        <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
+        <marball class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marball>
+
+        <warp data-target="oopball-output" class="warp-output large"><ul class="stats"><li>Warp Hole</li></ul></warp>
+
+        <block class="block-1"></block>
+        <block class="block-2"></block>
+        <block class="block-3"></block>
+        <block class="block-4"></block>
+
+        <glass class="oopball-output glass-2" data-ax="1">
             Get all 6 objects into this <b>Output Container</b> to win the round<br/>
-            <glass class="oopball-output" data-ax="1">Output Container</glass>
-        </fieldset>
-    </form>
-    <hr/>
+        </glass>
+    </div>
 </section>
 </body>
 </html>

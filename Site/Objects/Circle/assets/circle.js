@@ -9,7 +9,7 @@
     var WALL_BOUNCE_COOEFICIENT = 0.70;
     var BALL_BOUNCE_COOEFICIENT = 0.5;
 
-    var RESTITUTION = 3;
+    var RESTITUTION = 2;
     var RENDER_INTERVAL = 30;
 
     // Include
@@ -99,7 +99,7 @@
 
     document.addEventListener('render', renderElement);
 
-    var dropElement = function (e, circle) {
+    var initElement = function (e, circle) {
         circle = circle || e.target || this;
         if(!isCircle(circle))
             return;
@@ -107,7 +107,7 @@
         circle.pos = null;
     };
 
-    document.addEventListener('drop-at', dropElement);
+    document.addEventListener('init', initElement);
 
     // Physics Methods
 
