@@ -387,7 +387,7 @@
             v = getVelocity(element);
             v.x = Math.abs(v.x);
             v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-            R.position.x = - R.position.x;
+            R.position.x = 0;
             setVelocity(element, v);
             setPosition(element, R.position);
             collision = true;
@@ -407,7 +407,7 @@
             v = getVelocity(element);
             v.y = Math.abs(v.y);
             v = v.multiply(WALL_BOUNCE_COOEFICIENT);
-            R.position.y = - R.position.y;
+            R.position.y = 0;
             setVelocity(element, v);
             setPosition(element, R.position);
             collision = true;

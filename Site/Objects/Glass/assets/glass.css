@@ -10,7 +10,7 @@ glass, .glass {
     height: 400px;
     background: url("img/glass.png");
 
-    opacity: .7;
+    /* opacity: .7; */
 
     background-repeat: round;
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));

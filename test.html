@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="title" content="OOPBall">
+    <meta name="title" content="Alley-oop">
 
     <script src='Site/Objects/assets/loader.js'></script>
 
@@ -20,36 +20,35 @@
 <section class="header">
     <h1 class="header-title"></h1>
 </section>
-<section class="content level1">
-    <glass class="drop-container glass-1">Glass Container</glass>
-    <div class="oopball-program drop-container" data-ax="2" data-ay="4">
+<section class="content program level1 drop-container" data-ax="2" data-ay="4">
+    <fieldset class="infobox inline">
+        <legend class="legend-infobox fixed">InfoBox</legend>
+        <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
+        <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
+        <br/> Choose a marball
+        <br/> Drop it into the warp
+        <br/> (under the glass)
+    </fieldset>
+    <marball class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marball>
+    <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
+    <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
+    <marball class="purple" draggable="true" data-ax="center" data-ay="center"></marball>
+    <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
+    <marball class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marball>
 
-        <fieldset class="infobox inline">
-            <legend class="legend-infobox fixed">InfoBox</legend>
-            <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
-            <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
-            <br/> Choose a marball
-            <br/> Drop it into the warp
-            <br/> (under the glass)
-        </fieldset>
-        <marball class="red" draggable="true" data-ax="-1" data-ay="4" style="font-size: 8px"></marball>
-        <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
-        <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
-        <marball class="purple" draggable="true" data-ax="center" data-ay="center"></marball>
-        <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
-        <marball class="darkblue" draggable="true" data-ax="-1" data-ay="-4" style="font-size: 24px"></marball>
+    <warp data-target="output" class="warp-output large"><ul class="stats"><li>Warp Hole</li></ul></warp>
 
-        <warp data-target="oopball-output" class="warp-output large"><ul class="stats"><li>Warp Hole</li></ul></warp>
-
-        <block class="block-1"></block>
-        <block class="block-2"></block>
-        <block class="block-3"></block>
-        <block class="block-4"></block>
-
-        <glass class="oopball-output glass-2" data-ax="1">
-            Get all 6 objects into this <b>Output Container</b> to win the round<br/>
-        </glass>
+    <div>
+        <glass class="drop-container glass-1">Glass Container</glass>
     </div>
+    <block class="block-1"></block>
+    <block class="block-2"></block>
+    <block class="block-3"></block>
+    <block class="block-4"></block>
+
+    <glass class="output glass-2" data-ax="1">
+        Get all 6 objects into this <b>Output Container</b> to win the round<br/>
+    </glass>
 </section>
 </body>
 </html>

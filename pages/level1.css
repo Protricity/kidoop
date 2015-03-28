@@ -1,6 +1,7 @@
 .level1 {
     position: relative;
     height: 71em;
+    /* padding: 0; */
 }
 
 .level1 .glass-1 {
@@ -45,11 +46,11 @@
     height: 100%;
 }
 
-.level1 .oopball-program {
+.level1 .program {
     /* height: 47em; */
 }
 
-.level1 .oopball-input {
+.level1 .input {
     width: 22em;
     height: 19em;
 }
