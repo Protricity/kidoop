@@ -11,14 +11,16 @@
     cursor: pointer;
 /*     background-color: #0AF; */
 /*     opacity: 0.9; */
-    border-radius: 4em;
     
     border: double 1px #AFF
 }
 
 .drop-container.dragenter {
     background-color: #CCF;
-    -webkit-filter: none;
+    border-radius: 2em;
+}
+.drop-container.dragenter * {
+    background-color: #333;
 }
 .dragenter {
 /*     background-color: #F44; */

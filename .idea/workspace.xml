@@ -5,9 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath" afterPath="$PROJECT_DIR$/CPath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" afterPath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" afterPath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" afterPath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,16 +101,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="draggable.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="draggable.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding>
-                <marker date="1427566617398" expanded="true" signature="304:313" placeholder="{...}" />
-                <marker date="1427566617398" expanded="true" signature="594:742" placeholder="{...}" />
-                <marker date="1427566617398" expanded="true" signature="785:840" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.5288889" vertical-offset="0" max-vertical-offset="918">
+              <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="969">
+            <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="969">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -239,9 +232,9 @@
         <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" />
         <option value="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" />
         <option value="$PROJECT_DIR$/pages/level1.css" />
-        <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" />
         <option value="$PROJECT_DIR$/pages/level1.html" />
         <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" />
       </list>
     </option>
   </component>
@@ -1250,18 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <marker date="1427566617398" expanded="true" signature="304:313" placeholder="{...}" />
-            <marker date="1427566617398" expanded="true" signature="594:742" placeholder="{...}" />
-            <marker date="1427566617398" expanded="true" signature="785:840" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="986">
@@ -1275,12 +1256,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="969">
+        <state vertical-scroll-proportion="-1.3333334" vertical-offset="0" max-vertical-offset="969">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#marball#5;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5288889" vertical-offset="0" max-vertical-offset="918">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -14,33 +14,33 @@
 
     // Include
 
-    var include = function(src) {
-        if(/\.js$/i.test(src)) {
-            var scripts = document.head.getElementsByTagName('script');
-            for(var si=0; si<scripts.length; si++)
-                if(scripts[si].getAttribute('src') == src)
-                    return false;
+//     var include = function(src) {
+//         if(/\.js$/i.test(src)) {
+//             var scripts = document.head.getElementsByTagName('script');
+//             for(var si=0; si<scripts.length; si++)
+//                 if(scripts[si].getAttribute('src') == src)
+//                     return false;
 
-            var script = document.createElement('script');
-            script.setAttribute('src', src);
-            document.head.appendChild(script);
-            return true;
+//             var script = document.createElement('script');
+//             script.setAttribute('src', src);
+//             document.head.appendChild(script);
+//             return true;
 
-        } else if (/\.css$/i.test(src)) {
-            var links = document.head.getElementsByTagName('link');
-            for(var li=0; li<links.length; li++)
-                if(links[li].getAttribute('href') == src)
-                    return false;
+//         } else if (/\.css$/i.test(src)) {
+//             var links = document.head.getElementsByTagName('link');
+//             for(var li=0; li<links.length; li++)
+//                 if(links[li].getAttribute('href') == src)
+//                     return false;
 
-            var link = document.createElement('link');
-            link.setAttribute('rel', 'stylesheet');
-            link.setAttribute('href', src);
-            document.head.appendChild(link);
-            return true;
-        } else {
-            throw new Error("Invalid SRC: " + src);
-        }
-    };
+//             var link = document.createElement('link');
+//             link.setAttribute('rel', 'stylesheet');
+//             link.setAttribute('href', src);
+//             document.head.appendChild(link);
+//             return true;
+//         } else {
+//             throw new Error("Invalid SRC: " + src);
+//         }
+//     };
 
     // Methods
 
@@ -73,12 +73,16 @@
         circle.lastRender = time;
 
         var v = getVelocity(circle);
+        var p = getPosition(circle);
+        p = p.addVector(v);
+        setPosition(circle, p);
+
         var a = getAcceleration(circle);
         if(a.x || a.y) {
             v = v.addVector(a.multiply(totalElapsedTime / 1000));
             setVelocity(circle, v);
         }
-
+        
         var siblings = circle.parentNode.children;
         for(var k=0; k<siblings.length; k++) {
             var sibling = siblings[k];
@@ -91,9 +95,6 @@
         }
         testRectContainment(circle, circle.parentNode);
 
-        var p = getPosition(circle);
-        p = p.addVector(v);
-        setPosition(circle, p);
         render(circle);
     };
 
