@@ -4,13 +4,14 @@
 marball, .marball {
     position: absolute;
     text-indent: 4.2em;    
-    /* line-height: 32px; */
+/*     line-height: 32px; */
     white-space: nowrap;
     color: #225;
     display: inline-block;
     width: 4em;
     height: 4em;
-    font-size:16px;
+    border-radius: 4em;
+/*     font-size:16px; */
     background: url("img/sprites.png") 0 0;
 
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
@@ -20,9 +21,9 @@ marball, .marball {
     Color='#444')";
 filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
 
-    -ms-transform: rotate(5deg); /* IE 9 */
-    /* -webkit-transform: rotate(5deg); */ /* Safari */
-    /* transform: rotate(5deg); */
+/*     -ms-transform: rotate(25deg); /* IE 9 */ */
+/*     -webkit-transform: rotate(25deg);  /* Safari */ */
+/*     transform: rotate(25deg); */
 }
 
 marball.red, .marball.red {

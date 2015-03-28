@@ -38,18 +38,10 @@
 }
 
 [draggable]:hover {
-    -webkit-filter: drop-shadow(0 0 15px rgba(100,50,0,1));
-    filter: drop-shadow(0 0 15px rgba(100,50,0,1));
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
-    Color='#730')";
-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#A44')";
+    border: double #AFF
 }
 
 
 [draggable].dragging {
-    -webkit-filter: drop-shadow(0 0 30px rgba(0,150,250,1));
-    filter: drop-shadow(0 0 30px rgba(0,150,250,1));
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2,
-    Color='#08F')";
-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#A44')";
+    border: double #AFF
 }

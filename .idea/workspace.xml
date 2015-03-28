@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath" afterPath="$PROJECT_DIR$/CPath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Glass/assets/img/glass.png" afterPath="$PROJECT_DIR$/Site/Objects/Glass/assets/img/glass.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" afterPath="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" afterPath="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" afterPath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css" afterPath="$PROJECT_DIR$/Site/Objects/Glass/assets/glass.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.css" afterPath="$PROJECT_DIR$/pages/level1.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.js" afterPath="$PROJECT_DIR$/pages/level1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" afterPath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,8 +94,8 @@
       <file leaf-file-name="level1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/level1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.0" vertical-offset="306" max-vertical-offset="1020">
-              <caret line="21" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="7" />
+            <state vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="986">
+              <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#marball#5;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -112,10 +107,12 @@
       <file leaf-file-name="draggable.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1020">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
-                <marker date="1427565366671" expanded="true" signature="304:313" placeholder="{...}" />
+                <marker date="1427566617398" expanded="true" signature="304:313" placeholder="{...}" />
+                <marker date="1427566617398" expanded="true" signature="594:742" placeholder="{...}" />
+                <marker date="1427566617398" expanded="true" signature="785:840" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -134,7 +131,7 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="1003">
+            <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="969">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -164,8 +161,8 @@
       <file leaf-file-name="marball.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1156">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="1173">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -242,8 +239,8 @@
         <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" />
         <option value="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" />
         <option value="$PROJECT_DIR$/pages/level1.css" />
-        <option value="$PROJECT_DIR$/pages/level1.html" />
         <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css" />
+        <option value="$PROJECT_DIR$/pages/level1.html" />
         <option value="$PROJECT_DIR$/test.html" />
       </list>
     </option>
@@ -1223,8 +1220,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1156">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="1173">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1255,18 +1252,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1020">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <marker date="1427565366671" expanded="true" signature="304:313" placeholder="{...}" />
+            <marker date="1427566617398" expanded="true" signature="304:313" placeholder="{...}" />
+            <marker date="1427566617398" expanded="true" signature="594:742" placeholder="{...}" />
+            <marker date="1427566617398" expanded="true" signature="785:840" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0" vertical-offset="306" max-vertical-offset="1020">
-          <caret line="21" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="7" />
+        <state vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#marball#5;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1276,7 +1275,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="1003">
+        <state vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="969">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#marball#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
