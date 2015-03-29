@@ -45,5 +45,8 @@
 
 
 [draggable].dragging {
+    background-image: none;
     border: double #AFF
+;
+    /* opacity: .5; */
 }

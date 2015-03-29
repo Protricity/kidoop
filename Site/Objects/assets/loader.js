@@ -169,7 +169,7 @@
 
     var loadElement = function(element) {
         var tagName = element.tagName.toLowerCase();
-        console.log('Tag: ', tagName);
+//         console.log('Tag: ', tagName);
         if(commonTags.indexOf(tagName) === -1) {
             if(loadedTags.indexOf(tagName) === -1) {
                 include('Site/Objects/' + ucfirst(tagName) + '/assets/' + tagName + '.js');

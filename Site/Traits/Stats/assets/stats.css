@@ -1,0 +1,26 @@
+
+/** Stats **/
+
+.stats-box {
+    padding: 0.4em;
+    font-size: 8pt;
+    color: #DDD;
+    margin-top: -3em;
+    float: left;
+    display: none;
+    pointer-events: none;
+}
+
+
+.stats-box li {
+}
+
+.stats-box .title {
+    font-weight: bold;
+    color: #000;
+}
+
+.stats-box .stat {
+    font-weight: bold;
+    color: #333;
+}

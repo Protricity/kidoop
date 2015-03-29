@@ -13,19 +13,17 @@
     var onMouse = function(e) {
         if(typeof e.target.classList === 'undefined')
             return;
+        var stats = document.getElementsByClassName('stats');
         switch(e.type) {
             case 'click':
-//                 e.target.classList.add(STATS_CLASS);
-                break;
-            case 'mouseenter':
+                for(var i=0; i<stats.length; i++)
+                    stats[i].classList.remove(STATS_CLASS);
                 e.target.classList.add(STATS_CLASS);
-                break;
-            case 'mouseleave':
-                e.target.classList.remove(STATS_CLASS);
                 break;
             default:
                 throw new Error("Unknown: " + e.type);
         }
+        console.log(stats);
     };
 
     var onRender = function(e) {
@@ -38,6 +36,6 @@
     document.addEventListener('render', onRender, false);
 
     document.addEventListener('click', onMouse, false);
-    document.addEventListener('mouseenter', onMouse, false);
-    document.addEventListener('mouseleave', onMouse, false);
+//     document.addEventListener('mouseenter', onMouse, false);
+//     document.addEventListener('mouseleave', onMouse, false);
 })();
