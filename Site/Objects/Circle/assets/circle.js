@@ -130,7 +130,8 @@
     };
 
     var getMass = function(element) {
-        return getRadius(element);
+        var r = getRadius(element);
+        return 4 * Math.PI * r * r;
     };
 
     var getPosition = function(element) {
