@@ -195,10 +195,22 @@
         var def = DEFAULT_GRAVITY;
         var ax = (element.dataset.ax || element.parentNode.dataset.ax || def);
         var ay = (element.dataset.ay || element.parentNode.dataset.ay || def);
-        if(ax === 'center')
-            ax = (element.offsetLeft + element.offsetWidth / 2 > element.parentNode.offsetWidth / 2) ? -def : def;
-        if(ay === 'center')
-            ay = (element.offsetTop  + element.offsetHeight / 2 > element.parentNode.offsetHeight / 2) ? -def : def;
+        switch(ax) {
+            case 'center':
+                ax = (element.offsetLeft + element.offsetWidth / 2 > element.parentNode.offsetWidth / 2) ? -def : def;
+                break;
+            //case 'mouse':
+            //    break;
+            default: break;
+        }
+        switch(ay) {
+            case 'center':
+                ay = (element.offsetTop  + element.offsetHeight / 2 > element.parentNode.offsetHeight / 2) ? -def : def;
+                break;
+            //case 'mouse':
+            //    break;
+            default: break;
+        }
         return new Vector(parseFloat(ax), parseFloat(ay));
     };
 
