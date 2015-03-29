@@ -48,10 +48,20 @@
     var initMarball = function(e) {
         if(marballs === null)
             marballs = document.getElementsByTagName('marball');
-        for(var i=0; i<marballs.length; i++)
-            if(!marballs[i].classList.contains('circle'))
-                marballs[i].classList.add('circle');
+        for(var i=0; i<marballs.length; i++) {
+            var marball = marballs[i];
+            if(!marball.style.left) 
+                marball.style.left = marball.offsetLeft + 'px';
+            if(!marball.style.top) 
+                marball.style.top = marball.offsetTop + 'px';
+        }
         
+        // Add circle class after position init
+        for(var i=0; i<marballs.length; i++) {
+            var marball = marballs[i];
+            if(!marball.classList.contains('circle'))
+                marball.classList.add('circle');
+        }
     };
     document.addEventListener('init', initMarball);
     setTimeout(initMarball, 1000);

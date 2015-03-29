@@ -2,8 +2,7 @@
 /** Glass **/
 
 block, .block {
-    /* border-radius: 1em; */
-    /*background-color: #555;*/
+    position: absolute;
     display: inline-block;
     width: 4em;
     height: 4em;
@@ -14,12 +13,4 @@ block, .block {
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#444')";
 
-}
-
-
-/** Position **/
-
-.drop-container block,
-.drop-container .block {
-    position: absolute;
 }

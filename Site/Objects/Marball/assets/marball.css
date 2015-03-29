@@ -2,8 +2,7 @@
 /** Marball **/
 
 marball, .marball {
-    position: absolute;
-    text-indent: 4.2em;    
+    text-indent: 4.2em;
 /*     line-height: 32px; */
     white-space: nowrap;
     color: #225;
@@ -63,11 +62,4 @@ marball.darkblue, .marball.darkblue {
 marball.yellow, .marball.yellow {
     background: url("img/sprites.png") -20em 0;
     background-size: 32em 4em;
-}
-
-/** Position **/
-
-.drop-container marball,
-.drop-container .marball {
-    position: absolute;
 }

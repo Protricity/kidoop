@@ -74,14 +74,14 @@
 
         var v = getVelocity(circle);
         var p = getPosition(circle);
-        p = p.addVector(v);
-        setPosition(circle, p);
-
         var a = getAcceleration(circle);
         if(a.x || a.y) {
             v = v.addVector(a.multiply(totalElapsedTime / 1000));
             setVelocity(circle, v);
         }
+
+        p = p.addVector(v);
+        setPosition(circle, p);
 
         var siblings = circle.parentNode.children;
         for(var k=0; k<siblings.length; k++) {

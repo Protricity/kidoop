@@ -11,24 +11,90 @@
     <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
     <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
     <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
+    <style>
+        .level1 {
+            position: relative;
+            height: 71em;
+        }
 
-    <script src='pages/level1.js'></script>
-    <link rel='stylesheet' href='pages/level1.css' />
+        .level1 .glass-1 {
+            left: 13em;
+            top: 11em;
+            width: 36em;
+            height: 26em;
+            position: absolute;
+        }
+
+        .level1 .glass-2 {
+            left: 16em;
+            top: 47em;
+            width: 30em;
+            height: 20em;
+            position: absolute;
+        }
+
+        .level1 .block-1 { left: 14em; top: 12em; width: 12em; height: 8em; }
+        .level1 .block-2 { left: 38em; top: 12em; width: 12em; height: 8em; }
+        .level1 .block-3 { left: 14em; top: 30em; width: 12em; height: 8em; }
+        .level1 .block-4 { left: 38em; top: 30em; width: 12em; height: 8em; }
+
+        .level1 .warp-output {
+            left: 371px;
+            top: 296px;
+        }
+
+        .level1 .infobox {
+            float:right;
+        }
+
+        .level1 .win {
+            background-color: #0AF;
+            border-radius: 1em;
+        }
+    </style>
+    <script>
+        // Game Constants
+        var WIN_COUNT = 6;
+
+        // Game Logic
+        var onDrop = function(e) {
+            var output = document.getElementsByClassName('output')[0];
+            var marballs = output.getElementsByTagName('marball');
+            var win = marballs.length >= WIN_COUNT;
+            win ? output.classList.add('win')
+                    : output.classList.remove('win');
+
+            if(win) {
+                for(var i=0; i<marballs.length; i++) {
+                    marballs[i].dataset.ax = parseInt(32 - Math.random() * 64);
+                    marballs[i].dataset.ay = parseInt(32 - Math.random() * 64);
+                }
+            }
+        };
+
+        document.addEventListener('warp', onDrop);
+
+
+        var doRender = function() {
+            var renderEvent = new CustomEvent('render');
+            document.dispatchEvent(renderEvent);
+        };
+        var renderInterval = setInterval(doRender, 30);
+
+        document.addEventListener('pause', function() {
+            clearInterval(renderInterval);
+        });
+        document.addEventListener('resume', function() {
+            clearInterval(renderInterval);
+            renderInterval = setInterval(doRender, 30)
+        });
+    </script>
 </head>
 <body>
     <section class="header">
         <h1 class="header-title"></h1>
     </section>
     <section class="content program level1 drop-container" data-ax="2" data-ay="4">
-        <fieldset class="infobox inline">
-            <legend class="legend-infobox fixed">InfoBox</legend>
-            <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
-            <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
-            <br/> Choose a marball
-            <br/> Drop it into the warp
-            <br/> (under the glass)
-            <glass class="drop-container glass-1">Glass Container</glass>
-        </fieldset>
         <marball class="red small" draggable="true" data-ax="-1" data-ay="4"></marball>
         <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
         <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
@@ -46,6 +112,18 @@
         <glass class="output glass-2" data-ax="1">
             Get all 6 objects into this <b>Output Container</b> to win the round<br/>
         </glass>
+
+
+        <fieldset class="infobox inline">
+            <legend class="legend-infobox fixed">InfoBox</legend>
+            <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
+            <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
+            <br/> Choose a marball
+            <br/> Drop it into the warp
+            <br/> (under the glass)
+            <glass class="drop-container glass-1">Glass Container</glass>
+        </fieldset>
+
     </section>
 </body>
 </html>
