@@ -36,30 +36,30 @@ marball.tiny, .marball.tiny {
 
 marball.red, .marball.red {
     background: url("img/sprites.png") -0 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
 
 marball.purple, .marball.purple {
     background: url("img/sprites.png") -4em 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
 
 marball.lightblue, .marball.lightblue {
     background: url("img/sprites.png") -8em 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
 
 marball.green, .marball.green {
     background: url("img/sprites.png") -12em 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
 
 marball.darkblue, .marball.darkblue {
     background: url("img/sprites.png") -16em 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
 
 marball.yellow, .marball.yellow {
     background: url("img/sprites.png") -20em 0;
-    background-size: 32em 4em;
+    background-size: 40em 4em;
 }
