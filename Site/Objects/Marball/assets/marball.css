@@ -22,6 +22,10 @@ filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=2, OffY=2, Color='#44
 
 }
 
+marball.huge, .marball.huge {
+    font-size:48px;
+}
+
 marball.large, .marball.large {
     font-size: 24px;
 }
@@ -39,12 +43,12 @@ marball.red, .marball.red {
     background-size: 40em 4em;
 }
 
-marball.purple, .marball.purple {
+marball.orange, .marball.orange {
     background: url("img/sprites.png") -4em 0;
     background-size: 40em 4em;
 }
 
-marball.lightblue, .marball.lightblue {
+marball.yellow, .marball.yellow {
     background: url("img/sprites.png") -8em 0;
     background-size: 40em 4em;
 }
@@ -59,7 +63,27 @@ marball.darkblue, .marball.darkblue {
     background-size: 40em 4em;
 }
 
-marball.yellow, .marball.yellow {
+marball.purple, .marball.purple {
     background: url("img/sprites.png") -20em 0;
+    background-size: 40em 4em;
+}
+
+marball.lightblue, .marball.lightblue {
+    background: url("img/sprites.png") -24em 0;
+    background-size: 40em 4em;
+}
+
+marball.silver, .marball.silver{
+    background: url("img/sprites.png") -28em 0;
+    background-size: 40em 4em;
+}
+
+marball.rainbow, .marball.rainbow {
+    background: url("img/sprites.png") -32em 0;
+    background-size: 40em 4em;
+}
+
+marball.black, .marball.black {
+    background: url("img/sprites.png") -36em 0;
     background-size: 40em 4em;
 }
