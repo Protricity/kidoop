@@ -37,8 +37,10 @@
 //         dropElm.dataset.vy = 0;
     };
 
-    var lastDragObject, lastClickOffset, lastDragStart, lastDragOver;
+    var lastClickOffset = [0,0];
+    var lastDragObject, lastDragStart, lastDragOver;
     var onDrag = function(e) {
+        var x, y;
         var isDraggable = !!e.target.getAttribute('draggable');
         var isDroppable = e.target.classList.contains(CLASS_DROP_CONTAINER);
         console.log("Drag ", [e.type, e.target, isDraggable]);
@@ -50,7 +52,9 @@
                 var draggings = document.getElementsByClassName('dragging');
                 if(isDraggable) {
                     var isDragging = e.target.classList.contains('dragging');
-                    lastClickOffset = [e.offsetX, e.offsetY];
+                    x = e.offsetX==undefined ? e.layerX : e.offsetX;
+                    y = e.offsetY==undefined ? e.layerY : e.offsetY;
+                    lastClickOffset = [x, y];
                     lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
 
 
@@ -79,9 +83,11 @@
                     // Iterate backwards 
                     for(var dck=draggings.length-1; dck>=0; dck--) {
                         var dragging = draggings.item(dck);
+                        x = e.offsetX==undefined ? e.layerX : e.offsetX;
+                        y = e.offsetY==undefined ? e.layerY : e.offsetY;
                         dropAt(e.target, dragging,
-                            e.offsetX - lastClickOffset[0],
-                            e.offsetY - lastClickOffset[1],
+                            x - lastClickOffset[0],
+                            y - lastClickOffset[1],
                             lastDragStart[0] - lastClickOffset[0],
                             lastDragStart[1] - lastClickOffset[1]);
                         dragging.classList.remove('dragging');
@@ -96,7 +102,9 @@
 
             case 'dragstart':
 //                 lastDragObject = e.target;
-                lastClickOffset = [e.offsetX, e.offsetY];
+                x = e.offsetX==undefined ? e.layerX : e.offsetX;
+                y = e.offsetY==undefined ? e.layerY : e.offsetY;
+                lastClickOffset = [x || 0, y || 0];
                 lastDragStart = [e.target.offsetLeft, e.target.offsetTop];
                 if(isDraggable) {
                     e.target.classList.add('dragging');

@@ -11,16 +11,23 @@
     var STATS_CLASS = 'stats';
     var STATS_BOX_CLASS = 'stats-box';
     var STATS_DEFAULT_CLASS = 'stats-default';
+    var STATS_TARGET_CLASS = 'stats-target';
 
-    var updateStats = function() {
+    var updateStats = function(e) {
         var statsBoxes = document.getElementsByClassName(STATS_BOX_CLASS);
         if(statsBoxes.length === 0) {
-            statsBoxes = [document.createElement(STATS_BOX_CLASS)];
-            document.body.appendChild(statsBoxes[0]);
-            statsBoxes[0].style.position = 'absolute';
+            var defaultStatsBox = document.createElement('div');
+            defaultStatsBox.classList.add(STATS_BOX_CLASS);
+            defaultStatsBox.style.position = 'absolute';
+            document.body.appendChild(defaultStatsBox);
         }
 
-        var statsObjects = document.getElementsByClassName(STATS_CLASS);
+        if(statsBoxes[0].style.position === 'absolute') {
+            statsBoxes[0].style.left = e.pageX + 'px';
+            statsBoxes[0].style.top = (e.pageY + 50) + 'px';
+        }
+
+        var statsObjects = document.getElementsByClassName(STATS_TARGET_CLASS);
         if(statsObjects.length = 0)
             return;
 
@@ -66,43 +73,48 @@
 
         for(var si=0; si<statsBoxes.length; si++) {
             var statsBox = statsBoxes[si];
-            var defaultStats = statsBox.getElementsByClassName(STATS_DEFAULT_CLASS);
-            if(defaultStats.length === 0) {
-                defaultStats = [document.createElement('div')];
-                statsBox.appendChild(defaultStats[0]);
-                defaultStats[0].classList.add(STATS_DEFAULT_CLASS);
+            var defaultStats = statsBox.getElementsByClassName(STATS_DEFAULT_CLASS)[0];
+            if(!defaultStats) {
+                statsBox.appendChild(defaultStats = document.createElement('div'));
+                defaultStats.classList.add(STATS_DEFAULT_CLASS);
             }
-            defaultStats[0].innerHTML = html;
+            defaultStats.innerHTML = html;
         }
     };
 
     var onMouse = function(e) {
-        if(typeof e.target.classList === 'undefined')
-            return;
+//         if(typeof e.target.classList === 'undefined')
+//             return;
         
         var i;
         switch(e.type) {
-            case 'click':
             case 'mouseenter':
-            case 'mouseover':
-                var stats = document.getElementsByClassName(STATS_CLASS);
-                for(i=0; i<stats.length; i++)
-                    stats[i].classList.remove(STATS_CLASS);
-                e.target.classList.add(STATS_CLASS);
+            case 'mouseleave':
+            case 'mousemove':
+                var statsTarget = document.getElementsByClassName(STATS_TARGET_CLASS);
+                for(i=0; i<statsTarget.length; i++)
+                    statsTarget[i].classList.remove(STATS_TARGET_CLASS);
 
+                var stats = document.getElementsByClassName(STATS_CLASS);
                 var distTarget = [1000000,null];
-                for(i=0; i<e.target.children.length; i++) {
-                    var child = e.target.children[i];
-                    var x = e.offsetX - child.offsetTop;
-                    var y = e.offsetY - child.offsetLeft;
+                for(i=0; i<stats.length; i++) {
+                    var child = stats[i];
+                    var x = e.offsetX==undefined ? e.layerX : e.offsetX;
+                    var y = e.offsetY==undefined ? e.layerY : e.offsetY;
+                    x = x - child.offsetLeft;
+                    y = y - child.offsetTop;
                     var dist = Math.sqrt(x*x + y*y);
                     if(dist < distTarget[0]) {
                         distTarget = [dist, child];
                     }
                 }
-                console.log("Child: ", distTarget);
+                if(!distTarget[1])
+                    return false;
+                    
+                distTarget[1].classList.add(STATS_TARGET_CLASS);
+//                 console.log("Child: ", e.type, distTarget);
 
-                updateStats();
+                updateStats(e);
 
                 break;
             default:
@@ -120,8 +132,8 @@
 
     document.addEventListener('render', onRender, false);
 
-    document.addEventListener('click', onMouse, false);
-    document.addEventListener('mouseover', onMouse);
-    document.addEventListener('mouseenter', onMouse);
-//     document.addEventListener('mouseleave', onMouse, false);
+//     document.addEventListener('click', onMouse, false);
+    document.addEventListener('mousemove', onMouse, false);
+    document.addEventListener('mouseenter', onMouse, false);
+    document.addEventListener('mouseleave', onMouse, false);
 })();

@@ -57,10 +57,12 @@
         }
         
         // Add circle class after position init
-        for(var i=0; i<marballs.length; i++) {
-            var marball = marballs[i];
+        for(i=0; i<marballs.length; i++) {
+            marball = marballs[i];
             if(!marball.classList.contains('circle'))
                 marball.classList.add('circle');
+            if(!marball.classList.contains('stats'))
+                marball.classList.add('stats');
         }
     };
     document.addEventListener('init', initMarball);

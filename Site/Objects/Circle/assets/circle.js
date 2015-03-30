@@ -147,13 +147,13 @@
         var pos = getPosition(element);
         element.style.left = Math.round(pos.x * 10) / 10 + 'px';
         element.style.top = Math.round(pos.y * 10) / 10 + 'px';
-        var stats = element.getElementsByClassName('stats-circle');
-        if(stats.length === 0) {
-            stats[0] = document.createElement('ul');
-            element.appendChild(stats[0]);
-            stats[0].classList.add('stats');
-            stats[0].classList.add('stats-circle');
-        }
+        //var stats = element.getElementsByClassName('stats-circle')[0];
+        //if(!stats) {
+        //    stats = document.createElement('ul');
+        //    element.appendChild(stats);
+        //    stats.classList.add('stats');
+        //    stats.classList.add('stats-circle');
+        //}
 //             var html = "<li><span class='title'>" + element.nodeName + ' ' + element.getAttribute('class') + "</span></li>"; // element.getAttribute('class')
 //                 + "<li><span class='stat'>x:</span> " + Math.round(element.pos.x) + "</li>"
 //                 + "<li><span class='stat'>y:</span> " + Math.round(element.pos.y) + "</li>";
