@@ -118,8 +118,8 @@
                     var x = e.pageX==undefined ? e.layerX : e.pageX;
                     var y = e.pageY==undefined ? e.layerY : e.pageY;
                     var offset = getOffset(child);
-                    x = x - offset.left;
-                    y = y - offset.top;
+                    x = x - offset.left + child.offsetWidth / 2;
+                    y = y - offset.top + child.offsetWidth / 2;
                     var dist = Math.sqrt(x*x + y*y);
                     if(dist < distTarget[0]) {
                         distTarget = [dist, child];
