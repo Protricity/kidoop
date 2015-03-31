@@ -3,6 +3,10 @@
  * User: Ari
  */
 (function(){
+    if(typeof document.warp_js !== 'undefined')
+        return;
+    document.warp_js = true;
+
     var WARP_ITEM_CLASS = 'warp-item';
 
     var onCollision = function(e) {
@@ -39,9 +43,8 @@
         target.style.top = 0;
     };
 
-    if(typeof document.warp_js !== 'undefined')
-        return;
-
-    document.warp_js = true;
     document.addEventListener('collision', onCollision, false);
+
+    //document.addEventListener('stats', statsElement);
+
 })();

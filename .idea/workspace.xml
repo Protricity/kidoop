@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery001.html" afterPath="$PROJECT_DIR$/pages/artillery001.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" afterPath="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" afterPath="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/level1.html" afterPath="$PROJECT_DIR$/pages/level1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js" afterPath="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.css" afterPath="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" afterPath="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" afterPath="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="circle.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="circle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.4" vertical-offset="2392" max-vertical-offset="9027">
-              <caret line="156" column="11" selection-start-line="156" selection-start-column="11" selection-end-line="156" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.42908654" vertical-offset="1632" max-vertical-offset="9401">
+              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -98,8 +94,18 @@
       <file leaf-file-name="stats.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="46.24" vertical-offset="1326" max-vertical-offset="2448">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="19" />
+            <state vertical-scroll-proportion="-28.56" vertical-offset="1326" max-vertical-offset="2516">
+              <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DHTML.js" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="19741" max-vertical-offset="76500">
+              <caret line="1178" column="17" selection-start-line="1178" selection-start-column="17" selection-end-line="1178" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -108,8 +114,8 @@
       <file leaf-file-name="warp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="884">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="935">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,11 +144,9 @@
       <file leaf-file-name="marball.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="850">
-              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-              <folding>
-                <element signature="e#118#1104#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="707" max-vertical-offset="1564">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,21 +161,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.867725" vertical-offset="1694" max-vertical-offset="2261">
+            <state vertical-scroll-proportion="62.53846" vertical-offset="1694" max-vertical-offset="2261">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatsAttributes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Site/Traits/Stats/StatsAttributes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="612">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -217,7 +211,6 @@
         <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.html" />
         <option value="$PROJECT_DIR$/Site/Games/OOPBall/pages/level1.js" />
         <option value="$PROJECT_DIR$/pages/level1.js" />
-        <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" />
         <option value="$PROJECT_DIR$/Site/Config.php" />
         <option value="$PROJECT_DIR$/Site/Template/DefaultTemplate.php" />
         <option value="$PROJECT_DIR$/CPath/Render/HTML/Template/assets/default-template.css" />
@@ -234,13 +227,14 @@
         <option value="$PROJECT_DIR$/Site/Objects/Block/assets/block.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.css" />
         <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.css" />
-        <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js" />
-        <option value="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" />
         <option value="$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js" />
-        <option value="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" />
         <option value="$PROJECT_DIR$/pages/level1.html" />
         <option value="$PROJECT_DIR$/pages/artillery001.html" />
         <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js" />
+        <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js" />
+        <option value="$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js" />
+        <option value="$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js" />
       </list>
     </option>
   </component>
@@ -722,7 +716,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29898074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29898074" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26354167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -780,13 +774,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Glass/GlassElement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="255" max-vertical-offset="1207">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPath/Render/HTML/Element/HTMLElement.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.038462" vertical-offset="122" max-vertical-offset="5423">
@@ -1094,44 +1081,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.4" vertical-offset="2392" max-vertical-offset="9027">
-          <caret line="156" column="11" selection-start-line="156" selection-start-column="11" selection-end-line="156" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Site/Traits/Draggable/assets/draggable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.04" vertical-offset="1020" max-vertical-offset="2720">
           <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="257" max-vertical-offset="850">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-          <folding>
-            <element signature="e#118#1104#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="46.24" vertical-offset="1326" max-vertical-offset="2448">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="884">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1156,8 +1109,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.867725" vertical-offset="1694" max-vertical-offset="2261">
+        <state vertical-scroll-proportion="62.53846" vertical-offset="1694" max-vertical-offset="2261">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Objects/Warp/assets/warp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="935">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="707" max-vertical-offset="1564">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19741" max-vertical-offset="76500">
+          <caret line="1178" column="17" selection-start-line="1178" selection-start-column="17" selection-end-line="1178" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Traits/Stats/assets/stats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.56" vertical-offset="1326" max-vertical-offset="2516">
+          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Site/Objects/Circle/assets/circle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42908654" vertical-offset="1632" max-vertical-offset="9401">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
           <folding />
         </state>
       </provider>

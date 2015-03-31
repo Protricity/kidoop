@@ -22,13 +22,13 @@
             document.body.appendChild(defaultStatsBox);
         }
 
-        if(statsBoxes[0].style.position === 'absolute') {
+        if(e && statsBoxes[0].style.position === 'absolute') {
             statsBoxes[0].style.left = e.pageX + 'px';
             statsBoxes[0].style.top = (e.pageY + 50) + 'px';
         }
 
         var statsObjects = document.getElementsByClassName(STATS_TARGET_CLASS);
-        if(statsObjects.length = 0)
+        if(statsObjects.length == 0)
             return;
 
         var object = statsObjects[0];
@@ -78,15 +78,19 @@
                 statsBox.appendChild(defaultStats = document.createElement('div'));
                 defaultStats.classList.add(STATS_DEFAULT_CLASS);
             }
-            defaultStats.innerHTML = html;
+            if(defaultStats.innerHTML !== html) {
+                defaultStats.innerHTML = html;
+            }
         }
     };
+    setInterval(updateStats, 100);
 
     var onMouse = function(e) {
 //         if(typeof e.target.classList === 'undefined')
 //             return;
         
         var i;
+        var updateInterval;
         switch(e.type) {
             case 'mouseenter':
             case 'mouseleave':

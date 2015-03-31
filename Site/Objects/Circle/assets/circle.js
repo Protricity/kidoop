@@ -100,6 +100,28 @@
 
     document.addEventListener('render', renderElement);
 
+    var statsElement = function (e, circle) {
+        circle = circle || e.target || this;
+        if(!isCircle(circle))
+            return;
+        var pos = getPosition(circle);
+        var v = getVelocity(circle);
+        var a = getAcceleration(circle);
+        e.detail.stats.circle = {
+            x: pos.x,
+            y: pos.y,
+            vx: v.x,
+            vy: v.y,
+            ax: a.x,
+            ay: a.y,
+            radius: getRadius(circle),
+            mass: getMass(circle)
+        }
+    };
+
+    document.addEventListener('stats', statsElement, true);
+
+
     var initElement = function (e, circle) {
         circle = circle || e.target || this;
         if(!isCircle(circle))
