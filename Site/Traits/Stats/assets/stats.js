@@ -103,8 +103,8 @@
                 var distTarget = [1000000,null];
                 for(i=0; i<stats.length; i++) {
                     var child = stats[i];
-                    var x = e.offsetX==undefined ? e.layerX : e.offsetX;
-                    var y = e.offsetY==undefined ? e.layerY : e.offsetY;
+                    var x = e.pageX==undefined ? e.layerX : e.pageX;
+                    var y = e.pageY==undefined ? e.layerY : e.pageY;
                     x = x - child.offsetLeft;
                     y = y - child.offsetTop;
                     var dist = Math.sqrt(x*x + y*y);
