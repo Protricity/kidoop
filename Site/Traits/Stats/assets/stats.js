@@ -13,6 +13,18 @@
     var STATS_DEFAULT_CLASS = 'stats-default';
     var STATS_TARGET_CLASS = 'stats-target';
 
+    function getOffset( el ) {
+        var _x = 0;
+        var _y = 0;
+        while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+            _x += el.offsetLeft - el.scrollLeft;
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+        return { top: _y, left: _x };
+    }
+    var x = getOffset( document.getElementById('yourElId') ).left;
+
     var updateStats = function(e) {
         var statsBoxes = document.getElementsByClassName(STATS_BOX_CLASS);
         if(statsBoxes.length === 0) {
@@ -105,8 +117,9 @@
                     var child = stats[i];
                     var x = e.pageX==undefined ? e.layerX : e.pageX;
                     var y = e.pageY==undefined ? e.layerY : e.pageY;
-                    x = x - child.offsetLeft;
-                    y = y - child.offsetTop;
+                    var offset = getOffset(child);
+                    x = x - offset.left;
+                    y = y - offset.top;
                     var dist = Math.sqrt(x*x + y*y);
                     if(dist < distTarget[0]) {
                         distTarget = [dist, child];
