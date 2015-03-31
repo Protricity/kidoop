@@ -9,7 +9,7 @@ glass, .glass {
     width: 400px;
     height: 400px;
     background-size: cover;
-    background: url("img/glass.png") round;
+    background-image: url("img/glass.png");
 
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));

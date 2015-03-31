@@ -1,5 +1,8 @@
 
 /** Stats **/
+.stats-target {
+    border: double 4px #AFF;
+}
 
 .stats-box {
     padding: 0.4em;

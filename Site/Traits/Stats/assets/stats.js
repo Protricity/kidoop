@@ -37,6 +37,7 @@
         if(e && statsBoxes[0].style.position === 'absolute') {
             statsBoxes[0].style.left = e.pageX + 'px';
             statsBoxes[0].style.top = (e.pageY + 50) + 'px';
+//             draw line here
         }
 
         var statsObjects = document.getElementsByClassName(STATS_TARGET_CLASS);
@@ -102,7 +103,6 @@
 //             return;
         
         var i;
-        var updateInterval;
         switch(e.type) {
             case 'mouseenter':
             case 'mouseleave':
@@ -117,9 +117,11 @@
                     var child = stats[i];
                     var x = e.pageX==undefined ? e.layerX : e.pageX;
                     var y = e.pageY==undefined ? e.layerY : e.pageY;
+                    x -= (window.pageXOffset || document.documentElement.scrollLeft)  - (document.documentElement.clientLeft || 0);
+                    y -= (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
                     var offset = getOffset(child);
-                    x = x - offset.left + child.offsetWidth / 2;
-                    y = y - offset.top + child.offsetWidth / 2;
+                    x = x - offset.left - child.offsetWidth / 2;
+                    y = y - offset.top - child.offsetWidth / 2;
                     var dist = Math.sqrt(x*x + y*y);
                     if(dist < distTarget[0]) {
                         distTarget = [dist, child];
@@ -137,7 +139,6 @@
             default:
                 throw new Error("Unknown: " + e.type);
         }
-//         console.log(stats);
     };
 
     var onRender = function(e) {
