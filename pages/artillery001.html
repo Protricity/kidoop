@@ -43,8 +43,10 @@
             top: 296px;
         }
 
-        .level1 .infobox {
+        .level1 .fsInfo,
+        .level1 .fsStats{
             float:right;
+            clear:right;
         }
 
         .level1 .win {
@@ -114,7 +116,7 @@
         </glass>
 
 
-        <fieldset class="infobox inline">
+        <fieldset class="fsInfo inline">
             <legend class="legend-infobox fixed">InfoBox</legend>
             <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
             <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
@@ -124,6 +126,10 @@
             <glass class="drop-container glass-1">Glass Container</glass>
         </fieldset>
 
+        <fieldset class="fsStats inline" style="float: right">
+            <legend class="legend-statsbox fixed">Stats Box</legend>
+            <div class="stats-box"></div>
+        </fieldset>
     </section>
 </body>
 </html>

@@ -12,15 +12,29 @@
     /* float: left; */
     /* display: none; */
     /* pointer-events: none; */
+    background-color: darkslategray;
+    border-radius: 1em;
+    color: #DDD;
+    /* opacity: 0.9; */
 }
 
+.stats-box ul {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+}
 
 .stats-box li {
 }
 
 .stats-box .title {
     font-weight: bold;
-    color: #000;
+    color: #FFF;
+}
+
+.stats-box .classes {
+    font-weight: bold;
+    color: #888;
 }
 
 .stats-box .stat {

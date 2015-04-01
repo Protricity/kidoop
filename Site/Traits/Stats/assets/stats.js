@@ -23,8 +23,8 @@
         }
         return { top: _y, left: _x };
     }
-    var x = getOffset( document.getElementById('yourElId') ).left;
 
+    var oldXY = [0,0];
     var updateStats = function(e) {
         var statsBoxes = document.getElementsByClassName(STATS_BOX_CLASS);
         if(statsBoxes.length === 0) {
@@ -35,9 +35,10 @@
         }
 
         if(e && statsBoxes[0].style.position === 'absolute') {
-            statsBoxes[0].style.left = e.pageX + 'px';
-            statsBoxes[0].style.top = (e.pageY + 50) + 'px';
-//             draw line here
+            statsBoxes[0].style.left = (Math.round(e.pageX / 100) * 100) + 'px';
+            statsBoxes[0].style.top = (Math.round(e.pageY / 100) * 100 + 100) + 'px';
+            oldXY = [e.pageX, e.pageY];
+            //             draw line here
         }
 
         var statsObjects = document.getElementsByClassName(STATS_TARGET_CLASS);
@@ -56,7 +57,8 @@
         });
 
         object.dispatchEvent(statsEvent);
-        var html = "<li>" + object.nodeName + ' ' + object.getAttribute('class') + "</li>";
+        var html = "<li class='title'>" + object.nodeName + "</li>";
+        html += "<li class='classes'>" + object.getAttribute('class') + "</li>";
 
         for(var stat in statsEvent.detail.stats) {
             if(statsEvent.detail.stats.hasOwnProperty(stat)) {
@@ -88,7 +90,7 @@
             var statsBox = statsBoxes[si];
             var defaultStats = statsBox.getElementsByClassName(STATS_DEFAULT_CLASS)[0];
             if(!defaultStats) {
-                statsBox.appendChild(defaultStats = document.createElement('div'));
+                statsBox.appendChild(defaultStats = document.createElement('ul'));
                 defaultStats.classList.add(STATS_DEFAULT_CLASS);
             }
             if(defaultStats.innerHTML !== html) {
@@ -96,7 +98,7 @@
             }
         }
     };
-    setInterval(updateStats, 100);
+    setInterval(updateStats, 200);
 
     var onMouse = function(e) {
 //         if(typeof e.target.classList === 'undefined')
