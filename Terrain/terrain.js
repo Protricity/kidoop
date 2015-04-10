@@ -14,19 +14,28 @@ function getCollisionElement(x, y) {
     return collisionElement;
 }
 
-var canvasCache = null;
-var canvasData = null;
-
-var testCache = [];
+//var testCache = [];
+var heightCache = [];
+//var minHeightCache = [];
+//var maxHeightCache = [];
 function testCollision(x, y) {
-
-    var i = x + y * (svgDoc.offsetWidth || svgDoc.width.baseVal.value);
-    if(typeof testCache[i] === 'boolean')
-       return testCache[i];
+    if(heightCache[x]) {
+        if (y <= heightCache[x][0])
+            return false;
+        if (y >= heightCache[x][1])
+            return true;
+    } else {
+        heightCache[x] = [0, svgDoc.offsetHeight || svgDoc.height.baseVal.value];
+    }
 
     var test = !!getCollisionElement(x, y);
-    //console.log("Test: ", [x, y, test]);
-    testCache[i] = test;
+    if(test) {
+        heightCache[x][1] = y;
+    } else {
+        heightCache[x][0] = y;
+    }
+
+    console.log("Test: ", [x, y, test]);
     return test;
 }
 
