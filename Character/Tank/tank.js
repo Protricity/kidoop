@@ -113,7 +113,7 @@ var getCollisionVector = function(x, y, test) {
     }
     //if(!vx && !vy)
     //    vy = -1;
-    console.log("Vector: ", vx, vy, d);
+//     console.log("Vector: ", vx, vy, d);
     return {vx:vx, vy:vy};
 };
 
