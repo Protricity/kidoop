@@ -1,0 +1,108 @@
+/**
+ * Created by ari on 3/27/2015.
+ */
+(function() {
+
+    var supportFiles = {
+        'marball': [
+            'Objects/Marball/assets/marball.js',
+            'Objects/Marball/assets/marball.css'
+        ],
+        'warp': [
+            'Objects/Warp/assets/warp.js',
+            'Objects/Warp/assets/warp.css'
+        ],
+        'block': [
+            'Objects/Block/assets/block.js',
+            'Objects/Block/assets/block.css'
+        ],
+        'glass': [
+            'Objects/Glass/assets/glass.js',
+            'Objects/Glass/assets/glass.css'
+        ],
+
+        'tank': [
+            'Character/Tank/tank.js',
+            'Character/Tank/tank.css'
+        ]
+    };
+
+
+    // Include
+    //var ucfirst = function(string) {
+    //    return string.charAt(0).toUpperCase() + string.slice(1);
+    //};
+
+    var include = function(src) {
+        if(/\.js$/i.test(src)) {
+            var scripts = document.head.getElementsByTagName('script');
+            for(var si=0; si<scripts.length; si++)
+                if(scripts[si].getAttribute('src') == src)
+                    return false;
+
+            var script = document.createElement('script');
+            script.setAttribute('src', src);
+            document.head.appendChild(script);
+            return true;
+
+        } else if (/\.css$/i.test(src)) {
+            var links = document.head.getElementsByTagName('link');
+            for(var li=0; li<links.length; li++)
+                if(links[li].getAttribute('href') == src)
+                    return false;
+
+            var link = document.createElement('link');
+            link.setAttribute('rel', 'stylesheet');
+            link.setAttribute('href', src);
+            document.head.appendChild(link);
+            return true;
+        } else {
+            throw new Error("Invalid SRC: " + src);
+        }
+    };
+
+    var loadedTags = [];
+    var loadElement = function(element) {
+        var tagName = element.tagName.toLowerCase();
+//         console.log('Tag: ', tagName);
+        if(typeof supportFiles[tagName] === 'object') {
+            if(loadedTags.indexOf(tagName) === -1) {
+                for(var j=0; j<supportFiles[tagName].length; j++)
+                    include(supportFiles[tagName][j]);
+                loadedTags.push(tagName);
+            }
+        }
+        for(var i=0; i<element.children.length; i++) {
+            loadElement(element.children[i]);
+        }
+    };
+
+    var onReady = function() {
+        loadElement(document.body);
+
+        var objects = document.getElementsByTagName('object');
+        for(var i=0; i<objects.length; i++) {
+            var object = objects[i];
+//             object.addEventListener('load', function(e) {
+//                 var svgDoc = this.contentDocument.getElementsByTagName('svg')[0]; //get the inner DOM of alpha.svg
+//                 console.log([e, svgDoc]);
+//             })
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', onReady);
+
+
+
+
+
+    //it's important to add an load event listener to the object, as it will load the svg doc asynchronously
+    document.addEventListener("load",function(e){
+        console.log(e);
+        var svgDoc = a.contentDocument; //get the inner DOM of alpha.svg
+        var delta = svgDoc.getElementById("delta"); //get the inner element by id
+        delta.addEventListener("mousedown",function(){alert('hello world!')},false);    //add behaviour
+    },false);
+
+
+}());

@@ -33,14 +33,14 @@
         }
     };
 
-    include('Site/Traits/Draggable/assets/draggable.js');
-    include('Site/Traits/Draggable/assets/draggable.css');
+    include('Traits/Draggable/assets/draggable.js');
+    include('Traits/Draggable/assets/draggable.css');
 
-    include('Site/Objects/Circle/assets/circle.js');
-    include('Site/Objects/Circle/assets/circle.css');
+    include('Objects/Circle/assets/circle.js');
+    include('Objects/Circle/assets/circle.css');
 
-    include('Site/Traits/Stats/assets/stats.js');
-    include('Site/Traits/Stats/assets/stats.css');
+    include('Traits/Stats/assets/stats.js');
+    include('Traits/Stats/assets/stats.css');
 
     // Methods
 

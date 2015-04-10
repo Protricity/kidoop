@@ -6,82 +6,52 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="title" content="Artillery">
 
-    <script src='Site/Objects/assets/loader.js'></script>
+    <!--<script src='Objects/assets/loader.js'></script>-->
 
-    <script src='CPath/Render/HTML/Template/assets/default-template.js'></script>
-    <link rel='stylesheet' href='CPath/Render/HTML/Template/assets/default-template.css' />
     <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
     <style>
-        .level1 {
+        .artillery001 {
             position: relative;
-            height: 71em;
+            height: 51em;
         }
 
-        .level1 .glass-1 {
-            left: 13em;
-            top: 11em;
-            width: 36em;
-            height: 26em;
+        .terrain {
             position: absolute;
+            bottom: 0;
+            /*left: 150px;*/
         }
 
-        .level1 .glass-2 {
-            left: 16em;
-            top: 47em;
-            width: 30em;
-            height: 20em;
+        .tank {
+            left: 350px;
             position: absolute;
-        }
-
-        .level1 .block-1 { left: 14em; top: 12em; width: 12em; height: 8em; }
-        .level1 .block-2 { left: 38em; top: 12em; width: 12em; height: 8em; }
-        .level1 .block-3 { left: 14em; top: 30em; width: 12em; height: 8em; }
-        .level1 .block-4 { left: 38em; top: 30em; width: 12em; height: 8em; }
-
-        .level1 .warp-output {
-            left: 371px;
-            top: 296px;
-        }
-
-        .level1 .fsInfo,
-        .level1 .fsStats{
-            float:right;
-            clear:right;
-        }
-
-        .level1 .win {
-            background-color: #0AF;
-            border-radius: 1em;
         }
     </style>
     <script>
-        // Game Constants
-        var WIN_COUNT = 6;
 
-        // Game Logic
-        var onDrop = function(e) {
-            var output = document.getElementsByClassName('output')[0];
-            var marballs = output.getElementsByTagName('marball');
-            var win = marballs.length >= WIN_COUNT;
-            win ? output.classList.add('win')
-                    : output.classList.remove('win');
-
-            if(win) {
-                for(var i=0; i<marballs.length; i++) {
-                    marballs[i].dataset.ax = 'center'; // parseInt(32 - Math.random() * 64);
-                    marballs[i].dataset.ay = 'center'; // parseInt(32 - Math.random() * 64);
-                }
-            }
-        };
-
-        document.addEventListener('warp', onDrop);
-
+        var objectTags = document.getElementsByTagName('object');
 
         var doRender = function() {
-            var renderEvent = new CustomEvent('render');
-            document.dispatchEvent(renderEvent);
+            var renderEvent = new CustomEvent('render', {
+                 detail: {
+//                     parentDocument: document
+                 }
+            });
+//            document.dispatchEvent(renderEvent);
+            for(var i=0; i<objectTags.length; i++) {
+                var svgDoc = objectTags[i].contentDocument;
+                if(svgDoc === null)
+                    continue;
+                renderEvent.detail.parentElement = objectTags[i];
+                svgDoc.dispatchEvent(renderEvent);
+            }
         };
         var renderInterval = setInterval(doRender, 30);
+
+//        for(var i=0; i<objectTags.length; i++) {
+//            objectTags[i].addEventListener('load', function(e) {
+//
+//            })  ;
+//        }
 
         document.addEventListener('pause', function() {
             clearInterval(renderInterval);
@@ -96,40 +66,17 @@
     <section class="header">
         <h1 class="header-title"></h1>
     </section>
-    <section class="content program level1 drop-container" data-ax="2" data-ay="4">
-        <marball class="darkblue large" draggable="true" data-ax="-1" data-ay="-4"></marball>
-        <marball class="yellow" draggable="true" data-ax="-4" data-ay="1"></marball>
-        <marball class="red small" draggable="true" data-ax="-1" data-ay="4"></marball>
-        <marball class="lightblue" draggable="true" data-ax="center" data-ay="-4"></marball>
-        <marball class="green" draggable="true" data-ax="4" data-ay="-1"></marball>
-        <marball class="purple tiny" draggable="true" data-ax="center" data-ay="center"></marball>
+    <section class="content program artillery001">
+        <!--<object class="tank" type="image/svg+xml" data="/kidoop/Character/Tank/tank.svg"></object>-->
+        <!--<object class="tank" type="image/svg+xml" data="/kidoop/Character/Tank/tank.svg"></object>-->
+        <object class="tank stats" type="image/svg+xml" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="tank stats" type="image/svg+xml" style="left: 400px" data-va="4" data-a="50" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="tank stats" type="image/svg+xml" style="left: 450px" data-va="-4" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="tank stats" type="image/svg+xml" style="left: 500px" data-va="-8" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="tank stats" type="image/svg+xml" style="left: 600px" data-va="16" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="tank stats" type="image/svg+xml" style="left: 700px" data-va="64" data="/kidoop/Character/Tank/tank1.svg"></object>
+        <object class="terrain stats" type="image/svg+xml" data="/kidoop/Terrain/hill1.svg"></object>
 
-        <warp data-target="output" class="warp-output large"></warp>
-
-        <block class="block-1"></block>
-        <block class="block-2"></block>
-        <block class="block-3"></block>
-        <block class="block-4"></block>
-
-        <glass class="output glass-2" data-ax="1">
-            Get all 6 objects into this <b>Output Container</b> to win the round<br/>
-        </glass>
-
-
-        <fieldset class="fsInfo inline">
-            <legend class="legend-infobox fixed">InfoBox</legend>
-            <button onclick="document.dispatchEvent(new CustomEvent('pause')); return false;">Pause</button>
-            <button onclick="document.dispatchEvent(new CustomEvent('resume')); return false;">Resume</button>
-            <br/> Choose a marball
-            <br/> Drop it into the warp
-            <br/> (under the glass)
-            <glass class="drop-container glass-1">Glass Container</glass>
-        </fieldset>
-
-        <fieldset class="fsStats inline" style="float: right">
-            <legend class="legend-statsbox fixed">Stats Box</legend>
-            <div class="stats-box"></div>
-        </fieldset>
     </section>
 </body>
 </html>
