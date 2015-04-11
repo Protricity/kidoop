@@ -19,6 +19,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            pointer-events: none;
         }
 
         .hill2 {
@@ -26,44 +27,75 @@
         }
 
         .tank {
-            left: 350px;
+            /*left: 350px;*/
             position: absolute;
+            width: 4em;
+        }
+
+        .projectile {
+            position: absolute;
+            left: 43em;
+            bottom: 17em;
+            transform: rotate(50deg);
+            /*-webkit-filter: drop-shadow(12px 12px 2px rgba(0,0,0,0.5));*/
+            /*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));*/
+        }
+
+        .tank1 {
+            left: 2em;
+            bottom: 30em;
+            transform: rotate(56deg);
+        }
+
+        .tank2 {
+            left: 16em;
+            bottom: 7.5em;
+            transform: rotate(1deg);
+        }
+
+        .tank3 {
+            left: 60em;
+            bottom: 3em;
+            transform: rotate(11deg);
+        }
+
+        .tank4 {
+            left: 74em;
+            bottom: 35em;
+            transform: rotate(-18deg);
+        }
+
+        .usertank {
+            left: 533px;
+            bottom: 179px;
+            transform: rotate(51deg);
+            font-size: 20px;
         }
     </style>
     <script>
 
-        var objectTags = document.getElementsByTagName('object');
+        var renderList = document.getElementsByClassName('projectile');
 
         var doRender = function() {
-            var renderEvent = new CustomEvent('render', {
-                 detail: {
-//                     parentDocument: document
-                 }
-            });
-//            document.dispatchEvent(renderEvent);
-            for(var i=0; i<objectTags.length; i++) {
-                var svgDoc = objectTags[i].contentDocument;
-                if(svgDoc === null)
-                    continue;
-                renderEvent.detail.parentElement = objectTags[i];
-                svgDoc.dispatchEvent(renderEvent);
+            var renderEvent = new CustomEvent('render');
+            for(var i=0; i<renderList.length; i++) {
+                renderList[i].dispatchEvent(renderEvent);
             }
         };
         var renderInterval = setInterval(doRender, 30);
 
-//        for(var i=0; i<objectTags.length; i++) {
-//            objectTags[i].addEventListener('load', function(e) {
-//
-//            })  ;
-//        }
-
-        document.addEventListener('pause', function() {
+        var pause = function() {
             clearInterval(renderInterval);
-        });
-        document.addEventListener('resume', function() {
+        };
+        var resume = function() {
             clearInterval(renderInterval);
             renderInterval = setInterval(doRender, 30)
-        });
+        };
+
+        document.addEventListener('click', function(e) {
+            var usertank = document.getElementsByClassName('usertank')[0];
+            usertank.dispatchEvent(new CustomEvent('fire'));
+        }, true);
     </script>
 </head>
 <body>
@@ -71,17 +103,18 @@
         <h1 class="header-title"></h1>
     </section>
     <section class="content program artillery001">
-        <!--<object class="tank" type="image/svg+xml" data="Character/Tank/tank.svg"></object>-->
-        <!--<object class="tank" type="image/svg+xml" data="Character/Tank/tank.svg"></object>-->
-        <object class="tank stats" type="image/svg+xml" data="Character/Tank/tank1.svg"></object>
-        <object class="tank stats" type="image/svg+xml" style="left: 400px" data-ax="-10" data-va="4" data-a="50" data="Character/Tank/tank1.svg"></object>
-        <object class="tank stats" type="image/svg+xml" style="left: 450px" data-ax="10" data-va="-4" data="Character/Tank/tank1.svg"></object>
-        <object class="tank stats" type="image/svg+xml" style="left: 500px" data-va="-8" data="Character/Tank/tank1.svg"></object>
-        <object class="tank stats" type="image/svg+xml" style="left: 600px" data-va="16" data="Character/Tank/tank1.svg"></object>
-        <object class="tank stats" type="image/svg+xml" style="left: 700px" data-va="64" data="Character/Tank/tank1.svg"></object>
 
-        <object class="terrain hill1 stats" type="image/svg+xml" data="Terrain/art-hill.svg"></object>
+        <object class="terrain hill1 stats" type="image/svg+xml" data="pages/artillery001.svg"></object>
 
+        <object data="Character/Tank/tank.svg#left" class="tank usertank stats" type="image/svg+xml"></object>
+
+        <object data="Character/Tank/tank.svg#right" class="tank tank1 stats" type="image/svg+xml"></object>
+        <object data="Character/Tank/tank.svg#right" class="tank tank2 stats" type="image/svg+xml"></object>
+
+        <object data="Character/Tank/tank.svg#left" class="tank tank3 stats" type="image/svg+xml"></object>
+        <object data="Character/Tank/tank.svg#left" class="tank tank4 stats" type="image/svg+xml"></object>
+
+        <object data="Character/Tank/Projectile/projectile.svg" class="projectile stats" data-vy="-20" type="image/svg+xml"></object>
     </section>
 </body>
 </html>

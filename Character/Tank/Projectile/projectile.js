@@ -7,7 +7,7 @@ var DEFAULT_GRAVITY = 5;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 //var svgDoc = document.getElementsByTagName('svg')[0];
-var tankElm = (function() {
+var projectileElm = (function() {
     var objects = window.top.document.getElementsByTagName('object');
     for(var i=0; i<objects.length; i++) {
         if(objects[i].contentDocument === document) {
@@ -16,14 +16,13 @@ var tankElm = (function() {
     }
     throw new Error("Container element not found for ", document);
 })();
-tankElm.addEventListener('render', onRender, false);
-tankElm.addEventListener('stats', onStats, true);
-tankElm.addEventListener('fire', onFire, true);
-tankElm.addEventListener('collision', onCollision, true);
+projectileElm.addEventListener('render', onRender, false);
+projectileElm.addEventListener('stats', onStats, true);
+projectileElm.addEventListener('collision', onCollision, true);
 
 var testCache = [];
 function isCollisionPoint(x, y) {
-    var i = x + y * tankElm.offsetWidth;
+    var i = x + y * projectileElm.offsetWidth;
     if(typeof testCache[i] === 'boolean')
         return testCache[i];
 
@@ -37,56 +36,50 @@ function onCollision(e) {
     e.detail.isCollisionPoint = isCollisionPoint;
 }
 
-function onFire(e) {
-    var angle = getAngle(e.target);
-    console.log(e, angle);
-    // <object data="Character/Tank/Projectile/projectile.svg" class="projectile stats" data-vy="-20" type="image/svg+xml"></object>
-}
-
 function onRender(e) {
     var parentElement = (e.detail || {}).parentElement;
     if(!parentElement)
         return;
-    if(!tankElm)
-        tankElm = parentElement;
+    if(!projectileElm)
+        projectileElm = parentElement;
     //var rect = svgDoc.getBBox();
-    //console.log(tankElm, rect);
+    //console.log(projectileElm, rect);
 
     var time = new Date();
-    var totalElapsedTime = time - (tankElm.lastRender || new Date());
+    var totalElapsedTime = time - (projectileElm.lastRender || new Date());
     if(totalElapsedTime > RENDER_INTERVAL || totalElapsedTime < 0)
         totalElapsedTime = RENDER_INTERVAL;
-    tankElm.lastRender = time;
+    projectileElm.lastRender = time;
 
-    var v = getVelocity(tankElm);
-    var p = getPosition(tankElm);
-    var a = getAcceleration(tankElm);
+    var v = getVelocity(projectileElm);
+    var p = getPosition(projectileElm);
+    var a = getAcceleration(projectileElm);
     if(a.ax || a.ay) {
         v.vx = (v.vx || 0) + a.ax * totalElapsedTime / 1000;
         v.vy = (v.vy || 0) + a.ay * totalElapsedTime / 1000;
-        setVelocity(tankElm, v.vx, v.vy);
+        setVelocity(projectileElm, v.vx, v.vy);
     }
 
     p.x += v.vx;
     p.y += v.vy;
-    setPosition(tankElm, p.x, p.y);
+    setPosition(projectileElm, p.x, p.y);
 
-    var siblings = tankElm.parentNode.children;
+    var siblings = projectileElm.parentNode.children;
     for(var k=0; k<siblings.length; k++) {
         var sibling = siblings[k];
-        testCollision(tankElm, sibling);
+        testCollision(projectileElm, sibling);
     }
-    testRectContainment(tankElm, tankElm.parentNode);
+    testRectContainment(projectileElm, projectileElm.parentNode);
 
-    p = getPosition(tankElm);
-    setPosition(tankElm, p.x, p.y);
-    //render(tankElm);
+    p = getPosition(projectileElm);
+    setPosition(projectileElm, p.x, p.y);
+    //render(projectileElm);
 
-    var angleVelocity = getAngleVelocity(tankElm);
+    var angleVelocity = getAngleVelocity(projectileElm);
     if(angleVelocity) {
-        var angle = getAngle(tankElm);
+        var angle = getAngle(projectileElm);
         angle += angleVelocity;
-        setAngle(tankElm, angle);
+        setAngle(projectileElm, angle);
     }
 }
 

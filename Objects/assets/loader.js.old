@@ -22,7 +22,7 @@
         ],
 
         'tank': [
-            'Character/Tank/tank.js',
+            'Character/Tank/projectile.js',
             'Character/Tank/tank.css'
         ]
     };

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12"
+   height="10"
+   viewBox="0 0 12 10"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="projectile.svg">
+  <defs
+     id="projectile">
+    <linearGradient
+       id="linearGradient5634"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5636" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop5638" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5634"
+       id="linearGradient5640"
+       x1="4.864502e-008"
+       y1="22.5"
+       x2="1.4388133"
+       y2="28"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2,0,0,2,-9.7290038e-8,-40)" />
+  </defs>
+  <script
+     xlink:href="../../../Traits/Physics/physics-methods.js"
+     id="script5678" />
+  <script
+     xlink:href="projectile.js"
+     id="script5680" />
+  <g
+     inkscape:label="tank"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:url(#linearGradient5640);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.08744431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 10.956278,1.0437218 0,7.912556 c -13.2167411,0 -13.2167411,-7.912556 0,-7.912556 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
