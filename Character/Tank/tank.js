@@ -3,7 +3,7 @@
  * User: Ari
  */
 var RENDER_INTERVAL = 10000;
-var DEFAULT_GRAVITY = 10;
+var DEFAULT_GRAVITY = 5;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 var svgDoc = document.getElementsByTagName('svg')[0];
@@ -186,14 +186,15 @@ var doSVGCollision = function(element, svgContainerElement) {
                 setVelocity(element, velocity.vx, velocity.vy);
 
 
-                var va = getAngleVelocity(element);
                 //va = (point[0] - element.offsetWidth) / element.offsetWidth;
                 //va += (Math.abs(point[1] - element.offsetHeight) * (angle > vectorAngle ? -1 : 1)) / element.offsetHeight;
-                //va *= WALL_BOUNCE_COOEFICIENT;
-                va = Math.abs(angle-vectorAngle) / 20 * (angle > vectorAngle ? -1 : 1);
+//                 va = -va;
+
+                var va = getAngleVelocity(element);
+                va = Math.abs(angle-vectorAngle) / 2 * (angle > vectorAngle ? -1 : 1);
+                va *= WALL_BOUNCE_COOEFICIENT;
 
                 setAngleVelocity(element, va);
-                //setAngle(element, vectorAngle);
 
                 break;
             }
@@ -292,6 +293,14 @@ var testRectContainment = function(element, parent) {
         setVelocity(element, v.vx, v.vy);
         setPosition(element, R.left, R.top);
         collision = true;
+    }
+
+    if(collision) {
+        //var va = getAngleVelocity(element);
+        //va = Math.abs(angle-vectorAngle) / 2 * (angle > vectorAngle ? -1 : 1);
+        //va *= WALL_BOUNCE_COOEFICIENT;
+        //
+        //setAngleVelocity(element, va);
     }
     return collision;
 };

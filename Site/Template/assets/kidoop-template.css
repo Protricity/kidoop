@@ -2,6 +2,8 @@
 
 body {
     font-family: monospace;
+    background: url('img/kidoop.png') no-repeat;
+    background-position: 1em 1em;
     background-color: #393D85;
 }
 
@@ -13,12 +15,14 @@ body {
 }
 
 .content {
-    background: url('img/kidoop.png') no-repeat;
-    background-color: #537EB4;
+/*     background: url('img/kidoop.png') no-repeat; */
+    background-color: rgba(123, 166, 220, 0.5); // #537EB4 
     border: 1pt solid #ccc;
     border-radius: 1em;
     padding: 1em;
     margin: 1em;
+
+    overflow-x: hidden;
 
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));

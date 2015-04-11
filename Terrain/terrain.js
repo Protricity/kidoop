@@ -39,18 +39,18 @@ function testCollision(x, y) {
     return test;
 }
 
-function climb(x, y) {
-    if(x<0)                     x = 0;
-    if(x>svgDoc.offsetWidth)    x = svgDoc.offsetWidth;
-    var vy = -1;
-    while(true) {
-        if(!testCollision(x, y) || y < 0)
-            break;
-        y+=vy;
-//         vy++;
-    }
-    return [x, y];
-}
+//function climb(x, y) {
+//    if(x<0)                     x = 0;
+//    if(x>svgDoc.offsetWidth)    x = svgDoc.offsetWidth;
+//    var vy = -1;
+//    while(true) {
+//        if(!testCollision(x, y) || y < 0)
+//            break;
+//        y+=vy;
+////         vy++;
+//    }
+//    return [x, y];
+//}
 
 var onCollision = function(e) {
     var withElement = e.detail.withElement;
