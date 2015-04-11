@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1600"
-   height="800"
-   viewBox="0 0 1600 800"
+   width="1109"
+   height="472"
+   viewBox="0 0 1109 472"
    id="svg3434"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -130,7 +130,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,-328)">
     <path
        style="fill:url(#linearGradient5759);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.46778595;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.14677863, 0.14677863;stroke-dashoffset:0;stroke-opacity:1"
        d="M -37.067877,803.22315 C 68.901784,580.03984 673.30871,777.77188 1332.1552,803.47216"
@@ -139,7 +140,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:url(#linearGradient5759-6);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000441;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.10000045, 0.10000045;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 611.92219,804.99517 C 708.75299,665.19133 692.88809,506.93091 452.89014,445.93791 375.35574,426.23334 506.87707,818.17287 140.33722,803.1251"
+       d="M 611.92219,804.99517 C 708.75299,665.19133 690.03095,601.21662 450.033,540.22362 372.4986,520.51905 506.87707,818.17287 140.33722,803.1251"
        id="path3442-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc" />
