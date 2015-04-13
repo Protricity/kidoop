@@ -2,21 +2,23 @@
 
 body {
     font-family: monospace;
-    background: url('img/kidoop.png') no-repeat;
-    background-position: 1em 1em;
+    /* background: url('img/kidoop.png') no-repeat; */
     background-color: #393D85;
 }
 
 /** Page Layout **/
 
 .header {
-    /* height: 158px; */
+    height: 121px;
     background: url('img/kidoop.png') no-repeat;
+    background-position: -2em -3em;    
+    position: fixed;
 }
 
 .content {
-/*     background: url('img/kidoop.png') no-repeat; */
-    background-color: rgba(123, 166, 220, 0.5); // #537EB4 
+background: url('img/kidoop.png') no-repeat;
+    
+background-color: rgba(123, 166, 220, 1); // #537EB4 
     border: 1pt solid #ccc;
     border-radius: 1em;
     padding: 1em;

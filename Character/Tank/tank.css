@@ -1,0 +1,75 @@
+.tank {
+    position: absolute;
+    background-image: url(tank.svg);
+    background-size: contain;
+    width: 4em;
+    height: 2em;
+}
+
+img.tank,
+object.tank {
+    background-image: none;
+}
+
+.tank.reversed {
+}
+
+
+.projectile {
+    position: absolute;
+    background-image: url(Projectile/projectile.svg);
+    width: 12px;
+    height: 10px;
+    /* margin-top: -5px; */
+    /* margin-left: -6px; */
+    /*-webkit-filter: drop-shadow(12px 12px 2px rgba(0,0,0,0.5));*/
+    /*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));*/
+}
+
+.tank-part {
+
+}
+
+/*Explosions*/
+
+.tank-explosion-container {
+    float: right;
+    width: 0;
+    height: 0;
+}
+
+.tank-explosion {
+    position: absolute;
+    background-image: url(img/explosion.png);
+    background-size: 5em 4em;
+    background-position: 6em 33em;
+    font-size: 96px;
+    width: 1em;
+    height: 1em;
+/*     margin-left: -0.5em; */
+/*     margin-top: -0.5em; */
+}
+
+.tank-explosion.f1 { background-position: 0 0; }
+.tank-explosion.f2 { background-position: -1em 0; }
+.tank-explosion.f3 { background-position: -2em 0; }
+.tank-explosion.f4 { background-position: -3em 0; }
+.tank-explosion.f5 { background-position: -4em 0; }
+
+.tank-explosion.f6 { background-position: 0 -1em; }
+.tank-explosion.f7 { background-position: -1em -1em; }
+.tank-explosion.f8 { background-position: -2em -1em; }
+.tank-explosion.f9 { background-position: -3em -1em; }
+.tank-explosion.f10 { background-position: -4em -1em; }
+
+.tank-explosion.f11 { background-position: 0 -2em; }
+.tank-explosion.f12 { background-position: -1em -2em; }
+.tank-explosion.f13 { background-position: -2em -2em; }
+.tank-explosion.f14 { background-position: -3em -2em; }
+.tank-explosion.f15 { background-position: -4em -2em; }
+
+.tank-explosion.f16 { background-position: 0 -3em; }
+.tank-explosion.f17 { background-position: -1em -3em; }
+.tank-explosion.f18 { background-position: -2em -3em; }
+.tank-explosion.f19 { background-position: -3em -3em; }
+.tank-explosion.f20 { background-position: -4em -3em; display: none; }

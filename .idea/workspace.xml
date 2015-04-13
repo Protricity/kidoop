@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Character/Tank/Projectile/projectile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Objects/SVG/svg-methods.js" />
-      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Character\Tank\tank.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Terrain\tall-hill.svg" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Traits\Physics\assets\physics.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Traits\Physics\assets\physics.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Character/Tank/img/explosion.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Character/Tank/tank.css" />
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Character\Tank\Projectile\projectile.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery001.html" afterPath="$PROJECT_DIR$/pages/artillery001.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/assets/loader.js.old" afterPath="$PROJECT_DIR$/Objects/assets/loader.js.old" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" afterPath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Traits/Physics/physics-methods.js" afterPath="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.js" afterPath="$PROJECT_DIR$/Character/Tank/tank.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.svg" afterPath="$PROJECT_DIR$/Character/Tank/tank.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terrain/terrain.js" afterPath="$PROJECT_DIR$/Terrain/terrain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Dev\Server\WWW\kidoop\Character\Tank\tank1.svg" afterPath="$PROJECT_DIR$/Character/Tank/Projectile/projectile.svg" />
-      <change type="MOVED" beforePath="D:\Dev\Server\WWW\kidoop\Terrain\art-hill.svg" afterPath="$PROJECT_DIR$/pages/artillery001.svg" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,31 +75,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="artillery001.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="artillery001.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.5" vertical-offset="1474" max-vertical-offset="2125">
-              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="116" selection-end-column="133" />
+            <state vertical-scroll-proportion="0.38688526" vertical-offset="360" max-vertical-offset="1887">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tank.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="3859">
+              <caret line="219" column="120" selection-start-line="219" selection-start-column="120" selection-end-line="219" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tank.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Character/Tank/tank.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1377">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <marker date="1428956764448" expanded="true" signature="315:524" placeholder="{...}" />
+                <marker date="1428956764448" expanded="true" signature="557:636" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="explosion.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Character/Tank/img/explosion.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="tank.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Character/Tank/tank.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="3043">
-              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1401" max-vertical-offset="2329">
+              <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tank.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
+      <file leaf-file-name="terrain.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67355984" vertical-offset="258" max-vertical-offset="1768">
-              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="1326">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="physics-methods.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Traits/Physics/physics-methods.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.8" vertical-offset="4133" max-vertical-offset="6443">
+              <caret line="259" column="48" selection-start-line="259" selection-start-column="48" selection-end-line="259" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.js.old" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js.old">
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.821428" vertical-offset="510" max-vertical-offset="1921">
+              <caret line="61" column="6" selection-start-line="34" selection-start-column="0" selection-end-line="61" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="draggable.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Traits/Draggable/assets/draggable.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,7 +218,6 @@
         <option value="$PROJECT_DIR$/CPath/Render/HTML/Template/DefaultCPathTemplate.php" />
         <option value="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
         <option value="$PROJECT_DIR$/Site/Traits/Collision/assets/collision.js" />
-        <option value="$PROJECT_DIR$/Character/Tank/tank.css" />
         <option value="$PROJECT_DIR$/Site/Objects/assets/loader.js" />
         <option value="$PROJECT_DIR$/Objects/Marball/assets/marball.js" />
         <option value="$PROJECT_DIR$/Site/Objects/Marball/assets/marball.js" />
@@ -163,17 +230,18 @@
         <option value="$PROJECT_DIR$/Terrain/hill1.svg" />
         <option value="$PROJECT_DIR$/Traits/Physics/methods.js" />
         <option value="$PROJECT_DIR$/Traits/Physics/collision-methods.js" />
-        <option value="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
         <option value="$PROJECT_DIR$/Objects/SVG/svg-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-left.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-right.svg" />
         <option value="$PROJECT_DIR$/pages/artillery001.svg" />
-        <option value="$PROJECT_DIR$/Terrain/terrain.js" />
         <option value="$PROJECT_DIR$/Character/Tank/Projectile/projectile.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/Projectile/projectile.js" />
+        <option value="$PROJECT_DIR$/Terrain/terrain.js" />
+        <option value="$PROJECT_DIR$/Character/Tank/tank.css" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
-        <option value="$PROJECT_DIR$/pages/artillery001.html" />
+        <option value="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
+        <option value="$PROJECT_DIR$/pages/artillery001.html" />
       </list>
     </option>
   </component>
@@ -295,6 +363,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Draggable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Terrain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -403,6 +493,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Character" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tank" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -426,11 +538,11 @@
       <recent name="D:\Dev\Server\WWW\kidoop\Character\Tank\Projectile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\Server\WWW\kidoop\Character\Tank" />
+      <recent name="D:\Dev\Server\WWW\kidoop\Character\Tank\Explosion\img" />
       <recent name="D:\Dev\Server\WWW\kidoop\pages" />
       <recent name="D:\Dev\Server\WWW\kidoop\Terrain" />
       <recent name="D:\Dev\Server\WWW\kidoop" />
-      <recent name="D:\Dev\Server\WWW\kidoop\Site" />
-      <recent name="D:\Dev\Server\WWW\kidoop\Site\Classes\Objects\Warp\assets\img" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.build.php">
@@ -494,18 +606,38 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="1507" y="-1088" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2730093" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988626" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2730093" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26354167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28115016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28061768" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43601358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -555,11 +687,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/pages/artillery001.html</url>
-          <line>76</line>
+          <line>68</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="44" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -692,25 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js.old">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="680">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/level1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="2278">
@@ -783,34 +896,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Traits/Physics/physics-methods.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3430" max-vertical-offset="5015">
-          <caret line="143" column="9" selection-start-line="143" selection-start-column="9" selection-end-line="143" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Objects/SVG/svg-methods.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery001.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.44" vertical-offset="204" max-vertical-offset="2805">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -823,34 +912,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Character/Tank/Projectile/projectile.js">
+    <entry file="file://$PROJECT_DIR$/pages/artillery001.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1649">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2805">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2024" max-vertical-offset="9673">
+          <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Traits/Draggable/assets/draggable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js.old">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.821428" vertical-offset="510" max-vertical-offset="1921">
+          <caret line="61" column="6" selection-start-line="34" selection-start-column="0" selection-end-line="61" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/assets/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="680">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Character/Tank/img/explosion.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Character/Tank/tank.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1377">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <marker date="1428956764448" expanded="true" signature="315:524" placeholder="{...}" />
+            <marker date="1428956764448" expanded="true" signature="557:636" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="3043">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1401" max-vertical-offset="2329">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
+    <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.5" vertical-offset="1474" max-vertical-offset="2125">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="116" selection-end-column="133" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="1326">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Traits/Physics/physics-methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.8" vertical-offset="4133" max-vertical-offset="6443">
+          <caret line="259" column="48" selection-start-line="259" selection-start-column="48" selection-end-line="259" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67355984" vertical-offset="258" max-vertical-offset="1768">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2914" max-vertical-offset="3859">
+          <caret line="219" column="120" selection-start-line="219" selection-start-column="120" selection-end-line="219" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38688526" vertical-offset="360" max-vertical-offset="1887">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding />
         </state>
       </provider>

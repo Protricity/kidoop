@@ -20,48 +20,40 @@
             bottom: 0;
             left: 0;
             pointer-events: none;
-        }
 
-        .hill2 {
-            left: 300px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .tank {
-            /*left: 350px;*/
             position: absolute;
-            width: 4em;
-        }
-
-        .projectile {
-            position: absolute;
-            left: 43em;
-            bottom: 17em;
-            transform: rotate(50deg);
-            /*-webkit-filter: drop-shadow(12px 12px 2px rgba(0,0,0,0.5));*/
-            /*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));*/
         }
 
         .tank1 {
-            left: 2em;
-            bottom: 30em;
+            left: 32px;
+            top: 277px;
             transform: rotate(56deg);
         }
 
         .tank2 {
-            left: 16em;
-            bottom: 7.5em;
+            left: 198px;
+            top: 564px;
             transform: rotate(1deg);
         }
 
         .tank3 {
-            left: 60em;
-            bottom: 3em;
+            left: 777px;
+            top: 620px;
             transform: rotate(11deg);
         }
 
         .tank4 {
-            left: 74em;
-            bottom: 35em;
+            left: 961px;
+            top: 206px;
             transform: rotate(-18deg);
         }
 
@@ -78,9 +70,7 @@
 
         var doRender = function() {
             var renderEvent = new CustomEvent('render');
-            for(var i=0; i<renderList.length; i++) {
-                renderList[i].dispatchEvent(renderEvent);
-            }
+            document.dispatchEvent(renderEvent);
         };
         var renderInterval = setInterval(doRender, 30);
 
@@ -103,18 +93,14 @@
         <h1 class="header-title"></h1>
     </section>
     <section class="content program artillery001">
-
         <object class="terrain hill1 stats" type="image/svg+xml" data="pages/artillery001.svg"></object>
 
-        <object data="Character/Tank/tank.svg#left" class="tank usertank stats" type="image/svg+xml"></object>
+        <object data="Character/Tank/tank.svg" class="tank usertank fixed reversed stats" type="image/svg+xml"></object>
 
-        <object data="Character/Tank/tank.svg#right" class="tank tank1 stats" type="image/svg+xml"></object>
-        <object data="Character/Tank/tank.svg#right" class="tank tank2 stats" type="image/svg+xml"></object>
-
-        <object data="Character/Tank/tank.svg#left" class="tank tank3 stats" type="image/svg+xml"></object>
-        <object data="Character/Tank/tank.svg#left" class="tank tank4 stats" type="image/svg+xml"></object>
-
-        <object data="Character/Tank/Projectile/projectile.svg" class="projectile stats" data-vy="-20" type="image/svg+xml"></object>
+        <tank class="tank tank1 fixed stats"></tank>
+        <tank class="tank tank2 fixed stats"></tank>
+        <tank class="tank tank3 fixed reversed stats"></tank>
+        <img src="Character/Tank/tank.svg" class="tank tank4 fixed reversed stats" type="image/svg+xml"/>
     </section>
 </body>
 </html>

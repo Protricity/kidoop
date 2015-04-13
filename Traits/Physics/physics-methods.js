@@ -15,12 +15,15 @@ function getRect(element) {
 }
 
 function getPosition(element) {
+    if(!element.style)
+        return {x:0, y:0};
     var x = parseFloat(element.style.left || element.offsetLeft);
     var y = parseFloat(element.style.top || element.offsetTop);
     return {x:x, y:y};
 }
 
 function setPosition(element, x, y) {
+//     element.setAttribute('style', 'left: ' + x + 'px; top:' + y + 'px;');
     element.style.left = Math.round(x) + 'px';
     element.style.top = Math.round(y) + 'px';
 }
@@ -62,7 +65,7 @@ function getAcceleration(element) {
 
 function getAngle(element) {
     if(typeof element.dataset.a !== 'undefined')
-        return parseFloat(element.dataset.a);
+        return (360 + parseFloat(element.dataset.a)) % 360;
 
     var st = window.getComputedStyle(element, null);
     var tr = st.getPropertyValue("-webkit-transform") ||
@@ -89,7 +92,7 @@ function getAngle(element) {
 //    var sin = b/scale;
 // next line works for 30deg but not 130deg (returns 50);
 // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
-    return Math.round(Math.atan2(b, a) * (180/Math.PI));
+    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
 }
 
 function getAngleVelocity(element) {
@@ -99,7 +102,10 @@ function getAngleVelocity(element) {
 function setAngle(element, degrees) {
     degrees = parseInt(degrees * 10) / 10;
     element.dataset.a = degrees;
-    element.style.transform = 'rotate(' + degrees + 'deg)';
+    var transform = 'rotate(' + degrees + 'deg)';
+    if(element.classList.contains('reversed'))
+        transform += ' scaleX(-1)';
+    element.style.transform = transform;
 }
 
 function setAngleVelocity(element, degreeVelocity) {
@@ -107,38 +113,81 @@ function setAngleVelocity(element, degreeVelocity) {
     element.dataset.va = degreeVelocity;
 }
 
+// Rendering
+
+
+function renderElement(element) {
+    var v = getVelocity(element);
+    var p = getPosition(element);
+    var a = getAcceleration(element);
+    var angle = getAngle(element);
+    if(element.classList.contains('fixed')) {
+        //setPosition(element, p.x, p.y);
+
+    } else {
+
+        if(a.ax || a.ay) {
+            v.vx = (v.vx || 0) + a.ax * RENDER_INTERVAL / 1000;
+            v.vy = (v.vy || 0) + a.ay * RENDER_INTERVAL / 1000;
+            setVelocity(element, v.vx, v.vy);
+        }
+
+        p.x += v.vx;
+        p.y += v.vy;
+        setPosition(element, p.x, p.y);
+
+        var siblings = element.parentNode.children;
+        for(var k=0; k<siblings.length; k++) {
+            var sibling = siblings[k];
+            testCollision(element, sibling);
+        }
+        testRectContainment(element, element.parentNode);
+
+        var angleVelocity = getAngleVelocity(element);
+
+        if(angleVelocity) {
+            angle += angleVelocity;
+            setAngle(element, angle);
+        }
+    }
+
+    setAngle(element, angle);
+    //
+    //p = getPosition(element);
+    //setPosition(element, p.x, p.y);
+}
 
 
 // COLLISION
 
-function climb(x, y, test) {
-    var vy = -1;
-    while(true) {
-        if(!test(x, y))
-            break;
-        y+=vy;
-        //vy--;
-    }
-    return [x, y];
-}
-
 
 function getCollisionVector(x, y, test) {
-    var vx = 0;
-    var vy = 0;
+    var v = [0,0];
+    if(!test(x-1, y)) v[0] += 1;
+    if(!test(x+1, y)) v[0] -= 1;
+    if(!test(x, y-1)) v[1] += 1;
+    if(!test(x, y+1)) v[1] -= 1;
 
-    var d = 0;
-    while(vx === 0 || vy === 0) {
-        vx += (test(x - d, y) ? 1 / d : 0) + (test(x + d, y) ? -1 / d : 0);
-        vy += (test(x, y - d) ? 1 / d : 0) + (test(x, y + d) ? -1 / d : 0);
-        d++;
-        if(d>5)
-            break;
+    if(!test(x-1, y-1)) v = [v[0]-1, v[1]-1];
+    if(!test(x+1, y-1)) v = [v[0]+1, v[1]-1];
+    if(!test(x+1, y+1)) v = [v[0]+1, v[1]+1];
+    if(!test(x-1, y+1)) v = [v[0]-1, v[1]+1];
+    return v;
+}
+
+function findExitPoint(test, x, y) {
+    for(var d=1; d<99; d++) {
+        if(!test(x, y-d)) return [0, -d];
+        if(!test(x, y+d)) return [0, d];
+
+        if(!test(x+d, y)) return [d, 0];
+        if(!test(x-d, y)) return [-d, 0];
+
+        if(!test(x-d, y-d)) return [-d, -d];
+        if(!test(x+d, y-d)) return [d, -d];
+        if(!test(x+d, y+d)) return [d, d];
+        if(!test(x-d, y+d)) return [-d, d];
     }
-    //if(!vx && !vy)
-    //    vy = -1;
-//     console.log("Vector: ", vx, vy, d);
-    return {vx:vx, vy:vy};
 }
 
 function testCollision(element, element2) {
@@ -161,30 +210,34 @@ function testCollision(element, element2) {
         detail: {
             withElement: element,
             isCollisionPoint: function (x, y) {
-                return true;
+                return (x>=0 && y>=0); //  && x<=document.offsetWidth && y<=document.offsetHeight);
+            },
+            onCollisionPoint: function (x, y) {
+
             }
         },
-        cancelable: true
+        cancelable: true,
+        bubbles: true
     });
+
+    element2.dispatchEvent(collisionEvent);
 
     if (collisionEvent.defaultPrevented)
         return false;
-
 
     var test = collisionEvent.detail.isCollisionPoint;
     var dx = element.offsetLeft - element2.offsetLeft;
     var dy = element.offsetTop - element2.offsetTop;
 
-    if (collisionPoints.length === 0) {
-        collisionPoints.push([0, 0]);
-        collisionPoints.push([element.offsetWidth, 0]);
-        collisionPoints.push([0, element.offsetHeight]);
-        collisionPoints.push([element.offsetWidth, element.offsetHeight]);
-    }
+    var points = [];
+    points.push([0, 0]);
+    points.push([element.offsetWidth, 0]);
+    points.push([0, element.offsetHeight]);
+    points.push([element.offsetWidth, element.offsetHeight]);
 
-    for (var i = 0; i < collisionPoints.length; i++) {
-        var point = [collisionPoints[i][0], collisionPoints[i][1]];
-        var angle = getAngle(element);
+    var angle = getAngle(element);
+    for (var i = 0; i < points.length; i++) {
+        var point = [points[i][0], points[i][1]];
         if (angle) {
             angle = (angle % 360);
             if (angle > 180)
@@ -196,39 +249,40 @@ function testCollision(element, element2) {
         point[1] = parseInt(point[1] + dy);
 
         if (point[0] < 0) point[0] = 0;
-        if (point[0] > tankElm.offsetWidth) point[0] = tankElm.offsetWidth;
+        if (point[0] > element2.offsetWidth) point[0] = element2.offsetWidth;
         if (point[1] < 0) point[1] = 0;
-        if (point[1] > tankElm.offsetHeight) point[1] = tankElm.offsetHeight;
+        if (point[1] > element2.offsetHeight) point[1] = element2.offsetHeight;
         if (test(point[0], point[1])) {
-            var topPoint = climb(point[0], point[1] - 1, test);
-            var pushVector = [topPoint[0] - point[0], topPoint[1] - point[1]];
+
+            collisionEvent.detail.onCollisionPoint(point[0], point[1]);
+
+            var exitPoint = findExitPoint(test, point[0], point[1]);
             var position = getPosition(element);
-            position.x += pushVector[0];
-            position.y += pushVector[1];
+            position.x += exitPoint[0];
+            position.y += exitPoint[1];
             setPosition(element, position.x, position.y);
 
-            var vector = getCollisionVector(topPoint[0], topPoint[1], test);
-            var vectorAngle = Math.atan2(vector.vy, vector.vx) * 180 / Math.PI + 90;
-            if (!vector.vx && !vector.vy)
-                vector.vy = -1;
+            var vector = getCollisionVector(point[0] + exitPoint[0], point[1] + exitPoint[1], test);
+//             if (!vector[0] && !vector[1])
+//                vector[1] = -1;
             var velocity = getVelocity(element);
             var imp = Math.sqrt(velocity.vx * velocity.vx + velocity.vy * velocity.vy);
             imp *= WALL_BOUNCE_COOEFICIENT;
-            velocity.vx = vector.vx * imp;
-            velocity.vy = vector.vy * imp;
+            velocity.vx = vector[0] * imp;
+            velocity.vy = vector[1] * imp;
             setVelocity(element, velocity.vx, velocity.vy);
 
 
             //va = (point[0] - element.offsetWidth) / element.offsetWidth;
             //va += (Math.abs(point[1] - element.offsetHeight) * (angle > vectorAngle ? -1 : 1)) / element.offsetHeight;
-//                 va = -va;
+            //    va = -va;
 
-            var va = getAngleVelocity(element);
-            va = Math.abs(angle - vectorAngle) / 2 * (angle > vectorAngle ? -1 : 1);
-            va *= WALL_BOUNCE_COOEFICIENT;
+            var vectorAngle = (180 + 360 + Math.atan2(vector[0], vector[1]) * 180 / Math.PI) % 360;
+            var va = -getAngleVelocity(element);
+            va *= 0.5;
+            va += Math.abs(angle - vectorAngle) / 50 * (angle > vectorAngle ? -1 : 1);
 
             setAngleVelocity(element, va);
-
             break;
         }
 
@@ -287,4 +341,34 @@ function testRectContainment(element, parent) {
         //setAngleVelocity(element, va);
     }
     return collision;
+}
+
+
+function include(src, doc) {
+    if(!doc) doc = document;
+    if(/\.js$/i.test(src)) {
+        var scripts = doc.head.getElementsByTagName('script');
+        for(var si=0; si<scripts.length; si++)
+            if(scripts[si].getAttribute('src') == src)
+                return false;
+
+        var script = doc.createElement('script');
+        script.setAttribute('src', src);
+        doc.head.appendChild(script);
+        return true;
+
+    } else if (/\.css$/i.test(src)) {
+        var links = doc.head.getElementsByTagName('link');
+        for(var li=0; li<links.length; li++)
+            if(links[li].getAttribute('href') == src)
+                return false;
+
+        var link = doc.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', src);
+        doc.head.appendChild(link);
+        return true;
+    } else {
+        throw new Error("Invalid SRC: " + src);
+    }
 }

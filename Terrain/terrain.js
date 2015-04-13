@@ -4,7 +4,26 @@
  */
 var WALL_BOUNCE_COOEFICIENT = 0.40;
 
+var CONFIG = window.top._terrain_config;
+if(typeof CONFIG === 'undefined') {
+    var topDoc = window.top.document;
+    CONFIG = window.top._terrain_config = {
+        //projectile: null,
+        documents: []
+    };
+
+    topDoc.addEventListener('stats', onStats, false);
+    topDoc.addEventListener('collision', onCollision, false);
+}
+CONFIG.documents.push(document);
+
 var svgDoc = document.getElementsByTagName('svg')[0];
+function elementFromPoint(x, y) {
+    var elm = document.elementFromPoint(x, y);
+    if(elm === svgDoc) 
+        return null;
+    return elm;
+}
 
 var heightCache = [];
 function isCollisionPoint(x, y) {
@@ -14,23 +33,34 @@ function isCollisionPoint(x, y) {
         if (y >= heightCache[x][1])
             return true;
     } else {
-        heightCache[x] = [0, svgDoc.offsetHeight || svgDoc.height.baseVal.value];
+        if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
+            return false;
+        heightCache[x] = [0, svgDoc.offsetHeight || 999999];
     }
 
-    var test = !!document.elementFromPoint(x, y);
+    var test = !!elementFromPoint(x, y);
     if(test) {
         heightCache[x][1] = y;
     } else {
         heightCache[x][0] = y;
     }
 
-    console.log("Test: ", [x, y, test]);
+    //isCollisionPoint(x, Math.floor(heightCache[x][0] / 2 + heightCache[x][1] / 2));
+    console.log("Test: ", x, y, test);
     return test;
 }
 
-var onCollision = function(e) {
-    e.detail.isCollisionPoint = isCollisionPoint;
-};
+function isTerrainElement(element) {
+    return element.classList && element.classList.contains('terrain');
+}
+
+function onCollision(e) {
+    if(!isTerrainElement(e.target))
+        return;
+    e.detail.isCollisionPoint = function(x, y) {
+        return isCollisionPoint(x, y);
+    };
+}
 
 
 var onStats = function (e) {
@@ -39,7 +69,4 @@ var onStats = function (e) {
 //         }
 };
 
-
-document.addEventListener('collision', onCollision, true);
-document.addEventListener('stats', onStats, true);
 
