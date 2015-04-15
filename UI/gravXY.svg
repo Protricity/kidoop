@@ -18,8 +18,8 @@
    inkscape:version="0.91 r13725"
    viewBox="0 0 400 400"
    sodipodi:docname="gravXY.svg">
-
-  <script>
+  <script
+     id="script9666">
     function onClick(e) {
         var x = e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
         var y = e.pageY || e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
@@ -29,7 +29,6 @@
     }
     document.addEventListener('click', onClick);
   </script>
-
   <defs
      id="defs3349">
     <linearGradient
@@ -169,8 +168,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.9725481"
-     inkscape:cx="193.65"
-     inkscape:cy="174.15001"
+     inkscape:cx="88.826327"
+     inkscape:cy="214.70669"
      inkscape:current-layer="controls"
      inkscape:document-units="px"
      showgrid="true"
@@ -361,7 +360,7 @@
      inkscape:groupmode="layer"
      transform1="matrix(1,0,-0.249328,1,0,0)"
      style="filter:url(#i1)"
-     transform="translate(0,200)">
+     transform="translate(-200,0)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot9051"
@@ -373,7 +372,7 @@
            x="-20"
            y="25" /></flowRegion><flowPara
          id="flowPara9057" /></flowRoot>    <circle
-       style="opacity:0.26400003;fill:#c3ddff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.49851632;fill:#d3ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path9067"
        cx="65.300003"
        cy="134.7"
