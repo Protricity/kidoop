@@ -175,7 +175,7 @@ function renderExplosion(element) {
         return;
     }
 
-    setAngle(element, element._frame * element._vangle);
+    setAngle(element, element._frame * element._vangle + element._vangle * 50);
     var a = getAcceleration(element.parentNode);
     var p = getPosition(element);
 

@@ -112,8 +112,8 @@
       <file leaf-file-name="tank.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28169015" vertical-offset="4393" max-vertical-offset="5032">
-              <caret line="269" column="1" selection-start-line="269" selection-start-column="1" selection-end-line="269" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.5477308" vertical-offset="2659" max-vertical-offset="5032">
+              <caret line="177" column="77" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -1023,8 +1023,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28169015" vertical-offset="4393" max-vertical-offset="5032">
-          <caret line="269" column="1" selection-start-line="269" selection-start-column="1" selection-end-line="269" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.5477308" vertical-offset="2659" max-vertical-offset="5032">
+          <caret line="177" column="77" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
           <folding />
         </state>
       </provider>
