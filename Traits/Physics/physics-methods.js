@@ -24,8 +24,8 @@ function getPosition(element) {
 
 function setPosition(element, x, y) {
 //     element.setAttribute('style', 'left: ' + x + 'px; top:' + y + 'px;');
-    element.style.left = Math.round(x) + 'px';
-    element.style.top = Math.round(y) + 'px';
+    element.style.left = Math.round(x * 10) / 10 + 'px';
+    element.style.top = Math.round(y * 10) / 10 + 'px';
 }
 
 function getVelocity(element) {
@@ -119,37 +119,40 @@ function setAngleVelocity(element, degreeVelocity) {
 // Rendering
 
 
-function renderElement(element) {
+var RENDER_INTERVAL_MAX = 1000;
+function renderElement(element, duration) {
     var v = getVelocity(element);
     var p = getPosition(element);
     var a = getAcceleration(element);
     var angle = getAngle(element);
+    if(duration > RENDER_INTERVAL_MAX)
+        duration = RENDER_INTERVAL_MAX;
     if(element.classList.contains('fixed')) {
         //setPosition(element, p.x, p.y);
 
     } else {
 
         if(a.ax || a.ay) {
-            v.vx = (v.vx || 0) + a.ax * RENDER_INTERVAL / 1000;
-            v.vy = (v.vy || 0) + a.ay * RENDER_INTERVAL / 1000;
+            v.vx = (v.vx || 0) + a.ax * duration / 1000;
+            v.vy = (v.vy || 0) + a.ay * duration / 1000;
             setVelocity(element, v.vx, v.vy);
         }
 
-        p.x += v.vx;
-        p.y += v.vy;
+        p.x += v.vx * duration / 1000;
+        p.y += v.vy * duration / 1000;
         setPosition(element, p.x, p.y);
 
         var siblings = element.parentNode.children;
         for(var k=0; k<siblings.length; k++) {
             var sibling = siblings[k];
-            testCollision(element, sibling);
+            testCollision(element, sibling, duration);
             if(!element)
                 break;
         }
         if(!element || !element.parentNode)
             return;
 
-        testRectContainment(element, element.parentNode);
+        testRectContainment(element, element.parentNode, duration);
 
         var angleVelocity = getAngleVelocity(element);
 

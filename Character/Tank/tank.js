@@ -7,7 +7,7 @@ var DEFAULT_GRAVITY = 1;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 var PROJECTILE_SVG = 'Character/Tank/Projectile/projectile.svg';
-var CANNON_VELOCITY = [10,1];
+var CANNON_VELOCITY = [35,4];
 
 var CONFIG = window.top._tank_config;
 if(typeof CONFIG === 'undefined') {
@@ -108,23 +108,23 @@ function onFire(e) {
 function onRender(e) {
     var tanks = e.target.getElementsByClassName('tank');
     for(var i=0; i<tanks.length; i++)
-        renderElement(tanks[i]);
+        renderElement(tanks[i], RENDER_INTERVAL);
 
     var tankParts = e.target.getElementsByClassName('tank-part');
     for(i=0; i<tankParts.length; i++)
-        renderTankPart(tankParts[i]);
+        renderTankPart(tankParts[i], RENDER_INTERVAL);
 
     var projectiles = e.target.getElementsByClassName('projectile');
     for(i=0; i<projectiles.length; i++) {
         var velocity = getVelocity(projectiles[i]);
         var vectorAngle = (180 + 360 + Math.atan2(velocity.vy, velocity.vx) * 180 / Math.PI) % 360;
         setAngle(projectiles[i], vectorAngle);
-        renderElement(projectiles[i]);
+        renderElement(projectiles[i], RENDER_INTERVAL);
     }
 
     var explosions = e.target.getElementsByClassName('tank-explosion');
     for(i=0; i<explosions.length; i++)
-        renderExplosion(explosions[i]);
+        renderExplosion(explosions[i], RENDER_INTERVAL);
 }
 
 function onStats(e) {
@@ -135,8 +135,8 @@ function onStats(e) {
 //         }
 }
 
-function renderTankPart(element) {
-    renderElement(element);
+function renderTankPart(element, duration) {
+    renderElement(element, duration);
 
     var position = getPosition(element);
     if(Math.random() > 0.90) {
@@ -263,10 +263,10 @@ function destroyTank(element) {
         element.parentNode.appendChild(tankPart);
 
         setAngleVelocity(tankPart, Math.random() * 20 - 10);
-        setVelocity(tankPart, Math.random() * 20 - 10, Math.random() * 20 - 10);
+        setVelocity(tankPart, Math.random() * 60 - 30, Math.random() * 60 - 30);
     }
 
-    //element.parentNode.removeChild(element);
+    element.parentNode.removeChild(element);
 }
 
 var explodeContainer = null;

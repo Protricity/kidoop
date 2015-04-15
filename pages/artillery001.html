@@ -9,98 +9,20 @@
     <!--<script src='Objects/assets/loader.js'></script>-->
 
     <link rel='stylesheet' href='Site/Template/assets/kidoop-template.css' />
-    <style>
-        .artillery001 {
-            position: relative;
-            height: 51em;
-        }
-
-        .terrain {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            pointer-events: none;
-
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        .tank {
-            position: absolute;
-        }
-
-        .tank1 {
-            left: 53px;
-            top: 318px;
-            transform: rotate(64deg);
-        }
-
-        .tank2 {
-            left: 198px;
-            top: 564px;
-            transform: rotate(1deg);
-        }
-
-        .tank3 {
-            left: 777px;
-            top: 614px;
-            transform: rotate(7deg) rotateY(180deg);
-        }
-
-        .tank4 {
-            left: 961px;
-            top: 209px;
-            transform: rotate(-18deg) rotateY(180deg);
-        }
-
-        .usertank {
-            left: 467px;
-            bottom: 229px;
-            transform: rotate(28deg) rotateY(180deg);
-        }
-
-        .controls {
-            position: absolute;
-            left: 520px;
-            top: 50px;
-        }
-
-    </style>
-    <script>
-
-        var renderList = document.getElementsByClassName('projectile');
-
-        var doRender = function() {
-            var renderEvent = new CustomEvent('render');
-            document.dispatchEvent(renderEvent);
-        };
-        var renderInterval = setInterval(doRender, 30);
-
-        var pause = function() {
-            clearInterval(renderInterval);
-        };
-        var resume = function() {
-            clearInterval(renderInterval);
-            renderInterval = setInterval(doRender, 30)
-        };
-
-        document.addEventListener('click', function(e) {
-            var usertank = document.getElementsByClassName('usertank')[0];
-            usertank.dispatchEvent(new CustomEvent('fire'));
-        }, true);
-    </script>
+    <link rel='stylesheet' href='pages/artillery001/artillery001.css' />
+    <script src="pages/artillery001/artillery001.js"></script>
 </head>
-<body>
+<body class="wind">
     <section class="header">
         <h1 class="header-title"></h1>
     </section>
     <section class="content program artillery001">
+        <div class="wind-container">
+            <!--<div class='wind'></div>-->
+            <!--<div class='wind large'></div>-->
+        </div>
         <object class="terrain hill1 stats" type="image/svg+xml" data="pages/artillery001/artillery001.svg"></object>
-        <!--<object class="controls stats" type="image/svg+xml" data="pages/artillery001/grav_wind_control.svg"></object>-->
+        <object class="controls stats" type="image/svg+xml" data="UI/gravXY.svg"></object>
 
         <object data="Character/Tank/tank.svg" class="tank usertank large fixed reversed stats" type="image/svg+xml"></object>
 
