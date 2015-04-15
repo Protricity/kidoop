@@ -140,7 +140,12 @@ function renderElement(element) {
         for(var k=0; k<siblings.length; k++) {
             var sibling = siblings[k];
             testCollision(element, sibling);
+            if(!element)
+                break;
         }
+        if(!element || !element.parentNode)
+            return;
+
         testRectContainment(element, element.parentNode);
 
         var angleVelocity = getAngleVelocity(element);
@@ -176,7 +181,7 @@ function getCollisionVector(x, y, test) {
 }
 
 function findExitPoint(test, x, y) {
-    for(var d=1; d<99; d++) {
+    for(var d=1; d<999; d++) {
         if(!test(x, y-d)) return [0, -d];
         if(!test(x, y+d)) return [0, d];
 
@@ -188,6 +193,7 @@ function findExitPoint(test, x, y) {
         if(!test(x+d, y+d)) return [d, d];
         if(!test(x-d, y+d)) return [-d, d];
     }
+    throw new Error("No exit point found");
 }
 
 function testCollision(element, element2) {
@@ -208,6 +214,7 @@ function testCollision(element, element2) {
 
     var collisionEvent = new CustomEvent('collision', {
         detail: {
+            points: null,
             withElement: element,
             isCollisionPoint: function (x, y) {
                 return (x>=0 && y>=0); //  && x<=document.offsetWidth && y<=document.offsetHeight);
@@ -229,11 +236,13 @@ function testCollision(element, element2) {
     var dx = element.offsetLeft - element2.offsetLeft;
     var dy = element.offsetTop - element2.offsetTop;
 
-    var points = [];
-    points.push([0, 0]);
-    points.push([element.offsetWidth, 0]);
-    points.push([0, element.offsetHeight]);
-    points.push([element.offsetWidth, element.offsetHeight]);
+    var points = collisionEvent.detail.points || [];
+    if(points.length === 0) {
+        points.push([0, 0]);
+        points.push([element.offsetWidth, 0]);
+        points.push([0, element.offsetHeight]);
+        points.push([element.offsetWidth, element.offsetHeight]);
+    }
 
     var angle = getAngle(element);
     for (var i = 0; i < points.length; i++) {
@@ -253,8 +262,11 @@ function testCollision(element, element2) {
         if (point[1] < 0) point[1] = 0;
         if (point[1] > element2.offsetHeight) point[1] = element2.offsetHeight;
         if (test(point[0], point[1])) {
-
+//test(point[0], point[1]);
             collisionEvent.detail.onCollisionPoint(point[0], point[1]);
+
+            if(!element)
+                break;
 
             var exitPoint = findExitPoint(test, point[0], point[1]);
             var position = getPosition(element);

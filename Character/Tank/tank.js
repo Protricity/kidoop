@@ -40,14 +40,33 @@ function isCollisionPoint(x, y) {
 }
 
 
+function isTerrainElement(element) {
+    return element.classList && element.classList.contains('terrain');
+}
 function isTankElement(element) {
     return element.classList && element.classList.contains('tank');
+}
+function isTankPart(element) {
+    return element.classList && element.classList.contains('tank-part');
 }
 function isProjectileElement(element) {
     return element.classList && element.classList.contains('projectile');
 }
 
 function onCollision(e) {
+    if(isTankPart(e.detail.withElement)) {
+        if(!isTerrainElement(e.target)) {
+            e.preventDefault();
+        }
+
+        e.detail.points = [
+            [e.detail.withElement.offsetWidth/2, e.detail.withElement.offsetHeight/2]
+        ];
+        //e.detail.onCollisionPoint = function(x, y) {
+        //    e.target.parentNode.removeChild(e.detail.withElement);
+        //};
+        return;
+    }
     if(isTankElement(e.target)) {
         e.detail.isCollisionPoint = function(x, y) {
             return isCollisionPoint(x, y);
@@ -68,6 +87,10 @@ function onCollision(e) {
                 detonateProjectile(projectile, e.target);
             };
         }
+
+        e.detail.points = [
+            [e.detail.withElement.offsetWidth/2, e.detail.withElement.offsetHeight/2]
+        ];
     }
 }
 
@@ -85,6 +108,10 @@ function onRender(e) {
     var tanks = e.target.getElementsByClassName('tank');
     for(var i=0; i<tanks.length; i++)
         renderElement(tanks[i]);
+
+    var tankParts = e.target.getElementsByClassName('tank-part');
+    for(i=0; i<tankParts.length; i++)
+        renderTankPart(tankParts[i]);
 
     var projectiles = e.target.getElementsByClassName('projectile');
     for(i=0; i<projectiles.length; i++) {
@@ -105,6 +132,10 @@ function onStats(e) {
 //         e.detail.stats.tank = {
 //             data: 'data'
 //         }
+}
+
+function renderTankPart(element) {
+    renderElement(element);
 }
 
 function renderExplosion(element) {
@@ -197,7 +228,30 @@ function detonateProjectile(projectile, targetElement) {
 
 function destroyTank(element) {
     var svgDoc = CONFIG.documents[0];
-    console.log(svgDoc.getElementsByTagName('path'));
+    var svg = svgDoc.getElementsByTagName('svg')[0];
+    var paths = svg.getElementsByTagName('path');
+
+    for(var i=0; i<paths.length; i++) {
+        var newSVG = svg.cloneNode(true);
+        var newPaths = newSVG.getElementsByTagName('path');
+        var tankPart = element.ownerDocument.createElement('div');
+        tankPart.classList.add('tank-part');
+        for(var j=paths.length-1; j>=0; j--) {
+            if(i !== j) {
+                newPaths[j].parentNode.removeChild(newPaths[j]);
+            }
+        }
+        tankPart.appendChild(newSVG);
+        tankPart.setAttribute('style', element.getAttribute('style'));
+        tankPart.style.left = element.offsetLeft + 'px';
+        tankPart.style.top = element.offsetTop + 'px';
+        element.parentNode.appendChild(tankPart);
+
+        setAngleVelocity(tankPart, Math.random() * 20 - 10);
+        setVelocity(tankPart, Math.random() * 20 - 10, Math.random() * 20 - 10);
+    }
+
+    //element.parentNode.removeChild(element);
 }
 
 var explodeContainer = null;

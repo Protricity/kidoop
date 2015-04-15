@@ -24,29 +24,74 @@ function elementFromPoint(x, y) {
         return null;
     return elm;
 }
+//
+//var heights = [];
+//function isCollisionPoint(x, y) {
+//    if(!isNaN(heights[x])) {
+//        return y >= heights[x];
+//    }
+//
+//    if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
+//        return false;
+//
+//    var min = 0;
+//    var max = svgDoc.offsetHeight;
+//    var height = y;
+//    while(max > min + 1) {
+//        var test = !!elementFromPoint(x, height);
+//        console.log("Test: ", x, height, test);
+//        if (test) {
+//            max = height;
+//        } else {
+//            min = height;
+//        }
+//        height = Math.floor((min + max) / 2);
+//    }
+//
+//    heights[x] = height;
+//    return y >= height;
+//}
+//
+//function scanTerrain(x1, y1, x2, y2) {
+//
+//}
 
-var heightCache = [];
+var height = [];
+var heightMax = [];
+
+var cacheName = document.location.href;
+if(localStorage[cacheName+'#height']) {
+    height = localStorage[cacheName+'#height'].split('').map(function(n){ return n.charCodeAt(0) - 100; });
+    heightMax = localStorage[cacheName+'#heightMax'].split('').map(function(n){ return n.charCodeAt(0) - 100; });
+}
+
+var storeCount = 1;
 function isCollisionPoint(x, y) {
-    if(heightCache[x]) {
-        if (y <= heightCache[x][0])
-            return false;
-        if (y >= heightCache[x][1])
-            return true;
-    } else {
-        if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
-            return false;
-        heightCache[x] = [0, svgDoc.offsetHeight || 999999];
-    }
+    if(y <= height[x] && !isNaN(height[x]))
+        return false;
+
+    if(y >= heightMax[x])
+        return true;
+
+    if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
+        return false;
+
+    //height[x] = 0;
+    //heightMax[x] = svgDoc.offsetHeight;
 
     var test = !!elementFromPoint(x, y);
+    console.log("Test: ", x, y, test);
     if(test) {
-        heightCache[x][1] = y;
+        heightMax[x] = y;
     } else {
-        heightCache[x][0] = y;
+        height[x] = y;
     }
 
-    //isCollisionPoint(x, Math.floor(heightCache[x][0] / 2 + heightCache[x][1] / 2));
-    console.log("Test: ", x, y, test);
+    if (storeCount++ % 100 === 0) {
+        localStorage[cacheName + '#height'] = height.map(function(h) { return String.fromCharCode(h + 100); }).join('');
+        localStorage[cacheName + '#heightMax'] = heightMax.map(function(h) { return String.fromCharCode(h + 100); }).join('');
+        console.log("Store: ", height.length, heightMax.length);
+    }
     return test;
 }
 
@@ -54,10 +99,24 @@ function isTerrainElement(element) {
     return element.classList && element.classList.contains('terrain');
 }
 
+var storeCounter=1;
 function onCollision(e) {
     if(!isTerrainElement(e.target))
         return;
     e.detail.isCollisionPoint = function(x, y) {
+        //
+        //if(isNaN(heights[x])) {
+        //    for (var i = 0; i < 64; i++) {
+        //        if (!isNaN(heights[x + i])) {
+        //            scanTerrain(x, y, x + i, heights[x + i]);
+        //            break;
+        //        }
+        //        if (!isNaN(heights[x - i])) {
+        //            scanTerrain(x, y, x - i, heights[x - i]);
+        //            break;
+        //        }
+        //    }
+        //}
         return isCollisionPoint(x, y);
     };
 }
