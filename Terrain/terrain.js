@@ -14,6 +14,7 @@ if(typeof CONFIG === 'undefined') {
 
     topDoc.addEventListener('stats', onStats, false);
     topDoc.addEventListener('collision', onCollision, false);
+    topDoc.addEventListener('compile', onCompile, false);
 }
 CONFIG.documents.push(document);
 
@@ -58,14 +59,31 @@ function elementFromPoint(x, y) {
 
 var height = [];
 var heightMax = [];
-
 var cacheName = document.location.href;
-if(localStorage[cacheName+'#height']) {
-    height = localStorage[cacheName+'#height'].split('').map(function(n){ return n.charCodeAt(0) - 100; });
-    heightMax = localStorage[cacheName+'#heightMax'].split('').map(function(n){ return n.charCodeAt(0) - 100; });
-}
 
-var storeCount = 1;
+var CHAR_OFFSET = 64;
+
+
+
+var tryLoad = function() {
+    var g = document.getElementsByTagName('g')[0];
+    if (!g) {
+        setTimeout(tryLoad, 100);
+    } else {
+        height = g.getAttribute('height').split('').map(function (char) {
+            return char.charCodeAt(0) - CHAR_OFFSET;
+        });
+        for (var hi = 0; hi < height.length; hi++)
+            heightMax[hi] = height[hi] + 1;
+    }
+};
+tryLoad();
+//if(localStorage[cacheName+'#height']) {
+//    height = localStorage[cacheName+'#height'].split('').map(function(n){ return n.charCodeAt(0) - CHAR_OFFSET; });
+//    heightMax = localStorage[cacheName+'#heightMax'].split('').map(function(n){ return n.charCodeAt(0) - CHAR_OFFSET; });
+//}
+
+//var storeCount = 1;
 function isCollisionPoint(x, y) {
     if(y <= height[x] && !isNaN(height[x]))
         return false;
@@ -87,11 +105,6 @@ function isCollisionPoint(x, y) {
         height[x] = y;
     }
 
-    if (storeCount++ % 100 === 0) {
-        localStorage[cacheName + '#height'] = height.map(function(h) { return String.fromCharCode(h + 100); }).join('');
-        localStorage[cacheName + '#heightMax'] = heightMax.map(function(h) { return String.fromCharCode(h + 100); }).join('');
-        console.log("Store: ", height.length, heightMax.length);
-    }
     return test;
 }
 
@@ -99,7 +112,6 @@ function isTerrainElement(element) {
     return element.classList && element.classList.contains('terrain');
 }
 
-var storeCounter=1;
 function onCollision(e) {
     if(!isTerrainElement(e.target))
         return;
@@ -129,3 +141,22 @@ var onStats = function (e) {
 };
 
 
+function onCompile() {
+    for(var x=0; x<=svgDoc.offsetWidth; x++) {
+        var min = 0;
+        var max = svgDoc.offsetHeight;
+        while(max > min + 1) {
+            var y = parseInt((min + max) / 2);
+            if(isCollisionPoint(x, y)) {
+                max = y;
+            } else {
+                min = y;
+            }
+        }
+    }
+
+    localStorage[cacheName + '#height'] = height.map(function(h) { return String.fromCharCode(h + CHAR_OFFSET); }).join('');
+    localStorage[cacheName + '#heightMax'] = heightMax.map(function(h) { return String.fromCharCode(h + CHAR_OFFSET); }).join('');
+
+    console.log("Compile Complete:", [height, heightMax]);
+}

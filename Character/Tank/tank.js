@@ -251,7 +251,7 @@ function destroyTank(element) {
         setVelocity(tankPart, Math.random() * 20 - 10, Math.random() * 20 - 10);
     }
 
-    //element.parentNode.removeChild(element);
+    element.parentNode.removeChild(element);
 }
 
 var explodeContainer = null;

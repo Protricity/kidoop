@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Terrain/terrain.js" line="63" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/Terrain/terrain.js" line="81" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery001.html" afterPath="$PROJECT_DIR$/pages/artillery001.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Traits/Physics/physics-methods.js" afterPath="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.css" afterPath="$PROJECT_DIR$/Character/Tank/tank.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery001.svg" afterPath="$PROJECT_DIR$/pages/artillery001.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.js" afterPath="$PROJECT_DIR$/Character/Tank/tank.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.svg" afterPath="$PROJECT_DIR$/Character/Tank/tank.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Terrain/terrain.js" afterPath="$PROJECT_DIR$/Terrain/terrain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -75,20 +72,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="terrain.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="terrain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="2329">
-              <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+            <state vertical-scroll-proportion="2.5110784" vertical-offset="918" max-vertical-offset="2839">
+              <caret line="154" column="9" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tank.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="artillery001.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/artillery001.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2141" max-vertical-offset="2822">
+              <caret line="132" column="1323" selection-start-line="132" selection-start-column="1323" selection-end-line="132" selection-end-column="1323" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tank.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6708861" vertical-offset="3947" max-vertical-offset="4777">
+            <state vertical-scroll-proportion="-121.44" vertical-offset="1282" max-vertical-offset="4777">
               <caret line="254" column="1" selection-start-line="254" selection-start-column="1" selection-end-line="254" selection-end-column="1" />
               <folding />
             </state>
@@ -180,15 +187,15 @@
         <option value="$PROJECT_DIR$/Objects/SVG/svg-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-left.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-right.svg" />
-        <option value="$PROJECT_DIR$/pages/artillery001.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/Projectile/projectile.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/Projectile/projectile.js" />
         <option value="$PROJECT_DIR$/pages/artillery001.html" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.css" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
-        <option value="$PROJECT_DIR$/Terrain/terrain.js" />
         <option value="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
+        <option value="$PROJECT_DIR$/Terrain/terrain.js" />
+        <option value="$PROJECT_DIR$/pages/artillery001.svg" />
       </list>
     </option>
   </component>
@@ -200,10 +207,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1515" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1010" />
+    <option name="x" value="1507" />
+    <option name="y" value="-1088" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -574,17 +581,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1515" y="-1080" width="1920" height="1010" extended-state="6" />
+    <frame x="1507" y="-1088" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988626" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2996595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2730093" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26354167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.283029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28061768" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43601358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -851,14 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery001.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2142" max-vertical-offset="2805">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2024" max-vertical-offset="9673">
@@ -931,14 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="2329">
-          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Traits/Physics/physics-methods.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.64" vertical-offset="2374" max-vertical-offset="6647">
@@ -949,8 +940,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6708861" vertical-offset="3947" max-vertical-offset="4777">
+        <state vertical-scroll-proportion="-121.44" vertical-offset="1282" max-vertical-offset="4777">
           <caret line="254" column="1" selection-start-line="254" selection-start-column="1" selection-end-line="254" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artillery001.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2141" max-vertical-offset="2822">
+          <caret line="132" column="1323" selection-start-line="132" selection-start-column="1323" selection-end-line="132" selection-end-column="1323" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Terrain/terrain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5110784" vertical-offset="918" max-vertical-offset="2839">
+          <caret line="154" column="9" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
           <folding />
         </state>
       </provider>
