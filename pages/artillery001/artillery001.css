@@ -31,7 +31,7 @@ section.content {
     /* height: 100%; */
     /* z-index: -1; */
 
-    -webkit-animation: movewind 20s linear infinite;
+    -webkit-animation: movewind 15s linear infinite;
     -moz-animation: movewind 20s linear infinite;
     -o-animation: movewind 20s linear infinite;
 }

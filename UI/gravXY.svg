@@ -16,19 +16,11 @@
    id="svg3347"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 400 400"
+   viewBox="-50 -50 500 500"
    sodipodi:docname="gravXY.svg">
   <script
-     id="script9666">
-    function onClick(e) {
-        var x = e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        var y = e.pageY || e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-
-        var g = document.getElementById('controls');
-        g.setAttribute('transform', 'translate(' + (x-80) + ', ' + (y-120) + ')');
-    }
-    document.addEventListener('click', onClick);
-  </script>
+     xlink:href="gravXY.js"
+     id="script9738" />
   <defs
      id="defs3349">
     <linearGradient
@@ -167,16 +159,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9725481"
-     inkscape:cx="88.826327"
-     inkscape:cy="214.70669"
+     inkscape:zoom="0.79785979"
+     inkscape:cx="649.95207"
+     inkscape:cy="373.07734"
      inkscape:current-layer="controls"
      inkscape:document-units="px"
      showgrid="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
-     inkscape:window-x="1507"
-     inkscape:window-y="-8"
+     inkscape:window-height="976"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
      inkscape:window-maximized="1"
      showguides="false"
      inkscape:snap-page="false">
@@ -192,7 +184,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
