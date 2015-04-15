@@ -140,7 +140,7 @@ function renderTankPart(element) {
 
     var position = getPosition(element);
     if(Math.random() > 0.90) {
-        explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight);
+        explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight, Math.random()*50);
         if (Math.random() > 0.90)
             element.parentNode.removeChild(element);
     }

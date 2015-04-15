@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery001.html" afterPath="$PROJECT_DIR$/pages/artillery001.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.js" afterPath="$PROJECT_DIR$/Character/Tank/tank.js" />
     </list>
     <ignored path="kidoop.iws" />
@@ -69,11 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="artillery001.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="artillery001.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.6538463" vertical-offset="1355" max-vertical-offset="2006">
-              <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.6082949" vertical-offset="1355" max-vertical-offset="2006">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tank.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tank.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5477308" vertical-offset="2659" max-vertical-offset="5032">
-              <caret line="177" column="77" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
+            <state vertical-scroll-proportion="-11.92" vertical-offset="2116" max-vertical-offset="5032">
+              <caret line="142" column="155" selection-start-line="142" selection-start-column="155" selection-end-line="142" selection-end-column="155" />
               <folding />
             </state>
           </provider>
@@ -221,8 +222,8 @@
         <option value="$PROJECT_DIR$/Traits/Physics/physics-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
         <option value="$PROJECT_DIR$/pages/artillery001/artillery001.svg" />
-        <option value="$PROJECT_DIR$/pages/artillery001.html" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
+        <option value="$PROJECT_DIR$/pages/artillery001.html" />
       </list>
     </option>
   </component>
@@ -1013,18 +1014,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
+    <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.6538463" vertical-offset="1355" max-vertical-offset="2006">
-          <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+        <state vertical-scroll-proportion="-11.92" vertical-offset="2116" max-vertical-offset="5032">
+          <caret line="142" column="155" selection-start-line="142" selection-start-column="155" selection-end-line="142" selection-end-column="155" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
+    <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5477308" vertical-offset="2659" max-vertical-offset="5032">
-          <caret line="177" column="77" selection-start-line="177" selection-start-column="77" selection-end-line="177" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.6082949" vertical-offset="1355" max-vertical-offset="2006">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding />
         </state>
       </provider>
