@@ -92,7 +92,10 @@ function getAngle(element) {
 //    var sin = b/scale;
 // next line works for 30deg but not 130deg (returns 50);
 // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
-    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
+    var angle = (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
+    if(element.classList.contains('reversed'))
+        angle = (angle + 180) % 360;
+    return angle;
 }
 
 function getAngleVelocity(element) {
@@ -156,7 +159,6 @@ function renderElement(element) {
         }
     }
 
-    setAngle(element, angle);
     //
     //p = getPosition(element);
     //setPosition(element, p.x, p.y);

@@ -3,10 +3,11 @@
  * User: Ari
  */
 var RENDER_INTERVAL = 100;
-var DEFAULT_GRAVITY = 5;
+var DEFAULT_GRAVITY = 1;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 var PROJECTILE_SVG = 'Character/Tank/Projectile/projectile.svg';
+var CANNON_VELOCITY = [10,1];
 
 var CONFIG = window.top._tank_config;
 if(typeof CONFIG === 'undefined') {
@@ -205,7 +206,9 @@ function fireCannon(element) {
 
     projectile.setAttribute('style', 'left: ' + (point[0] - projectile.offsetWidth/2) + 'px; top: ' +  (point[1] - projectile.offsetHeight/2) + 'px; transform: rotate(' + angle + 'deg);');
 
-    var velocity = [-30,2];
+    var velocity = CANNON_VELOCITY.slice();
+    if(element.classList.contains('reversed'))
+        velocity[0] = -velocity[0];
     velocity = rotate(0, 0, velocity[0], velocity[1], angle);
     projectile.dataset.vx = velocity[0];
     projectile.dataset.vy = velocity[1];
@@ -243,6 +246,11 @@ function destroyTank(element) {
         }
         tankPart.appendChild(newSVG);
         tankPart.setAttribute('style', element.getAttribute('style'));
+       
+        var position = getPosition(element);
+        setPosition(tankPart, position.x, position.y);
+        setAngle(tankPart, getAngle(element));
+
         tankPart.style.left = element.offsetLeft + 'px';
         tankPart.style.top = element.offsetTop + 'px';
         element.parentNode.appendChild(tankPart);
