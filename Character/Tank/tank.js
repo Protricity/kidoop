@@ -137,6 +137,12 @@ function onStats(e) {
 
 function renderTankPart(element) {
     renderElement(element);
+
+    var position = getPosition(element);
+    if(Math.random() > 0.95)
+        explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight);
+    if(Math.random() > 0.98)
+        element.parentNode.removeChild(element);
 }
 
 function renderExplosion(element) {
