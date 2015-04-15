@@ -139,10 +139,11 @@ function renderTankPart(element) {
     renderElement(element);
 
     var position = getPosition(element);
-    if(Math.random() > 0.95)
+    if(Math.random() > 0.90) {
         explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight);
-    if(Math.random() > 0.98)
-        element.parentNode.removeChild(element);
+        if (Math.random() > 0.90)
+            element.parentNode.removeChild(element);
+    }
 }
 
 function renderExplosion(element) {
@@ -265,7 +266,7 @@ function destroyTank(element) {
         setVelocity(tankPart, Math.random() * 20 - 10, Math.random() * 20 - 10);
     }
 
-    //element.parentNode.removeChild(element);
+    element.parentNode.removeChild(element);
 }
 
 var explodeContainer = null;
