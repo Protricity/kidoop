@@ -200,7 +200,6 @@
      id="background"
      inkscape:label="background"
      inkscape:groupmode="layer"
-     onclick="XY"
      transform1="matrix(1,0,-0.249328,1,0,0)"
      transform="translate(0,200)">
     <path
@@ -372,7 +371,7 @@
            x="-20"
            y="25" /></flowRegion><flowPara
          id="flowPara9057" /></flowRoot>    <circle
-       style="opacity:0.49851632;fill:#d3ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.499;fill:#d3ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path9067"
        cx="65.300003"
        cy="134.7"
