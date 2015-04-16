@@ -1,4 +1,5 @@
 
+var dragging = false;
 function onClick(e) {
     var w = document.documentElement.offsetWidth;
     var h = document.documentElement.offsetHeight;
@@ -14,6 +15,24 @@ function onClick(e) {
     if(y<0) y=0;
     if(x>w) x=w;
     if(y>h) y=h;
+
+
+    switch(e.type) {
+        default:
+        case 'click':
+            dragging = false;
+            break;
+        case 'mousedown':
+            dragging = true;
+            break;
+        case 'mouseup':
+            dragging = false;
+            break;
+        case 'mousemove':
+            if(!dragging)
+                return;
+            break;
+    }
 
     var g = document.getElementById('controls');
     g.setAttribute('transform', 'translate(' + (x) + ', ' + (y-80) + ')');
@@ -44,16 +63,6 @@ function onClick(e) {
 }
 document.addEventListener('click', onClick);
 
-function onMouse(e) {
-    switch(e.type) {
-        case 'mousedown':
-            break;
-        case 'mousedown':
-            break;
-        case 'mousedown':
-            break;
-    }
-}
-document.addEventListener('mousedown', onMouse);
-document.addEventListener('mousemove', onMouse);
-document.addEventListener('mouseup', onMouse);
+document.addEventListener('mousedown', onClick);
+document.addEventListener('mousemove', onClick);
+document.addEventListener('mouseup', onClick);

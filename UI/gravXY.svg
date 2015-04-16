@@ -203,15 +203,15 @@
        fy="380"
        r="20.000114"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(6.1320755,0,0,6.1320755,-413.20754,-2330.1886)" />
+       gradientTransform="matrix(3.7499765,7.4999509,-11.180271,5.5901372,4073.5055,-2874.2471)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient7312"
        id="linearGradient7320-0"
        x1="79.999886"
        y1="380"
-       x2="120.00011"
-       y2="380"
+       x2="112.23077"
+       y2="404.46152"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(6.1320755,0,0,6.1320755,-413.20754,-2330.1886)" />
   </defs>
@@ -387,7 +387,7 @@
        cy="-5.5879354e-006"
        r="94.339622" />
     <circle
-       style="opacity:1;fill:url(#radialGradient7308-6);fill-opacity:1;stroke:url(#linearGradient7320-0);stroke-width:61.320755;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.75324079"
+       style="opacity:1;fill:url(#radialGradient7308-6);fill-opacity:1;stroke:url(#linearGradient7320-0);stroke-width:39.9999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:159.99999762,39.9999994;stroke-dashoffset:299.99999553;stroke-opacity:0.75324079"
        id="path7286-1"
        cx="200"
        cy="-5.5879354e-006"
