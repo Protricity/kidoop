@@ -39,8 +39,10 @@ function onClick(e) {
 
     var angle = parseInt(Math.atan2(w/2 - x, y - h/2) * 180 / Math.PI + 90);
 
-    var g = document.getElementById('controls');
-    g.setAttribute('transform', 'translate(' + (x < 100 ? 100 : x) + ', ' + (y < 100 ? 100 : y) + ') rotate(' + angle + ')');
+    //var g = document.getElementById('controls');
+    //g.setAttribute('transform', 'translate(' + (x < 100 ? 100 : x) + ', ' + (y < 100 ? 100 : y) + ') rotate(' + angle + ')');
+    var xyAngle = document.getElementById('xy-angle');
+    xyAngle.setAttribute('transform', ' translate(194, 185) rotate(' + angle + ')');
 
     var event = new CustomEvent('xy', {
         detail: {
