@@ -1,8 +1,8 @@
 
 var dragging = false;
 function onClick(e) {
-    var w = document.documentElement.offsetWidth;
-    var h = document.documentElement.offsetHeight;
+    var w = document.documentElement.offsetWidth || document.documentElement.width.baseVal.value;
+    var h = document.documentElement.offsetHeight || document.documentElement.height.baseVal.value;
     var x = e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
     var y = e.pageY || e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 
@@ -37,7 +37,7 @@ function onClick(e) {
             break;
     }
 
-    var angle = Math.atan2(w/2 - x, y - h/2) * 180 / Math.PI + 90;
+    var angle = parseInt(Math.atan2(w/2 - x, y - h/2) * 180 / Math.PI + 90);
 
     var g = document.getElementById('controls');
     g.setAttribute('transform', 'translate(' + (x < 100 ? 100 : x) + ', ' + (y < 100 ? 100 : y) + ') rotate(' + angle + ')');
