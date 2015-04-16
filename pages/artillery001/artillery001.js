@@ -24,9 +24,11 @@ document.addEventListener('xy', function(e) {
     var container = document.getElementsByClassName('artillery001')[0];
     container.dataset.ax = e.detail.percX * 20 - 10;
     container.dataset.ay = e.detail.percY * 20 - 10;
+    e.detail.formatX = Math.round(container.dataset.ax*10)/10 + 'px/s';
+    e.detail.formatY = Math.round(container.dataset.ay*10)/10 + 'px/s';
+    e.detail.tankCount = document.getElementsByClassName('tank').length - 1;
 });
 
-$(document).on('touchmove', function(e) {
-    console.log(e);
+document.addEventListener('touchmove', function(e) {
     e.preventDefault();
 });
