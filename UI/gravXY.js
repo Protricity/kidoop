@@ -23,19 +23,24 @@ function onClick(e) {
             dragging = false;
             break;
         case 'mousedown':
+        case 'touchstart':
             dragging = true;
             break;
         case 'mouseup':
+        case 'touchend':
             dragging = false;
             break;
         case 'mousemove':
+        case 'touchmove':
             if(!dragging)
                 return;
             break;
     }
 
+    var angle = Math.atan2(w/2 - x, y - h/2) * 180 / Math.PI + 90;
+
     var g = document.getElementById('controls');
-    g.setAttribute('transform', 'translate(' + (x) + ', ' + (y-80) + ')');
+    g.setAttribute('transform', 'translate(' + (x < 100 ? 100 : x) + ', ' + (y < 100 ? 100 : y) + ') rotate(' + angle + ')');
 
     var event = new CustomEvent('xy', {
         detail: {
@@ -66,3 +71,6 @@ document.addEventListener('click', onClick);
 document.addEventListener('mousedown', onClick);
 document.addEventListener('mousemove', onClick);
 document.addEventListener('mouseup', onClick);
+document.addEventListener("touchstart", onClick, true);
+document.addEventListener("touchmove", onClick, true);
+document.addEventListener("touchend", onClick, true);

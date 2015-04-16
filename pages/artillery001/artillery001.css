@@ -1,7 +1,7 @@
 section.content {
     opacity:0.8;
     max-width: 980px;
-
+    user-select: none;
 }
 
 .artillery001 {
