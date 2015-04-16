@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI/gravXY.js" afterPath="$PROJECT_DIR$/UI/gravXY.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI/gravXY.svg" afterPath="$PROJECT_DIR$/UI/gravXY.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -111,20 +109,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gravXY.svg" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gravXY.svg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI/gravXY.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.76" vertical-offset="6432" max-vertical-offset="8993">
-              <caret line="403" column="12" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.6792453" vertical-offset="8772" max-vertical-offset="11101">
+              <caret line="552" column="34" selection-start-line="552" selection-start-column="34" selection-end-line="552" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gravXY.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gravXY.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/gravXY.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85516506" vertical-offset="319" max-vertical-offset="1258">
+            <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1258">
               <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
               <folding />
             </state>
@@ -233,8 +231,8 @@
         <option value="$PROJECT_DIR$/pages/artillery001/artillery001.css" />
         <option value="$PROJECT_DIR$/pages/artillery001.html" />
         <option value="$PROJECT_DIR$/pages/artillery001/artillery001.js" />
-        <option value="$PROJECT_DIR$/UI/gravXY.svg" />
         <option value="$PROJECT_DIR$/UI/gravXY.js" />
+        <option value="$PROJECT_DIR$/UI/gravXY.svg" />
       </list>
     </option>
   </component>
@@ -1098,18 +1096,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/gravXY.svg">
+    <entry file="file://$PROJECT_DIR$/UI/gravXY.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.76" vertical-offset="6432" max-vertical-offset="8993">
-          <caret line="403" column="12" selection-start-line="403" selection-start-column="12" selection-end-line="403" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1258">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI/gravXY.js">
+    <entry file="file://$PROJECT_DIR$/UI/gravXY.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85516506" vertical-offset="319" max-vertical-offset="1258">
-          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.6792453" vertical-offset="8772" max-vertical-offset="11101">
+          <caret line="552" column="34" selection-start-line="552" selection-start-column="34" selection-end-line="552" selection-end-column="34" />
           <folding />
         </state>
       </provider>
