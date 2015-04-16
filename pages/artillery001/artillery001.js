@@ -25,3 +25,8 @@ document.addEventListener('xy', function(e) {
     container.dataset.ax = e.detail.percX * 20 - 10;
     container.dataset.ay = e.detail.percY * 20 - 10;
 });
+
+$(document).on('touchmove', function(e) {
+    console.log(e);
+    e.preventDefault();
+});
