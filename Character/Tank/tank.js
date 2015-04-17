@@ -191,8 +191,8 @@ function fireCannon(element) {
         throw new Error("Not a tank");
 
     var angle = getAngle(element);
-    if(element.classList.contains('reversed'))
-       angle += 180;
+//     if(element.classList.contains('reversed'))
+//        angle += 180;
 
     var point = [element.offsetWidth / 2, element.offsetHeight / 2];
     var cannonTip = document.getElementById('cannon-tip');
