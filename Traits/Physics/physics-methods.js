@@ -80,6 +80,10 @@ function getAngle(element) {
 
 // rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
 
+
+    if(!tr || tr === 'none')
+        return 0;
+        
     var values = tr.split('(')[1].split(')')[0].split(',');
     var a = values[0];
     var b = values[1];

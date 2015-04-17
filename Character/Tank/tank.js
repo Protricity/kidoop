@@ -140,7 +140,7 @@ function renderTankPart(element, duration) {
 
     var position = getPosition(element);
     if(Math.random() > 0.90) {
-        explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight, Math.random()*50);
+        explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight, Math.random()*10);
         if (Math.random() > 0.95)
             element.parentNode.removeChild(element);
     }
@@ -190,9 +190,9 @@ function fireCannon(element) {
     if(!isTankElement(element))
         throw new Error("Not a tank");
 
-    var angle = getAngle(element) + 180;
+    var angle = getAngle(element);
     if(element.classList.contains('reversed'))
-        angle += 180;
+       angle += 180;
 
     var point = [element.offsetWidth / 2, element.offsetHeight / 2];
     var cannonTip = document.getElementById('cannon-tip');
@@ -211,7 +211,11 @@ function fireCannon(element) {
     element.parentNode.appendChild(projectile);
     //projectile.setAttribute('src', PROJECTILE_SVG);
 
-    projectile.setAttribute('style', 'left: ' + (point[0] - projectile.offsetWidth/2) + 'px; top: ' +  (point[1] - projectile.offsetHeight/2) + 'px; transform: rotate(' + angle + 'deg);');
+    var el = document.getElementById('foo');
+    var style = window.getComputedStyle(element, null).getPropertyValue('font-size');
+    var fontSize = parseFloat(style);
+
+    projectile.setAttribute('style','font-size: ' + fontSize + 'px; left: ' + (point[0] - projectile.offsetWidth/2) + 'px; top: ' +  (point[1] - projectile.offsetHeight/2) + 'px; transform: rotate(' + angle + 'deg);');
 
     var velocity = CANNON_VELOCITY.slice();
     if(element.classList.contains('reversed'))
@@ -220,7 +224,7 @@ function fireCannon(element) {
     projectile.dataset.vx = velocity[0];
     projectile.dataset.vy = velocity[1];
 
-    explodeAt(element.parentNode, point[0], point[1]);
+    explodeAt(element.parentNode, point[0], point[1], fontSize/2);
     //setPosition(projectile, element.offsetLeft, element.offsetHeight);
 //
 
@@ -232,7 +236,12 @@ function detonateProjectile(projectile, targetElement) {
     }
     var x = projectile.offsetLeft + projectile.offsetWidth/2;
     var y = projectile.offsetTop + projectile.offsetHeight/2;
-    explodeAt(projectile.parentElement, x, y, 96);
+
+    var el = document.getElementById('foo');
+    var style = window.getComputedStyle(projectile, null).getPropertyValue('font-size');
+    var fontSize = parseFloat(style);
+
+    explodeAt(projectile.parentElement, x, y, fontSize);
     projectile.parentElement.removeChild(projectile);
 }
 
@@ -272,6 +281,7 @@ function destroyTank(element) {
 var explodeContainer = null;
 function explodeAt(container, x, y, size) {
     if(!size) size = 32;
+    size *= 5;
     if(!explodeContainer)
         explodeContainer = container.getElementsByClassName('tank-explosion-container').item(0);
     if(!explodeContainer) {

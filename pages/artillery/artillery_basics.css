@@ -59,38 +59,49 @@ section.content {
 }
 
 .tank1 {
-    left: 53px;
-    top: 318px;
-    transform: rotate(64deg);
+    font-size: 12px !important;
+    left: 501px;
+    top: 420px;
+    transform: rotate(-13deg) rotateY(180deg);
 }
 
 .tank2 {
-    left: 198px;
-    top: 564px;
-    transform: rotate(1deg);
+    font-size: 20px !important;
+    left: 631px;
+    bottom: 57px;
+    transform: rotate(15deg);
 }
 
 .tank3 {
-    left: 777px;
-    top: 614px;
+    font-size: 10px !important;
+    left: 832px;
+    bottom: 323px;
     transform: rotate(7deg) rotateY(180deg);
 }
 
 .tank4 {
-    left: 961px;
-    top: 209px;
-    transform: rotate(-18deg) rotateY(180deg);
+    font-size: 10px !important;
+    left: 722px;
+    bottom: 284px;
+    transform: rotate(-7deg) rotateY(180deg);
+}
+
+.tank5 {
+    left: 938px;
+    bottom: 550px;
+    transform: rotate(-24deg) rotateY(180deg);
 }
 
 .usertank {
-    left: 467px;
-    bottom: 229px;
-    transform: rotate(28deg) rotateY(180deg);
+    font-size: 10px !important;
+    left: 46px;
+    bottom: 165px;
+    transform: rotate(340deg);
 }
 
 .controls {
     position: absolute;
-    left: 515px;
+    left: 470px;
     top: 33px;
     transform: skewX(-14deg);
     /* width: 34em; */

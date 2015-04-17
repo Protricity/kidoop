@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    viewBox="-50 -50 500 500"
-   sodipodi:docname="gravXY.svg">
+   sodipodi:docname="wind.svg">
   <script
      xlink:href="gravXY.js"
      id="script9738" />
@@ -475,7 +475,7 @@
        id="linearGradient4297"
        x1="-268.74521"
        y1="-86.528336"
-       x2="118.75479"
+       x2="181.25479"
        y2="-86.528336"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(124.7452,89.028334)" />
@@ -485,7 +485,7 @@
        id="linearGradient4305"
        x1="-268.74521"
        y1="-86.528336"
-       x2="118.75479"
+       x2="181.25479"
        y2="-86.528336"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(124.7452,89.028334)" />
@@ -498,9 +498,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1283442"
-     inkscape:cx="298.98859"
+     inkscape:cx="147.88222"
      inkscape:cy="101.90295"
-     inkscape:current-layer="controlsOld"
+     inkscape:current-layer="background"
      inkscape:document-units="px"
      showgrid="true"
      inkscape:window-width="1920"
@@ -522,7 +522,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -642,14 +642,14 @@
        r="90.56604" />
     <rect
        style="opacity:0.843;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:17.41499875;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:104.48999249, 17.41499874999999900;stroke-dashoffset:15.67349888;stroke-opacity:0.75324079"
-       id="rect7322"
+       id="wind-ax"
        width="362.58472"
        height="22.584728"
        x="18.707642"
        y="-11.292371" />
     <rect
-       style="opacity:0.843;fill:#800000;fill-opacity:1;stroke:#800000;stroke-width:17.41527174;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:139.3221739, 17.41527174000000100;stroke-dashoffset:52.24581521;stroke-opacity:0.75324079"
-       id="rect7322-8"
+       style="opacity:0.843;fill:#808080;fill-opacity:1;stroke:#999999;stroke-width:17.41527174;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:139.3221739, 17.41527174000000100;stroke-dashoffset:52.24581521;stroke-opacity:0.75324079"
+       id="grav-ay"
        width="362.58472"
        height="22.584728"
        x="-181.29234"
@@ -790,15 +790,14 @@
        inkscape:connector-curvature="0" />
   </g>
   <g
-     id="controls-shadow"
-     style="filter:url(#dropShadow);">
+     id="controls-shadow">
     <g
        id="controls"
        inkscape:label="controls"
        inkscape:groupmode="layer"
        style="-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;">
       <rect
-         style="opacity:0.84299999;fill:url(#linearGradient4305);fill-opacity:1;stroke:url(#linearGradient4297);stroke-width:17.41499875;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:52.24499922;stroke-opacity:0.75324079"
+         style="opacity:1;fill:url(#linearGradient4305);fill-opacity:1;stroke:url(#linearGradient4297);stroke-width:17.41499875;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:52.24499922;stroke-opacity:0.75324079"
          id="xy-angle"
          width="362.58472"
          height="22.584728"
