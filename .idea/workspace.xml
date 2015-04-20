@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery/artillery_basics.css" afterPath="$PROJECT_DIR$/pages/artillery/artillery_basics.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery/ui/gravXY.svg" afterPath="$PROJECT_DIR$/pages/artillery/ui/gravXY.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery/svg/hill_basics.svg" afterPath="$PROJECT_DIR$/pages/artillery/svg/hill_basics.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" afterPath="$PROJECT_DIR$/Site/Template/assets/kidoop-template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.js" afterPath="$PROJECT_DIR$/Character/Tank/tank.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,20 +126,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="artillery_basics.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="artillery_basics.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2397">
+            <state vertical-scroll-proportion="0.6851852" vertical-offset="187" max-vertical-offset="2397">
               <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hill_basics.svg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hill_basics.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/artillery/svg/hill_basics.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33295456" vertical-offset="166" max-vertical-offset="6783">
+            <state vertical-scroll-proportion="-11.72" vertical-offset="166" max-vertical-offset="6783">
               <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
               <folding />
             </state>
@@ -1098,14 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2397">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.24" vertical-offset="23541" max-vertical-offset="26316">
@@ -1116,8 +1104,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/artillery/svg/hill_basics.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295456" vertical-offset="166" max-vertical-offset="6783">
+        <state vertical-scroll-proportion="-11.72" vertical-offset="166" max-vertical-offset="6783">
           <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6851852" vertical-offset="187" max-vertical-offset="2397">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
           <folding />
         </state>
       </provider>
