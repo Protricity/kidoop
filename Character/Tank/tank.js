@@ -7,39 +7,72 @@ var DEFAULT_GRAVITY = 1;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 var PROJECTILE_SVG = 'Character/Tank/Projectile/projectile.svg';
-var CANNON_VELOCITY = [35,4];
+var CANNON_VELOCITY = [100,12];
 
 var CONFIG = window.top._tank_config;
 if(typeof CONFIG === 'undefined') {
-    var topDoc = window.top.document;
     CONFIG = window.top._tank_config = {
         documents: []
     };
 
-    topDoc.addEventListener('render', onRender, false);
-    topDoc.addEventListener('stats', onStats, true);
-    topDoc.addEventListener('fire', onFire, true);
-    topDoc.addEventListener('collision', onCollision, true);
+    var topDoc = window.top.document;
+    if(topDoc !== document) {
+        topDoc.addEventListener('render', onRender, false);
+        topDoc.addEventListener('stats', onStats, true);
+        topDoc.addEventListener('fire', onFire, true);
+        topDoc.addEventListener('collision', onCollision, true);
 
-    include('Character/Tank/tank.css', topDoc);
+        include('Character/Tank/tank.css', topDoc);
+    }
 }
 CONFIG.documents.push(document);
 
+var svgDoc = document.getElementsByTagName('svg')[0];
+function elementFromPoint(x, y) {
+    var elm = document.elementFromPoint(x, y);
+    if(elm === null || elm === svgDoc)
+        return null;
+    if(elm.classList && elm.classList.contains('nohit'))
+        return null;
+    return elm;
+}
+
+
 var testCache = [];
-function isCollisionPoint(x, y) {
-    if(x<0 || y<0 || x>document.offsetWidth || y>document.offsetHeight)
+function isCollisionPoint(sx, sy, target) {
+    var w = document.documentElement.offsetWidth || document.documentElement.width.baseVal.value;
+    var h = document.documentElement.offsetHeight || document.documentElement.height.baseVal.value;
+
+    if(target) {
+        var x = Math.round(sx * w / target.offsetWidth);
+        var y = Math.round(sy * h / target.offsetHeight);
+    }
+
+    if(Math.abs(x) > w/2 || Math.abs(y) > h/2)
         return false;
 
-    var i = x + y * document.offsetWidth;
+    x += w/2;
+    y += h/2;
+
+    var i = x + y * w;
     if(typeof testCache[i] === 'boolean')
         return testCache[i];
 
-    var test = !!document.elementFromPoint(x, y);
-    console.log("Test: ", [x, y, test]);
+    var test = !!elementFromPoint(x, y);
+    console.log("Test Tank: ", [x, y, test]);
     testCache[i] = test;
+
+    if(test)
+        setHitPoint(x,y);
+
     return test;
 }
 
+function setHitPoint(x, y) {
+    var hitPoint = document.getElementById('hit-point');
+    if(hitPoint)
+        hitPoint.setAttribute('transform', 'translate(' + x + ', ' + y + ')');
+}
 
 function isTerrainElement(element) {
     return element.classList && element.classList.contains('terrain');
@@ -55,32 +88,28 @@ function isProjectileElement(element) {
 }
 
 function onCollision(e) {
-    if(isTankPart(e.detail.withElement)) {
+    if(isTankPart(e.detail.withElement) || isTankPart(e.target)) {
         if(!isTerrainElement(e.target)) {
             e.preventDefault();
         }
-
-        e.detail.points = [
-            [e.detail.withElement.offsetWidth/2, e.detail.withElement.offsetHeight/2]
-        ];
-        //e.detail.onCollisionPoint = function(x, y) {
-        //    e.target.parentNode.removeChild(e.detail.withElement);
-        //};
         return;
     }
     if(isTankElement(e.target)) {
-        e.detail.isCollisionPoint = function(x, y) {
-            return isCollisionPoint(x, y);
+        e.detail.testPoint = function(x, y) {
+            var test = isCollisionPoint(x, y, e.target);
+            //explodeAt(e.target.parentNode, e.target.offsetLeft + x, e.target.offsetTop  +  y, test ? 16 : 4);
+            return test;
         };
     }
     if(isProjectileElement(e.detail.withElement)) {
         var projectile = e.detail.withElement;
         if(isTankElement(e.target)) {
-            if(projectile.firedElement === e.target) {
+            var tank = e.target;
+            if(projectile.firedElement === tank) {
                 e.preventDefault();
             } else {
                 e.detail.onCollisionPoint = function(x, y) {
-                    detonateProjectile(projectile, e.target);
+                    detonateProjectile(projectile, tank);
                 };
             }
         } else {
@@ -88,10 +117,6 @@ function onCollision(e) {
                 detonateProjectile(projectile, e.target);
             };
         }
-
-        e.detail.points = [
-            [e.detail.withElement.offsetWidth/2, e.detail.withElement.offsetHeight/2]
-        ];
     }
 }
 
@@ -99,9 +124,24 @@ function onFire(e) {
     if(!isTankElement(e.target))
         return;
 
+    var tank = e.target;
 //     explodeAt(e.target.parentNode, Math.random() * 500, Math.random() * 500, Math.random() * 200);
 
-    fireCannon(e.target);
+
+    if(e.detail.clickEvent && e.detail.clickEvent.target == tank.parentNode) {
+        var clickEvent = e.detail.clickEvent;
+        var dx = clickEvent.layerX - tank.offsetLeft - tank.offsetWidth/2;
+        var dy = clickEvent.layerY - tank.offsetTop - tank.offsetHeight/2;
+        var d = Math.sqrt(dx*dx + dy*dy) - 100;
+        if(d<0) d=0;
+        var cannonAngle = (-90 + 360 + Math.atan2(dx, dy) * 180 / Math.PI) % 360;
+        if(cannonAngle<0 || cannonAngle>180) cannonAngle = 0;
+        if(cannonAngle>70) cannonAngle = 70;
+
+        console.log(cannonAngle, (d<500?d:500)/500);
+        fireCannon(tank, cannonAngle, (d<500?d:500)/500 + 0.2);
+    }
+
     //destroyTank(e.target);
 }
 
@@ -141,41 +181,18 @@ function renderTankPart(element, duration) {
     var position = getPosition(element);
     if(Math.random() > 0.90) {
         explodeAt(element.parentNode, position.x + Math.random() * element.offsetWidth, position.y + Math.random() * element.offsetHeight, Math.random()*10);
-        if (Math.random() > 0.95)
+        if (Math.random() > 0.92)
             element.parentNode.removeChild(element);
     }
 }
 
 function renderExplosion(element) {
-    if(typeof element._frame === 'number') {
-        element.classList.remove('f' + (element._frame));
-        element._frame += 1; // Math.random() > 0.8;
-    } else {
-        element._frame = 1;
-        element._vangle = Math.round(Math.random() * 5 - 2);
-        for(var i=0; i<element.classList.length; i++) {
-            var className = element.classList.item(i);
-            var match = /f(-?[0-9]+)/.exec(className);
-            if(!match)
-                continue;
-            element._frame = parseInt(match[1]);
-            element.classList.remove(className);
-        }
-    }
-    if(element._frame > 100) {
-        element._frame = 1;
-        //element.parentNode.removeChild(element);
-        return;
-    }
-    element.classList.add('f' + (element._frame));
-
-
-    if(!element.offsetWidth && !element.offsetHeight) {
+    if(!element.offsetWidth || !element.offsetHeight) {
         element.parentNode.removeChild(element);
         return;
     }
 
-    setAngle(element, element._frame * element._vangle + element._vangle * 50);
+    //addAngle(element, element._vangle);
     var a = getAcceleration(element.parentNode);
     var p = getPosition(element);
 
@@ -186,43 +203,54 @@ function renderExplosion(element) {
     }
 }
 
-function fireCannon(element) {
+function fireCannon(element, cannonAngle, power) {
     if(!isTankElement(element))
         throw new Error("Not a tank");
 
     var angle = getAngle(element);
-//     if(element.classList.contains('reversed'))
-//        angle += 180;
+    if(cannonAngle) {
+        var cannonGroup = document.getElementById('cannon-group');
+        cannonGroup.setAttribute('transform', 'translate(66, 56) rotate(' + -cannonAngle + ')');
+        angle -= cannonAngle % 360;
+    }
 
     var point = [element.offsetWidth / 2, element.offsetHeight / 2];
     var cannonTip = document.getElementById('cannon-tip');
     if(cannonTip) {
         var bb = cannonTip.getBoundingClientRect();
         point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
-        if(element.classList.contains('reversed'))
-            point[0] = element.offsetWidth - point[0];
+        //point = transformXYInto(element, point[0], point[1]);
     }
-    point = rotate(element.offsetWidth/2, element.offsetHeight/2, point[0], point[1], angle);
+    //var poin23t = transformXYInto(element, point[0], point[1]);
+
+    var trans = getTransformValues(element);
+    point[0] -= element.offsetWidth/2;
+    point[1] -= element.offsetHeight/2;
+    point = transform(point[0], point[1], trans[0], trans[1], trans[2], trans[3], trans[4], trans[5]);
+    point[0] += element.offsetWidth/2;
+    point[1] += element.offsetHeight/2;
+
+    //point = transformXYInto(element, point[0] - element.offsetWidth/2, point[1] - element.offsetHeight/2);
+
     point[0] += element.offsetLeft;
     point[1] += element.offsetTop;
-    var projectile = window.top.document.createElement('div');
+
+    var projectile = element.ownerDocument.createElement('div');
     projectile.classList.add('projectile');
     projectile.firedElement = element;
     element.parentNode.appendChild(projectile);
     //projectile.setAttribute('src', PROJECTILE_SVG);
 
-    var el = document.getElementById('foo');
-    var style = window.getComputedStyle(element, null).getPropertyValue('font-size');
-    var fontSize = parseFloat(style);
+    var fontSize = parseFloat(window.getComputedStyle(element, null).getPropertyValue('font-size'));
 
     projectile.setAttribute('style','font-size: ' + fontSize + 'px; left: ' + (point[0] - projectile.offsetWidth/2) + 'px; top: ' +  (point[1] - projectile.offsetHeight/2) + 'px; transform: rotate(' + angle + 'deg);');
 
     var velocity = CANNON_VELOCITY.slice();
-    if(element.classList.contains('reversed'))
-        velocity[0] = -velocity[0];
+    //if(element.classList.contains('reversed'))
+    //    velocity[0] = -velocity[0];
     velocity = rotate(0, 0, velocity[0], velocity[1], angle);
-    projectile.dataset.vx = velocity[0];
-    projectile.dataset.vy = velocity[1];
+    projectile.dataset.vx = velocity[0] * (power || 1);
+    projectile.dataset.vy = velocity[1] * (power || 1);
 
     explodeAt(element.parentNode, point[0], point[1], fontSize/2);
     //setPosition(projectile, element.offsetLeft, element.offsetHeight);
@@ -232,14 +260,15 @@ function fireCannon(element) {
 
 function detonateProjectile(projectile, targetElement) {
     if(targetElement && isTankElement(targetElement)) {
+        var pv = getVelocity(projectile);
+        var tv = getVelocity(targetElement);
+        setVelocity(targetElement, tv.vx + pv.vx / 4, tv.vy + pv.vy / 4);
         destroyTank(targetElement);
     }
     var x = projectile.offsetLeft + projectile.offsetWidth/2;
     var y = projectile.offsetTop + projectile.offsetHeight/2;
 
-    var el = document.getElementById('foo');
-    var style = window.getComputedStyle(projectile, null).getPropertyValue('font-size');
-    var fontSize = parseFloat(style);
+    var fontSize = parseFloat(window.getComputedStyle(projectile, null).getPropertyValue('font-size'));
 
     explodeAt(projectile.parentElement, x, y, fontSize);
     projectile.parentElement.removeChild(projectile);
@@ -250,29 +279,37 @@ function destroyTank(element) {
     var svg = svgDoc.getElementsByTagName('svg')[0];
     var paths = svg.getElementsByTagName('path');
 
-    for(var i=0; i<paths.length; i++) {
-        var newSVG = svg.cloneNode(true);
-        var newPaths = newSVG.getElementsByTagName('path');
-        var tankPart = element.ownerDocument.createElement('div');
-        tankPart.classList.add('tank-part');
-        for(var j=paths.length-1; j>=0; j--) {
-            if(i !== j) {
-                newPaths[j].parentNode.removeChild(newPaths[j]);
-            }
-        }
-        tankPart.appendChild(newSVG);
-        tankPart.setAttribute('style', element.getAttribute('style'));
-       
-        var position = getPosition(element);
-        setPosition(tankPart, position.x, position.y);
-        setAngle(tankPart, getAngle(element));
+    var velocity = getVelocity(element);
 
+    var fontSize = parseFloat(window.getComputedStyle(element, null).getPropertyValue('font-size'));
+
+    var transValues = getTransformValues(element);
+
+    for(var i=0; i<paths.length; i++) {
+        var newSVG = svg.cloneNode();
+        newSVG.setAttribute('width', element.offsetWidth);
+        newSVG.setAttribute('height', element.offsetHeight);
+        //var newPaths = newSVG.getElementsByTagName('g')[0].children;
+        newSVG.appendChild(paths[i].cloneNode());
+
+        var tankPart = element.ownerDocument.createElement('div');
+        tankPart.setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
+
+        tankPart.appendChild(newSVG);
+        element.parentNode.appendChild(tankPart);
+        tankPart.setAttribute('style', 'transform: matrix(' + transValues.join(', ') + ')');
         tankPart.style.left = element.offsetLeft + 'px';
         tankPart.style.top = element.offsetTop + 'px';
-        element.parentNode.appendChild(tankPart);
+        tankPart.style.width = element.offsetWidth + 'px';
+        tankPart.style.height = element.offsetHeight + 'px';
 
-        setAngleVelocity(tankPart, Math.random() * 20 - 10);
-        setVelocity(tankPart, Math.random() * 60 - 30, Math.random() * 60 - 30);
+        //var position = getPosition(element);
+        //setPosition(tankPart, position.x, position.y);
+        //setAngle(tankPart, getAngle(element));
+
+
+        setAngleVelocity(tankPart, Math.random() * 8 - 4);
+        setVelocity(tankPart, velocity.vx + Math.random() * 60 - 30, velocity.vy + Math.random() * 60 - 30);
     }
 
     element.parentNode.removeChild(element);
@@ -290,7 +327,7 @@ function explodeAt(container, x, y, size) {
         container.appendChild(explodeContainer);
     }
 
-    var explosion = container.ownerDocument.createElement('div');
+    var explosion = explodeContainer.ownerDocument.createElement('div');
     explosion.classList.add('tank-explosion');
     explodeContainer.appendChild(explosion);
     explosion.setAttribute('style', 'font-size: ' + size + 'px;');

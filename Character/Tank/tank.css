@@ -3,38 +3,30 @@
     background-image: url(tank.svg);
 }
 
-.tank-part,
-.tank {
-    position: absolute;
-    background-size: 4em 2em;
-    width: 4em;
-    height: 2em;
-    font-size: 16px;
-}
-
-.tank.large,
-.tank-part.large {
-    font-size: 24px;
-}
-
-.tank.small,
-.tank-part.small {
-    font-size: 12px;
-}
-
-.tank.tiny,
-.tank-part.tiny {
-    font-size: 8px;
-}
-
 img.tank,
 object.tank {
     background-image: none;
 }
 
-.tank.reversed {
+.tank-part,
+.tank {
+    position: absolute;
+    background-size: 8em 6em;
+    width: 8em;
+    height: 6em;
+    font-size: 16px;
+    z-index: -10;
 }
 
+.tank-part {
+    /*animation: rotate 50s;*/
+    /* -webkit-animation: rotate 50s ; */ /* Chrome, Safari, Opera */
+}
+
+g.reversed,
+svg.reversed {
+    transform: rotateY(180deg);
+}
 
 .projectile {
     position: absolute;
@@ -48,6 +40,7 @@ object.tank {
     /*filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));*/
 }
 
+
 /*Explosions*/
 
 .tank-explosion-container {
@@ -57,10 +50,29 @@ object.tank {
 }
 
 .tank-explosion {
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+
+    -webkit-animation-timing-function: steps(1,end);
+    animation-timing-function: steps(1,end);
+
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+
+    -webkit-animation-name: bkframes4x5;
+    animation-name: bkframes4x5;
+
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+
     position: absolute;
     background-image: url(img/explosion.png);
     background-size: 5em 4em;
-/*     background-position: 6em 33em; */
+
+    /* background-position: -4em -3em; */
     /*font-size: 96px;*/
     width: 1em;
     height: 1em;
@@ -68,26 +80,110 @@ object.tank {
 /*     margin-top: -0.5em; */
 }
 
-.tank-explosion.f1 { background-position: 0 0; }
-.tank-explosion.f2 { background-position: -1em 0; }
-.tank-explosion.f3 { background-position: -2em 0; }
-.tank-explosion.f4 { background-position: -3em 0; }
-.tank-explosion.f5 { background-position: -4em 0; }
+/*.tank-explosion.f1 { background-position: 0 0; }*/
+/*.tank-explosion.f2 { background-position: -1em 0; }*/
+/*.tank-explosion.f3 { background-position: -2em 0; }*/
+/*.tank-explosion.f4 { background-position: -3em 0; }*/
+/*.tank-explosion.f5 { background-position: -4em 0; }*/
 
-.tank-explosion.f6 { background-position: 0 -1em; }
-.tank-explosion.f7 { background-position: -1em -1em; }
-.tank-explosion.f8 { background-position: -2em -1em; }
-.tank-explosion.f9 { background-position: -3em -1em; }
-.tank-explosion.f10 { background-position: -4em -1em; }
+/*.tank-explosion.f6 { background-position: 0 -1em; }*/
+/*.tank-explosion.f7 { background-position: -1em -1em; }*/
+/*.tank-explosion.f8 { background-position: -2em -1em; }*/
+/*.tank-explosion.f9 { background-position: -3em -1em; }*/
+/*.tank-explosion.f10 { background-position: -4em -1em; }*/
 
-.tank-explosion.f11 { background-position: 0 -2em; }
-.tank-explosion.f12 { background-position: -1em -2em; }
-.tank-explosion.f13 { background-position: -2em -2em; }
-.tank-explosion.f14 { background-position: -3em -2em; }
-.tank-explosion.f15 { background-position: -4em -2em; }
+/*.tank-explosion.f11 { background-position: 0 -2em; }*/
+/*.tank-explosion.f12 { background-position: -1em -2em; }*/
+/*.tank-explosion.f13 { background-position: -2em -2em; }*/
+/*.tank-explosion.f14 { background-position: -3em -2em; }*/
+/*.tank-explosion.f15 { background-position: -4em -2em; }*/
 
-.tank-explosion.f16 { background-position: 0 -3em; }
-.tank-explosion.f17 { background-position: -1em -3em; }
-.tank-explosion.f18 { background-position: -2em -3em; }
-.tank-explosion.f19 { background-position: -3em -3em; }
-.tank-explosion.f20 { background-position: -4em -3em; display: none; }
+/*.tank-explosion.f16 { background-position: 0 -3em; }*/
+/*.tank-explosion.f17 { background-position: -1em -3em; }*/
+/*.tank-explosion.f18 { background-position: -2em -3em; }*/
+/*.tank-explosion.f19 { background-position: -3em -3em; }*/
+/*.tank-explosion.f20 { background-position: -4em -3em; display: none; }*/
+
+
+@-webkit-keyframes bkframes4x5 {
+    0%    { background-position: 0 0; }
+    5%    { background-position: -1em 0; }
+    10%   { background-position: -2em 0; }
+    15%   { background-position: -3em 0; }
+    20%   { background-position: -4em 0; }
+
+    25%   { background-position: 0 -1em; }
+    30%   { background-position: -1em -1em; }
+    35%   { background-position: -2em -1em; }
+    40%   { background-position: -3em -1em; }
+    45%   { background-position: -4em -1em; }
+
+    50%   { background-position: 0 -2em; }
+    55%   { background-position: -1em -2em; }
+    60%   { background-position: -2em -2em; }
+    65%   { background-position: -3em -2em; }
+    70%   { background-position: -4em -2em; }
+
+    75%   { background-position: 0 -3em; }
+    80%   { background-position: -1em -3em; }
+    85%   { background-position: -2em -3em; }
+    90%   { background-position: -3em -3em; }
+    95%   { background-position: -4em -3em; }
+
+    100%  { background-position: -4em -3em; display: none; height: 0; }
+}
+@keyframes bkframes4x5 {
+    0%    { background-position: 0 0; }
+    5%    { background-position: -1em 0; }
+    10%   { background-position: -2em 0; }
+    15%   { background-position: -3em 0; }
+    20%   { background-position: -4em 0; }
+
+    25%   { background-position: 0 -1em; }
+    30%   { background-position: -1em -1em; }
+    35%   { background-position: -2em -1em; }
+    40%   { background-position: -3em -1em; }
+    45%   { background-position: -4em -1em; }
+
+    50%   { background-position: 0 -2em; }
+    55%   { background-position: -1em -2em; }
+    60%   { background-position: -2em -2em; }
+    65%   { background-position: -3em -2em; }
+    70%   { background-position: -4em -2em; }
+
+    75%   { background-position: 0 -3em; }
+    80%   { background-position: -1em -3em; }
+    85%   { background-position: -2em -3em; }
+    90%   { background-position: -3em -3em; }
+    95%   { background-position: -4em -3em; }
+
+    100%  { background-position: -4em -3em; display: none; height: 0; }
+}
+
+
+@-webkit-keyframes rotate {
+    0%   {transform: rotate(0deg);}
+    10%   {transform: rotate(10deg);}
+    20%   {transform: rotate(20deg);}
+    30%   {transform: rotate(30deg);}
+    40%   {transform: rotate(40deg);}
+    50%   {transform: rotate(50deg);}
+    60%   {transform: rotate(60deg);}
+    70%   {transform: rotate(70deg);}
+    80%   {transform: rotate(80deg);}
+    90%   {transform: rotate(90deg);}
+    100%   {transform: rotate(100deg);}
+}
+@keyframes rotate {
+    0%   {transform: rotate(0deg);}
+    10%   {transform: rotate(10deg);}
+    20%   {transform: rotate(20deg);}
+    30%   {transform: rotate(30deg);}
+    40%   {transform: rotate(40deg);}
+    50%   {transform: rotate(50deg);}
+    60%   {transform: rotate(60deg);}
+    70%   {transform: rotate(70deg);}
+    80%   {transform: rotate(80deg);}
+    90%   {transform: rotate(90deg);}
+    100%   {transform: rotate(100deg);}
+}

@@ -2,6 +2,7 @@ section.content {
     opacity:0.8;
     max-width: 980px;
     user-select: none;
+    overflow: hidden;
 }
 
 .artillery001 {
@@ -56,47 +57,58 @@ section.content {
 
 .tank {
     position: absolute;
+    /*transform-origin: top left;*/
 }
 
 .tank1 {
-    font-size: 12px !important;
-    left: 501px;
-    top: 420px;
-    transform: rotate(-13deg) rotateY(180deg);
+    font-size: 10px !important;
+    left: 482px;
+    bottom: 248px;
+    transform: rotate(-17deg) scale(-1, 1);
+/*//  scale(0.2)*/
 }
 
 .tank2 {
-    font-size: 20px !important;
-    left: 631px;
-    bottom: 57px;
-    transform: rotate(15deg);
+    font-size: 32px !important;
+    left: 528px;
+    bottom: 39px;
+    transform: rotate(20deg);
+    opacity: 0.3;
 }
 
 .tank3 {
-    font-size: 10px !important;
-    left: 832px;
-    bottom: 323px;
-    transform: rotate(7deg) rotateY(180deg);
+    font-size: 8px !important;
+    left: 821px;
+    bottom: 327px;
+    transform: rotate(7deg) scale(-1, 1);
 }
 
 .tank4 {
-    font-size: 10px !important;
-    left: 722px;
-    bottom: 284px;
-    transform: rotate(-7deg) rotateY(180deg);
+    font-size: 8px !important;
+    left: 713px;
+    bottom: 287px;
+    transform: rotate(-7deg) scale(-1, 1);
 }
 
 .tank5 {
-    left: 938px;
-    bottom: 550px;
-    transform: rotate(-24deg) rotateY(180deg);
+    left: 873px;
+    font-size: 20px !important;
+    bottom: 544px;
+    transform: rotate(-24deg) scale(-1, 1);
+}
+
+.tank6 {
+    font-size: 6px !important;
+    left: 386px;
+    bottom: 361px;
+    transform: rotate(-14deg) scale(-1, 1);
 }
 
 .usertank {
-    font-size: 10px !important;
-    left: 46px;
-    bottom: 165px;
-    transform: rotate(340deg);
+    font-size: 18px !important;
+    left: 5px;
+    bottom: 156px;
+    transform: rotate(-20deg);
 }
 
 .controls {

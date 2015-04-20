@@ -3,8 +3,8 @@ var dragging = false;
 function onClick(e) {
     var w = document.documentElement.offsetWidth || document.documentElement.width.baseVal.value;
     var h = document.documentElement.offsetHeight || document.documentElement.height.baseVal.value;
-    var x = e.pageX || e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    var y = e.pageY || e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    var x = e.pageX || e.clientX + document.documentElement.scrollLeft + document.documentElement.scrollLeft;
+    var y = e.pageY || e.clientY + document.documentElement.scrollTop + document.documentElement.scrollTop;
 
     x-=50;
     y-=50;
@@ -37,12 +37,15 @@ function onClick(e) {
             break;
     }
 
-    var angle = parseInt(Math.atan2(w/2 - x, y - h/2) * 180 / Math.PI + 90);
+    var angle = parseInt(Math.atan2(x - w/2, h/2 - y) * 180 / Math.PI);
+    if(angle<18) angle = 18;
+    if(angle>90) angle = 90;
 
-    //var g = document.getElementById('controls');
-    //g.setAttribute('transform', 'translate(' + (x < 100 ? 100 : x) + ', ' + (y < 100 ? 100 : y) + ') rotate(' + angle + ')');
-    var xyAngle = document.getElementById('xy-angle');
-    xyAngle.setAttribute('transform', ' translate(194, 185) rotate(' + angle + ')');
+    var angleRotate = document.getElementsByClassName('angle-rotate');
+    for(var i=0; i<angleRotate.length; i++)
+        angleRotate[i].setAttribute('transform', 'rotate(' + (angle - 90) + ')');
+
+    document.getElementById('angle-circle').style.strokeDashoffset = -angle;
 
     var event = new CustomEvent('xy', {
         detail: {

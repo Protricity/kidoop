@@ -21,41 +21,12 @@ CONFIG.documents.push(document);
 var svgDoc = document.getElementsByTagName('svg')[0];
 function elementFromPoint(x, y) {
     var elm = document.elementFromPoint(x, y);
-    if(elm === svgDoc) 
+    if(elm === null || elm === svgDoc)
+        return null;
+    if(elm.classList && elm.classList.contains('nohit'))
         return null;
     return elm;
 }
-//
-//var heights = [];
-//function isCollisionPoint(x, y) {
-//    if(!isNaN(heights[x])) {
-//        return y >= heights[x];
-//    }
-//
-//    if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
-//        return false;
-//
-//    var min = 0;
-//    var max = svgDoc.offsetHeight;
-//    var height = y;
-//    while(max > min + 1) {
-//        var test = !!elementFromPoint(x, height);
-//        console.log("Test: ", x, height, test);
-//        if (test) {
-//            max = height;
-//        } else {
-//            min = height;
-//        }
-//        height = Math.floor((min + max) / 2);
-//    }
-//
-//    heights[x] = height;
-//    return y >= height;
-//}
-//
-//function scanTerrain(x1, y1, x2, y2) {
-//
-//}
 
 var height = [];
 var heightMax = [];
@@ -64,12 +35,11 @@ var cacheName = document.location.href;
 var CHAR_OFFSET = 64;
 
 
-
 var tryLoad = function() {
     var g = document.getElementsByTagName('g')[0];
     if (!g) {
         setTimeout(tryLoad, 100);
-    } else {
+    } else if(g.getAttribute('height')) {
         height = g.getAttribute('height').split('').map(function (char) {
             return char.charCodeAt(0) - CHAR_OFFSET;
         });
@@ -85,20 +55,23 @@ tryLoad();
 
 //var storeCount = 1;
 function isCollisionPoint(x, y) {
+    var w = document.documentElement.offsetWidth || document.documentElement.width.baseVal.value;
+    var h = document.documentElement.offsetHeight || document.documentElement.height.baseVal.value;
+
+    if(Math.abs(x) > w/2 || Math.abs(y) > h/2)
+        return false;
+
+    x += w/2;
+    y += h/2;
+
     if(y <= height[x] && !isNaN(height[x]))
         return false;
 
     if(y >= heightMax[x])
         return true;
 
-    if(x<0 || y<0 || x>svgDoc.offsetWidth || y>svgDoc.offsetHeight)
-        return false;
-
-    //height[x] = 0;
-    //heightMax[x] = svgDoc.offsetHeight;
-
     var test = !!elementFromPoint(x, y);
-    console.log("Test: ", x, y, test);
+    //console.log("Test Terrain: ", x, y, test);
     if(test) {
         heightMax[x] = y;
     } else {
@@ -115,20 +88,8 @@ function isTerrainElement(element) {
 function onCollision(e) {
     if(!isTerrainElement(e.target))
         return;
-    e.detail.isCollisionPoint = function(x, y) {
-        //
-        //if(isNaN(heights[x])) {
-        //    for (var i = 0; i < 64; i++) {
-        //        if (!isNaN(heights[x + i])) {
-        //            scanTerrain(x, y, x + i, heights[x + i]);
-        //            break;
-        //        }
-        //        if (!isNaN(heights[x - i])) {
-        //            scanTerrain(x, y, x - i, heights[x - i]);
-        //            break;
-        //        }
-        //    }
-        //}
+    e.detail.testPoint = function(x, y) {
+
         return isCollisionPoint(x, y);
     };
 }

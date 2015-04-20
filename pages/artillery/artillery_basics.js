@@ -1,5 +1,3 @@
-var renderList = document.getElementsByClassName('projectile');
-
 var doRender = function() {
     var renderEvent = new CustomEvent('render');
     document.dispatchEvent(renderEvent);
@@ -17,7 +15,11 @@ var resume = function() {
 document.addEventListener('click', function(e) {
     var tanks = document.getElementsByClassName('usertank');
     for(var i=0; i<tanks.length; i++)
-        tanks[i].dispatchEvent(new CustomEvent('fire'));
+        tanks[i].dispatchEvent(new CustomEvent('fire', {
+            detail: {
+                clickEvent: e
+            }
+        }));
 }, true);
 
 document.addEventListener('xy', function(e) {

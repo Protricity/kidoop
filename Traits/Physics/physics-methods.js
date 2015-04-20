@@ -7,6 +7,27 @@ function rotate(cx, cy, x, y, angle) {
     return [nx, ny];
 }
 
+function getMatrixInverse(a, b, c, d, e, f) {
+    var dt = a * d - b * c;	// determinant(), skip DRY here...
+
+    var m = [];
+    m[0] = d / dt;
+    m[1] = -b / dt;
+    m[2] = -c / dt;
+    m[3] = a / dt;
+    m[4] = (c * f - d * e) / dt;
+    m[5] = -(a * f - b * e) / dt;
+
+    return m;
+}
+
+function transform(x, y, a, b, c, d, e, f) {
+    return [
+        x * a + y * c + e,
+        x * b + y * d + f
+    ];
+}
+
 function getRect(element) {
     var p = getPosition(element);
     var w = element.offsetWidth;
@@ -63,10 +84,23 @@ function getAcceleration(element) {
     return {ax:ax, ay:ay};
 }
 
-function getAngle(element) {
-    if(typeof element.dataset.a !== 'undefined')
-        return (360 + parseFloat(element.dataset.a)) % 360;
+//
+//function transformXYInto(element, x, y) {
+//    var values = getTransformValues(element);
+//    if(!values) return [x, y];
+//    var point = transform(x, y, values[0], values[1], values[2], values[3], values[4], values[5]);
+//    return [point[0], point[1]]
+//}
+//
+//function transformXYOutOf(element, x, y) {
+//    var values = getTransformValues(element);
+//    if(!values) return [x + element.offsetLeft, y + element.offsetTop];
+//    else values = getMatrixInverse(values[0], values[1], values[2], values[3], values[4], values[5]);
+//    var point = transform(x, y, values[0], values[1], values[2], values[3], values[4], values[5]);
+//    return [point[0], point[1]]
+//}
 
+function getTransformValues(element) {
     var st = window.getComputedStyle(element, null);
     var tr = st.getPropertyValue("-webkit-transform") ||
         st.getPropertyValue("-moz-transform") ||
@@ -75,44 +109,65 @@ function getAngle(element) {
         st.getPropertyValue("transform") ||
         "FAIL";
 
-// With rotate(30deg)...
-// matrix(0.866025, 0.5, -0.5, 0.866025, 0px, 0px)
+    if (!tr || tr === 'none' || tr === 'FAIL')
+        return false;
 
-// rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
+    return tr.split('(')[1].split(')')[0].split(',').map( function( num ){ return parseFloat( num) } );
+}
 
 
-    if(!tr || tr === 'none')
-        return 0;
-        
-    var values = tr.split('(')[1].split(')')[0].split(',');
+function getAngle(element) {
+    if(typeof element.dataset.a !== 'undefined')
+        return (360 + parseFloat(element.dataset.a)) % 360;
+
+    var values = getTransformValues(element);
     var a = values[0];
     var b = values[1];
     var c = values[2];
     var d = values[3];
 
-    //var scale = Math.sqrt(a*a + b*b);
 
-// arc sin, convert from radians to degrees, round
-//    var sin = b/scale;
-// next line works for 30deg but not 130deg (returns 50);
-// var angle = Math.round(Math.asin(sin) * (180/Math.PI));
-    var angle = (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
-    if(element.classList.contains('reversed'))
-        angle = (angle + 180) % 360;
-    return angle;
+    //var scale = Math.sqrt(a*a + b*b);
+    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
 }
 
 function getAngleVelocity(element) {
     return parseFloat(element.dataset.va) || 0;
 }
 
+function addAngle(element, degrees) {
+    degrees = parseInt(degrees * 10) / 10;
+    element.dataset.a = degrees;
+
+    var values = getTransformValues(element);
+    if(values)
+        element.style.transform = 'matrix(' + values.join(',') + ') rotate(' + degrees + 'deg)';
+    else
+        element.style.transform = 'rotate(' + degrees + 'deg)';
+}
+
 function setAngle(element, degrees) {
     degrees = parseInt(degrees * 10) / 10;
     element.dataset.a = degrees;
-    var transform = 'rotate(' + degrees + 'deg)';
-    if(element.classList.contains('reversed'))
-        transform += ' scaleX(-1)';
-    element.style.transform = transform;
+
+    var values = getTransformValues(element);
+    var a = values[0];
+    var b = values[1];
+    var c = values[2];
+    var d = values[3];
+
+    var scaleX = Math.sqrt((a * a) + (c * c));
+    var scaleY = Math.sqrt((b * b) + (d * d));
+    var scale = Math.sqrt(a*a + b*b);
+    if(Math.round(scale*10)/10 === 1) {
+        element.style.transform = 'rotate(' + degrees + 'deg)';
+    } else {
+        element.style.transform = 'rotate(' + degrees + 'deg) scale(' + scale + ')';
+    }
+//     var values = getTransformValues(element);
+//     if(values)
+//         element.style.transform = 'matrix(' + values.join(',') + ') rotate(' + degrees + 'deg)';
+//     else
 }
 
 function setAngleVelocity(element, degreeVelocity) {
@@ -147,10 +202,20 @@ function renderElement(element, duration) {
         setPosition(element, p.x, p.y);
 
         var siblings = element.parentNode.children;
+        var bb1 = element.getBoundingClientRect();
         for(var k=0; k<siblings.length; k++) {
             var sibling = siblings[k];
+            if(sibling === element)
+                continue;
+            var bb2 = sibling.getBoundingClientRect();
+            if(    bb1.right  < bb2.left
+                || bb1.left   > bb2.right
+                || bb1.bottom < bb2.top
+                || bb1.top    > bb2.bottom
+            )
+                continue;
             testCollision(element, sibling, duration);
-            if(!element)
+            if(!element || !element.parentNode)
                 break;
         }
         if(!element || !element.parentNode)
@@ -161,8 +226,8 @@ function renderElement(element, duration) {
         var angleVelocity = getAngleVelocity(element);
 
         if(angleVelocity) {
-            angle += angleVelocity;
-            setAngle(element, angle);
+            //angle += angleVelocity;
+            addAngle(element, angleVelocity);
         }
     }
 
@@ -202,31 +267,28 @@ function findExitPoint(test, x, y) {
         if(!test(x+d, y+d)) return [d, d];
         if(!test(x-d, y+d)) return [-d, d];
     }
-    throw new Error("No exit point found");
+    throw new Error("No exit point found: ", [x, y]);
 }
 
 function testCollision(element, element2) {
     if (element === element2)
         return false;
 
-    if (element2.offsetLeft > element.offsetLeft + element.offsetWidth)
-        return false;
-
-    if (element2.offsetLeft + element2.offsetWidth < element.offsetLeft)
-        return false;
-
-    if (element2.offsetTop > element.offsetTop + element.offsetHeight)
-        return false;
-
-    if (element2.offsetTop + element2.offsetHeight < element.offsetTop)
-        return false;
+    var transform1 = getTransformValues(element);
+    var transform2 = getTransformValues(element2);
+    var transformInverse = false;
+    if(transform2)
+        transformInverse = getMatrixInverse(transform2[0], transform2[1], transform2[2], transform2[3], transform2[4], transform2[5]);
 
     var collisionEvent = new CustomEvent('collision', {
         detail: {
-            points: null,
+            points: [[0,0]],
+
             withElement: element,
-            isCollisionPoint: function (x, y) {
-                return (x>=0 && y>=0); //  && x<=document.offsetWidth && y<=document.offsetHeight);
+            testPoint: function (x, y) {
+                return (Math.abs(x) > element2.offsetWidth/2
+                    || Math.abs(y) > element2.offsetHeight/2);
+                //return true; // (x>=0 && y>=0); //  && x<=document.offsetWidth && y<=document.offsetHeight);
             },
             onCollisionPoint: function (x, y) {
 
@@ -241,37 +303,24 @@ function testCollision(element, element2) {
     if (collisionEvent.defaultPrevented)
         return false;
 
-    var test = collisionEvent.detail.isCollisionPoint;
-    var dx = element.offsetLeft - element2.offsetLeft;
-    var dy = element.offsetTop - element2.offsetTop;
+    var test = collisionEvent.detail.testPoint;
 
     var points = collisionEvent.detail.points || [];
-    if(points.length === 0) {
-        points.push([0, 0]);
-        points.push([element.offsetWidth, 0]);
-        points.push([0, element.offsetHeight]);
-        points.push([element.offsetWidth, element.offsetHeight]);
-    }
 
-    var angle = getAngle(element);
     for (var i = 0; i < points.length; i++) {
         var point = [points[i][0], points[i][1]];
-        if (angle) {
-            angle = (angle % 360);
-            if (angle > 180)
-                angle -= 360;
-            point = rotate(element.offsetWidth / 2, element.offsetHeight / 2, point[0], point[1], angle);
-        }
 
-        point[0] = parseInt(point[0] + dx);
-        point[1] = parseInt(point[1] + dy);
+        if(transform1)
+            point = transform(point[0], point[1], transform1[0], transform1[1], transform1[2], transform1[3], transform1[4], transform1[5]);
 
-        if (point[0] < 0) point[0] = 0;
-        if (point[0] > element2.offsetWidth) point[0] = element2.offsetWidth;
-        if (point[1] < 0) point[1] = 0;
-        if (point[1] > element2.offsetHeight) point[1] = element2.offsetHeight;
+        point[0] += (element.offsetLeft + element.offsetWidth/2) - (element2.offsetLeft + element2.offsetWidth/2);
+        point[1] += (element.offsetTop + element.offsetHeight/2) - (element2.offsetTop + element2.offsetHeight/2);
+
+        if(transform2)
+            point = transform(point[0], point[1], transformInverse[0], transformInverse[1], transformInverse[2], transformInverse[3], transformInverse[4], transformInverse[5]);
+
+        point = [Math.round(point[0]), Math.round(point[1])];
         if (test(point[0], point[1])) {
-//test(point[0], point[1]);
             collisionEvent.detail.onCollisionPoint(point[0], point[1]);
 
             if(!element)
@@ -284,8 +333,6 @@ function testCollision(element, element2) {
             setPosition(element, position.x, position.y);
 
             var vector = getCollisionVector(point[0] + exitPoint[0], point[1] + exitPoint[1], test);
-//             if (!vector[0] && !vector[1])
-//                vector[1] = -1;
             var velocity = getVelocity(element);
             var imp = Math.sqrt(velocity.vx * velocity.vx + velocity.vy * velocity.vy);
             imp *= WALL_BOUNCE_COOEFICIENT;
@@ -293,11 +340,7 @@ function testCollision(element, element2) {
             velocity.vy = vector[1] * imp;
             setVelocity(element, velocity.vx, velocity.vy);
 
-
-            //va = (point[0] - element.offsetWidth) / element.offsetWidth;
-            //va += (Math.abs(point[1] - element.offsetHeight) * (angle > vectorAngle ? -1 : 1)) / element.offsetHeight;
-            //    va = -va;
-
+            var angle = getAngle(element) + 360 % 360;
             var vectorAngle = (180 + 360 + Math.atan2(vector[0], vector[1]) * 180 / Math.PI) % 360;
             var va = -getAngleVelocity(element);
             va *= 0.5;
@@ -362,6 +405,70 @@ function testRectContainment(element, parent) {
         //setAngleVelocity(element, va);
     }
     return collision;
+}
+
+/**
+ * Helper function to determine whether there is an intersection between the two polygons described
+ * by the lists of vertices. Uses the Separating Axis Theorem
+ *
+ * @param a an array of connected points [{x:, y:}, {x:, y:},...] that form a closed polygon
+ * @param b an array of connected points [{x:, y:}, {x:, y:},...] that form a closed polygon
+ * @return true if there is any intersection between the 2 polygons, false otherwise
+ */
+function doPolygonsIntersect (a, b) {
+    var polygons = [a, b];
+    var minA, maxA, projected, i, i1, j, minB, maxB;
+
+    for (i = 0; i < polygons.length; i++) {
+
+        // for each polygon, look at each edge of the polygon, and determine if it separates
+        // the two shapes
+        var polygon = polygons[i];
+        for (i1 = 0; i1 < polygon.length; i1++) {
+
+            // grab 2 vertices to create an edge
+            var i2 = (i1 + 1) % polygon.length;
+            var p1 = polygon[i1];
+            var p2 = polygon[i2];
+
+            // find the line perpendicular to this edge
+            var normal = { x: p2.y - p1.y, y: p1.x - p2.x };
+
+            minA = maxA = undefined;
+            // for each vertex in the first shape, project it onto the line perpendicular to the edge
+            // and keep track of the min and max of these values
+            for (j = 0; j < a.length; j++) {
+                projected = normal.x * a[j].x + normal.y * a[j].y;
+                if (isUndefined(minA) || projected < minA) {
+                    minA = projected;
+                }
+                if (isUndefined(maxA) || projected > maxA) {
+                    maxA = projected;
+                }
+            }
+
+            // for each vertex in the second shape, project it onto the line perpendicular to the edge
+            // and keep track of the min and max of these values
+            minB = maxB = undefined;
+            for (j = 0; j < b.length; j++) {
+                projected = normal.x * b[j].x + normal.y * b[j].y;
+                if (isUndefined(minB) || projected < minB) {
+                    minB = projected;
+                }
+                if (isUndefined(maxB) || projected > maxB) {
+                    maxB = projected;
+                }
+            }
+
+            // if there is no overlap between the projects, the edge we are looking at separates the two
+            // polygons, and we know there is no overlap
+            if (maxA < minB || maxB < minA) {
+                CONSOLE("polygons don't intersect!");
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 
