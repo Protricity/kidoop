@@ -24,7 +24,7 @@ section.content {
 }
 
 .wind {
-    background: url('wind.jpg') repeat-x;
+    background: url('../img/wind.jpg') repeat-x;
     /*     background-size: 1980px 1280px; */
     /* position: absolute; */
     /* width: 100%; */
