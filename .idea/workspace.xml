@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/artillery/artillery_basics.css" afterPath="$PROJECT_DIR$/pages/artillery/artillery_basics.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank.js" afterPath="$PROJECT_DIR$/Character/Tank/tank.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,18 +73,8 @@
       <file leaf-file-name="tank.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.12" vertical-offset="2244" max-vertical-offset="5831">
-              <caret line="141" column="61" selection-start-line="141" selection-start-column="61" selection-end-line="141" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectile.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Character/Tank/Projectile/projectile.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1139">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state vertical-scroll-proportion="-6.12" vertical-offset="2261" max-vertical-offset="5831">
+              <caret line="142" column="5" selection-start-line="142" selection-start-column="5" selection-end-line="142" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -116,20 +107,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="artillery_basics.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
+      <file leaf-file-name="gravXY.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.5635359" vertical-offset="306" max-vertical-offset="1479">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="artillery_basics.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gravXY.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26299">
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="artillery_basics.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2363">
+              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="artillery_basics.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/artillery_basics.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5221843" vertical-offset="0" max-vertical-offset="879">
+            <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="612">
               <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding />
             </state>
@@ -204,7 +215,6 @@
         <option value="$PROJECT_DIR$/pages/artillery/ui/wind.svg" />
         <option value="$PROJECT_DIR$/pages/artillery/ui/wind_grav.svg" />
         <option value="$PROJECT_DIR$/pages/artillery/ui/angle90.svg" />
-        <option value="$PROJECT_DIR$/pages/artillery/ui/gravXY.js" />
         <option value="$PROJECT_DIR$/pages/artillery/ui/gravXY.svg" />
         <option value="$PROJECT_DIR$/pages/artillery/svg/artillery001.svg" />
         <option value="$PROJECT_DIR$/pages/artillery001.html" />
@@ -220,6 +230,7 @@
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
         <option value="$PROJECT_DIR$/pages/artillery/artillery_basics.css" />
+        <option value="$PROJECT_DIR$/pages/artillery/ui/gravXY.js" />
       </list>
     </option>
   </component>
@@ -951,22 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1479">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.04" vertical-offset="272" max-vertical-offset="26299">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/artillery001.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.576923" vertical-offset="21" max-vertical-offset="697">
@@ -1078,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.12" vertical-offset="2244" max-vertical-offset="5831">
-          <caret line="141" column="61" selection-start-line="141" selection-start-column="61" selection-end-line="141" selection-end-column="61" />
+        <state vertical-scroll-proportion="-6.12" vertical-offset="2261" max-vertical-offset="5831">
+          <caret line="142" column="5" selection-start-line="142" selection-start-column="5" selection-end-line="142" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1092,18 +1087,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
+    <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="26299">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/artillery_basics.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5221843" vertical-offset="0" max-vertical-offset="879">
+        <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="612">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artillery/artillery_basics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2363">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/artillery/ui/gravXY.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5635359" vertical-offset="306" max-vertical-offset="1479">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>

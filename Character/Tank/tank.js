@@ -138,7 +138,7 @@ function onFire(e) {
         if(cannonAngle<0 || cannonAngle>180) cannonAngle = 0;
         if(cannonAngle>70) cannonAngle = 70;
 
-        console.log(cannonAngle, (d<500?d:500)/500);
+//         console.log(cannonAngle, (d<500?d:500)/500);
         fireCannon(tank, cannonAngle, (d<500?d:500)/500 + 0.2);
     }
 

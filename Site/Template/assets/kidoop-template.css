@@ -24,9 +24,11 @@ background-color: rgba(123, 166, 220, 1); // #537EB4
     padding: 1em;
     margin: 1em;
 
-    overflow-x: hidden;
+    
+overflow-x: hidden;
 
-    -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+    
+/* -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     min-width: 800px;
 }
