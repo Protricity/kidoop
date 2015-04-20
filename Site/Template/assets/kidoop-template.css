@@ -16,19 +16,18 @@ body {
 }
 
 .content {
-background: url('img/kidoop.png') no-repeat;
-    
-background-color: rgba(123, 166, 220, 1); // #537EB4 
+    background: url('img/kidoop.png') no-repeat;
+
+    background-color: rgba(123, 166, 220, 1); // #537EB4 
     border: 1pt solid #ccc;
     border-radius: 1em;
     padding: 1em;
     margin: 1em;
 
     
-overflow-x: hidden;
+    overflow: hidden;
 
-    
-/* -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); */
+/* -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,1.5)); */
     filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
     min-width: 800px;
 }

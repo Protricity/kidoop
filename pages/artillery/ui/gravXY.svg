@@ -1414,7 +1414,8 @@
      inkscape:groupmode="layer"
      transform1="matrix(1,0,-0.249328,1,0,0)"
      style="-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"
-     transform="translate(-200,0)">
+     transform="translate(-200,0)"
+     >
     <flowRoot
        xml:space="preserve"
        id="flowRoot9051"

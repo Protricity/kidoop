@@ -59,7 +59,7 @@ function isCollisionPoint(sx, sy, target) {
         return testCache[i];
 
     var test = !!elementFromPoint(x, y);
-    console.log("Test Tank: ", [x, y, test]);
+    //console.log("Test Tank: ", [x, y, test]);
     testCache[i] = test;
 
     if(test)
