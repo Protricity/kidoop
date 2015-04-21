@@ -34,3 +34,21 @@ document.addEventListener('xy', function(e) {
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
 });
+
+
+
+function onCompile() {
+    for (var x = 0; x <= svgDoc.offsetWidth; x++) {
+        var min = 0;
+        var max = svgDoc.offsetHeight;
+        while (max > min + 1) {
+            var y = parseInt((min + max) / 2);
+            if (!!elementFromPoint(x, y)) {
+                max = y;
+            } else {
+                min = y;
+            }
+        }
+        console.log(x, min,max);
+    }
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<?xml-stylesheet type="text/css" href="css/basics.css" ?><svg
+<?xml-stylesheet type="text/css" href="css/basics.css" ?>
+<svg
    xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -17,17 +17,14 @@
    id="svg3434"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="basics.svg"
+   sodipodi:docname="01basics.svg"
    style="enable-background:new">
   <script
-     xlink:href="../Terrain/terrain.js"
+     xlink:href="assets/artillery.js"
      id="script3405" />
   <script
-     xlink:href="../Character/tank.js"
-     id="script6443" />
-  <script
-     xlink:href="js/basics.js"
-     id="script6445" />
+     xlink:href="assets/01basics.js"
+     id="script5633" />
   <defs
      id="defs3436">
     <filter
@@ -332,13 +329,23 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5705"
-       id="linearGradient5640"
+       id="linearGradient4657"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2,0,0,2,-6.0000028,-45.000022)"
        x1="4.864502e-008"
        y1="22.5"
        x2="1.4388133"
-       y2="28"
+       y2="28" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5705"
+       id="linearGradient4663"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(2,0,0,2,397.48315,241.01124)" />
+       gradientTransform="matrix(2,0,0,2,-2.84729e-6,550)"
+       x1="4.864502e-008"
+       y1="22.5"
+       x2="1.4388133"
+       y2="28" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -347,11 +354,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3185185"
-     inkscape:cx="540"
-     inkscape:cy="300"
+     inkscape:zoom="1.0729879"
+     inkscape:cx="539.60802"
+     inkscape:cy="225.44184"
      inkscape:document-units="px"
-     inkscape:current-layer="sky"
+     inkscape:current-layer="sprite-templates"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="976"
@@ -374,7 +381,8 @@
   <g
      inkscape:groupmode="layer"
      id="sky"
-     inkscape:label="sky">
+     inkscape:label="sky"
+     style="display:inline">
     <rect
        style="opacity:1;fill:#7ba6dc;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8.44799995;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect5836"
@@ -387,7 +395,7 @@
      inkscape:groupmode="layer"
      id="sprite-templates"
      inkscape:label="sprite-templates"
-     style="display:inline">
+     style1="display:none">
     <g
        id="player-template"
        class="tank player"
@@ -548,22 +556,41 @@
          class="wheel-chain"
          id="path4871-9" />
     </g>
-    <path
-       style="enable-background:new;fill:url(#linearGradient5640);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.08744431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 408.43942,282.05496 0,7.91255 c -13.21674,0 -13.21674,-7.91255 0,-7.91255 z"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       id="projectile" />
+    <g
+       width="100%"
+       height="100%"
+       id="projectile-template">
+      <path
+         id="path5060"
+         y="20"
+         x="20"
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         d="m 4.956277,-3.9563222 0,7.9126 c -13.2167398,0 -13.2167398,-7.9126 0,-7.9126 z"
+         style="fill:url(#linearGradient4657);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.08744431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="sprites"
-     inkscape:label="sprites">
+     inkscape:label="sprites"
+     height="100%"
+     width="100%">
+    <use
+       xlink:href="#projectile-template"
+       x="50"
+       y="50"
+       id="projectile1"
+       class="projectile"
+       transform="translate(325.06288,199.42971)"
+       width="100%"
+       height="100%" />
     <use
        xlink:href="#player-template"
        x="0"
        y="0"
        id="player"
+       class="usertank"
        transform="matrix(0.96592583,-0.25881905,0.25881905,0.96592583,-136.40898,-133.04778)"
        width="100%"
        height="100%" />
@@ -616,7 +643,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,128)"
-     style="filter:url(#dropShadow)"
+     style="display:inline;filter:url(#dropShadow)"
      sodipodi:insensitive="true">
     <path
        style="opacity:0.51599995;fill:url(#linearGradient10812-6);fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient10816-4);stroke-width:3.18307972;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"

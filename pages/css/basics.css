@@ -22,6 +22,10 @@ section.content {
     100% {background-position: -100em 0;}
 }
 
+.projectile {
+    width: 100px;
+}
+
 .wind {
     background: url('../img/wind.jpg') repeat-x;
     /*     background-size: 1980px 1280px; */

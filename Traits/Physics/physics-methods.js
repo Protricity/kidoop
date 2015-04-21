@@ -117,17 +117,12 @@ function getTransformValues(element) {
 
 
 function getAngle(element) {
-    if(typeof element.dataset.a !== 'undefined')
-        return (360 + parseFloat(element.dataset.a)) % 360;
-
     var values = getTransformValues(element);
     var a = values[0];
     var b = values[1];
     var c = values[2];
     var d = values[3];
 
-
-    //var scale = Math.sqrt(a*a + b*b);
     return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
 }
 
