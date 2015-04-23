@@ -29,8 +29,13 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+
   <defs
      id="defs4267">
+
+      <ref id="paramCannonAngle" param="cannonAngle" default="40" />
+
+
     <linearGradient
        inkscape:collect="always"
        id="linearGradient4272">
@@ -211,10 +216,12 @@
        id="cannon-group"
        class="nohit"
        inkscape:groupmode="layer"
-       transform="translate(66, 56) rotate(-7)"
+       cy="url(#paramCannonAngle)"
+       transform="translate(66, 56) rotate(5)"
        inkscape:label="#cannon-group">
       <path
          id="cannon"
+         cy="url(#paramCannonAngle)"
          style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
          d="m 52.74336,-13.637897 0,5.302118 L 0,-6.568457 l 0,-7.149798 52.74336,0.08038 z"
          inkscape:connector-curvature="0"
@@ -224,7 +231,7 @@
          id="cannon-tip"
          width="1.9679996"
          height="9.0753574"
-         x="51.615307"
+         x="url(#paramCannonAngle)"
          y="-15.283634" />
     </g>
     <path

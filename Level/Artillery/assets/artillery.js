@@ -19,9 +19,25 @@ document.addEventListener('fire', onFire, true);
 function testRectContainment(element) {
 }
 
+function replaceUseWithSource(useElement) {
+    var url = useElement.getAttributeNS('xlink', 'href') || useElement.getAttribute('href') || useElement.getAttribute('xlink:href');
+    if(url.charAt(0) !== '#') throw new Error("No #");
+    var id = url.substr(1);
+    var templateElement = document.getElementById(id).cloneNode(true);
+    templateElement.setAttribute('style', useElement.getAttribute('style'));
+    templateElement.setAttribute('class', useElement.getAttribute('class'));
+    templateElement.setAttribute('transform', useElement.getAttribute('transform'));
+    templateElement.setAttribute('id', useElement.getAttribute('id') || id + '_copy');
+    useElement.parentNode.appendChild(templateElement);
+    useElement.parentNode.removeChild(useElement);
+    return templateElement;
+}
+
 function renderTank(element, duration) {
     //if(duration > RENDER_INTERVAL_MAX)
     //    duration = RENDER_INTERVAL_MAX;
+    if(element.nodeName.toLowerCase() === 'use')
+        element = replaceUseWithSource(element);
     testRectContainment(element);
 }
 
@@ -36,27 +52,66 @@ function renderProjectile(projectile, duration) {
     projectile.vx = (projectile.vx || 0) + WIND * duration / 1000;
     projectile.vy = (projectile.vy || 0) + GRAVITY * duration / 1000;
 
-    var x = parseFloat(projectile.getAttribute('x'));
-    var y = parseFloat(projectile.getAttribute('y'));
-    x += projectile.vx * duration / 1000;
-    y += projectile.vy * duration / 1000;
-    projectile.setAttribute('x', x);
-    projectile.setAttribute('y', y);
+    //var x = parseFloat(projectile.getAttribute('x')) || 0;
+    //var y = parseFloat(projectile.getAttribute('y')) || 0;
+    //x += projectile.vx * duration / 1000;
+    //y += projectile.vy * duration / 1000;
+    //projectile.setAttribute('x', x);
+    //projectile.setAttribute('y', y);
+
 
     var bb = projectile.getBoundingClientRect();
-    var position = [bb.left+bb.width/2, bb.top+bb.height/2];
+    var x = bb.left;
+    var y = bb.top;
+
+    try {
+        var svgTransform = projectile.transform.baseVal[0];
+        var matrix = svgTransform.matrix;
+        x = matrix.e;
+        y = matrix.f;
+    } catch (e) {
+
+    }
+
+    x += projectile.vx * duration / 1000;
+    y += projectile.vy * duration / 1000;
+
+    //var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
+    var vectorAngle = (180 + Math.atan2(projectile.vy, projectile.vx) * 180 / Math.PI) % 360;
+    projectile.setAttribute('transform', 'translate(' + x + ', ' + y + ') rotate(' + vectorAngle + ')');
+
+
+    //var position = [bb.left+bb.width/2, bb.top+bb.height/2];
+    //position[0] += projectile.vx * duration / 1000;
+    //position[1] += projectile.vy * duration / 1000;
+    //svgTransform.setTranslate(position[0], position[1]);
+
+    //svgTransform.setMatrix(svgTransform.matrix.translate(
+    //    projectile.vx * duration / 1000,
+    //    projectile.vy * duration / 1000
+    //));
+
     //testRectContainment(projectile);
 
-    var vectorAngle = (180 + 360 + Math.atan2(projectile.vx, projectile.vy) * 180 / Math.PI) % 360;
-    //projectile.transform.baseVal[0].setRotate(vectorAngle, bb.width/2, bb.height/2);
+    //svgTransform.setRotate(vectorAngle, bb.width/2, bb.height/2);
+    //svgTransform.setMatrix(svgTransform.matrix.rotate(curAngle < vectorAngle ? 1 : -1)); // curAngle < vectorAngle ? 1 : -1));
+    //svgTransform.setMatrix(svgTransform.matrix.rotate(vectorAngle, bb.width/2, bb.height/2));
 
-    var collisionElement = document.elementFromPoint(position[0], position[1]);
-    if(collisionElement === projectile)
-        return;
+    var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
     if(collisionElement === null) {
+        console.error('null projectile', projectile);
         detonateProjectile(projectile);
         return;
     }
+    if(collisionElement === projectile
+        || collisionElement === projectile.sourceTank
+        || collisionElement.parentNode === projectile.sourceTank
+        || collisionElement.parentNode.parentNode === projectile.sourceTank
+    )
+        return;
+    if(collisionElement.classList
+        && collisionElement.classList.contains('nohit'))
+        return;
 
     switch(collisionElement.nodeName.toLowerCase()) {
         case 'g':
@@ -68,6 +123,7 @@ function renderProjectile(projectile, duration) {
             break;
 
         default:
+            console.error('unknown collision element: ', collisionElement, projectile);
             detonateProjectile(projectile);
             break;
     }
@@ -106,12 +162,13 @@ function onFire(e) {
 
     if(e.detail.clickEvent) {
         var clickEvent = e.detail.clickEvent;
-        var dx = clickEvent.layerX - tank.offsetLeft - tank.offsetWidth/2;
-        var dy = clickEvent.layerY - tank.offsetTop - tank.offsetHeight/2;
+        var bb = tank.getBoundingClientRect();
+        var dx = clickEvent.layerX - bb.left - bb.width/2;
+        var dy = clickEvent.layerY - bb.top - bb.height/2;
         var d = Math.sqrt(dx*dx + dy*dy) - 100;
         if(d<0) d=0;
-        var cannonAngle = (-90 + 360 + Math.atan2(dx, dy) * 180 / Math.PI) % 360;
-        if(cannonAngle<0 || cannonAngle>180) cannonAngle = 0;
+        var cannonAngle = (-50 + 360 + Math.atan2(dx, dy) * 120 / Math.PI) % 360;
+        if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
         if(cannonAngle>70) cannonAngle = 70;
 
         //         console.log(cannonAngle, (d<500?d:500)/500);
@@ -122,42 +179,52 @@ function onFire(e) {
 }
 
 function fireCannon(tankElement, cannonAngle, power) {
-    var spriteGroup = document.getElementById('sprites');
-    var tankTemplate = document.getElementById('player-template');
+
+    if(tankElement.nodeName.toLowerCase() === 'use')
+        tankElement = replaceUseWithSource(tankElement);
+
+    var spriteGroup = tankElement.parentNode; // document.getElementById('sprites');
 
     var tankBB = tankElement.getBoundingClientRect();
     var tankMatrix = tankElement.transform.baseVal[0].matrix;
     var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
 
     if(cannonAngle) {
-        var cannonGroup = document.getElementById('cannon-group');
-        cannonGroup.setAttribute('transform', 'translate(66, 56) rotate(' + -cannonAngle + ')');
+        var cannonGroup = tankElement.getElementsByClassName('cannon-group')[0];
+        cannonGroup.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
         angle -= cannonAngle % 360;
     }
 
-    var point = [0,0];
+    var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
     if(cannonTip) {
         var bb = cannonTip.getBoundingClientRect();
-        point = [(bb.right + bb.left - tankBB.width) / 2, (bb.bottom + bb.top - tankBB.height) / 2];
+        point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
     }
 
-    point = transform(point[0], point[1], tankMatrix.a, tankMatrix.b, tankMatrix.c, tankMatrix.d, tankMatrix.e, tankMatrix.f);
-    point[0] += tankBB.width/2;
-    point[1] += tankBB.height/2;
+    //point = transform(point[0], point[1], tankMatrix.a, tankMatrix.b, tankMatrix.c, tankMatrix.d, tankMatrix.e, tankMatrix.f);
+//     point[0] += tankBB.width/2;
+//     point[1] += tankBB.height/2;
 
-    point[0] += 200;
+//     point[0] += 200;
 
     //point = transformXYInto(element, point[0] - element.offsetWidth/2, point[1] - element.offsetHeight/2);
 
-    point[0] += tankBB.left;
-    point[1] += tankBB.top;
+//     point[0] += tankBB.left;
+//     point[1] += tankBB.top;
 
-    var projectile = tankElement.ownerDocument.createElement('use');
-    projectile.setAttribute('xlink:href', '#projectile-template');
-    //projectile.setAttribute('transform', '');
-    projectile.setAttribute('x', point[0]+'');
-    projectile.setAttribute('y', point[1]+'');
+
+    var xmlns = "http://www.w3.org/2000/svg";
+    var svgns = 'http://www.w3.org/2000/xlink/namespace/';
+    var projectile = tankElement.ownerDocument.createElementNS(xmlns, 'use');
+
+    projectile.setAttributeNS(svgns,'xlink:href','#projectile-template');
+    projectile.href.baseVal = '#projectile-template';
+
+    projectile.setAttribute('transform', '');    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ')');
+
+    //projectile.setAttribute('x', point[0]+'');
+    //projectile.setAttribute('y', point[1]+'');
     //projectile.setAttribute('width', '100%');
     //projectile.setAttribute('height', '100%');
 
