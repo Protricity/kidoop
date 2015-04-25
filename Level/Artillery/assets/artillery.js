@@ -167,7 +167,7 @@ function renderExplosion(explosion, duration) {
         return true;
     }
     explosion.setAttribute('transform', 'translate(' + x + ', ' + y + ') rotate(' + (opacity * 20) + ') scale(' + (50 * Math.pow(opacity-0.9, 2)) + ', ' + (20 * (opacity - 0.8)) + ')');
-    explosion.style.opacity = opacity * (opacity>0.1?0.94:0.99);
+    explosion.style.opacity = opacity * (opacity>0.1?0.95:0.98);
     return false;
 }
 

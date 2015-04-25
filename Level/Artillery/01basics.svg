@@ -176,17 +176,18 @@
     <style
        type="text/css"
        id="style4903">
-          // <![CDATA[
-          .tank-cloud {
-            opacity:0.15;
+          /** <![CDATA[ **/
+          .arc20 .cannon-group {
+            transform: rotate(-20deg);
           }
           .tank-fog {
             opacity:0.3;
           }
-          .arc20 .cannon-group {
-            transform: rotate(-20deg);
+          .tank-cloud {
+            opacity:0.15;
           }
-		// ]]></style>
+		/** ]]> **/
+    </style>
     <filter
        id="dropShadow"
        x="0"
