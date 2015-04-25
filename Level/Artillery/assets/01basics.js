@@ -18,7 +18,7 @@ var resume = function() {
 
 document.addEventListener('click', function(e) {
     var tanks = document.getElementsByClassName('usertank');
-    console.log(document.elementFromPoint(e.layerX, e.layerY));
+//     console.log(document.elementFromPoint(e.layerX, e.layerY));
     for(var i=0; i<tanks.length; i++)
         tanks[i].dispatchEvent(new CustomEvent('fire', {
             detail: {

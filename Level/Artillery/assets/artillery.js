@@ -41,8 +41,40 @@ function renderTank(element, duration) {
     testRectContainment(element);
 }
 
-function renderTankPart(element, duration) {
-    testRectContainment(element);
+function renderTankPart(tankPart, duration) {
+
+    tankPart.vx = (tankPart.vx || 0) + WIND * duration / 1000;
+    tankPart.vy = (tankPart.vy || 0) + GRAVITY * duration / 1000;
+//     tankPart.va = (tankPart.va || 0) 
+
+    var bb = tankPart.getBoundingClientRect();
+    var svgTransform = tankPart.transform.baseVal[0];
+    var matrix = svgTransform.matrix;
+    var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
+    var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
+    var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
+
+    matrix.e += tankPart.vx * duration / 1000;
+    matrix.f += tankPart.vy * duration / 1000;
+    svgTransform.setMatrix(matrix.rotate(tankPart.va * duration / 1000));
+    //curAngle += tankPart.va * duration / 1000;
+
+//     tankPart.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') scale(' + scaleX + ', ' + scaleY + ') rotate(' + curAngle + ') ');
+
+    var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
+    if(collisionElement === null
+        || (collisionElement.classList
+            && !collisionElement.classList.contains('nohit')
+            && collisionElement !== tankPart
+            && collisionElement.parentNode !== tankPart
+            && collisionElement.sourceTank !== tankPart.sourceTank)
+        ) {
+        tankPart.parentNode.removeChild(tankPart);
+        explodeAt((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
+        return;
+    }
+
+    testRectContainment(tankPart);
 }
 
 function renderProjectile(projectile, duration) {
@@ -52,57 +84,29 @@ function renderProjectile(projectile, duration) {
     projectile.vx = (projectile.vx || 0) + WIND * duration / 1000;
     projectile.vy = (projectile.vy || 0) + GRAVITY * duration / 1000;
 
-    //var x = parseFloat(projectile.getAttribute('x')) || 0;
-    //var y = parseFloat(projectile.getAttribute('y')) || 0;
-    //x += projectile.vx * duration / 1000;
-    //y += projectile.vy * duration / 1000;
-    //projectile.setAttribute('x', x);
-    //projectile.setAttribute('y', y);
+    var svgTransform = projectile.transform.baseVal[0];
+    var matrix = svgTransform.matrix;
 
-
-    var bb = projectile.getBoundingClientRect();
-    var x = bb.left;
-    var y = bb.top;
-
-    try {
-        var svgTransform = projectile.transform.baseVal[0];
-        var matrix = svgTransform.matrix;
-        x = matrix.e;
-        y = matrix.f;
-    } catch (e) {
-
-    }
-
-    x += projectile.vx * duration / 1000;
-    y += projectile.vy * duration / 1000;
-
-    //var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
+    var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
+    var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
     var vectorAngle = (180 + Math.atan2(projectile.vy, projectile.vx) * 180 / Math.PI) % 360;
-    projectile.setAttribute('transform', 'translate(' + x + ', ' + y + ') rotate(' + vectorAngle + ')');
 
-
-    //var position = [bb.left+bb.width/2, bb.top+bb.height/2];
-    //position[0] += projectile.vx * duration / 1000;
-    //position[1] += projectile.vy * duration / 1000;
-    //svgTransform.setTranslate(position[0], position[1]);
-
-    //svgTransform.setMatrix(svgTransform.matrix.translate(
-    //    projectile.vx * duration / 1000,
-    //    projectile.vy * duration / 1000
+    //svgTransform.setMatrix(matrix.translate(
+    matrix.e += projectile.vx * duration / 1000;
+    matrix.f += projectile.vy * duration / 1000;
     //));
 
-    //testRectContainment(projectile);
+    //var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
+    projectile.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scaleX + ', ' + scaleY + ')');
 
-    //svgTransform.setRotate(vectorAngle, bb.width/2, bb.height/2);
-    //svgTransform.setMatrix(svgTransform.matrix.rotate(curAngle < vectorAngle ? 1 : -1)); // curAngle < vectorAngle ? 1 : -1));
-    //svgTransform.setMatrix(svgTransform.matrix.rotate(vectorAngle, bb.width/2, bb.height/2));
-
+    var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
     if(collisionElement === null) {
         console.error('null projectile', projectile);
         detonateProjectile(projectile);
         return;
     }
+//     console.log("collision: ", [collisionElement, projectile]);
     if(collisionElement === projectile
         || collisionElement === projectile.sourceTank
         || collisionElement.parentNode === projectile.sourceTank
@@ -113,29 +117,57 @@ function renderProjectile(projectile, duration) {
         && collisionElement.classList.contains('nohit'))
         return;
 
+
     switch(collisionElement.nodeName.toLowerCase()) {
         case 'g':
-            if(collisionElement.classList.contains('tank')) {
-                if(projectile.sourceTank !== collisionElement) {
-                    detonateProjectile(projectile, collisionElement);
-                }
-            }
+        case 'path':
+        case 'circle':
+            if(collisionElement.parentNode.classList.contains('tank'))
+                collisionElement = collisionElement.parentNode;
+            else if(collisionElement.parentNode.parentNode.classList.contains('tank'))
+                collisionElement = collisionElement.parentNode.parentNode;
             break;
 
         default:
             console.error('unknown collision element: ', collisionElement, projectile);
-            detonateProjectile(projectile);
             break;
     }
+    detonateProjectile(projectile, collisionElement);
 
 }
 
 
-function renderExplosion(element) {
-    if(!element.offsetWidth || !element.offsetHeight) {
-        element.parentNode.removeChild(element);
+function renderExplosion(explosion, duration) {
+    if(duration > RENDER_INTERVAL_MAX)
+        duration = RENDER_INTERVAL_MAX;
+
+    explosion.vx = (explosion.vx || 0) + WIND * duration / 10000;
+    explosion.vy = (explosion.vy || 0) + -GRAVITY * duration / 10000;
+
+    var bb = explosion.getBoundingClientRect();
+    var x = bb.left;
+    var y = bb.top;
+
+    try {
+        var svgTransform = explosion.transform.baseVal[0];
+        var matrix = svgTransform.matrix;
+        x = matrix.e;
+        y = matrix.f;
+    } catch (e) {
+
+    }
+
+    x += explosion.vx * duration / 1000;
+    y += explosion.vy * duration / 1000;
+
+    var opacity = parseFloat(explosion.style.opacity || 1);
+
+    if(opacity <= 0.01) {
+        explosion.parentNode.removeChild(explosion);
         return true;
     }
+    explosion.setAttribute('transform', 'translate(' + x + ', ' + y + ') rotate(' + (opacity * 20) + ') scale(' + (50 * Math.pow(opacity-0.9, 2)) + ', ' + (20 * (opacity - 0.8)) + ')');
+    explosion.style.opacity = opacity * (opacity>0.1?0.94:0.99);
     return false;
 }
 
@@ -152,7 +184,7 @@ function renderArtilleryElements(e) {
     for(i=0; i<tankParts.length; i++)
         renderTankPart(tankParts[i], RENDER_INTERVAL);
 
-    var explosions = e.target.getElementsByClassName('tank-explosion');
+    var explosions = e.target.getElementsByClassName('explosion');
     for(i=0; i<explosions.length; i++)
         renderExplosion(explosions[i], RENDER_INTERVAL);
 }
@@ -202,17 +234,6 @@ function fireCannon(tankElement, cannonAngle, power) {
         point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
     }
 
-    //point = transform(point[0], point[1], tankMatrix.a, tankMatrix.b, tankMatrix.c, tankMatrix.d, tankMatrix.e, tankMatrix.f);
-//     point[0] += tankBB.width/2;
-//     point[1] += tankBB.height/2;
-
-//     point[0] += 200;
-
-    //point = transformXYInto(element, point[0] - element.offsetWidth/2, point[1] - element.offsetHeight/2);
-
-//     point[0] += tankBB.left;
-//     point[1] += tankBB.top;
-
 
     var xmlns = "http://www.w3.org/2000/svg";
     var svgns = 'http://www.w3.org/2000/xlink/namespace/';
@@ -221,20 +242,12 @@ function fireCannon(tankElement, cannonAngle, power) {
     projectile.setAttributeNS(svgns,'xlink:href','#projectile-template');
     projectile.href.baseVal = '#projectile-template';
 
-    projectile.setAttribute('transform', '');    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ')');
-
-    //projectile.setAttribute('x', point[0]+'');
-    //projectile.setAttribute('y', point[1]+'');
-    //projectile.setAttribute('width', '100%');
-    //projectile.setAttribute('height', '100%');
+    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ')');
 
     projectile.classList.add('projectile');
     projectile.sourceTank = tankElement;
-    spriteGroup.appendChild(projectile);
+    spriteGroup.insertBefore(projectile, spriteGroup.firstChild);
 
-    //var fontSize = parseFloat(window.getComputedStyle(tankElement, null).getPropertyValue('font-size'));
-
-    //projectile.setAttribute('style','font-size: ' + fontSize + 'px; left: ' + (point[0] - projectile.offsetWidth/2) + 'px; top: ' +  (point[1] - projectile.offsetHeight/2) + 'px; transform: rotate(' + angle + 'deg);');
 
     var velocity = CANNON_VELOCITY.slice();
     velocity[0] *= power || 1;
@@ -243,82 +256,57 @@ function fireCannon(tankElement, cannonAngle, power) {
     projectile.vx = velocity[0];
     projectile.vy = velocity[1];
 
-
-    explodeAt(point[0], point[1], tankBB.height/2);
+    //explodeAt(point[0], point[1], tankBB.height/2);
 }
 
 
 function detonateProjectile(projectile, tankElement) {
-    if(tankElement) {
+    if(tankElement && tankElement.classList.contains('tank')) {
         tankElement.vx = (tankElement.vx || 0) + projectile.vx / 4;
         tankElement.vy = (tankElement.vy || 0) + projectile.vy / 4;
         destroyTank(tankElement);
     }
-    var x = projectile.offsetLeft + projectile.offsetWidth/2;
-    var y = projectile.offsetTop + projectile.offsetHeight/2;
+    var bb = projectile.getBoundingClientRect();
+    var x = bb.left + bb.width/2;
+    var y = bb.top + bb.height/2;
 
     var fontSize = parseFloat(window.getComputedStyle(projectile, null).getPropertyValue('font-size'));
 
-    explodeAt(projectile.parentElement, x, y, fontSize);
+    explodeAt(x, y, fontSize);
     projectile.parentElement.removeChild(projectile);
 }
 
-function destroyTank(element) {
-    var svgDoc = CONFIG.documents[0];
-    var svg = svgDoc.getElementsByTagName('svg')[0];
-    var paths = svg.getElementsByTagName('path');
+function destroyTank(tankElement) {
+    if(!tankElement.classList.contains('tank'))
+        throw new Error("Not a tank: ", tankElement);
+    var paths = tankElement.children;
 
-    var velocity = getVelocity(element);
+    //var tankBB = tankElement.getBoundingClientRect();
 
-    var fontSize = parseFloat(window.getComputedStyle(element, null).getPropertyValue('font-size'));
+    for(var i=paths.length-1; i>=0; i--) {
+        paths[i].setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
+        paths[i].setAttribute('transform', tankElement.getAttribute('transform'));
 
-    var transValues = getTransformValues(element);
+        //setAngleVelocity(paths[i], Math.random() * 8 - 4);
+        paths[i].va = (tankElement.va || 0) + Math.random() * 60 - 30;
+        paths[i].vx = (tankElement.vx || 0) + Math.random() * 60 - 30;
+        paths[i].vy = (tankElement.vy || 0) + Math.random() * 60 - 50;
+        paths[i].sourceTank = tankElement;
+        tankElement.parentNode.appendChild(paths[i]);
 
-    for(var i=0; i<paths.length; i++) {
-        var newSVG = svg.cloneNode();
-        newSVG.setAttribute('width', element.offsetWidth);
-        newSVG.setAttribute('height', element.offsetHeight);
-        //var newPaths = newSVG.getElementsByTagName('g')[0].children;
-        newSVG.appendChild(paths[i].cloneNode());
-
-        var tankPart = element.ownerDocument.createElement('div');
-        tankPart.setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
-
-        tankPart.appendChild(newSVG);
-        element.parentNode.appendChild(tankPart);
-        tankPart.setAttribute('style', 'transform: matrix(' + transValues.join(', ') + ')');
-        tankPart.style.left = element.offsetLeft + 'px';
-        tankPart.style.top = element.offsetTop + 'px';
-        tankPart.style.width = element.offsetWidth + 'px';
-        tankPart.style.height = element.offsetHeight + 'px';
-
-        //var position = getPosition(element);
-        //setPosition(tankPart, position.x, position.y);
-        //setAngle(tankPart, getAngle(element));
-
-
-        setAngleVelocity(tankPart, Math.random() * 8 - 4);
-        setVelocity(tankPart, velocity.vx + Math.random() * 60 - 30, velocity.vy + Math.random() * 60 - 30);
     }
 
-    element.parentNode.removeChild(element);
+    tankElement.parentNode.removeChild(tankElement);
 }
 
-var explodeContainer = null;
 function explodeAt(x, y, size) {
-    var spriteGroup = document.getElementById('sprites');
+    var spriteGroup = document.getElementById('sky');
 
-    var explosion = spriteGroup.ownerDocument.createElement('use');
-    explosion.setAttribute('xlink:href', '#explosion');
-    //explosion.setAttribute('transform', 'matrix(' + transValues.join(', ') + ')');
-    explosion.classList.add('tank-explosion');
-    spriteGroup.appendChild(explosion);
+    var explosionElement = document.getElementById('explosion-template').cloneNode(true);
 
-    //explosion.setAttribute('style', 'font-size: ' + size + 'px;');
-    //explosion.style.left = x - explosion.offsetWidth/2;
-    //explosion.style.top = y - explosion.offsetHeight/2;
-    //explosion.setAttribute('style', 'font-size: ' + size + 'px;left: ' + (x - explosion.offsetWidth/2) + 'px; top: ' + (y - explosion.offsetHeight/2) + 'px; ');
-
+    explosionElement.classList.add('explosion');
+    explosionElement.setAttribute('transform', 'translate(' + x + ', ' + y + ') scale(4)');
+    spriteGroup.appendChild(explosionElement);
 }
 
 function getTransformValues(element) {
@@ -336,15 +324,15 @@ function getTransformValues(element) {
     return tr.split('(')[1].split(')')[0].split(',').map( function( num ){ return parseFloat( num) } );
 }
 
-function getAngle(element) {
-    var values = getTransformValues(element);
-    var a = values[0];
-    var b = values[1];
-    var c = values[2];
-    var d = values[3];
-
-    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
-}
+//function getAngle(element) {
+//    var values = getTransformValues(element);
+//    var a = values[0];
+//    var b = values[1];
+//    var c = values[2];
+//    var d = values[3];
+//
+//    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
+//}
 
 function transform(x, y, a, b, c, d, e, f) {
     return [
