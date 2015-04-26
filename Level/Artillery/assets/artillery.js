@@ -122,6 +122,7 @@ function renderProjectile(projectile, duration) {
         case 'g':
         case 'path':
         case 'circle':
+        case 'rect':
             if(collisionElement.parentNode.classList.contains('tank'))
                 collisionElement = collisionElement.parentNode;
             else if(collisionElement.parentNode.parentNode.classList.contains('tank'))
@@ -210,6 +211,14 @@ function onFire(e) {
     //destroyTank(e.target);
 }
 
+function aimCannon(tankElement, cannonAngle, power) {
+
+//.attr('d', 'M' + [
+//        [850, 75], [958, 137.5], [958, 262.5],
+//        [850, 325], [742, 262.6], [742, 137.5]
+//    ].join('L') + 'Z')
+}
+
 function fireCannon(tankElement, cannonAngle, power) {
 
     if(tankElement.nodeName.toLowerCase() === 'use')
@@ -257,6 +266,23 @@ function fireCannon(tankElement, cannonAngle, power) {
     projectile.vy = velocity[1];
 
     //explodeAt(point[0], point[1], tankBB.height/2);
+
+    var cannonProjection = document.getElementById('cannon-projection');
+    var projPoint = point;
+    var pathPoints = [point.slice()];
+    var projVelocity = [projectile.vx, projectile.vy];
+    for(var i=0; i<100; i++) {
+        projVelocity[0] += WIND;
+        projVelocity[1] += GRAVITY;
+        projPoint[0] += projVelocity[0];
+        projPoint[1] += projVelocity[1];
+        if(projPoint[0] < 0 || projPoint[0] > 1000) break;
+        if(projPoint[1] < 0 || projPoint[1] > 1000) break;
+        pathPoints.push(projPoint.slice());
+    }
+
+    cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
+
 }
 
 
@@ -281,19 +307,15 @@ function destroyTank(tankElement) {
         throw new Error("Not a tank: ", tankElement);
     var paths = tankElement.children;
 
-    //var tankBB = tankElement.getBoundingClientRect();
-
     for(var i=paths.length-1; i>=0; i--) {
         paths[i].setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
         paths[i].setAttribute('transform', tankElement.getAttribute('transform'));
 
-        //setAngleVelocity(paths[i], Math.random() * 8 - 4);
         paths[i].va = (tankElement.va || 0) + Math.random() * 60 - 30;
         paths[i].vx = (tankElement.vx || 0) + Math.random() * 60 - 30;
         paths[i].vy = (tankElement.vy || 0) + Math.random() * 60 - 50;
         paths[i].sourceTank = tankElement;
         tankElement.parentNode.appendChild(paths[i]);
-
     }
 
     tankElement.parentNode.removeChild(tankElement);
@@ -309,37 +331,21 @@ function explodeAt(x, y, size) {
     spriteGroup.appendChild(explosionElement);
 }
 
-function getTransformValues(element) {
-    var st = window.getComputedStyle(element, null);
-    var tr = st.getPropertyValue("-webkit-transform") ||
-        st.getPropertyValue("-moz-transform") ||
-        st.getPropertyValue("-ms-transform") ||
-        st.getPropertyValue("-o-transform") ||
-        st.getPropertyValue("transform") ||
-        "FAIL";
-
-    if (!tr || tr === 'none' || tr === 'FAIL')
-        return false;
-
-    return tr.split('(')[1].split(')')[0].split(',').map( function( num ){ return parseFloat( num) } );
-}
-
-//function getAngle(element) {
-//    var values = getTransformValues(element);
-//    var a = values[0];
-//    var b = values[1];
-//    var c = values[2];
-//    var d = values[3];
+//function getTransformValues(element) {
+//    var st = window.getComputedStyle(element, null);
+//    var tr = st.getPropertyValue("-webkit-transform") ||
+//        st.getPropertyValue("-moz-transform") ||
+//        st.getPropertyValue("-ms-transform") ||
+//        st.getPropertyValue("-o-transform") ||
+//        st.getPropertyValue("transform") ||
+//        "FAIL";
 //
-//    return (360 + Math.round(Math.atan2(b, a) * (180/Math.PI))) % 360;
+//    if (!tr || tr === 'none' || tr === 'FAIL')
+//        return false;
+//
+//    return tr.split('(')[1].split(')')[0].split(',').map( function( num ){ return parseFloat( num) } );
 //}
 
-function transform(x, y, a, b, c, d, e, f) {
-    return [
-        x * a + y * c + e,
-        x * b + y * d + f
-    ];
-}
 
 function rotate(cx, cy, x, y, angle) {
     var radians = (Math.PI / 180) * angle,

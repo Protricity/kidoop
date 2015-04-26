@@ -164,34 +164,34 @@
         projectile.parentElement.removeChild(projectile);
     }
 
-    function destroyTank(element) {
+    function destroyTank(tankElement) {
         var svgDoc = CONFIG.documents[0];
         var svg = svgDoc.getElementsByTagName('svg')[0];
         var paths = svg.getElementsByTagName('path');
 
-        var velocity = getVelocity(element);
+        var velocity = getVelocity(tankElement);
 
-        var fontSize = parseFloat(window.getComputedStyle(element, null).getPropertyValue('font-size'));
+        var fontSize = parseFloat(window.getComputedStyle(tankElement, null).getPropertyValue('font-size'));
 
-        var transValues = getTransformValues(element);
+        var matrix = tankElement.transform.baseVal[0].matrix;
 
         for(var i=0; i<paths.length; i++) {
             var newSVG = svg.cloneNode();
-            newSVG.setAttribute('width', element.offsetWidth);
-            newSVG.setAttribute('height', element.offsetHeight);
+            newSVG.setAttribute('width', tankElement.offsetWidth);
+            newSVG.setAttribute('height', tankElement.offsetHeight);
             //var newPaths = newSVG.getElementsByTagName('g')[0].children;
             newSVG.appendChild(paths[i].cloneNode());
 
-            var tankPart = element.ownerDocument.createElement('div');
+            var tankPart = tankElement.ownerDocument.createElement('div');
             tankPart.setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
 
             tankPart.appendChild(newSVG);
-            element.parentNode.appendChild(tankPart);
-            tankPart.setAttribute('style', 'transform: matrix(' + transValues.join(', ') + ')');
-            tankPart.style.left = element.offsetLeft + 'px';
-            tankPart.style.top = element.offsetTop + 'px';
-            tankPart.style.width = element.offsetWidth + 'px';
-            tankPart.style.height = element.offsetHeight + 'px';
+            tankElement.parentNode.appendChild(tankPart);
+            tankPart.setAttribute('style', 'transform: matrix(' + matrix.a + ', ' + matrix.b + ', ' + matrix.c + ', ' + matrix.d + ', ' + matrix.e + ', ' + matrix.f + ')');
+            tankPart.style.left = tankElement.offsetLeft + 'px';
+            tankPart.style.top = tankElement.offsetTop + 'px';
+            tankPart.style.width = tankElement.offsetWidth + 'px';
+            tankPart.style.height = tankElement.offsetHeight + 'px';
 
             //var position = getPosition(element);
             //setPosition(tankPart, position.x, position.y);
@@ -202,7 +202,7 @@
             setVelocity(tankPart, velocity.vx + Math.random() * 60 - 30, velocity.vy + Math.random() * 60 - 30);
         }
 
-        element.parentNode.removeChild(element);
+        tankElement.parentNode.removeChild(tankElement);
     }
 
     var explodeContainer = null;

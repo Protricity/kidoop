@@ -27,6 +27,46 @@
      id="defs3436">
     <linearGradient
        inkscape:collect="always"
+       id="linearGradient5180">
+      <stop
+         style="stop-color:#008d00;stop-opacity:1;"
+         offset="0"
+         id="stop5182" />
+      <stop
+         style="stop-color:#008d00;stop-opacity:0;"
+         offset="1"
+         id="stop5184" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker4688"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4268"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker4521"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4265"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
        id="blastGradient"
        gradientUnits="userSpaceOnUse">
       <stop
@@ -448,6 +488,15 @@
        fx="0"
        fy="0"
        r="12.5" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5180"
+       id="linearGradient5186"
+       x1="130.41655"
+       y1="389.3944"
+       x2="865.47021"
+       y2="389.3944"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <defs
      id="defs5172">
@@ -561,15 +610,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1596551"
-     inkscape:cx="535.78731"
-     inkscape:cy="311.54985"
+     inkscape:cx="530.5715"
+     inkscape:cy="104.59176"
      inkscape:document-units="px"
-     inkscape:current-layer="sprites"
+     inkscape:current-layer="sky"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
-     inkscape:window-x="1507"
-     inkscape:window-y="-8"
+     inkscape:window-height="976"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
      inkscape:window-maximized="1"
      units="px"
      showguides="false" />
@@ -634,6 +683,24 @@
        class="nohit"
        inkscape:connector-curvature="0"
        inkscape:label="" />
+      <path xmlns="http://www.w3.org/2000/svg"
+            style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5186);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:15.6, 15.60000000000000000;stroke-dashoffset:0;stroke-opacity:1"
+            d="M231.6637378831776,303.2706755407778L341.39097903173604,256.6022183911259L451.1182201802945,211.93376124147406L560.8454613288529,169.2653040918222L670.5727024774113,128.59684694217034L780.2999436259697,89.92838979251849L890.0271847745281,53.25993264286663L999.7544259230865,18.591475493214773"
+            id="cannon-projection"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            inkscape:connector-curvature="0"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            sodipodi:nodetypes="cc"
+            inkscape:label="">
+          <animate
+                  attributeName="stroke-dashoffset"
+                  begin="0s"
+                  from="100%"
+                  to="0%"
+                  dur="25s"
+                  fill="freeze" />
+       </path>
+
   </g>
   <!--<g-->
   <!--inkscape:groupmode="layer"-->
