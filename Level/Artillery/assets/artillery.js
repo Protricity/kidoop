@@ -310,6 +310,7 @@ function destroyTank(tankElement) {
     for(var i=paths.length-1; i>=0; i--) {
         paths[i].setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
         paths[i].setAttribute('transform', tankElement.getAttribute('transform'));
+        paths[i].setAttribute('style', tankElement.getAttribute('style'));
 
         paths[i].va = (tankElement.va || 0) + Math.random() * 60 - 30;
         paths[i].vx = (tankElement.vx || 0) + Math.random() * 60 - 30;
