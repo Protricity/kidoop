@@ -1752,6 +1752,24 @@
        height="600"
        x="7.6293945e-006"
        y="-7.6293945e-006" />
+
+      <path
+              style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5186);stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16,8,4,8;stroke-dashoffset:0;stroke-opacity:1"
+              d="m -3.7021179,-38.192741 109.7272379,-46.66846 109.72724,-44.668459 109.72724,-42.66846 109.72724,-40.66845 109.72724,-38.66846 109.72724,-36.66846 109.72725,-34.66846"
+              id="cannon-projection"
+              inkscape:connector-curvature="0"
+              sodipodi:nodetypes="cc"
+              inkscape:label="">
+          <animate
+                  attributeName="stroke-dashoffset"
+                  begin="0s"
+                  from="100%"
+                  to="0%"
+                  dur="25s"
+                  repeatCount="indefinite"
+                  fill="freeze" />
+      </path>
+
     <use
        xlink:href="#explosion-template"
        class="explosion nohit"
@@ -1797,32 +1815,6 @@
        class="nohit"
        inkscape:connector-curvature="0"
        inkscape:label="" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5186);stroke-width:4;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:16,8,4,8;stroke-dashoffset:0;stroke-opacity:1"
-       d="m -3.7021179,-38.192741 109.7272379,-46.66846 109.72724,-44.668459 109.72724,-42.66846 109.72724,-40.66845 109.72724,-38.66846 109.72724,-36.66846 109.72725,-34.66846"
-       id="cannon-projection"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       inkscape:label="">
-      <animate
-         attributeName="stroke-dashoffset"
-         begin="0s"
-         from="100%"
-         to="0%"
-         dur="25s"
-         repeatCount="indefinite"
-         fill="freeze" />
-    </path>
-    <g
-       id="g8183"
-       transform="translate(-20,-20)"
-       style="fill:#000080" />
-    <g
-       id="ui-arc-power"
-       transform1="matrix(0.80000001,0,-0.29117619,0.80000001,602.55138,23.269711)"
-       style="opacity:0.6"
-       clip-path="none"
-       transform="matrix(2,0,0,2,-160,-199.99998)" />
   </g>
   <!--<g-->
   <!--inkscape:groupmode="layer"-->

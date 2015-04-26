@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01basics.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
     </list>
@@ -70,11 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="01basics.svg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="01basics.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8046615" vertical-offset="30079" max-vertical-offset="33626">
-              <caret line="1812" column="33" selection-start-line="1812" selection-start-column="33" selection-end-line="1812" selection-end-column="33" />
+            <state vertical-scroll-proportion="-29.68" vertical-offset="29365" max-vertical-offset="33490">
+              <caret line="1771" column="0" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,8 +84,8 @@
       <file leaf-file-name="01basics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <caret line="18" column="32" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1547">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="artillery.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="artillery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-61.88" vertical-offset="3757" max-vertical-offset="6188">
-              <caret line="312" column="36" selection-start-line="312" selection-start-column="36" selection-end-line="312" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.2763596" vertical-offset="3389" max-vertical-offset="6443">
+              <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -171,9 +172,9 @@
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
         <option value="$PROJECT_DIR$/pages/artillery_basics.html" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
       </list>
     </option>
   </component>
@@ -803,26 +804,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.68" vertical-offset="29365" max-vertical-offset="33490">
+          <caret line="1771" column="0" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1547">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-61.88" vertical-offset="3757" max-vertical-offset="6188">
-          <caret line="312" column="36" selection-start-line="312" selection-start-column="36" selection-end-line="312" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8046615" vertical-offset="30079" max-vertical-offset="33626">
-          <caret line="1812" column="33" selection-start-line="1812" selection-start-column="33" selection-end-line="1812" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.2763596" vertical-offset="3389" max-vertical-offset="6443">
+          <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
           <folding />
         </state>
       </provider>

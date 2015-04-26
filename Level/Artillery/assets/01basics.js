@@ -16,16 +16,59 @@ var resume = function() {
     renderInterval = setInterval(doRender, 30)
 };
 
-document.addEventListener('click', function(e) {
+var mouseDown = false;
+function onMouse(e) {
+
+    var eventName = null;
+    switch(e.type) {
+        case 'mouseup':
+        case 'click':
+            eventName = 'fire';
+            mouseDown = false;
+            break;
+
+        case 'mousedown':
+            mouseDown = true;
+            return;
+
+        case 'mousemove':
+            eventName = 'aim';
+            break;
+
+        default:
+            throw new Error("Invalid Event: ", e);
+    }
+
     var tanks = document.getElementsByClassName('usertank');
 //     console.log(document.elementFromPoint(e.layerX, e.layerY));
-    for(var i=0; i<tanks.length; i++)
-        tanks[i].dispatchEvent(new CustomEvent('fire', {
+    for(var i=0; i<tanks.length; i++) {
+        var tank = tanks[i];
+        var bb = tank.getBoundingClientRect();
+        var dx = e.layerX - bb.left - bb.width/2;
+        var dy = e.layerY - bb.top - bb.height/2;
+        var d = Math.sqrt(dx*dx + dy*dy) - 100;
+        if(d<0) d=0;
+        var cannonAngle = (-50 + 360 + Math.atan2(dx, dy) * 120 / Math.PI) % 360;
+        if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
+        if(cannonAngle>70) cannonAngle = 70;
+
+        var cannonPower = (d<500?d:500)/500 + 0.2;
+        if(cannonPower > 1)
+            cannonPower = 1;
+
+        tank.dispatchEvent(new CustomEvent(eventName, {
             detail: {
-                clickEvent: e
+                angle: cannonAngle,
+                power: cannonPower
             }
         }));
-}, true);
+    }
+}
+
+document.addEventListener('click', onMouse, true);
+document.addEventListener('mousemove', onMouse, true);
+document.addEventListener('mouseup', onMouse, true);
+document.addEventListener('mousedown', onMouse, true);
 
 //document.addEventListener('xy', function(e) {
 //    var container = document.getElementsByClassName('artillery001')[0];
