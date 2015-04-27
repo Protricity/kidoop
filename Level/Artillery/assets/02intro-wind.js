@@ -3,7 +3,7 @@
  * User: Ari
  */
 
-WIND = -3;
+WIND = -4;
 GRAVITY = 3;
 
 var doRender = function() {

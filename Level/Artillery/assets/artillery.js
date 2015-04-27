@@ -116,9 +116,11 @@ function renderProjectile(projectile, duration) {
     )
         return;
     if(collisionElement.classList
-        && collisionElement.classList.contains('nohit'))
+        && (
+            collisionElement.classList.contains('nohit')
+            || (collisionElement.parentNode.classList && collisionElement.parentNode.classList.contains('nohit'))
+        ))
         return;
-
 
     switch(collisionElement.nodeName.toLowerCase()) {
         case 'g':
@@ -136,7 +138,6 @@ function renderProjectile(projectile, duration) {
             break;
     }
     detonateProjectile(projectile, collisionElement);
-
 }
 
 
@@ -336,7 +337,7 @@ function destroyTank(tankElement) {
     var paths = tankElement.children;
 
     for(var i=paths.length-1; i>=0; i--) {
-        paths[i].setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
+        paths[i].setAttribute('class', 'tank-part nohit'); //  + element.getAttribute('class'));
         paths[i].setAttribute('transform', tankElement.getAttribute('transform'));
         paths[i].setAttribute('style', tankElement.getAttribute('style'));
 
