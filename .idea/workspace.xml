@@ -146,8 +146,8 @@
       <file leaf-file-name="artillery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57808566" vertical-offset="3672" max-vertical-offset="6647">
-              <caret line="243" column="24" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.34256926" vertical-offset="1530" max-vertical-offset="6664">
+              <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -941,8 +941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57808566" vertical-offset="3672" max-vertical-offset="6647">
-          <caret line="243" column="24" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.34256926" vertical-offset="1530" max-vertical-offset="6664">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
           <folding />
         </state>
       </provider>

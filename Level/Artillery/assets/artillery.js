@@ -104,7 +104,8 @@ function renderProjectile(projectile, duration) {
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
     if(collisionElement === null) {
         //console.error('null projectile', projectile);
-        //detonateProjectile(projectile);
+        if(bb.top > 500)
+            detonateProjectile(projectile);
         return;
     }
 //     console.log("collision: ", [collisionElement, projectile]);
