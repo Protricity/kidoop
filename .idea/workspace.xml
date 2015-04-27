@@ -8,6 +8,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01basics.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +75,8 @@
       <file leaf-file-name="01basics.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-29.68" vertical-offset="29365" max-vertical-offset="33490">
-              <caret line="1771" column="0" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="0" />
+            <state vertical-scroll-proportion="-20.16" vertical-offset="36981" max-vertical-offset="41140">
+              <caret line="2205" column="34" selection-start-line="2205" selection-start-column="34" selection-end-line="2205" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -84,8 +85,8 @@
       <file leaf-file-name="01basics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1547">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1751">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,8 +105,8 @@
       <file leaf-file-name="artillery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2763596" vertical-offset="3389" max-vertical-offset="6443">
-              <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.5849057" vertical-offset="3808" max-vertical-offset="6630">
+              <caret line="255" column="101" selection-start-line="255" selection-start-column="101" selection-end-line="255" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -172,8 +173,8 @@
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
         <option value="$PROJECT_DIR$/pages/artillery_basics.html" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
       </list>
     </option>
@@ -246,6 +247,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kidoop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Level" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Artillery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,26 +823,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.68" vertical-offset="29365" max-vertical-offset="33490">
-          <caret line="1771" column="0" selection-start-line="1771" selection-start-column="0" selection-end-line="1771" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1751">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="319" max-vertical-offset="1547">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="-20.16" vertical-offset="36981" max-vertical-offset="41140">
+          <caret line="2205" column="34" selection-start-line="2205" selection-start-column="34" selection-end-line="2205" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2763596" vertical-offset="3389" max-vertical-offset="6443">
-          <caret line="214" column="10" selection-start-line="214" selection-start-column="10" selection-end-line="214" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5849057" vertical-offset="3808" max-vertical-offset="6630">
+          <caret line="255" column="101" selection-start-line="255" selection-start-column="101" selection-end-line="255" selection-end-column="101" />
           <folding />
         </state>
       </provider>

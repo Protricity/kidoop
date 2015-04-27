@@ -214,6 +214,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         cannonGroup.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
         angle -= cannonAngle % 360;
     }
+    angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
@@ -245,6 +246,15 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
     }
 
     cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
+
+    var uiAngleValue = document.getElementsByClassName('ui-angle-value');
+    for(i=0; i<uiAngleValue.length; i++)
+        uiAngleValue[i].setAttribute('transform', 'rotate(' + (90 - cannonAngle) + ' 120 300)')
+
+    var uiPowerValue = document.getElementsByClassName('ui-power-value');
+    for(i=0; i<uiPowerValue.length; i++)
+        uiPowerValue[i].setAttribute('transform', 'rotate(180 90 200) scale(1, ' + (cannonPower + 0.3 < 1 ? cannonPower  + 0.3 : 1) + ')');
+
 }
 
 function fireCannon(tankElement, cannonAngle, cannonPower) {
@@ -266,6 +276,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
         if(cannonAngle>70) cannonAngle = 70;
         angle -= cannonAngle % 360;
     }
+    angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];

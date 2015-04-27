@@ -17,11 +17,12 @@ var resume = function() {
 };
 
 var mouseDown = false;
+var lastAngle = 0;
+// var lastPower = 1;
 function onMouse(e) {
 
     var eventName = null;
     switch(e.type) {
-        case 'mouseup':
         case 'click':
             eventName = 'fire';
             mouseDown = false;
@@ -31,6 +32,7 @@ function onMouse(e) {
             mouseDown = true;
             return;
 
+        case 'mouseup':
         case 'mousemove':
             eventName = 'aim';
             break;
@@ -56,9 +58,19 @@ function onMouse(e) {
         if(cannonPower > 1)
             cannonPower = 1;
 
+        if(lastAngle > cannonAngle)
+            lastAngle -= 0.5;
+        else if(lastAngle < cannonAngle) 
+            lastAngle += 0.5;
+
+//         if(lastPower > cannonPower)
+//             lastPower -= 0.01;
+//         else if(lastPower < cannonPower)
+//             lastPower += 0.01;
+
         tank.dispatchEvent(new CustomEvent(eventName, {
             detail: {
-                angle: cannonAngle,
+                angle: lastAngle,
                 power: cannonPower
             }
         }));
