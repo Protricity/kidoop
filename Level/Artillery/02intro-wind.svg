@@ -2438,10 +2438,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.81999999"
-     inkscape:cx="254.0902"
-     inkscape:cy="385.8237"
+     inkscape:cx="517.50484"
+     inkscape:cy="416.3115"
      inkscape:document-units="px"
-     inkscape:current-layer="sky"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1058"
@@ -2916,8 +2916,8 @@
      transform1="translate(0,128)"
      style="display:inline;filter:url(#dropShadow)">
     <path
-       style="display:inline;fill:#000000;fill-opacity:0;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
-       d="M -49.512195,205.2439 394.63415,223.53659 355,685 -55,685 Z"
+       style="display:inline;fill:#000000;fill-opacity:0;stroke:none;stroke-width:1.02284789;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+       d="M -47.512195,238.80488 396.63415,256.04574 357,690.97509 l -410,0 z"
        id="hitbox1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
@@ -2999,7 +2999,7 @@
        xlink:href="#tank-template"
        id="enemy-3"
        class="tank"
-       transform="matrix(0.28657271,-0.02507186,0.02507186,0.28657271,380.78966,612.84867)"
+       transform="matrix(0.28657271,-0.02507186,0.02507186,0.28657271,380.78966,552.84867)"
        x="0"
        y="0"
        width="100%"

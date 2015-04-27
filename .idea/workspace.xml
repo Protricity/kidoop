@@ -102,9 +102,15 @@
       <file leaf-file-name="02intro-wind.svg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/02intro-wind.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7375" vertical-offset="48634" max-vertical-offset="51850">
-              <caret line="2899" column="15" selection-start-line="2895" selection-start-column="0" selection-end-line="2899" selection-end-column="15" />
-              <folding />
+            <state vertical-scroll-proportion="0.33295456" vertical-offset="49347" max-vertical-offset="51918">
+              <caret line="2920" column="14" selection-start-line="2920" selection-start-column="11" selection-end-line="2920" selection-end-column="14" />
+              <folding>
+                <marker date="1430162035556" expanded="true" signature="59:342568" placeholder="..." />
+                <marker date="1430162035556" expanded="true" signature="882:281092" placeholder="..." />
+                <marker date="1430162035556" expanded="true" signature="280871:281092" placeholder="..." />
+                <marker date="1430162035556" expanded="true" signature="341231:342561" placeholder="..." />
+                <marker date="1430162035556" expanded="true" signature="341231:341309" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -884,9 +890,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/02intro-wind.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7375" vertical-offset="48634" max-vertical-offset="51850">
-          <caret line="2899" column="15" selection-start-line="2895" selection-start-column="0" selection-end-line="2899" selection-end-column="15" />
-          <folding />
+        <state vertical-scroll-proportion="0.33295456" vertical-offset="49347" max-vertical-offset="51918">
+          <caret line="2920" column="14" selection-start-line="2920" selection-start-column="11" selection-end-line="2920" selection-end-column="14" />
+          <folding>
+            <marker date="1430162035556" expanded="true" signature="59:342568" placeholder="..." />
+            <marker date="1430162035556" expanded="true" signature="882:281092" placeholder="..." />
+            <marker date="1430162035556" expanded="true" signature="280871:281092" placeholder="..." />
+            <marker date="1430162035556" expanded="true" signature="341231:342561" placeholder="..." />
+            <marker date="1430162035556" expanded="true" signature="341231:341309" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
