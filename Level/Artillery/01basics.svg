@@ -2102,9 +2102,9 @@
          begin="0s"
          from="100%"
          to="0%"
-         dur="25s"
+         dur="40s"
          fill="freeze"
-         repeat="indefinite" />
+         repeatCount="indefinite" />
     </path>
     <rect
        style="display:inline;opacity:0.84299999;fill:url(#linearGradient8673);fill-opacity:1;stroke:url(#radialGradient9716);stroke-width:1.00000477;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#dropShadow);enable-background:new"
