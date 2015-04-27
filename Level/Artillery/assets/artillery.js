@@ -132,7 +132,7 @@ function renderProjectile(projectile, duration) {
             break;
 
         default:
-            console.error('unknown collision element: ', collisionElement, projectile);
+//             console.error('unknown collision element: ', collisionElement, projectile);
             break;
     }
     detonateProjectile(projectile, collisionElement);
