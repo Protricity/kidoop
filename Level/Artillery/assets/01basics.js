@@ -16,6 +16,8 @@ var resume = function() {
     renderInterval = setInterval(doRender, 30)
 };
 
+
+var lastTime = new Date().getTime();
 var lastPoint = null;
 var lastAngle = 20;
 var lastPower = 0.5;
@@ -34,6 +36,9 @@ function onMouse(e) {
 
     var tanks = document.getElementsByClassName('usertank');
 
+    var endTime = new Date().getTime();
+    var longpress = (endTime - lastTime >= 500);
+
     switch(e.type) {
         case 'click':
             isDragging = false;
@@ -41,11 +46,12 @@ function onMouse(e) {
 
         case 'mousedown':
             isDragging = true;
+            lastTime = new Date().getTime();
             return;
 
         case 'mouseup':
         case 'mousemove':
-            if(e.type === 'mouseup' && dist <= 5) {
+            if(e.type === 'mouseup' && !longpress) {
                 for(var fi=0; fi<tanks.length; fi++) {
                     var fireTank = tanks[fi];
                     fireTank.dispatchEvent(new CustomEvent('fire', {
@@ -56,6 +62,7 @@ function onMouse(e) {
                     }));
                 }
                 isDragging = false;
+                lastTime = new Date().getTime();
                 return;
             }
 
@@ -67,7 +74,7 @@ function onMouse(e) {
                 else if(lastAngle < 0 || lastAngle > 270)
                     lastAngle = 0;
 
-                lastPower = lastPower + distX / 500;
+                lastPower = lastPower + distX / 1000;
                 if(lastPower > 1)
                     lastPower = 1;
                 if(lastPower < 0.2)
