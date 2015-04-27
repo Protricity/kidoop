@@ -235,14 +235,15 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
     var projVelocity = [velocity[0], velocity[1]];
     var pathPoints = [point.slice()];
 
-    for(var i=0; i<100; i++) {
-        projVelocity[0] += WIND;
-        projVelocity[1] += GRAVITY;
-        point[0] += projVelocity[0];
-        point[1] += projVelocity[1];
-        if(point[0] < 0 || point[0] > 1000) break;
-        if(point[1] < 0 || point[1] > 1000) break;
-        pathPoints.push(point.slice());
+    for(var i=0; i<200; i++) {
+        projVelocity[0] += WIND / 5;
+        projVelocity[1] += GRAVITY / 5;
+        point[0] += projVelocity[0] / 5;
+        point[1] += projVelocity[1] / 5;
+        if(point[0] < -20 || point[0] > 1800) break;
+        if(point[1] < -20 || point[1] > 1800) break;
+        if(i % 5 === 0)
+            pathPoints.push(point.slice());
     }
 
     cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
@@ -265,7 +266,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     //explodeAt(point[0], point[1], tankBB.height/2);
     aimCannon(tankElement, cannonAngle, cannonPower);
 
-    var spriteGroup = tankElement.parentNode; // document.getElementById('sprites');
+    var spriteGroup = document.getElementById('sprites') || tankElement.parentNode;
 
     var tankBB = tankElement.getBoundingClientRect();
     var tankMatrix = tankElement.transform.baseVal[0].matrix;

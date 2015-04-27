@@ -19,7 +19,7 @@ var resume = function() {
 
 var lastTime = new Date().getTime();
 var lastPoint = null;
-var lastAngle = 20;
+var lastAngle = 0;
 var lastPower = 0.5;
 var isDragging = false;
 // var lastPower = 1;
@@ -68,7 +68,7 @@ function onMouse(e) {
 
             if(isDragging) {
 
-                lastAngle = lastAngle - distY / 5  ;
+                lastAngle = lastAngle - distY / 20;
                 if(lastAngle > 70)
                     lastAngle = 70;
                 else if(lastAngle < 0 || lastAngle > 270)
