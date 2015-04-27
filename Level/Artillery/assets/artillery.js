@@ -103,8 +103,8 @@ function renderProjectile(projectile, duration) {
     var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
     if(collisionElement === null) {
-        console.error('null projectile', projectile);
-        detonateProjectile(projectile);
+        //console.error('null projectile', projectile);
+        //detonateProjectile(projectile);
         return;
     }
 //     console.log("collision: ", [collisionElement, projectile]);
@@ -240,8 +240,8 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         projVelocity[1] += GRAVITY / 5;
         point[0] += projVelocity[0] / 5;
         point[1] += projVelocity[1] / 5;
-        if(point[0] < -20 || point[0] > 1800) break;
-        if(point[1] < -20 || point[1] > 1800) break;
+        if(point[0] < -500 || point[0] > 1800) break;
+        if(point[1] < -500 || point[1] > 1800) break;
         if(i % 5 === 0)
             pathPoints.push(point.slice());
     }
