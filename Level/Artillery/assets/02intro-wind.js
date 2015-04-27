@@ -3,8 +3,8 @@
  * User: Ari
  */
 
-WIND = -5;
-
+WIND = -3;
+GRAVITY = 3;
 
 var doRender = function() {
     var renderEvent = new CustomEvent('render');

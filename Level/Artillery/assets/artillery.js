@@ -8,7 +8,7 @@ var WALL_BOUNCE_COOEFICIENT = 0.20;
 
 var CANNON_VELOCITY = [100,12];
 
-var GRAVITY = 2;
+var GRAVITY = 4;
 var WIND = 0;
 
 document.addEventListener('render', renderArtilleryElements, false);

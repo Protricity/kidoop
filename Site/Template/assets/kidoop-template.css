@@ -16,9 +16,9 @@ body {
 }
 
 .content {
-    background: url('img/kidoop.png') no-repeat;
+    /* background: url('img/kidoop.png') no-repeat; */
 
-    background-color: rgba(123, 166, 220, 1); // #537EB4 
+    /* background-color: rgba(123, 166, 220, 1); */ // #537EB4 
     border: 1pt solid #ccc;
     border-radius: 1em;
     padding: 1em;

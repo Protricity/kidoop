@@ -2,6 +2,9 @@
  * Created with JetBrains PhpStorm.
  * User: Ari
  */
+
+GRAVITY = 4;
+
 var doRender = function() {
     var renderEvent = new CustomEvent('render');
     document.dispatchEvent(renderEvent);
