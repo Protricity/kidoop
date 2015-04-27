@@ -7,7 +7,6 @@
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01basics.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
@@ -75,18 +74,24 @@
       <file leaf-file-name="01basics.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.16" vertical-offset="36981" max-vertical-offset="41140">
-              <caret line="2205" column="34" selection-start-line="2205" selection-start-column="34" selection-end-line="2205" selection-end-column="34" />
-              <folding />
+            <state vertical-scroll-proportion="-12.0" vertical-offset="36318" max-vertical-offset="40647">
+              <caret line="2154" column="0" selection-start-line="2154" selection-start-column="0" selection-end-line="2154" selection-end-column="0" />
+              <folding>
+                <marker date="1430098133781" expanded="true" signature="116:97216" placeholder="..." />
+                <marker date="1430098133781" expanded="true" signature="931:1019" placeholder="..." />
+                <marker date="1430098133781" expanded="true" signature="81589:88264" placeholder="..." />
+                <marker date="1430098133781" expanded="true" signature="81589:81601" placeholder="..." />
+                <marker date="1430098133781" expanded="true" signature="81589:81592" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01basics.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="01basics.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1751">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.45260915" vertical-offset="612" max-vertical-offset="2499">
+              <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -102,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="artillery.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="artillery.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5849057" vertical-offset="3808" max-vertical-offset="6630">
-              <caret line="255" column="101" selection-start-line="255" selection-start-column="101" selection-end-line="255" selection-end-column="101" />
+            <state vertical-scroll-proportion="-14.04" vertical-offset="3066" max-vertical-offset="6630">
+              <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -173,9 +178,9 @@
         <option value="$PROJECT_DIR$/Character/Tank/tank.svg" />
         <option value="$PROJECT_DIR$/pages/artillery_basics.html" />
         <option value="$PROJECT_DIR$/Character/Tank/tank.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/01basics.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/assets/01basics.js" />
       </list>
     </option>
   </component>
@@ -472,7 +477,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2601" max-vertical-offset="13413">
           <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1430098133781" expanded="true" signature="116:97216" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="931:1019" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:88264" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:81601" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:81592" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -573,6 +584,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2024" max-vertical-offset="9673">
           <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -823,26 +835,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1751">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/01basics.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.16" vertical-offset="36981" max-vertical-offset="41140">
-          <caret line="2205" column="34" selection-start-line="2205" selection-start-column="34" selection-end-line="2205" selection-end-column="34" />
-          <folding />
+        <state vertical-scroll-proportion="-12.0" vertical-offset="36318" max-vertical-offset="40647">
+          <caret line="2154" column="0" selection-start-line="2154" selection-start-column="0" selection-end-line="2154" selection-end-column="0" />
+          <folding>
+            <marker date="1430098133781" expanded="true" signature="116:97216" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="931:1019" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:88264" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:81601" placeholder="..." />
+            <marker date="1430098133781" expanded="true" signature="81589:81592" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5849057" vertical-offset="3808" max-vertical-offset="6630">
-          <caret line="255" column="101" selection-start-line="255" selection-start-column="101" selection-end-line="255" selection-end-column="101" />
+        <state vertical-scroll-proportion="-14.04" vertical-offset="3066" max-vertical-offset="6630">
+          <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01basics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45260915" vertical-offset="612" max-vertical-offset="2499">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
           <folding />
         </state>
       </provider>
