@@ -27,18 +27,6 @@
      id="defs3436">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient5590">
-      <stop
-         style="stop-color:#d42626;stop-opacity:1;"
-         offset="0"
-         id="stop5592" />
-      <stop
-         style="stop-color:#3f26d4;stop-opacity:1"
-         offset="1"
-         id="stop5594" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
        id="linearGradient8409">
       <stop
          style="stop-color:#009900;stop-opacity:1"
@@ -168,7 +156,7 @@
     </pattern>
     <linearGradient
        inkscape:collect="always"
-       id="ui-text-bk">
+       id="linearGradient5180">
       <stop
          style="stop-color:#008d00;stop-opacity:1;"
          offset="0"
@@ -473,7 +461,7 @@
        r="12.5" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient5186"
        x1="130.41655"
        y1="389.3944"
@@ -1736,7 +1724,7 @@
        y2="197.69881" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient7237"
+       xlink:href="#ui-bk1"
        id="linearGradient8913"
        x1="-465"
        y1="325"
@@ -1756,7 +1744,7 @@
        gradientTransform="translate(383.68893,-25.688928)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient4992"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.68337612,0.68337612,-0.68337612,0.68337612,515.35537,255.63115)"
@@ -1776,7 +1764,7 @@
        y2="323.8092" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#cliff-side2"
+       xlink:href="#ui-bk1"
        id="linearGradient6335"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(383.68893,-25.688928)"
@@ -2248,7 +2236,7 @@
        y2="197.69881" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient8853"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(7.3434091,0,0,0.43210378,1.507294,-283.73122)"
@@ -2288,7 +2276,7 @@
        gradientTransform="matrix(0.85561427,0,0,0.87152588,190.70098,75.086795)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient6235"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(3.8725929,0,0,0.82131074,211.2977,-164.60394)"
@@ -2328,7 +2316,7 @@
        y2="528.883" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient8853-3"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(7.2995949,0,0,0.45495722,-310.79137,86.048128)"
@@ -2348,10 +2336,10 @@
        y2="551.62561" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient5630"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-219.29266)"
+       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-222.62767)"
        x1="-1.118279"
        y1="462.97855"
        x2="99.091415"
@@ -2361,17 +2349,17 @@
        xlink:href="#hill1-border"
        id="linearGradient5632"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-219.29266)"
+       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-222.62767)"
        x1="-1.118279"
        y1="462.97855"
        x2="99.091415"
        y2="551.62561" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#ui-text-bk"
+       xlink:href="#linearGradient5180"
        id="linearGradient5757"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-219.29266)"
+       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-222.62767)"
        x1="-1.118279"
        y1="462.97855"
        x2="99.091415"
@@ -2381,7 +2369,7 @@
        xlink:href="#hill1-border"
        id="linearGradient5759"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-219.29266)"
+       gradientTransform="matrix(7.2995949,0,0,0.51823807,-725.59674,-222.62767)"
        x1="-1.118279"
        y1="462.97855"
        x2="99.091415"
@@ -2425,6 +2413,16 @@
        x2="112.71195"
        y2="163.45712"
        gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7237"
+       id="linearGradient5863-5"
+       x1="175.02673"
+       y1="216.96301"
+       x2="32.295929"
+       y2="149.21045"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1255349,0,0,9.6060797,186.8274,-2734.081)" />
     <linearGradient
        gradientTransform="matrix(1.3762963,0,0,13.010201,164.59965,-3210.4178)"
        inkscape:collect="always"
@@ -2622,15 +2620,6 @@
        y1="197.69881"
        x2="379.35538"
        y2="197.69881" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5590"
-       id="linearGradient5596"
-       x1="58.062859"
-       y1="-62.391403"
-       x2="128.4623"
-       y2="-151.99681"
-       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -2639,11 +2628,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.6386203"
-     inkscape:cx="214.9807"
-     inkscape:cy="467.17789"
+     inkscape:zoom="1.1596551"
+     inkscape:cx="106.60162"
+     inkscape:cy="405.59912"
      inkscape:document-units="px"
-     inkscape:current-layer="ui-cannon"
+     inkscape:current-layer="controls"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="976"
@@ -2739,6 +2728,28 @@
            style="display:inline;opacity:1;fill:url(#linearGradient8853-3);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8855-0);stroke-width:1.54238486;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
            onclick="setPower"
            id="rect8851-6" />
+        <g
+           id="ui-clip"
+           clip-path="url(#arc-90)">
+          <path
+             id="path4686"
+             inkscape:connector-curvature="0"
+             d="m 120.68892,104.6889 a 192.62216,192.62216 0 0 1 192.62216,192.62217 l -192.62216,0 z"
+             class="ui-cannon-angle-value"
+             style="opacity:1;fill:url(#linearGradient4992);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5474);stroke-width:1.33159912px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+        <path
+           id="path4688"
+           style="fill:url(#linearGradient6335);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient6337);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           class="ui-angle-bk"
+           sodipodi:type="arc"
+           sodipodi:cx="118.6889"
+           sodipodi:cy="299.31107"
+           sodipodi:rx="199.31108"
+           sodipodi:ry="199.31108"
+           sodipodi:start="5.0754175"
+           sodipodi:end="0"
+           d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z" />
         <path
            d="M 118.68891,99.999985 A 199.31108,199.31108 0 0 1 317.99998,299.31107 l -199.31108,0 z"
            sodipodi:end="0"
@@ -2749,46 +2760,23 @@
            sodipodi:cx="118.6889"
            sodipodi:type="arc"
            class="ui-angle-bk"
-           style="fill:url(#linearGradient8913);fill-opacity:1.0;fill-rule:evenodd;stroke:url(#linearGradient8922);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="fill:url(#linearGradient8913);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8922);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            id="cannon-angle-bk"
            onmouseup="setAngle"
            onmousedown="setAngle"
            onmousemove="setAngle" />
-        <g
-           id="ui-clip"
-           clip-path="url(#arc-90)">
-          <path
-             id="path4686"
-             inkscape:connector-curvature="0"
-             d="m 120.68892,104.6889 a 192.62216,192.62216 0 0 1 192.62216,192.62217 l -192.62216,0 z"
-             class="ui-cannon-angle-value"
-             transform="rotate(0 120 300)"
-             style="opacity:1;fill:url(#linearGradient4992);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5474);stroke-width:1.33159912px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-        </g>
-        <path
-           id="path4688"
-           style="fill:url(#linearGradient6335);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient6337);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:0.56"
-           class="ui-angle-bk"
-           sodipodi:type="arc"
-           sodipodi:cx="118.6889"
-           sodipodi:cy="299.31107"
-           sodipodi:rx="199.31108"
-           sodipodi:ry="199.31108"
-           sodipodi:start="5.0754175"
-           sodipodi:end="0"
-           d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z" />
         <rect
+           id="rect5628"
            onclick="setPower"
            style="display:inline;opacity:1;fill:url(#linearGradient5630);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5632);stroke-width:1.64616036;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
            class="ui-power-bk"
            width="182.48987"
            height="62.188568"
            x="-287.62112"
-           y="13.914537"
+           y="10.579531"
            rx="92.743546"
            ry="14.419251"
-           transform="matrix(0,-1,1,0,0,0)"
-           id="rect6476" />
+           transform="matrix(0,-1,1,0,0,0)" />
         <rect
            id="ui-power-bk"
            onclick="setPower"
@@ -2801,7 +2789,7 @@
            rx="27"
            ry="30" />
         <rect
-           style="display:inline;opacity:0.8457519;fill:url(#linearGradient5596);fill-opacity:1;stroke:url(#linearGradient5885-0);stroke-width:0.52211552;stroke-opacity:1;enable-background:new;stroke-miterlimit:4;stroke-dasharray:none"
+           style="display:inline;opacity:0.8457519;fill:url(#linearGradient5863-5);fill-opacity:1.0;stroke:url(#linearGradient5885-0);stroke-width:0.52211552;stroke-opacity:1;enable-background:new;stroke-miterlimit:4;stroke-dasharray:none"
            class="ui-cannon-power-value"
            x="69"
            y="-129"
@@ -2818,21 +2806,41 @@
            transform="scale(1,-2.51)" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+           style="font-style:normal;font-weight:normal;font-size:66.70014191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.79500002;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
            x="152.96622"
            y="329.19464"
            id="text6243-5"
-           class="ui-cannon-angle-text-value noselect"
-           sodipodi:linespacing="125%">Angle: 35.3</text>
+           class="noselect"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan6245-8"
+             x="152.96622"
+             y="329.19464"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Angle: 35.3</tspan><tspan
+             sodipodi:role="line"
+             x="152.96622"
+             y="360.46033"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+             id="tspan5609" /></text>
         <text
            sodipodi:linespacing="125%"
            id="text5645"
-           class="ui-cannon-power-text-value noselect"
+           class="noselect"
            y="49.948231"
            x="-262.36389"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+           style="font-style:normal;font-weight:normal;font-size:66.70014191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.79500002;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
            xml:space="preserve"
-           transform="matrix(0,-1,1,0,0,0)">Power: 100%</text>
+           transform="matrix(0,-1,1,0,0,0)"><tspan
+             id="tspan5649"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+             y="49.948231"
+             x="-262.36389"
+             sodipodi:role="line">Power: 53%</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+             y="81.213921"
+             x="-262.36389"
+             sodipodi:role="line"
+             id="tspan5653" /></text>
       </g>
       <g
          id="g3744"
@@ -2968,7 +2976,7 @@
            transform="matrix(0,-1,1,0,0,0)"
            ry="14.419251"
            rx="92.743546"
-           y="13.914537"
+           y="10.579531"
            x="-287.62112"
            height="62.188568"
            width="182.48987"

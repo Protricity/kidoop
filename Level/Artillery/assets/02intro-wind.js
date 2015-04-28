@@ -72,7 +72,7 @@ function onMouse(e) {
 
             if(isDragging) {
 
-                lastAngle = lastAngle - distY / 20;
+                lastAngle = lastAngle - distY / 8;
                 if(lastAngle > 70)
                     lastAngle = 70;
                 else if(lastAngle < 0 || lastAngle > 270)
@@ -104,32 +104,6 @@ function onMouse(e) {
             throw new Error("Invalid Event: ", e);
     }
 
-//     console.log(document.elementFromPoint(e.layerX, e.layerY));
-//    for(var i=0; i<tanks.length; i++) {
-//        var aimTank = tanks[i];
-
-        //aimTank.dispatchEvent(new CustomEvent('aim', {
-        //    detail: {
-        //        angle: lastAngle,
-        //        power: lastPower
-        //    }
-        //}));
-
-        //var bb = aimTank.getBoundingClientRect();
-        //var dx = e.layerX - bb.left - bb.width/2;
-        //var dy = e.layerY - bb.top - bb.height/2;
-        //var d = Math.sqrt(dx*dx + dy*dy) - 100;
-        //if(d<0) d=0;
-        //var cannonAngle = (-50 + 360 + Math.atan2(dx, dy) * 120 / Math.PI) % 360;
-        //if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
-        //if(cannonAngle>70) cannonAngle = 70;
-        //
-        //var cannonPower = (d<500?d:500)/500 + 0.2;
-        //if(cannonPower > 1)
-        //    cannonPower = 1;
-        //
-
-    //}
 }
 
 //document.addEventListener('click', onMouse, true);

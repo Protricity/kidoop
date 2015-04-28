@@ -250,13 +250,21 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
 
     cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
 
-    var uiAngleValue = document.getElementsByClassName('ui-angle-value');
+    var uiAngleValue = document.getElementsByClassName('ui-cannon-angle-value');
     for(i=0; i<uiAngleValue.length; i++)
         uiAngleValue[i].setAttribute('transform', 'rotate(' + (90 - cannonAngle) + ' 120 300)')
 
-    var uiPowerValue = document.getElementsByClassName('ui-power-value');
+    var uiAngleTextValue = document.getElementsByClassName('ui-cannon-angle-text-value');
+    for(i=0; i<uiAngleTextValue.length; i++)
+        uiAngleTextValue[i].innerHTML = 'Angle: ' + Math.round(cannonAngle) + '°';
+
+    var uiPowerValue = document.getElementsByClassName('ui-cannon-power-value');
     for(i=0; i<uiPowerValue.length; i++)
-        uiPowerValue[i].setAttribute('transform', 'rotate(180 90 200) scale(1, ' + (cannonPower + 0.3 < 1 ? cannonPower  + 0.3 : 1) + ')');
+        uiPowerValue[i].setAttribute('height', cannonPower * 100 + 'px');
+
+    var uiPowerTextValue = document.getElementsByClassName('ui-cannon-power-text-value');
+    for(i=0; i<uiPowerTextValue.length; i++)
+        uiPowerTextValue[i].innerHTML = 'Power: ' + Math.round(cannonPower * 100) + '%';
 
 }
 
