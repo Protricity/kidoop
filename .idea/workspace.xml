@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,8 +112,8 @@
       <file leaf-file-name="02wind-intro.svg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9602339" vertical-offset="30170" max-vertical-offset="33099">
-              <caret line="1823" column="8" selection-start-line="1823" selection-start-column="8" selection-end-line="1823" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.5840909" vertical-offset="23932" max-vertical-offset="33082">
+              <caret line="1438" column="0" selection-start-line="1438" selection-start-column="0" selection-end-line="1438" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -885,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9602339" vertical-offset="30170" max-vertical-offset="33099">
-          <caret line="1823" column="8" selection-start-line="1823" selection-start-column="8" selection-end-line="1823" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.5840909" vertical-offset="23932" max-vertical-offset="33082">
+          <caret line="1438" column="0" selection-start-line="1438" selection-start-column="0" selection-end-line="1438" selection-end-column="0" />
           <folding />
         </state>
       </provider>
