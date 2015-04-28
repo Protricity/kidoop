@@ -136,6 +136,10 @@ document.addEventListener('mousemove', onMouse, true);
 document.addEventListener('mouseup', onMouse, true);
 document.addEventListener('mousedown', onMouse, true);
 
+document.addEventListener('touchstart', onMouse, true);
+document.addEventListener('touchmove', onMouse, true);
+document.addEventListener('touchend', onMouse, true);
+
 //document.addEventListener('xy', function(e) {
 //    var container = document.getElementsByClassName('artillery001')[0];
 //    container.dataset.ax = e.detail.percX * 20 - 10;
