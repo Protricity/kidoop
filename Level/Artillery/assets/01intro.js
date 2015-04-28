@@ -140,6 +140,13 @@ document.addEventListener('touchstart', onMouse, true);
 document.addEventListener('touchmove', onMouse, true);
 document.addEventListener('touchend', onMouse, true);
 
+// function setPower(e) {
+//      console.log(e);
+// }
+// function setAngle(e) {
+//      console.log(e);
+// }
+
 //document.addEventListener('xy', function(e) {
 //    var container = document.getElementsByClassName('artillery001')[0];
 //    container.dataset.ax = e.detail.percX * 20 - 10;

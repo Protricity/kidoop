@@ -1396,7 +1396,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9378018"
-     inkscape:cx="93.721826"
+     inkscape:cx="-59.828743"
      inkscape:cy="259.74705"
      inkscape:document-units="px"
      inkscape:current-layer="ui-cannon"
@@ -1495,7 +1495,7 @@
     <g
        style="display:inline;opacity:0.79500002;filter:url(#dropShadow);enable-background:new"
        id="ui-cannon"
-       transform="matrix(1.1898393,0,0,1.1898393,9.4421937,-54.247153)">
+       transform="matrix(1.0128847,0,0,0.9519894,-0.095565,-39.235548)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;line-height:125%;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
@@ -1513,8 +1513,11 @@
          width="184.62512"
          class="ui-power-bk"
          style="display:inline;opacity:1;fill:url(#linearGradient8853-3-8);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8855-0-2);stroke-width:1.54238486;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-         onclick="setPower"
-         id="rect8851-6-3" />
+         onclick=""
+         id="rect8851-6-3"
+         onmousedown="setAngle"
+         onmouseup="setAngle"
+         onmousemove="setAngle" />
       <path
          d="M 118.68891,99.999985 A 199.31108,199.31108 0 0 1 317.99998,299.31107 l -199.31108,0 z"
          sodipodi:end="0"
@@ -1532,7 +1535,10 @@
          onmousemove="setAngle" />
       <g
          id="ui-clip"
-         clip-path="url(#arc-90-3)">
+         clip-path="url(#arc-90-3)"
+         onmousedown="setAngle"
+         onmouseup="setAngle"
+         onmousemove="setAngle">
         <path
            id="path4686"
            inkscape:connector-curvature="0"
@@ -1551,7 +1557,10 @@
          sodipodi:ry="199.31108"
          sodipodi:start="5.0754175"
          sodipodi:end="0"
-         d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z" />
+         d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z"
+         onmousedown="setAngle"
+         onmouseup="setAngle"
+         onmousemove="setAngle" />
       <text
          sodipodi:linespacing="125%"
          id="text5645-1"
@@ -1562,7 +1571,7 @@
          xml:space="preserve"
          transform="matrix(0,-1,1,0,0,0)">Power: 100%</text>
       <rect
-         onclick="setPower"
+         onclick=""
          style="display:inline;opacity:1;fill:url(#linearGradient5630-6);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5632-0);stroke-width:1.64616036;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          class="ui-power-bk"
          width="182.48987"
@@ -1572,10 +1581,13 @@
          rx="92.743546"
          ry="14.419251"
          transform="matrix(0,-1,1,0,0,0)"
-         id="rect6476-0" />
+         id="rect6476-0"
+         onmousedown="setPower"
+         onmouseup="setPower"
+         onmousemove="setPower" />
       <rect
          id="ui-power-bk-3"
-         onclick="setPower"
+         onclick=""
          style="display:inline;opacity:1;fill:url(#linearGradient10451);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient10443);stroke-width:4.32643604;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          class="ui-power-bk"
          width="54.080452"
@@ -1583,7 +1595,10 @@
          x="65.49823"
          y="68.25071"
          rx="27"
-         ry="30" />
+         ry="30"
+         onmousedown="setPower"
+         onmouseout="setPower"
+         onmouseup="setPower" />
       <rect
          style="display:inline;opacity:0.84575189;fill:url(#linearGradient5596-5);fill-opacity:1;stroke:url(#linearGradient5885-0-3);stroke-width:0.52211553;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
          class="ui-cannon-power-value"

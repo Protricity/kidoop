@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/02wind-intro.html" />
-      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\Level\Artillery\02intro-wind.svg.2015_04_27_20_27_40.0.svg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/02intro-wind.html" afterPath="$PROJECT_DIR$/pages/02intro-wind.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Dev\Server\WWW\kidoop\Level\Artillery\02intro-wind.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
-      <change type="MOVED" beforePath="D:\Dev\Server\WWW\kidoop\Level\Artillery\assets\02intro-wind.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,8 +85,8 @@
       <file leaf-file-name="01intro.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1730" max-vertical-offset="2737">
-              <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+            <state vertical-scroll-proportion="-26.88" vertical-offset="1759" max-vertical-offset="2856">
+              <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -109,8 +105,8 @@
       <file leaf-file-name="01intro.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.76" vertical-offset="1696" max-vertical-offset="30260">
-              <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="123" selection-end-column="11" />
+            <state vertical-scroll-proportion="-13.76" vertical-offset="1747" max-vertical-offset="30515">
+              <caret line="123" column="11" selection-start-line="120" selection-start-column="27" selection-end-line="123" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -119,8 +115,8 @@
       <file leaf-file-name="02wind-intro.svg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33295456" vertical-offset="26074" max-vertical-offset="33099">
-              <caret line="1551" column="189" selection-start-line="1551" selection-start-column="189" selection-end-line="1551" selection-end-column="189" />
+            <state vertical-scroll-proportion="0.9602339" vertical-offset="30170" max-vertical-offset="33099">
+              <caret line="1823" column="8" selection-start-line="1823" selection-start-column="8" selection-end-line="1823" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -204,11 +200,11 @@
         <option value="$PROJECT_DIR$/pages/artillery_basics.html" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/02intro-wind.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/02intro-wind.svg" />
         <option value="$PROJECT_DIR$/pages/02wind-intro.html" />
-        <option value="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
       </list>
     </option>
@@ -847,14 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1730" max-vertical-offset="2737">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/02wind-intro.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="493">
@@ -871,14 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.76" vertical-offset="1696" max-vertical-offset="30260">
-          <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="123" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="2312">
@@ -887,10 +867,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.76" vertical-offset="1747" max-vertical-offset="30515">
+          <caret line="123" column="11" selection-start-line="120" selection-start-column="27" selection-end-line="123" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.88" vertical-offset="1759" max-vertical-offset="2856">
+          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295456" vertical-offset="26074" max-vertical-offset="33099">
-          <caret line="1551" column="189" selection-start-line="1551" selection-start-column="189" selection-end-line="1551" selection-end-column="189" />
+        <state vertical-scroll-proportion="0.9602339" vertical-offset="30170" max-vertical-offset="33099">
+          <caret line="1823" column="8" selection-start-line="1823" selection-start-column="8" selection-end-line="1823" selection-end-column="8" />
           <folding />
         </state>
       </provider>
