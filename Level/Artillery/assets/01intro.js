@@ -3,7 +3,7 @@
  * User: Ari
  */
 
-GRAVITY = 4;
+GRAVITY = 2;
 
 var doRender = function() {
     var renderEvent = new CustomEvent('render');
