@@ -2639,11 +2639,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.6386203"
-     inkscape:cx="214.9807"
-     inkscape:cy="467.17789"
+     inkscape:zoom="1.1596551"
+     inkscape:cx="556.80897"
+     inkscape:cy="302.24671"
      inkscape:document-units="px"
-     inkscape:current-layer="ui-cannon"
+     inkscape:current-layer="g3744"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="976"
@@ -2728,6 +2728,14 @@
       <g
          id="ui-cannon"
          transform="translate(66.70013,0)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+           x="152.96622"
+           y="329.19464"
+           id="text6243-5"
+           class="ui-cannon-angle-text-value noselect"
+           sodipodi:linespacing="125%">Angle: 35.3</text>
         <rect
            ry="6.3463798"
            rx="91.244934"
@@ -2777,6 +2785,15 @@
            sodipodi:start="5.0754175"
            sodipodi:end="0"
            d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text5645"
+           class="ui-cannon-power-text-value noselect"
+           y="49.948231"
+           x="-262.36389"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
+           xml:space="preserve"
+           transform="matrix(0,-1,1,0,0,0)">Power: 100%</text>
         <rect
            onclick="setPower"
            style="display:inline;opacity:1;fill:url(#linearGradient5630);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5632);stroke-width:1.64616036;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
@@ -2816,27 +2833,23 @@
            onmousemove="setPower"
            id="ui-power-value"
            transform="scale(1,-2.51)" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
-           x="152.96622"
-           y="329.19464"
-           id="text6243-5"
-           class="ui-cannon-angle-text-value noselect"
-           sodipodi:linespacing="125%">Angle: 35.3</text>
-        <text
-           sodipodi:linespacing="125%"
-           id="text5645"
-           class="ui-cannon-power-text-value noselect"
-           y="49.948231"
-           x="-262.36389"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'"
-           xml:space="preserve"
-           transform="matrix(0,-1,1,0,0,0)">Power: 100%</text>
       </g>
       <g
          id="g3744"
          transform="translate(241.788,208.75408)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:66.70013428px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="473.12674"
+           y="-52.663548"
+           id="text6243"
+           class="noselect"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan6245"
+             x="473.12674"
+             y="-52.663548"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01254845px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Wind: 4px/s</tspan></text>
         <rect
            ry="6.0275884"
            rx="93.300217"
@@ -2860,19 +2873,6 @@
            y="420.46921"
            rx="23.515989"
            ry="26.298811" />
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:66.70013428px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="473.12674"
-           y="-52.663548"
-           id="text6243"
-           class="noselect"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan6245"
-             x="473.12674"
-             y="-52.663548"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01254845px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Wind: 4px/s</tspan></text>
         <rect
            id="rect5771"
            width="50.025101"
@@ -2964,6 +2964,20 @@
       <g
          transform="translate(432.66264,-0.43099251)"
          id="g5713">
+        <text
+           transform="matrix(0,-1,1,0,0,0)"
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:66.70014191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.79500002;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+           x="-275.70386"
+           y="49.948231"
+           id="text5735"
+           class="noselect"
+           sodipodi:linespacing="125%"><tspan
+             id="tspan5739"
+             sodipodi:role="line"
+             x="-275.70386"
+             y="49.948231"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Gravity: -3px/s</tspan></text>
         <rect
            transform="matrix(0,-1,1,0,0,0)"
            ry="14.419251"
@@ -3001,20 +3015,6 @@
            onmouseover=""
            onmouseup="setGravity"
            onmousemove="setGravity" />
-        <text
-           transform="matrix(0,-1,1,0,0,0)"
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:66.70014191px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.79500002;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-           x="-275.70386"
-           y="49.948231"
-           id="text5735"
-           class="noselect"
-           sodipodi:linespacing="125%"><tspan
-             id="tspan5739"
-             sodipodi:role="line"
-             x="-275.70386"
-             y="49.948231"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01255035px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Gravity: -3px/s</tspan></text>
       </g>
     </g>
     <path
