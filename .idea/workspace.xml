@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/03wind-variable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" afterPath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,11 +112,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02wind-intro.svg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="02wind-intro.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49239767" vertical-offset="28615" max-vertical-offset="33643">
-              <caret line="1708" column="27" selection-start-line="1708" selection-start-column="27" selection-end-line="1708" selection-end-column="27" />
+            <state vertical-scroll-proportion="-1.96" vertical-offset="28615" max-vertical-offset="33643">
+              <caret line="1689" column="11" selection-start-line="1689" selection-start-column="11" selection-end-line="1689" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03wind-variable.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.76" vertical-offset="4501" max-vertical-offset="46461">
+              <caret line="285" column="11" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="42" />
+              <folding>
+                <marker date="1430336341207" expanded="true" signature="59:133586" placeholder="..." />
+                <marker date="1430336341207" expanded="true" signature="888:937" placeholder="..." />
+                <marker date="1430336341207" expanded="true" signature="133501:133579" placeholder="..." />
+                <marker date="1430336341207" expanded="true" signature="133501:133572" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03wind-variable.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44444445" vertical-offset="0" max-vertical-offset="2380">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03wind-variable.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/03wind-variable.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="493">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -152,9 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Traits/Physics/methods.js" />
-        <option value="$PROJECT_DIR$/Traits/Physics/collision-methods.js" />
-        <option value="$PROJECT_DIR$/Objects/SVG/svg-methods.js" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-left.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/tank-right.svg" />
         <option value="$PROJECT_DIR$/Character/Tank/Projectile/projectile.svg" />
@@ -203,6 +238,9 @@
         <option value="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
+        <option value="$PROJECT_DIR$/pages/03wind-variable.html" />
+        <option value="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" />
       </list>
     </option>
   </component>
@@ -370,8 +408,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dev\Server\WWW\kidoop\pages" />
       <recent name="D:\Dev\Server\WWW\kidoop\Level\Artillery\assets" />
+      <recent name="D:\Dev\Server\WWW\kidoop\pages" />
       <recent name="D:\Dev\Server\WWW\kidoop\Level\Artillery" />
       <recent name="D:\Dev\Server\WWW\kidoop\pages\js" />
       <recent name="D:\Dev\Server\WWW\kidoop\pages\css" />
@@ -880,10 +918,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/03wind-variable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="493">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49239767" vertical-offset="28615" max-vertical-offset="33643">
-          <caret line="1708" column="27" selection-start-line="1708" selection-start-column="27" selection-end-line="1708" selection-end-column="27" />
+        <state vertical-scroll-proportion="-1.96" vertical-offset="28615" max-vertical-offset="33643">
+          <caret line="1689" column="11" selection-start-line="1689" selection-start-column="11" selection-end-line="1689" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.76" vertical-offset="4501" max-vertical-offset="46461">
+          <caret line="285" column="11" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <marker date="1430336341207" expanded="true" signature="59:133586" placeholder="..." />
+            <marker date="1430336341207" expanded="true" signature="888:937" placeholder="..." />
+            <marker date="1430336341207" expanded="true" signature="133501:133579" placeholder="..." />
+            <marker date="1430336341207" expanded="true" signature="133501:133572" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44444445" vertical-offset="0" max-vertical-offset="2380">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding />
         </state>
       </provider>
