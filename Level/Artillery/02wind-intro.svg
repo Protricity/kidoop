@@ -1863,7 +1863,7 @@
        style="opacity:1;enable-background:new"
        xlink:href="#tank-template"
        id="usertank"
-       class="usertank tank"
+       class="usertank tank nohit"
        width="100%"
        height="100%"
        transform="matrix(0.46875,0,0,0.46875,369.15965,226.34822)"

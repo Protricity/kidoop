@@ -102,19 +102,22 @@ function renderProjectile(projectile, duration) {
 
     var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
-    if(collisionElement === null) {
+    if(collisionElement === null
+        || collisionElement === document
+        || collisionElement === document.rootElement) {
         //console.error('null projectile', projectile);
-        if(bb.top > 500)
+        if(bb.bottom > 600)
             detonateProjectile(projectile);
         return;
     }
 //     console.log("collision: ", [collisionElement, projectile]);
-    if(collisionElement === projectile
-        || collisionElement === projectile.sourceTank
-        || collisionElement.parentNode === projectile.sourceTank
-        || collisionElement.parentNode.parentNode === projectile.sourceTank
-    )
+    if(collisionElement === projectile)
         return;
+//        || collisionElement === projectile.sourceTank
+//        || collisionElement.parentNode === projectile.sourceTank
+//        || collisionElement.parentNode.parentNode === projectile.sourceTank
+//    )
+//        return;
     if(collisionElement.classList
         && (
             collisionElement.classList.contains('nohit')
@@ -231,7 +234,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle);
+    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
 
     var cannonProjection = document.getElementById('cannon-projection');
     var projVelocity = [velocity[0], velocity[1]];
@@ -250,19 +253,21 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
 
     cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
 
-    var uiAngleValue = document.getElementsByClassName('ui-cannon-angle-value');
+    var uiTarget = document.getElementById('ui-cannon-' + tankElement.getAttribute('id')) || document;
+
+    var uiAngleValue = uiTarget.getElementsByClassName('ui-cannon-angle-value');
     for(i=0; i<uiAngleValue.length; i++)
         uiAngleValue[i].setAttribute('transform', 'rotate(' + (90 - cannonAngle) + ' 120 300)')
 
-    var uiAngleTextValue = document.getElementsByClassName('ui-cannon-angle-text-value');
+    var uiAngleTextValue = uiTarget.getElementsByClassName('ui-cannon-angle-text-value');
     for(i=0; i<uiAngleTextValue.length; i++)
         uiAngleTextValue[i].innerHTML = 'Angle: ' + Math.round(cannonAngle) + '°';
 
-    var uiPowerValue = document.getElementsByClassName('ui-cannon-power-value');
+    var uiPowerValue = uiTarget.getElementsByClassName('ui-cannon-power-value');
     for(i=0; i<uiPowerValue.length; i++)
         uiPowerValue[i].setAttribute('height', cannonPower * 100 + 'px');
 
-    var uiPowerTextValue = document.getElementsByClassName('ui-cannon-power-text-value');
+    var uiPowerTextValue = uiTarget.getElementsByClassName('ui-cannon-power-text-value');
     for(i=0; i<uiPowerTextValue.length; i++)
         uiPowerTextValue[i].innerHTML = 'Power: ' + Math.round(cannonPower * 100) + '%';
 
@@ -316,7 +321,13 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle);
+
+    //var pt = document.rootElement.createSVGPoint();
+    //pt.x = velocity[0];
+    //pt.y = velocity[1];
+    //pt = pt.matrixTransform(tankMatrix);
+
+    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
     projectile.vx = velocity[0];
     projectile.vy = velocity[1];
 

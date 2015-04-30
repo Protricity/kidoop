@@ -1664,7 +1664,7 @@
        x="0"
        y="0"
        id="player"
-       class="tank usertank"
+       class="tank usertank nohit"
        transform="matrix(0.96592583,-0.25881905,0.25881905,0.96592583,76.081766,376.21978)"
        width="100%"
        height="100%" />
