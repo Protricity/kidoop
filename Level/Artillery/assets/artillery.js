@@ -6,7 +6,7 @@ var RENDER_INTERVAL_MAX = 1000;
 var RENDER_INTERVAL = 100;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
-var CANNON_VELOCITY = [100,12];
+var CANNON_VELOCITY = [100,0];
 
 var GRAVITY = 4;
 var WIND = 0;
@@ -19,6 +19,7 @@ document.addEventListener('aim', onAim, true);
 
 function testRectContainment(element) {
 }
+
 
 function replaceUseWithSource(useElement) {
     var url = useElement.getAttributeNS('xlink', 'href') || useElement.getAttribute('href') || useElement.getAttribute('xlink:href');
@@ -49,7 +50,7 @@ function renderTankPart(tankPart, duration) {
 //     tankPart.va = (tankPart.va || 0) 
 
     var bb = tankPart.getBoundingClientRect();
-    var svgTransform = tankPart.transform.baseVal[0];
+    var svgTransform = tankPart.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
     var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
     var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
@@ -85,7 +86,7 @@ function renderProjectile(projectile, duration) {
     projectile.vx = (projectile.vx || 0) + WIND * duration / 1000;
     projectile.vy = (projectile.vy || 0) + GRAVITY * duration / 1000;
 
-    var svgTransform = projectile.transform.baseVal[0];
+    var svgTransform = projectile.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
     var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
@@ -156,7 +157,7 @@ function renderExplosion(explosion, duration) {
     var y = bb.top;
 
     try {
-        var svgTransform = explosion.transform.baseVal[0];
+        var svgTransform = explosion.transform.baseVal.getItem(0);
         var matrix = svgTransform.matrix;
         x = matrix.e;
         y = matrix.f;
@@ -209,7 +210,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         tankElement = replaceUseWithSource(tankElement);
 
     var tankBB = tankElement.getBoundingClientRect();
-    var tankMatrix = tankElement.transform.baseVal[0].matrix;
+    var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
     var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
 
     if(cannonAngle) {
@@ -219,7 +220,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         cannonGroup.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
         angle -= cannonAngle % 360;
     }
-    angle -= 7;
+//     angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
@@ -284,7 +285,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     var spriteGroup = document.getElementById('sprites') || tankElement.parentNode;
 
     var tankBB = tankElement.getBoundingClientRect();
-    var tankMatrix = tankElement.transform.baseVal[0].matrix;
+    var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
     var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
 
     if(cannonAngle) {
@@ -292,7 +293,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
         if(cannonAngle>70) cannonAngle = 70;
         angle -= cannonAngle % 360;
     }
-    angle -= 7;
+//     angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];

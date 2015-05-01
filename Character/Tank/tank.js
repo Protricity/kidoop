@@ -173,7 +173,7 @@
 
         var fontSize = parseFloat(window.getComputedStyle(tankElement, null).getPropertyValue('font-size'));
 
-        var matrix = tankElement.transform.baseVal[0].matrix;
+        var matrix = tankElement.transform.baseVal.getItem(0).matrix;
 
         for(var i=0; i<paths.length; i++) {
             var newSVG = svg.cloneNode();
