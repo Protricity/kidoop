@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" afterPath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +72,8 @@
       <file leaf-file-name="03wind-variable.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67772514" vertical-offset="2352" max-vertical-offset="3706">
-              <caret line="172" column="23" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.46917808" vertical-offset="2921" max-vertical-offset="4437">
+              <caret line="196" column="40" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -85,8 +82,8 @@
       <file leaf-file-name="03wind-variable.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.26" vertical-offset="34025" max-vertical-offset="38454">
-              <caret line="2014" column="40" selection-start-line="2014" selection-start-column="40" selection-end-line="2014" selection-end-column="40" />
+            <state vertical-scroll-proportion="-4.26" vertical-offset="34042" max-vertical-offset="38471">
+              <caret line="2015" column="40" selection-start-line="2015" selection-start-column="40" selection-end-line="2015" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -167,10 +164,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1507" />
+    <option name="y" value="-1088" />
     <option name="width" value="1936" />
-    <option name="height" value="1014" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -433,7 +430,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1014" extended-state="6" />
+    <frame x="1507" y="-1088" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -865,16 +862,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.26" vertical-offset="34025" max-vertical-offset="38454">
-          <caret line="2014" column="40" selection-start-line="2014" selection-start-column="40" selection-end-line="2014" selection-end-column="40" />
+        <state vertical-scroll-proportion="-4.26" vertical-offset="34042" max-vertical-offset="38471">
+          <caret line="2015" column="40" selection-start-line="2015" selection-start-column="40" selection-end-line="2015" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67772514" vertical-offset="2352" max-vertical-offset="3706">
-          <caret line="172" column="23" selection-start-line="172" selection-start-column="23" selection-end-line="172" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.46917808" vertical-offset="2921" max-vertical-offset="4437">
+          <caret line="196" column="40" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
           <folding />
         </state>
       </provider>

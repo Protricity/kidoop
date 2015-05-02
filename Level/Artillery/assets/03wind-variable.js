@@ -83,10 +83,13 @@ function onMouse(e) {
                 for(var fi=0; fi<tanks.length; fi++) {
                     var fireTank = tanks[fi];
                     var fbb = fireTank.getBoundingClientRect();
+
+                    fireTank.lastFlipped = fbb.left + fbb.width/2 > e.pageX;
+
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,
                         power: fireTank.lastPower || 0.5,
-                        flipped: fbb.left + fbb.width/2 > e.pageX
+                        flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > e.pageX
                     }));
                 }
                 isDragging = false;
@@ -114,10 +117,12 @@ function onMouse(e) {
                     if(aimTank.lastPower < 0.2)
                         aimTank.lastPower = 0.2;
 
+                    aimTank.lastFlipped = abb.left + abb.width/2 > e.pageX;
+
                     aimTank.dispatchEvent(createEvent('aim', {
                         angle: aimTank.lastAngle,
                         power: aimTank.lastPower,
-                        flipped: abb.left + abb.width/2 > e.pageX
+                        flipped: aimTank.lastFlipped
 
                     }));
                 }
@@ -161,7 +166,8 @@ function setPower(e, tankID) {
 
                 powerTank.dispatchEvent(createEvent('aim', {
                     angle: powerTank.lastAngle || 0,
-                    power: powerTank.lastPower
+                    power: powerTank.lastPower,
+                    flipped: powerTank.lastFlipped
 //                     flipped: abb.left + abb.width/2 > e.pageX
                 }));
             }
@@ -173,7 +179,42 @@ function setPower(e, tankID) {
             break;
     }
     e.preventDefault();
-//     console.log(uiElement, evt);
+}
+
+
+var isAngleDragging = false;
+function setAngle(e, tankID) {
+    switch(e.type) {
+        case 'mousedown':
+            isAngleDragging = e.pageY;
+            break;
+        case 'mousemove':
+            if(typeof isAngleDragging === 'number') {
+                var distY = isAngleDragging - e.pageY;
+                isAngleDragging = e.pageY;
+
+                var aimTank = document.getElementById(tankID);
+                aimTank.lastAngle = (aimTank.lastAngle || 0) + distY / 2;
+                if(aimTank.lastAngle > 70)
+                    aimTank.lastAngle = 70;
+                else if(aimTank.lastAngle < 0 || aimTank.lastAngle > 270)
+                    aimTank.lastAngle = 0;
+
+                aimTank.dispatchEvent(createEvent('aim', {
+                    angle: aimTank.lastAngle || 0,
+                    power: aimTank.lastPower,
+                    flipped: aimTank.lastFlipped
+//                     flipped: abb.left + abb.width/2 > e.pageX
+                }));
+            }
+            break;
+        default:
+        case 'mouseout':
+        case 'mouseup':
+            isAngleDragging = false;
+            break;
+    }
+    e.preventDefault();
 }
 
 //document.addEventListener('click', onMouse, true);
