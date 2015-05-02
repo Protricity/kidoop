@@ -34,6 +34,8 @@ var curTank = null;
 var selectedTanks = document.getElementsByClassName('usertank selected');
 var userTanks = document.getElementsByClassName('usertank');
 function onMouse(e) {
+    if(e.defaultPrevented)
+        return;
     var dist = 0;
     var distX = 0;
     var distY = 0;
@@ -47,15 +49,16 @@ function onMouse(e) {
     var tanks = selectedTanks;
     if(tanks.length === 0 && e.type === 'mousedown') {
         var tankDist = 9999;
-        tanks = [userTanks[0]];
-        for(var si=0; si<userTanks.length; si++) {
-            var bb = userTanks[si].getBoundingClientRect();
-            var curTankDist = Math.sqrt(Math.pow(e.pageX - (bb.left + bb.width/2), 2) + Math.pow(e.pageY - (bb.top + bb.height/2), 2));
-            if(curTankDist < tankDist) {
-                tankDist = curTankDist;
-                //noinspection JSValidateTypes
-                tanks = selectedTanks = [userTanks[si]];
-//                 console.log('selected: ', selectedTanks);
+        tanks = selectedTanks = [userTanks[0]];
+        if(userTanks.length>1) {
+            for (var si = 0; si < userTanks.length; si++) {
+                var bb = userTanks[si].getBoundingClientRect();
+                var curTankDist = Math.sqrt(Math.pow(e.pageX - (bb.left + bb.width / 2), 2) + Math.pow(e.pageY - (bb.top + bb.height / 2), 2));
+                if (curTankDist < tankDist) {
+                    tankDist = curTankDist;
+                    //noinspection JSValidateTypes
+                    tanks = selectedTanks = [userTanks[si]];
+                }
             }
         }
     }
@@ -79,9 +82,11 @@ function onMouse(e) {
             if(e.type === 'mouseup' && !longpress) {
                 for(var fi=0; fi<tanks.length; fi++) {
                     var fireTank = tanks[fi];
+                    var fbb = fireTank.getBoundingClientRect();
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,
-                        power: fireTank.lastPower || 0.5
+                        power: fireTank.lastPower || 0.5,
+                        flipped: fbb.left + fbb.width/2 > e.pageX
                     }));
                 }
                 isDragging = false;
@@ -95,6 +100,7 @@ function onMouse(e) {
 
                 for(var ai=0; ai<tanks.length; ai++) {
                     var aimTank = tanks[ai];
+                    var abb = aimTank.getBoundingClientRect();
 
                     aimTank.lastAngle = (aimTank.lastAngle || 0) - distY / 8;
                     if(aimTank.lastAngle > 70)
@@ -110,7 +116,9 @@ function onMouse(e) {
 
                     aimTank.dispatchEvent(createEvent('aim', {
                         angle: aimTank.lastAngle,
-                        power: aimTank.lastPower
+                        power: aimTank.lastPower,
+                        flipped: abb.left + abb.width/2 > e.pageX
+
                     }));
                 }
 
@@ -133,14 +141,49 @@ function selectTank(tankElement) {
         : tankElement.classList.add('selected');
 }
 
-//document.addEventListener('click', onMouse, true);
-document.addEventListener('mousemove', onMouse, true);
-document.addEventListener('mouseup', onMouse, true);
-document.addEventListener('mousedown', onMouse, true);
+var isPowerDragging = false;
+function setPower(e, tankID) {
+    switch(e.type) {
+        case 'mousedown':
+            isPowerDragging = e.pageY;
+            break;
+        case 'mousemove':
+            if(typeof isPowerDragging === 'number') {
+                var distY = isPowerDragging - e.pageY;
+                isPowerDragging = e.pageY;
 
-document.addEventListener('touchstart', onMouse, true);
-document.addEventListener('touchmove', onMouse, true);
-document.addEventListener('touchend', onMouse, true);
+                var powerTank = document.getElementById(tankID);
+                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 100;
+                if(powerTank.lastPower > 1)
+                    powerTank.lastPower = 1;
+                if(powerTank.lastPower < 0.2)
+                    powerTank.lastPower = 0.2;
+
+                powerTank.dispatchEvent(createEvent('aim', {
+                    angle: powerTank.lastAngle || 0,
+                    power: powerTank.lastPower
+//                     flipped: abb.left + abb.width/2 > e.pageX
+                }));
+            }
+            break;
+        default:
+        case 'mouseout':
+        case 'mouseup':
+            isPowerDragging = false;
+            break;
+    }
+    e.preventDefault();
+//     console.log(uiElement, evt);
+}
+
+//document.addEventListener('click', onMouse, true);
+document.addEventListener('mousemove', onMouse, false);
+document.addEventListener('mouseup', onMouse, false);
+document.addEventListener('mousedown', onMouse, false);
+
+document.addEventListener('touchstart', onMouse, false);
+document.addEventListener('touchmove', onMouse, false);
+document.addEventListener('touchend', onMouse, false);
 
 
 

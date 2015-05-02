@@ -1324,14 +1324,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.57982755"
-     inkscape:cx="1181.2139"
+     inkscape:cx="913.03071"
      inkscape:cy="73.15829"
      inkscape:document-units="px"
      inkscape:current-layer="sky"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
-     inkscape:window-x="1507"
+     inkscape:window-height="976"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      units="px"
@@ -1367,7 +1367,7 @@
        x="7.6293945e-006"
        y="-7.6293945e-006" />
     <g
-       style="display:inline;filter:url(#dropShadow-1);enable-background:new"
+       style="display:inline;enable-background:new"
        id="cloudGroup2">
       <animateTransform
          attributeName="transform"
@@ -1790,7 +1790,7 @@
   <g
      id="cloudGroup1"
      inkscape:label="cloudGroup1"
-     style="filter:url(#dropShadow-1)">
+     style="">
     <animateTransform
        attributeName="transform"
        attributeType="XML"
