@@ -6,7 +6,7 @@ var RENDER_INTERVAL_MAX = 1000;
 var RENDER_INTERVAL = 100;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
-var CANNON_VELOCITY = [100,12];
+var CANNON_VELOCITY = [100,0];
 
 var GRAVITY = 4;
 var WIND = 0;
@@ -18,6 +18,18 @@ document.addEventListener('aim', onAim, true);
 //document.addEventListener('collision', onCollision, true);
 
 function testRectContainment(element) {
+}
+
+
+function testNoHit(element) {
+    while(element) {
+        if(element.classList.contains('nohit'))
+            return element;
+        if(element === document || element === document.rootElement)
+            return null;
+        element = element.parentNode;
+    }
+    return null;
 }
 
 function replaceUseWithSource(useElement) {
@@ -49,7 +61,7 @@ function renderTankPart(tankPart, duration) {
 //     tankPart.va = (tankPart.va || 0) 
 
     var bb = tankPart.getBoundingClientRect();
-    var svgTransform = tankPart.transform.baseVal[0];
+    var svgTransform = tankPart.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
     var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
     var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
@@ -58,21 +70,15 @@ function renderTankPart(tankPart, duration) {
     matrix.e += tankPart.vx * duration / 1000;
     matrix.f += tankPart.vy * duration / 1000;
     svgTransform.setMatrix(matrix.rotate(tankPart.va * duration / 1000));
-    //curAngle += tankPart.va * duration / 1000;
-
-//     tankPart.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') scale(' + scaleX + ', ' + scaleY + ') rotate(' + curAngle + ') ');
 
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
-    if(collisionElement === null
-        || (collisionElement.classList
-            && !collisionElement.classList.contains('nohit')
-            && collisionElement !== tankPart
-            && collisionElement.parentNode !== tankPart
-            && collisionElement.sourceTank !== tankPart.sourceTank)
-        ) {
+
+    if(collisionElement === tankPart || testNoHit(collisionElement))
+        return;
+
+    if(collisionElement !== null || bb.bottom > 600) {
         tankPart.parentNode.removeChild(tankPart);
         explodeAt((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
-        return;
     }
 
     testRectContainment(tankPart);
@@ -85,7 +91,7 @@ function renderProjectile(projectile, duration) {
     projectile.vx = (projectile.vx || 0) + WIND * duration / 1000;
     projectile.vy = (projectile.vy || 0) + GRAVITY * duration / 1000;
 
-    var svgTransform = projectile.transform.baseVal[0];
+    var svgTransform = projectile.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
     var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
@@ -97,47 +103,16 @@ function renderProjectile(projectile, duration) {
     matrix.f += projectile.vy * duration / 1000;
     //));
 
-    //var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
     projectile.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scaleX + ', ' + scaleY + ')');
 
     var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
-    if(collisionElement === null) {
-        //console.error('null projectile', projectile);
-        if(bb.top > 500)
-            detonateProjectile(projectile);
-        return;
-    }
-//     console.log("collision: ", [collisionElement, projectile]);
-    if(collisionElement === projectile
-        || collisionElement === projectile.sourceTank
-        || collisionElement.parentNode === projectile.sourceTank
-        || collisionElement.parentNode.parentNode === projectile.sourceTank
-    )
-        return;
-    if(collisionElement.classList
-        && (
-            collisionElement.classList.contains('nohit')
-            || (collisionElement.parentNode.classList && collisionElement.parentNode.classList.contains('nohit'))
-        ))
+
+    if(collisionElement === projectile || testNoHit(collisionElement))
         return;
 
-    switch(collisionElement.nodeName.toLowerCase()) {
-        case 'g':
-        case 'path':
-        case 'circle':
-        case 'rect':
-            if(collisionElement.parentNode.classList.contains('tank'))
-                collisionElement = collisionElement.parentNode;
-            else if(collisionElement.parentNode.parentNode.classList.contains('tank'))
-                collisionElement = collisionElement.parentNode.parentNode;
-            break;
-
-        default:
-//             console.error('unknown collision element: ', collisionElement, projectile);
-            break;
-    }
-    detonateProjectile(projectile, collisionElement);
+    if(collisionElement !== null || bb.bottom > 600)
+        detonateProjectile(projectile, collisionElement);
 }
 
 
@@ -153,7 +128,7 @@ function renderExplosion(explosion, duration) {
     var y = bb.top;
 
     try {
-        var svgTransform = explosion.transform.baseVal[0];
+        var svgTransform = explosion.transform.baseVal.getItem(0);
         var matrix = svgTransform.matrix;
         x = matrix.e;
         y = matrix.f;
@@ -194,10 +169,14 @@ function renderArtilleryElements(e) {
 }
 
 function onFire(e) {
+    if(e.target.classList.contains('flipped') !== e.detail.flipped)
+        e.detail.flipped ? e.target.classList.add('flipped') : e.target.classList.remove('flipped');
     fireCannon(e.target, e.detail.angle, e.detail.power);
 }
 
 function onAim(e) {
+    if(e.target.classList.contains('flipped') !== e.detail.flipped)
+        e.detail.flipped ? e.target.classList.add('flipped') : e.target.classList.remove('flipped');
     aimCannon(e.target, e.detail.angle, e.detail.power);
 }
 
@@ -206,7 +185,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         tankElement = replaceUseWithSource(tankElement);
 
     var tankBB = tankElement.getBoundingClientRect();
-    var tankMatrix = tankElement.transform.baseVal[0].matrix;
+    var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
     var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
 
     if(cannonAngle) {
@@ -216,7 +195,7 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         cannonGroup.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
         angle -= cannonAngle % 360;
     }
-    angle -= 7;
+//     angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
@@ -225,13 +204,16 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
         point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
     }
 
+    if(tankElement.classList.contains('flipped'))
+        angle += 180;
+
     var velocity = CANNON_VELOCITY.slice();
 
     if(cannonPower < 0.1) cannonPower = 0.1;
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle);
+    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
 
     var cannonProjection = document.getElementById('cannon-projection');
     var projVelocity = [velocity[0], velocity[1]];
@@ -250,19 +232,21 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
 
     cannonProjection.setAttributeNS(null, "d", 'M' + pathPoints.join('L') );
 
-    var uiAngleValue = document.getElementsByClassName('ui-cannon-angle-value');
+    var uiTarget = document.getElementById('ui-cannon-' + tankElement.getAttribute('id')) || document;
+
+    var uiAngleValue = uiTarget.getElementsByClassName('ui-cannon-angle-value');
     for(i=0; i<uiAngleValue.length; i++)
         uiAngleValue[i].setAttribute('transform', 'rotate(' + (90 - cannonAngle) + ' 120 300)')
 
-    var uiAngleTextValue = document.getElementsByClassName('ui-cannon-angle-text-value');
+    var uiAngleTextValue = uiTarget.getElementsByClassName('ui-cannon-angle-text-value');
     for(i=0; i<uiAngleTextValue.length; i++)
         uiAngleTextValue[i].innerHTML = 'Angle: ' + Math.round(cannonAngle) + '°';
 
-    var uiPowerValue = document.getElementsByClassName('ui-cannon-power-value');
+    var uiPowerValue = uiTarget.getElementsByClassName('ui-cannon-power-value');
     for(i=0; i<uiPowerValue.length; i++)
         uiPowerValue[i].setAttribute('height', cannonPower * 100 + 'px');
 
-    var uiPowerTextValue = document.getElementsByClassName('ui-cannon-power-text-value');
+    var uiPowerTextValue = uiTarget.getElementsByClassName('ui-cannon-power-text-value');
     for(i=0; i<uiPowerTextValue.length; i++)
         uiPowerTextValue[i].innerHTML = 'Power: ' + Math.round(cannonPower * 100) + '%';
 
@@ -279,7 +263,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     var spriteGroup = document.getElementById('sprites') || tankElement.parentNode;
 
     var tankBB = tankElement.getBoundingClientRect();
-    var tankMatrix = tankElement.transform.baseVal[0].matrix;
+    var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
     var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
 
     if(cannonAngle) {
@@ -287,7 +271,6 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
         if(cannonAngle>70) cannonAngle = 70;
         angle -= cannonAngle % 360;
     }
-    angle -= 7;
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
@@ -301,7 +284,7 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     var svgns = 'http://www.w3.org/2000/xlink/namespace/';
     var projectile = tankElement.ownerDocument.createElementNS(xmlns, 'use');
 
-    projectile.setAttributeNS(svgns,'xlink:href','#projectile-template');
+    projectile.setAttributeNS(svgns, 'xlink:href', '#projectile-template');
     projectile.href.baseVal = '#projectile-template';
 
     projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ')');
@@ -316,7 +299,16 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle);
+
+    //var pt = document.rootElement.createSVGPoint();
+    //pt.x = velocity[0];
+    //pt.y = velocity[1];
+    //pt = pt.matrixTransform(tankMatrix);
+
+    if(tankElement.classList.contains('flipped'))
+        angle += 180;
+
+    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
     projectile.vx = velocity[0];
     projectile.vy = velocity[1];
 
@@ -324,11 +316,20 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
 
 function detonateProjectile(projectile, tankElement) {
-    if(tankElement && tankElement.classList.contains('tank')) {
-        tankElement.vx = (tankElement.vx || 0) + projectile.vx / 4;
-        tankElement.vy = (tankElement.vy || 0) + projectile.vy / 4;
-        destroyTank(tankElement);
+    if(tankElement) {
+        while(true) {
+            if(!tankElement.classList || tankElement === document) 
+                break;
+            if(tankElement.classList.contains('tank')) {
+                tankElement.vx = (tankElement.vx || 0) + projectile.vx / 4;
+                tankElement.vy = (tankElement.vy || 0) + projectile.vy / 4;
+                destroyTank(tankElement);
+                break;
+            }
+            tankElement = tankElement.parentNode;
+        }
     }
+
     var bb = projectile.getBoundingClientRect();
     var x = bb.left + bb.width/2;
     var y = bb.top + bb.height/2;
@@ -342,7 +343,7 @@ function detonateProjectile(projectile, tankElement) {
 function destroyTank(tankElement) {
     if(!tankElement.classList.contains('tank'))
         throw new Error("Not a tank: ", tankElement);
-    var paths = tankElement.children;
+    var paths = tankElement.getElementsByTagName('path');
 
     for(var i=paths.length-1; i>=0; i--) {
         paths[i].setAttribute('class', 'tank-part nohit'); //  + element.getAttribute('class'));

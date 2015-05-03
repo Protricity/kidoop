@@ -24,7 +24,7 @@ var resume = function() {
 var lastTime = new Date().getTime();
 var lastPoint = null;
 var lastAngle = 0;
-var lastPower = 0.5;
+var lastPower = 0.55;
 var isDragging = false;
 // var lastPower = 1;
 function onMouse(e) {
@@ -110,6 +110,10 @@ function onMouse(e) {
 document.addEventListener('mousemove', onMouse, true);
 document.addEventListener('mouseup', onMouse, true);
 document.addEventListener('mousedown', onMouse, true);
+
+document.addEventListener('touchstart', onMouse, true);
+document.addEventListener('touchmove', onMouse, true);
+document.addEventListener('touchend', onMouse, true);
 
 //document.addEventListener('xy', function(e) {
 //    var container = document.getElementsByClassName('artillery001')[0];

@@ -3,7 +3,7 @@
  * User: Ari
  */
 
-GRAVITY = 4;
+GRAVITY = 2;
 
 var doRender = function() {
     var renderEvent = new CustomEvent('render');
@@ -135,6 +135,17 @@ function onMouse(e) {
 document.addEventListener('mousemove', onMouse, true);
 document.addEventListener('mouseup', onMouse, true);
 document.addEventListener('mousedown', onMouse, true);
+
+document.addEventListener('touchstart', onMouse, true);
+document.addEventListener('touchmove', onMouse, true);
+document.addEventListener('touchend', onMouse, true);
+
+// function setPower(e) {
+//      console.log(e);
+// }
+// function setAngle(e) {
+//      console.log(e);
+// }
 
 //document.addEventListener('xy', function(e) {
 //    var container = document.getElementsByClassName('artillery001')[0];
