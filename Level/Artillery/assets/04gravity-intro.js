@@ -152,7 +152,7 @@ function setPower(e, tankID) {
                 isPowerDragging = e.pageY;
 
                 var powerTank = document.getElementById(tankID);
-                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 100;
+                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 200;
                 if(powerTank.lastPower > 1)
                     powerTank.lastPower = 1;
                 if(powerTank.lastPower < 0.2)

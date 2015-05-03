@@ -225,7 +225,7 @@ function addWind(amount) {
     if(WIND < -10) WIND = -10;
 
     var uiWindValue = document.getElementById('ui-wind-value');
-    uiWindValue.setAttribute('transform', 'translate(' + (WIND * 5) + ', 0)');
+    uiWindValue.setAttribute('transform', 'translate(' + (WIND) + ', 0)');
 
     var uiCannonAngleTextValue = document.getElementById('ui-wind-text-value');
     uiCannonAngleTextValue.innerHTML = 'Wind: ' + WIND + 'px/s';

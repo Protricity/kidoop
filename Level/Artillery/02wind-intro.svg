@@ -687,91 +687,91 @@
        class="tank"
        id="tank-template"
        style="display:inline">
+      <g
+         class="tank-body"
+         id="g27013"
+         style="display:inline">
+        <path
+           inkscape:connector-curvature="0"
+           id="path27757"
+           d="m -58.93293,29.268281 0.15244,10.365854 14.63414,14.024391 97.560982,0.152439 12.957318,-12.347562 -0.304878,-16.615854 -4.878049,-4.57317 -115.701223,1.829268 -4.57317,3.963415 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <image
+           sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+           xlink:href="..\..\Character\Tank\img\tank2.png"
+           clip-path="url(#clipPath27772)"
+           width="128"
+           height="64"
+           preserveAspectRatio="none"
+           id="image27015"
+           x="-200.01904"
+           y="-8.1124268"
+           style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
+           transform="translate(140,0)" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 46.130168,35.751374 c 0,2.51508 2.06552,4.5557 4.6177,4.56203 2.55217,0.008 4.62807,-2.02409 4.6409,-4.53914 0.0118,-2.51502 -2.04231,-4.56586 -4.59441,-4.58483 -2.5521,-0.0205 -4.63833,2.00118 -4.66399,4.51609"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+           id="path27017" />
         <g
-                class="tank-body"
-                id="g27013"
-                style="display:inline">
-            <path
-                    inkscape:connector-curvature="0"
-                    id="path27757"
-                    d="m -58.93293,29.268281 0.15244,10.365854 14.63414,14.024391 97.560982,0.152439 12.957318,-12.347562 -0.304878,-16.615854 -4.878049,-4.57317 -115.701223,1.829268 -4.57317,3.963415 z"
-                    style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-            <image
-                    sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-                    xlink:href="..\..\Character\Tank\img\tank2.png"
-                    transform="translate(140,0)"
-                    style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
-                    y="-8.1124268"
-                    x="-200.01904"
-                    id="image27015"
-                    preserveAspectRatio="none"
-                    height="64"
-                    width="128"
-                    clip-path="url(#clipPath27772)" />
-            <path
-                    inkscape:connector-curvature="0"
-                    d="m 46.130168,35.751374 c 0,2.51508 2.06552,4.5557 4.6177,4.56203 2.55217,0.008 4.62807,-2.02409 4.6409,-4.53914 0.0118,-2.51502 -2.04231,-4.56586 -4.59441,-4.58483 -2.5521,-0.0205 -4.63833,2.00118 -4.66399,4.51609"
-                    style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
-                    id="path27017" />
-            <g
-                    class="cannon-group"
-                    inkscape:groupmode="layer"
-                    inkscape:label="#cannon-group"
-                    style="display:inline"
-                    id="g27019">
-                <path
-                        sodipodi:nodetypes="cccccc"
-                        inkscape:connector-curvature="0"
-                        d="m 52.646356,0.44202464 -0.203543,5.29820996 -52.77231686,-0.25869 0.274463,-7.14451 52.70139286,2.10501004 z"
-                        style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"
-                        class="cannon"
-                        id="path27021" />
-                <rect
-                        y="-1.1649712"
-                        x="50.792744"
-                        id="rect27023"
-                        style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-                        class="cannon-tip"
-                        width="1.9679996"
-                        height="9.0753574" />
-            </g>
-            <image
-                    sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-                    xlink:href="..\..\Character\Tank\img\tank2.png"
-                    transform="translate(140,-78)"
-                    y="69.516174"
-                    x="-200.31787"
-                    id="image27035"
-                    preserveAspectRatio="none"
-                    height="64"
-                    width="128"
-                    clip-path="url(#clipPath27788)"
-                    style="display:inline;enable-background:new" />
-            <image
-                    sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-                    xlink:href="..\..\Character\Tank\img\tank2.png"
-                    transform="translate(140,0)"
-                    clip-path="url(#clipPath27781)"
-                    width="128"
-                    height="64"
-                    preserveAspectRatio="none"
-                    id="image27025"
-                    x="-200.01904"
-                    y="-8.1124268"
-                    style="display:inline;opacity:1;fill:#000000;fill-opacity:0.49746195;enable-background:new" />
-            <image
-                    sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-                    xlink:href="..\..\Character\Tank\img\tank2.png"
-                    transform="translate(140,0)"
-                    clip-path="url(#clipPath27764)"
-                    width="128"
-                    height="64"
-                    preserveAspectRatio="none"
-                    id="image27760"
-                    x="-200.01904"
-                    y="-8.1124268"
-                    style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new" />
+           class="cannon-group"
+           inkscape:groupmode="layer"
+           inkscape:label="#cannon-group"
+           style="display:inline"
+           id="g27019">
+          <path
+             sodipodi:nodetypes="cccccc"
+             inkscape:connector-curvature="0"
+             d="m 52.646356,0.44202464 -0.203543,5.29820996 -52.77231686,-0.25869 0.274463,-7.14451 52.70139286,2.10501004 z"
+             style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"
+             class="cannon"
+             id="path27021" />
+          <rect
+             y="-1.1649712"
+             x="50.792744"
+             id="rect27023"
+             style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+             class="cannon-tip"
+             width="1.9679996"
+             height="9.0753574" />
         </g>
+        <image
+           sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+           xlink:href="..\..\Character\Tank\img\tank2.png"
+           style="display:inline;enable-background:new"
+           clip-path="url(#clipPath27788)"
+           width="128"
+           height="64"
+           preserveAspectRatio="none"
+           id="image27035"
+           x="-200.31787"
+           y="69.516174"
+           transform="translate(140,-78)" />
+        <image
+           sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+           xlink:href="..\..\Character\Tank\img\tank2.png"
+           style="display:inline;opacity:1;fill:#000000;fill-opacity:0.49746195;enable-background:new"
+           y="-8.1124268"
+           x="-200.01904"
+           id="image27025"
+           preserveAspectRatio="none"
+           height="64"
+           width="128"
+           clip-path="url(#clipPath27781)"
+           transform="translate(140,0)" />
+        <image
+           sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+           xlink:href="..\..\Character\Tank\img\tank2.png"
+           style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
+           y="-8.1124268"
+           x="-200.01904"
+           id="image27760"
+           preserveAspectRatio="none"
+           height="64"
+           width="128"
+           clip-path="url(#clipPath27764)"
+           transform="translate(140,0)" />
+      </g>
     </g>
     <g
        id="projectile-template">
@@ -1001,46 +1001,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#ui-text-bk"
-       id="linearGradient8853"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.3434091,0,0,0.43210378,1.507294,-283.73122)"
-       x1="-1.118279"
-       y1="462.97855"
-       x2="99.091415"
-       y2="551.62561" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#hill1-border"
-       id="linearGradient8855"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(7.3434091,0,0,0.43210378,1.507294,-283.73122)"
-       x1="-1.118279"
-       y1="462.97855"
-       x2="99.091415"
-       y2="551.62561" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#hill1-border"
-       id="linearGradient8878"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.8508802,0,0,1.8853006,-27.332446,-427.91605)"
-       x1="102.00538"
-       y1="413.64453"
-       x2="46.291302"
-       y2="528.883" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#ui-bk1"
-       id="linearGradient5490"
-       x1="-126.70123"
-       y1="526.08929"
-       x2="-69.285767"
-       y2="526.08929"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.85561427,0,0,0.87152588,190.70098,75.086795)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#ui-text-bk"
        id="linearGradient8853-3"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(7.2995949,0,0,0.45495722,-310.79137,86.048128)"
@@ -1147,26 +1107,6 @@
        y1="163.45712"
        x2="112.71195"
        y2="163.45712"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#ui-button-bk"
-       id="linearGradient5863-3"
-       x1="39.995495"
-       y1="227.15974"
-       x2="93.9123"
-       y2="95.36644"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.69432754,0,0,0.73834983,41.718932,363.38761)" />
-    <linearGradient
-       gradientTransform="matrix(0.84901926,0,0,1,28.006922,326.77503)"
-       inkscape:collect="always"
-       xlink:href="#ui-button-bk"
-       id="linearGradient5885-7"
-       x1="48.858707"
-       y1="204.33594"
-       x2="92.951843"
-       y2="107.02637"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
@@ -1442,6 +1382,78 @@
          id="path27790"
          inkscape:connector-curvature="0" />
     </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#ui-text-bk"
+       id="linearGradient8853"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.9659652,0,0,0.32407783,245.22259,-239.49968)"
+       x1="-1.118279"
+       y1="462.97855"
+       x2="99.091415"
+       y2="551.62561" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#hill1-border"
+       id="linearGradient8855"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.9659652,0,0,0.32407783,245.22259,-239.49968)"
+       x1="-1.118279"
+       y1="462.97855"
+       x2="99.091415"
+       y2="551.62561" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#ui-bk1"
+       id="linearGradient5490"
+       x1="-126.70123"
+       y1="526.08929"
+       x2="-69.285767"
+       y2="526.08929"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.61260961,0,0,0.34994504,161.18782,349.48491)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#hill1-border"
+       id="linearGradient8878"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.3252081,0,0,0.75700748,5.0785035,147.51345)"
+       x1="102.00538"
+       y1="413.64453"
+       x2="46.291302"
+       y2="528.883" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#ui-button-bk"
+       id="linearGradient5863-3"
+       x1="60.584827"
+       y1="205.03204"
+       x2="71.852303"
+       y2="142.38782"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.1075444,0,0,0.44341694,241.20392,-177.42239)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient17375"
+       id="linearGradient17381"
+       x1="50.788315"
+       y1="594.89746"
+       x2="117.82336"
+       y2="471.85199"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.4756173,0,0,0.60055129,54.485971,-395.65529)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient17375">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop17377" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop17379" />
+    </linearGradient>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1450,16 +1462,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.2799999"
-     inkscape:cx="-96.13535"
-     inkscape:cy="569.94922"
+     inkscape:zoom="0.57982754"
+     inkscape:cx="113.45875"
+     inkscape:cy="502.88102"
      inkscape:document-units="px"
-     inkscape:current-layer="g27013"
+     inkscape:current-layer="ui-wind"
      showgrid="false"
-     inkscape:window-width="1902"
-     inkscape:window-height="958"
-     inkscape:window-x="1"
-     inkscape:window-y="1"
+     inkscape:window-width="1920"
+     inkscape:window-height="976"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      units="px"
      showguides="true"
@@ -1696,69 +1708,6 @@
            transform="scale(1,-2.51)" />
       </g>
       <g
-         id="ui-wind"
-         transform="translate(73.902155,341.38185)"
-         style="filter:url(#filter10086)">
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:66.70013428px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           x="473.12674"
-           y="-52.663548"
-           id="text6243"
-           class="ui-wind-text-value noselect"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan6245"
-             x="473.12674"
-             y="-52.663548"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.01254845px;font-family:Shruti;-inkscape-font-specification:'Shruti Bold'">Wind: -4px/s</tspan></text>
-        <rect
-           ry="6.0275884"
-           rx="93.300217"
-           y="-89.284515"
-           x="442.11163"
-           height="51.852451"
-           width="183.58521"
-           style="display:inline;opacity:1;fill:url(#linearGradient8853);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8855);stroke-width:1.50765157;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-           id="rect8851" />
-        <rect
-           transform="matrix(0,-1,1,0,0,0)"
-           id="rect8874"
-           onclick="setPower"
-           style="display:inline;opacity:1;fill:url(#linearGradient5490);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8878);stroke-width:2.87988949;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-           class="ui-wind-bk"
-           width="46.272007"
-           height="226.23607"
-           x="83.72036"
-           y="420.46921"
-           rx="23.515989"
-           ry="26.298811" />
-        <rect
-           id="rect5771"
-           width="50.025101"
-           height="58.362614"
-           x="258.44922"
-           y="-104.09057"
-           rx="259.42682"
-           ry="16.760075"
-           style="fill:none;fill-opacity:1" />
-        <rect
-           style="display:inline;opacity:1;fill:url(#linearGradient5863-3);fill-opacity:1;stroke:url(#linearGradient5885-7);stroke-width:1.66750324;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
-           id="ui-wind-value"
-           width="34.73381"
-           height="49.248039"
-           x="88.637825"
-           y="465.60818"
-           rx="13.886552"
-           ry="14.766997"
-           onmousedown="setWind"
-           onclick=""
-           onmouseover=""
-           onmouseup="setWind"
-           onmousemove="setWind"
-           transform="matrix(0,-1,1,0,0,0)" />
-      </g>
-      <g
          id="g6058"
          transform="translate(333.50069,0)" />
       <g
@@ -1822,6 +1771,64 @@
          d="m 11.900315,39.359116 c -0.94238,-0.12105 -2.9639398,-0.59685 -3.7778198,-0.88916 -3.51982,-1.26416 -6.22758,-3.64815 -7.16143998,-6.30516 -0.5237,-1.49002 -0.51968,-3.2837 0.0107,-4.79283 1.46406998,-4.16555 6.94934998,-7.24788 12.89823978,-7.24788 0.82647,0 1.50268,-0.0303 1.50268,-0.0673 0,-0.037 -0.1342,-0.33534 -0.29822,-0.66291 -0.60806,-1.2144 -0.77135,-1.91511 -0.77143,-3.31036 -7e-5,-1.05034 0.0596,-1.49966 0.2873,-2.1624 1.02111,-2.97247 3.85958,-5.4137802 7.73555,-6.6531798 1.8691,-0.59767 3.3351,-0.81629 5.4843,-0.81786 2.19391,-0.002 3.61531,0.21407 5.55395,0.84271 l 1.30828,0.4242296 0.47853,-0.6947996 c 1.47638,-2.14363 4.41451,-4.23224 7.39022,-5.25344 9.43014,-3.23621 20.43974,0.34556 23.10986,7.5183796 0.32607,0.8759202 0.40151,1.2885802 0.45261,2.4758502 0.0694,1.6122 -0.11996,2.64873 -0.73372,4.0167 l -0.36017,0.80274 0.52998,0.13462 c 3.62809,0.92162 6.1694,2.17596 8.2253,4.05982 1.3743,1.25929 2.3914,2.79205 3.00183,4.5237 0.31996,0.90765 0.43945,2.9998 0.23222,4.06585 -0.89986,4.629 -5.47012,8.34327 -11.96484,9.72384 l -1.36363,0.28987 -25.69576,0.0138 c -14.13267,0.008 -25.86622,-0.008 -26.07456,-0.0348 z"
          style="display:inline;opacity:0.84600004;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.13600004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          transform="matrix(1.6675033,0,0,1.6675033,501.79945,-68.289218)" />
+      <g
+         style="display:inline;opacity:0.79500002;enable-background:new;filter:url(#filter10086)"
+         id="ui-wind"
+         transform="matrix(2.0409825,0,0,2.0409825,-460.58004,445.27627)"
+         onmouseover=""
+         onmouseout="setWind(evt);"
+         onmousedown="setWind(evt);"
+         onmouseup="setWind(evt);"
+         onmousemove="setWind(evt);">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21px;line-height:125%;font-family:Shruti;-inkscape-font-specification:'Shruti Bold';fill:#00ffff"
+           x="491.64865"
+           y="-67.621506"
+           id="ui-wind-text-value"
+           class="ui-wind-text-value noselect"
+           sodipodi:linespacing="125%"><tspan
+             style="font-size:15.64051151px"
+             id="tspan6240">Wind: 4px/s</tspan></text>
+        <rect
+           ry="4.5206914"
+           rx="50.388775"
+           y="-93.66465"
+           x="483.18033"
+           height="38.889339"
+           width="99.149117"
+           style="display:inline;opacity:1;fill:url(#linearGradient8853);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8855);stroke-width:0.95952696;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+           id="rect8851" />
+        <rect
+           transform="matrix(0,-1,1,0,0,0)"
+           id="ui-wind-bk"
+           onclick=""
+           style="display:inline;opacity:1;fill:url(#linearGradient5490);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8878);stroke-width:1.54414642;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+           width="33.130207"
+           height="90.840889"
+           x="84.590988"
+           y="488.16681"
+           rx="20"
+           ry="20"
+           onmousedown=""
+           onmouseup=""
+           onmousemove=""
+           onmouseout="" />
+        <rect
+           style="display:inline;opacity:1;fill:url(#linearGradient5863-3);fill-opacity:1;stroke:url(#linearGradient17381);stroke-width:2.52679157;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+           id="ui-wind-value"
+           width="63.831215"
+           height="29.359119"
+           x="492.09854"
+           y="-116.0337"
+           rx="17.394184"
+           ry="14.67956"
+           onmouseover=""
+           onmouseout="setWind(evt);"
+           onmousedown="setWind(evt);"
+           onmouseup="setWind(evt);"
+           onmousemove="setWind(evt);" />
+      </g>
     </g>
     <g
        id="g7446"
@@ -2097,94 +2104,94 @@
        width="100%"
        height="100%" />
     <!--<g-->
-       <!--class="tank"-->
-       <!--id="g27011"-->
-       <!--style="display:inline">-->
-      <!--<g-->
-         <!--class="tank-body"-->
-         <!--id="g27013"-->
-         <!--style="display:inline">-->
-        <!--<path-->
-           <!--inkscape:connector-curvature="0"-->
-           <!--id="path27757"-->
-           <!--d="m -58.93293,29.268281 0.15244,10.365854 14.63414,14.024391 97.560982,0.152439 12.957318,-12.347562 -0.304878,-16.615854 -4.878049,-4.57317 -115.701223,1.829268 -4.57317,3.963415 z"-->
-           <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />-->
-        <!--<image-->
-           <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
-           <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
-           <!--transform="translate(140,0)"-->
-           <!--style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"-->
-           <!--y="-8.1124268"-->
-           <!--x="-200.01904"-->
-           <!--id="image27015"-->
-           <!--preserveAspectRatio="none"-->
-           <!--height="64"-->
-           <!--width="128"-->
-           <!--clip-path="url(#clipPath27772)" />-->
-        <!--<path-->
-           <!--inkscape:connector-curvature="0"-->
-           <!--d="m 46.130168,35.751374 c 0,2.51508 2.06552,4.5557 4.6177,4.56203 2.55217,0.008 4.62807,-2.02409 4.6409,-4.53914 0.0118,-2.51502 -2.04231,-4.56586 -4.59441,-4.58483 -2.5521,-0.0205 -4.63833,2.00118 -4.66399,4.51609"-->
-           <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"-->
-           <!--id="path27017" />-->
-        <!--<g-->
-           <!--class="cannon-group"-->
-           <!--inkscape:groupmode="layer"-->
-           <!--inkscape:label="#cannon-group"-->
-           <!--style="display:inline"-->
-           <!--id="g27019">-->
-          <!--<path-->
-             <!--sodipodi:nodetypes="cccccc"-->
-             <!--inkscape:connector-curvature="0"-->
-             <!--d="m 52.646356,0.44202464 -0.203543,5.29820996 -52.77231686,-0.25869 0.274463,-7.14451 52.70139286,2.10501004 z"-->
-             <!--style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"-->
-             <!--class="cannon"-->
-             <!--id="path27021" />-->
-          <!--<rect-->
-             <!--y="-1.1649712"-->
-             <!--x="50.792744"-->
-             <!--id="rect27023"-->
-             <!--style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"-->
-             <!--class="cannon-tip"-->
-             <!--width="1.9679996"-->
-             <!--height="9.0753574" />-->
-        <!--</g>-->
-        <!--<image-->
-           <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
-           <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
-           <!--transform="translate(140,-78)"-->
-           <!--y="69.516174"-->
-           <!--x="-200.31787"-->
-           <!--id="image27035"-->
-           <!--preserveAspectRatio="none"-->
-           <!--height="64"-->
-           <!--width="128"-->
-           <!--clip-path="url(#clipPath27788)"-->
-           <!--style="display:inline;enable-background:new" />-->
-        <!--<image-->
-           <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
-           <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
-           <!--transform="translate(140,0)"-->
-           <!--clip-path="url(#clipPath27781)"-->
-           <!--width="128"-->
-           <!--height="64"-->
-           <!--preserveAspectRatio="none"-->
-           <!--id="image27025"-->
-           <!--x="-200.01904"-->
-           <!--y="-8.1124268"-->
-           <!--style="display:inline;opacity:1;fill:#000000;fill-opacity:0.49746195;enable-background:new" />-->
-        <!--<image-->
-           <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
-           <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
-           <!--transform="translate(140,0)"-->
-           <!--clip-path="url(#clipPath27764)"-->
-           <!--width="128"-->
-           <!--height="64"-->
-           <!--preserveAspectRatio="none"-->
-           <!--id="image27760"-->
-           <!--x="-200.01904"-->
-           <!--y="-8.1124268"-->
-           <!--style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new" />-->
-      <!--</g>-->
+    <!--class="tank"-->
+    <!--id="g27011"-->
+    <!--style="display:inline">-->
+    <!--<g-->
+    <!--class="tank-body"-->
+    <!--id="g27013"-->
+    <!--style="display:inline">-->
+    <!--<path-->
+    <!--inkscape:connector-curvature="0"-->
+    <!--id="path27757"-->
+    <!--d="m -58.93293,29.268281 0.15244,10.365854 14.63414,14.024391 97.560982,0.152439 12.957318,-12.347562 -0.304878,-16.615854 -4.878049,-4.57317 -115.701223,1.829268 -4.57317,3.963415 z"-->
+    <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />-->
+    <!--<image-->
+    <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
+    <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
+    <!--transform="translate(140,0)"-->
+    <!--style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"-->
+    <!--y="-8.1124268"-->
+    <!--x="-200.01904"-->
+    <!--id="image27015"-->
+    <!--preserveAspectRatio="none"-->
+    <!--height="64"-->
+    <!--width="128"-->
+    <!--clip-path="url(#clipPath27772)" />-->
+    <!--<path-->
+    <!--inkscape:connector-curvature="0"-->
+    <!--d="m 46.130168,35.751374 c 0,2.51508 2.06552,4.5557 4.6177,4.56203 2.55217,0.008 4.62807,-2.02409 4.6409,-4.53914 0.0118,-2.51502 -2.04231,-4.56586 -4.59441,-4.58483 -2.5521,-0.0205 -4.63833,2.00118 -4.66399,4.51609"-->
+    <!--style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"-->
+    <!--id="path27017" />-->
+    <!--<g-->
+    <!--class="cannon-group"-->
+    <!--inkscape:groupmode="layer"-->
+    <!--inkscape:label="#cannon-group"-->
+    <!--style="display:inline"-->
+    <!--id="g27019">-->
+    <!--<path-->
+    <!--sodipodi:nodetypes="cccccc"-->
+    <!--inkscape:connector-curvature="0"-->
+    <!--d="m 52.646356,0.44202464 -0.203543,5.29820996 -52.77231686,-0.25869 0.274463,-7.14451 52.70139286,2.10501004 z"-->
+    <!--style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"-->
+    <!--class="cannon"-->
+    <!--id="path27021" />-->
+    <!--<rect-->
+    <!--y="-1.1649712"-->
+    <!--x="50.792744"-->
+    <!--id="rect27023"-->
+    <!--style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"-->
+    <!--class="cannon-tip"-->
+    <!--width="1.9679996"-->
+    <!--height="9.0753574" />-->
+    <!--</g>-->
+    <!--<image-->
+    <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
+    <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
+    <!--transform="translate(140,-78)"-->
+    <!--y="69.516174"-->
+    <!--x="-200.31787"-->
+    <!--id="image27035"-->
+    <!--preserveAspectRatio="none"-->
+    <!--height="64"-->
+    <!--width="128"-->
+    <!--clip-path="url(#clipPath27788)"-->
+    <!--style="display:inline;enable-background:new" />-->
+    <!--<image-->
+    <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
+    <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
+    <!--transform="translate(140,0)"-->
+    <!--clip-path="url(#clipPath27781)"-->
+    <!--width="128"-->
+    <!--height="64"-->
+    <!--preserveAspectRatio="none"-->
+    <!--id="image27025"-->
+    <!--x="-200.01904"-->
+    <!--y="-8.1124268"-->
+    <!--style="display:inline;opacity:1;fill:#000000;fill-opacity:0.49746195;enable-background:new" />-->
+    <!--<image-->
+    <!--sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"-->
+    <!--xlink:href="..\..\Character\Tank\img\tank2.png"-->
+    <!--transform="translate(140,0)"-->
+    <!--clip-path="url(#clipPath27764)"-->
+    <!--width="128"-->
+    <!--height="64"-->
+    <!--preserveAspectRatio="none"-->
+    <!--id="image27760"-->
+    <!--x="-200.01904"-->
+    <!--y="-8.1124268"-->
+    <!--style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new" />-->
+    <!--</g>-->
     <!--</g>-->
   </g>
 </svg>
