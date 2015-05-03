@@ -23,8 +23,10 @@ function testRectContainment(element) {
 
 function testNoHit(element) {
     while(element) {
-        if(element.classList.contains('nohit'))
+        if(element.classList.contains('nohit')) {
+            console.log("No hit: ", element); 
             return element;
+        }
         if(element === document || element === document.rootElement)
             return null;
         element = element.parentNode;
@@ -343,7 +345,7 @@ function detonateProjectile(projectile, tankElement) {
 function destroyTank(tankElement) {
     if(!tankElement.classList.contains('tank'))
         throw new Error("Not a tank: ", tankElement);
-    var paths = tankElement.getElementsByTagName('path');
+    var paths = tankElement.querySelectorAll("*"); // ('path');
 
     for(var i=paths.length-1; i>=0; i--) {
         paths[i].setAttribute('class', 'tank-part nohit'); //  + element.getAttribute('class'));
