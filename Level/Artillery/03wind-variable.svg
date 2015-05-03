@@ -623,69 +623,69 @@
                         width="1.9679996"
                         height="9.0753574" />
             </g>
-            <image
-                    style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
-                    y="73.887573"
-                    x="-176.01904"
-                    id="image7273"
-                    xlink:href="../../Character/Tank/img/tank2.png"
-                    preserveAspectRatio="none"
-                    height="64"
-                    width="128"
-                    clip-path="url(#clipPath26154)"
-                    transform="translate(116,-82)" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -53.817876,104.51618 c -3.556564,-0.69514 1.920664,2.18624 0,0 z"
-                    id="path25552" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -163.31788,96.016178 c 2.77196,3.051813 0.18505,-2.619829 0,0 z"
-                    id="path25554" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -80.817876,96.516178 c 3.402081,1.229414 -0.239791,-2.412063 0,0 z"
-                    id="path25556" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -149.66296,95.059306 c 2.85978,2.852451 0.0592,-2.779228 0,0 z"
-                    id="path25558" />
-            <image
-                    style="display:inline;enable-background:new"
-                    clip-path="url(#clipPath25629-7)"
-                    width="128"
-                    height="64"
-                    preserveAspectRatio="none"
-                    xlink:href="../../Character/Tank/img/tank2.png"
-                    id="image25520"
-                    x="-176.31787"
-                    y="71.516174"
-                    transform="translate(116,-82)" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -153.06788,90.853897 c 3.85992,-0.592945 -2.48929,-2.455209 0,0 z"
-                    id="path25560" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -88.317876,82.016178 c 3.232257,2.203476 0.503478,-2.506861 0,0 z"
-                    id="path25564" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -142.38451,80.096475 c 3.72984,0.0787 -2.10608,-2.043807 0,0 z"
-                    id="path25566" />
-            <path
-                    inkscape:connector-curvature="0"
-                    style="fill:#000000"
-                    d="m -111.80614,76.497186 c 0.42279,-3.615065 -2.20343,1.137796 0,0 z"
-                    id="path25568" />
         </g>
+        <image
+                style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
+                y="73.887573"
+                x="-176.01904"
+                id="image7273"
+                xlink:href="../../Character/Tank/img/tank2.png"
+                preserveAspectRatio="none"
+                height="64"
+                width="128"
+                clip-path="url(#clipPath26154)"
+                transform="translate(116,-82)" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -53.817876,104.51618 c -3.556564,-0.69514 1.920664,2.18624 0,0 z"
+                id="path25552" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -163.31788,96.016178 c 2.77196,3.051813 0.18505,-2.619829 0,0 z"
+                id="path25554" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -80.817876,96.516178 c 3.402081,1.229414 -0.239791,-2.412063 0,0 z"
+                id="path25556" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -149.66296,95.059306 c 2.85978,2.852451 0.0592,-2.779228 0,0 z"
+                id="path25558" />
+        <image
+                style="display:inline;enable-background:new"
+                clip-path="url(#clipPath25629-7)"
+                width="128"
+                height="64"
+                preserveAspectRatio="none"
+                xlink:href="../../Character/Tank/img/tank2.png"
+                id="image25520"
+                x="-176.31787"
+                y="71.516174"
+                transform="translate(116,-82)" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -153.06788,90.853897 c 3.85992,-0.592945 -2.48929,-2.455209 0,0 z"
+                id="path25560" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -88.317876,82.016178 c 3.232257,2.203476 0.503478,-2.506861 0,0 z"
+                id="path25564" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -142.38451,80.096475 c 3.72984,0.0787 -2.10608,-2.043807 0,0 z"
+                id="path25566" />
+        <path
+                inkscape:connector-curvature="0"
+                style="fill:#000000"
+                d="m -111.80614,76.497186 c 0.42279,-3.615065 -2.20343,1.137796 0,0 z"
+                id="path25568" />
     </g>
     <g
        id="projectile-template">
