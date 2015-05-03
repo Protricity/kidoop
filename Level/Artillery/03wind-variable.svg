@@ -1866,8 +1866,8 @@
          attributeName="transform"
          attributeType="XML"
          type="translate"
-         from="1000,0"
-         to="-1000,0"
+         from="2000,0"
+         to="-2000,0"
          dur="400s"
          begin="-150s"
          repeatCount="indefinite" />
