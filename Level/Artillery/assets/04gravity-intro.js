@@ -139,11 +139,6 @@ function onMouse(e) {
 
 }
 
-function selectTank(tankElement) {
-    tankElement.classList.contains('selected')
-        ? tankElement.classList.remove('selected')
-        : tankElement.classList.add('selected');
-}
 
 var isPowerDragging = false;
 function setPower(e, tankID) {
@@ -216,74 +211,54 @@ function setAngle(e, tankID) {
     e.preventDefault();
 }
 
+function addGravity(amount) {
+    GRAVITY -= amount;
+    if(GRAVITY > 16) GRAVITY = 16;
+    if(GRAVITY < -16) GRAVITY = -16;
 
-var isWindDragging = false;
+    var uiGravityValue = document.getElementById('ui-gravity-value');
+    uiGravityValue.setAttribute('transform', 'translate(' + (-GRAVITY) + ', 0)');
 
-function addWind(amount) {
-    WIND += amount;
-    if(WIND > 10) WIND = 10;
-    if(WIND < -10) WIND = -10;
-
-    var uiWindValue = document.getElementById('ui-wind-value');
-    uiWindValue.setAttribute('transform', 'translate(' + (WIND * 5) + ', 0)');
-
-    var uiCannonAngleTextValue = document.getElementById('ui-wind-text-value');
-    uiCannonAngleTextValue.innerHTML = 'Wind: ' + WIND + 'px/s';
+    var uiGravityTextValue = document.getElementById('ui-gravity-text-value');
+    uiGravityTextValue.innerHTML = GRAVITY + 'px/s';
 
 
-    var windTanks = document.getElementsByClassName('usertank');
-    for(var ai=0; ai<windTanks.length; ai++) {
-        var aimTank = windTanks[ai];
-        aimTank.dispatchEvent(createEvent('aim', {
-            angle: aimTank.lastAngle || 0,
-            power: aimTank.lastPower,
-            flipped: aimTank.lastFlipped
+    var gravityTanks = document.getElementsByClassName('usertank');
+    for(var ai=0; ai<gravityTanks.length; ai++) {
+        var gravityTank = gravityTanks[ai];
+        gravityTank.dispatchEvent(createEvent('aim', {
+            angle: gravityTank.lastAngle || 0,
+            power: gravityTank.lastPower || 1,
+            flipped: gravityTank.lastFlipped
             //                     flipped: abb.left + abb.width/2 > e.pageX
         }));
     }
 
-    var windAnimations = document.getElementsByClassName('wind-animation');
-    for(var wi=0; wi<windAnimations.length; wi++) {
-        if(WIND == 0) {
-            windAnimations[wi].setAttribute('from', '1000 0');
-            windAnimations[wi].setAttribute('to', '-1000 0');
-            windAnimations[wi].setAttribute('dur', '100 s');
-
-        } else if(WIND > 0) {
-            windAnimations[wi].setAttribute('from', '-1000 0');
-            windAnimations[wi].setAttribute('to', '1000 0');
-            windAnimations[wi].setAttribute('dur', 20 * (11-WIND) + 's');
-
-        } else if(WIND < 0) {
-            windAnimations[wi].setAttribute('from', '1000 0');
-            windAnimations[wi].setAttribute('to', '-1000 0');
-            windAnimations[wi].setAttribute('dur', 20 * (11+WIND) + 's');
-
-        }
-    }
     
 }
-setTimeout(function() {addWind(0)}, 100);
+setTimeout(function() {addGravity(0)}, 100);
 
-function setWind(e) {
+
+var isGravityDragging = false;
+function setGravity(e) {
     switch(e.type) {
         case 'mousedown':
-            isWindDragging = e.pageX;
+            isGravityDragging = e.pageY;
             break;
         case 'mousemove':
-            if(typeof isWindDragging === 'number') {
-                var distX = isWindDragging - e.pageX;
-                isWindDragging = e.pageX;
+            if(typeof isGravityDragging === 'number') {
+                var distY = e.pageY - isGravityDragging;
+                isGravityDragging = e.pageY;
 
-                if(distX) {
-                    addWind(distX < 0 ? 1 : -1);
+                if(distY) {
+                    addGravity(distY < 0 ? 1 : -1);
                 }
             }
             break;
         default:
         case 'mouseout':
         case 'mouseup':
-            isWindDragging = false;
+            isGravityDragging = false;
             break;
     }
     e.preventDefault();
