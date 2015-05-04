@@ -103,32 +103,6 @@ function onMouse(e) {
             throw new Error("Invalid Event: ", e);
     }
 
-//     console.log(document.elementFromPoint(e.layerX, e.layerY));
-//    for(var i=0; i<tanks.length; i++) {
-//        var aimTank = tanks[i];
-
-        //aimTank.dispatchEvent(new CustomEvent('aim', {
-        //    detail: {
-        //        angle: lastAngle,
-        //        power: lastPower
-        //    }
-        //}));
-
-        //var bb = aimTank.getBoundingClientRect();
-        //var dx = e.layerX - bb.left - bb.width/2;
-        //var dy = e.layerY - bb.top - bb.height/2;
-        //var d = Math.sqrt(dx*dx + dy*dy) - 100;
-        //if(d<0) d=0;
-        //var cannonAngle = (-50 + 360 + Math.atan2(dx, dy) * 120 / Math.PI) % 360;
-        //if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
-        //if(cannonAngle>70) cannonAngle = 70;
-        //
-        //var cannonPower = (d<500?d:500)/500 + 0.2;
-        //if(cannonPower > 1)
-        //    cannonPower = 1;
-        //
-
-    //}
 }
 
 //document.addEventListener('click', onMouse, true);
@@ -140,23 +114,83 @@ document.addEventListener('touchstart', onMouse, true);
 document.addEventListener('touchmove', onMouse, true);
 document.addEventListener('touchend', onMouse, true);
 
-// function setPower(e) {
-//      console.log(e);
-// }
-// function setAngle(e) {
-//      console.log(e);
-// }
 
-//document.addEventListener('xy', function(e) {
-//    var container = document.getElementsByClassName('artillery001')[0];
-//    container.dataset.ax = e.detail.percX * 20 - 10;
-//    container.dataset.ay = e.detail.percY * 20 - 10;
-//    e.detail.formatX = Math.round(container.dataset.ax*10)/10 + 'px/s';
-//    e.detail.formatY = Math.round(container.dataset.ay*10)/10 + 'px/s';
-//    e.detail.tankCount = document.getElementsByClassName('tank').length - 1;
-//});
+var isPowerDragging = false;
+function setPower(e, tankID) {
+    switch(e.type) {
+        case 'mousedown':
+            isPowerDragging = e.pageY;
+            break;
+        case 'mousemove':
+            if(typeof isPowerDragging === 'number') {
+                var distY = isPowerDragging - e.pageY;
+                isPowerDragging = e.pageY;
 
-//document.addEventListener('touchmove', function(e) {
-//    e.preventDefault();
-//});
+                var powerTank = document.getElementById(tankID);
+                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 100;
+                if(powerTank.lastPower > 1)
+                    powerTank.lastPower = 1;
+                if(powerTank.lastPower < 0.2)
+                    powerTank.lastPower = 0.2;
 
+                powerTank.dispatchEvent(createEvent('aim', {
+                    angle: powerTank.lastAngle || 0,
+                    power: powerTank.lastPower,
+                    flipped: powerTank.lastFlipped
+//                     flipped: abb.left + abb.width/2 > e.pageX
+                }));
+            }
+            break;
+        default:
+        case 'mouseout':
+        case 'mouseup':
+            isPowerDragging = false;
+            break;
+    }
+    e.preventDefault();
+}
+
+
+var isAngleDragging = false;
+function setAngle(e, tankID) {
+    switch(e.type) {
+        case 'mousedown':
+            isAngleDragging = e.pageY;
+            break;
+        case 'mousemove':
+            if(typeof isAngleDragging === 'number') {
+                var distY = isAngleDragging - e.pageY;
+                isAngleDragging = e.pageY;
+
+                var aimTank = document.getElementById(tankID);
+                aimTank.lastAngle = (aimTank.lastAngle || 0) + distY / 2;
+                if(aimTank.lastAngle > 70)
+                    aimTank.lastAngle = 70;
+                else if(aimTank.lastAngle < 0 || aimTank.lastAngle > 270)
+                    aimTank.lastAngle = 0;
+
+                aimTank.dispatchEvent(createEvent('aim', {
+                    angle: aimTank.lastAngle || 0,
+                    power: aimTank.lastPower,
+                    flipped: aimTank.lastFlipped
+//                     flipped: abb.left + abb.width/2 > e.pageX
+                }));
+            }
+            break;
+        default:
+        case 'mouseout':
+        case 'mouseup':
+            isAngleDragging = false;
+            break;
+    }
+    e.preventDefault();
+}
+
+function createEvent(name, data) {
+    if(typeof CustomEvent !== 'undefined')
+        return new CustomEvent(name, {detail:data});
+    var evt = document.createEvent('Event');
+    evt.initEvent(name, true, true, data);
+    evt.detail = data || {};
+    return evt;
+}

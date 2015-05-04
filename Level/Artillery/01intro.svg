@@ -1462,10 +1462,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9378018"
-     inkscape:cx="155.73566"
+     inkscape:cx="2.185091"
      inkscape:cy="259.74705"
      inkscape:document-units="px"
-     inkscape:current-layer="sky"
+     inkscape:current-layer="ui-cannon"
      showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="976"
@@ -1602,9 +1602,10 @@
       <g
          id="ui-clip"
          clip-path="url(#arc-90-3)"
-         onmousedown="setAngle"
-         onmouseup="setAngle"
-         onmousemove="setAngle">
+         onmousedown="setAngle(evt, 'usertank')"
+         onmouseup="setAngle(evt, 'usertank')"
+         onmousemove="setAngle(evt, 'usertank')"
+         onmouseout="setAngle(evt, 'usertank')">
         <path
            id="path4686"
            inkscape:connector-curvature="0"
@@ -1624,9 +1625,10 @@
          sodipodi:start="5.0754175"
          sodipodi:end="0"
          d="m 189.46566,112.98995 a 199.31108,199.31108 0 0 1 128.53432,186.32112 l -199.31108,0 z"
-         onmousedown="setAngle"
-         onmouseup="setAngle"
-         onmousemove="setAngle" />
+         onmousedown="setAngle(evt, 'usertank')"
+         onmouseup="setAngle(evt, 'usertank')"
+         onmousemove="setAngle(evt, 'usertank')"
+         onmouseout="setAngle(evt, 'usertank')" />
       <text
          sodipodi:linespacing="125%"
          id="text5645-1"
@@ -1648,9 +1650,10 @@
          ry="14.419251"
          transform="matrix(0,-1,1,0,0,0)"
          id="rect6476-0"
-         onmousedown="setPower"
-         onmouseup="setPower"
-         onmousemove="setPower" />
+         onmousedown="setPower(evt, 'usertank')"
+         onmouseup="setPower(evt, 'usertank')"
+         onmousemove="setPower(evt, 'usertank')"
+         onmouseout="setPower(evt, 'usertank')" />
       <rect
          id="ui-power-bk-3"
          onclick=""
@@ -1662,9 +1665,10 @@
          y="68.25071"
          rx="27"
          ry="30"
-         onmousedown="setPower"
-         onmouseout="setPower"
-         onmouseup="setPower" />
+         onmousedown="setPower(evt, 'usertank')"
+         onmouseout="setPower(evt, 'usertank')"
+         onmouseup="setPower(evt, 'usertank')"
+         onmousemove="setPower(evt, 'usertank')" />
       <rect
          style="display:inline;opacity:0.84575189;fill:url(#linearGradient5596-5);fill-opacity:1;stroke:url(#linearGradient5885-0-3);stroke-width:0.52211553;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
          class="ui-cannon-power-value"
@@ -1674,13 +1678,14 @@
          height="100"
          rx="27"
          ry="11.764706"
-         onmousedown="setPower"
+         onmousedown="setPower(evt, 'usertank')"
          onclick=""
          onmouseover=""
-         onmouseup="setPower"
-         onmousemove="setPower"
+         onmouseup="setPower(evt, 'usertank')"
+         onmousemove="setPower(evt, 'usertank')"
          id="ui-power-value-4"
-         transform="scale(1,-2.51)" />
+         transform="scale(1,-2.51)"
+         onmouseout="setPower(evt, 'usertank')" />
       <path
          style="display:inline;opacity:0.872;fill:url(#linearGradient7611);fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient7613);stroke-width:2.511935;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          d="m 105.15892,339.35684 c -2.2685,-0.24586 -7.134814,-1.2123 -9.093984,-1.80603 -8.47293,-2.56773 -14.99106,-7.41003 -17.23904,-12.80689 -1.26066,-3.02649 -1.25098,-6.66977 0.0257,-9.73509 3.52431,-8.46096 16.72849,-14.72172 31.048684,-14.72172 1.98948,0 3.61725,-0.0615 3.61725,-0.13669 0,-0.0752 -0.32304,-0.68114 -0.71787,-1.34649 -1.46373,-2.46666 -1.8568,-3.88992 -1.857,-6.72393 -1.5e-4,-2.13342 0.14348,-3.04607 0.6916,-4.39221 2.45802,-6.03761 9.29078,-10.99633 18.62104,-13.51377 4.49929,-1.21397 8.02826,-1.65802 13.20182,-1.66121 5.28119,-0.004 8.70279,0.43481 13.36949,1.71168 l 3.14929,0.86169 1.15192,-1.41126 c 3.55394,-4.35409 10.62662,-8.59642 17.78976,-10.67065 22.70027,-6.57332 49.20262,0.70189 55.63014,15.27114 0.78492,1.77915 0.96652,2.61733 1.08953,5.02888 0.16705,3.27466 -0.28878,5.38003 -1.76622,8.15862 l -0.867,1.63051 1.27577,0.27344 c 8.73354,1.87197 14.851,4.41976 19.79997,8.24621 3.30822,2.55783 5.75658,5.67114 7.22601,9.18842 0.77022,1.8436 1.05785,6.09314 0.559,8.25848 -2.16614,9.4023 -13.16769,16.94664 -28.8018,19.75081 l -3.28254,0.58879 -61.85491,0.028 c -34.02022,0.0162 -62.26525,-0.0163 -62.76677,-0.0707 z"

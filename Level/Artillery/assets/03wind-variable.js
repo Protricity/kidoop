@@ -139,12 +139,6 @@ function onMouse(e) {
 
 }
 
-function selectTank(tankElement) {
-    tankElement.classList.contains('selected')
-        ? tankElement.classList.remove('selected')
-        : tankElement.classList.add('selected');
-}
-
 var isPowerDragging = false;
 function setPower(e, tankID) {
     switch(e.type) {
