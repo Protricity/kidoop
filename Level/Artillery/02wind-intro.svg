@@ -603,109 +603,129 @@
        y2="325" />
 
 
-
-
-
       <clipPath
               clipPathUnits="userSpaceOnUse"
-              id="clipPath7399">
+              id="clipPath3506">
           <path
-                  id="path7401"
-                  d="m -23.86788,9.57931 c -5.91661,2.10828 -12.33434,-5.212151 -9.46684,-10.80153 4.90257,-4.124963 12.47042,-1.460654 17.16502,-5.983392 8.47776,-3.100668 17.72626,-0.6724 25.72942,2.692396 5.450287,-0.36808 12.700406,0.366677 14.976775,6.23496 C 25.751727,8.337692 17.636662,12.155915 11.94873,10.198875 0.03686,8.987131 -11.99449,11.43993 -23.86788,9.57931 Z"
+                  sodipodi:nodetypes="scssssssscssscss"
+                  inkscape:connector-curvature="0"
+                  id="path3508"
+                  d="m -2.6446586,0.522724 0,-5.598187 6.25,0.634709 c 3.4375,0.349086 8.0110726,1.741281 10.3224716,1.678442 5.414729,-0.147209 41.942489,0.773013 43.579589,-0.866778 1.93738,-1.940572 14.75229,-1.646535 17.00278,0.390128 1.59045,1.43934 2.52102,1.489732 7.60127,0.411628 3.18393,-0.675675 7.10059,-1.076233 8.7037,-0.890128 2.60524,0.302442 2.91237,0.710026 2.89234,3.838372 l -0.0224,3.5 -9.07255,-0.303893 c -5.60559,-0.187764 -9.32145,0.09884 -9.72389,0.75 C 74.010092,5.48855 59.065882,5.43145 57.635522,4.001097 55.991102,2.356675 4.1548014,3.222526 3.5943914,4.903776 c -0.22315,0.669423 -1.718217,1.217133 -3.322383,1.217134 -2.874887,0 -2.916666,-0.08019 -2.916667,-5.598186 z"
+                  style="fill:#000000" />
+      </clipPath>
+      <clipPath
+              clipPathUnits="userSpaceOnUse"
+              id="clipPath3510">
+          <path
+                  inkscape:connector-curvature="0"
+                  id="path3512"
+                  d="m -22.961208,7.47103 c -1.16937,-1.169376 -0.74845,-11.885119 0.51655,-13.150118 0.67433,-0.674332 3.90613,-1.200001 7.37756,-1.200001 4.27121,0 6.56172,-0.462889 7.42244,-1.5 0.93311,-1.124321 3.43763,-1.5 10,-1.5 6.56237,0 9.066897,0.375679 10,1.5 0.863774,1.040784 3.159853,1.5 7.5,1.5 7.782205,0 8.701845,0.959872 8.302422,8.665627 L 27.855343,7.620911 2.788792,7.887696 c -13.7866,0.146732 -25.3741,-0.04077 -25.75,-0.416666 z"
+                  style="fill:#000000" />
+      </clipPath>
+      <clipPath
+              clipPathUnits="userSpaceOnUse"
+              id="clipPath3361">
+          <path
+                  inkscape:connector-curvature="0"
+                  id="path3363"
+                  d="m -46.440338,12.370911 0.29568,-6.75 8.38595,-0.292639 c 7.37577,-0.257387 8.61518,-0.04658 10.28896,1.75 1.75244,1.881033 3.08666,2.042639 16.86404,2.042639 l 14.96105,0 0,5 0,5 -25.54569,0 -25.54569,0 0.2957,-6.75 z"
+                  style="fill:#000000" />
+      </clipPath>
+      <clipPath
+              clipPathUnits="userSpaceOnUse"
+              id="clipPath3387">
+          <path
+                  clip-path="none"
                   style="fill:#000000"
+                  d="m 4.355342,14.120911 0,-5 16.297052,0 16.297047,0 3.817761,3.909733 c 2.09976,2.150354 3.51453,4.400354 3.14393,5 -0.44902,0.726529 -7.159791,1.090267 -20.114808,1.090267 l -19.440981,0 -1e-6,-5 z"
+                  id="path3389"
                   inkscape:connector-curvature="0" />
       </clipPath>
       <clipPath
               clipPathUnits="userSpaceOnUse"
-              id="clipPath7410">
+              id="clipPath3397">
           <path
                   inkscape:connector-curvature="0"
-                  id="path7412"
-                  d="m -39.58984,7.605469 c -7.43356,0.196699 -17.11133,0.04102 -17.11133,0.04102 -5.15152,8.16482 -7.37615,15.499481 -7.48633,21.755851 l 126.464844,0 C 62.104798,27.1354 61.720929,24.79514 60.835938,22.32814 56.475992,18.6351 55.225323,19.04877 47.572266,19.25587 40.42759,20.17036 37.490863,18.28535 29.628906,12.058599 5.49903,11.402036 -28.33165,13.045088 -39.58984,7.605474 Z"
-                  style="fill:#000000;fill-opacity:0.49746195" />
+                  id="path3399"
+                  d="m -50.423538,42.844007 -6.22112,-6.276907 0,-7.536004 c 0,-6.951363 0.21759,-7.744466 2.80472,-10.223094 l 2.80472,-2.687091 57.520965,0 57.520965,0 2.17432,2.314451 c 1.85668,1.97635 2.174311,3.477917 2.17431,10.278889 l 0,7.964437 -6.27691,6.221111 -6.2769,6.221112 -50.001983,0 -50.001987,-10e-7 -6.2211,-6.276903 z"
+                  style="fill:#000000" />
       </clipPath>
-      <clipPath
-              clipPathUnits="userSpaceOnUse"
-              id="clipPath7416">
-          <path
-                  inkscape:connector-curvature="0"
-                  id="path7418"
-                  d="m 62.277344,29.40234 -126.464844,0 c -0.24619,13.98031 10.11921,22.5525 22.3457,22.80078 19.27663,0.19822 38.55348,-0.14425 57.830081,-0.16015 9.056419,-0.5733 20.110935,0.0896 29.158203,-0.61914 9.655101,-0.99351 18.054918,-9.88101 17.13086,-22.02149 z"
-                  style="fill:#000000;fill-opacity:0.49746195" />
-      </clipPath>
+
 
       <g
               class="tank"
               id="tank-template"
-              style="display:inline">
+              transfor1m="translate(0,0)">
+          <image
+                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
+                  xlink:href="..\..\Character\Tank\img\tank2.png"
+                  clip-path="url(#clipPath3397)"
+                  width="256"
+                  height="128"
+                  preserveAspectRatio="none"
+                  id="image3540"
+                  x="-57.644653"
+                  y="-32.879089" />
           <g
-                  class="tank-body"
-                  id="g7381"
-                  style="display:inline">
-              <image
-                      sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-                      xlink:href="..\..\Character\Tank\img\tank2.png"
-                      clip-path="url(#clipPath7410)"
-                      width="128"
-                      height="64"
-                      preserveAspectRatio="none"
-                      id="image7383"
-                      x="-64.019043"
-                      y="-10.112427"
-                      style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new" />
-              <path
-                      inkscape:connector-curvature="0"
-                      d="m 46.130168,35.751374 c 0,2.51508 2.06552,4.5557 4.6177,4.56203 2.55217,0.008 4.62807,-2.02409 4.6409,-4.53914 0.0118,-2.51502 -2.04231,-4.56586 -4.59441,-4.58483 -2.5521,-0.0205 -4.63833,2.00118 -4.66399,4.51609"
-                      style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
-                      id="path7385" />
+                  class="cannon-body"
+                  id="cannon-body"
+                  inkscape:label="">
               <g
-                      class="cannon-group"
-                      inkscape:groupmode="layer"
-                      inkscape:label="#cannon-group"
-                      style="display:inline"
-                      id="g7387">
-                  <path
-                          sodipodi:nodetypes="cccccc"
-                          inkscape:connector-curvature="0"
-                          d="m 52.646356,0.44202464 -0.203543,5.29820996 -52.77231686,-0.25869 0.274463,-7.14451 52.70139286,2.10501004 z"
-                          style="display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.10000002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"
-                          class="cannon"
-                          id="path7389" />
+                      inkscape:label=""
+                      cy="url(#paramCannonAngle)"
+                      class="cannon-rotate"
+                      id="cannon-rotate">
+                  <image
+                          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
+                          xlink:href="..\..\Character\Tank\img\tank2.png"
+                          clip-path="url(#clipPath3506)"
+                          y="-12.879089"
+                          x="-97.644669"
+                          id="image4473"
+                          preserveAspectRatio="none"
+                          height="128"
+                          width="256" />
                   <rect
-                          y="-1.1649712"
-                          x="50.792744"
-                          id="rect7391"
-                          style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-                          class="cannon-tip"
+                          y="-4.2041359"
+                          x="92.131699"
+                          height="9.0753574"
                           width="1.9679996"
-                          height="9.0753574" />
+                          id="cannon-tip"
+                          class="cannon-tip"
+                          style="fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
               </g>
+              <image
+                      sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
+                      xlink:href="..\..\Character\Tank\img\tank2.png"
+                      y="-12.879089"
+                      x="-57.644653"
+                      id="image4453"
+                      preserveAspectRatio="none"
+                      height="128"
+                      width="256"
+                      clip-path="url(#clipPath3510)" />
           </g>
           <image
-                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
                   xlink:href="..\..\Character\Tank\img\tank2.png"
-                  style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
-                  y="-10.112427"
-                  x="-64.019043"
-                  id="image7393"
+                  clip-path="url(#clipPath3387)"
+                  width="256"
+                  height="128"
                   preserveAspectRatio="none"
-                  height="64"
-                  width="128"
-                  clip-path="url(#clipPath7416)" />
+                  id="image3514"
+                  x="-67.644653"
+                  y="-22.879089" />
           <image
-                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
                   xlink:href="..\..\Character\Tank\img\tank2.png"
-                  y="-10.483826"
-                  x="-64.317871"
-                  id="image7395"
+                  clip-path="url(#clipPath3361)"
+                  width="256"
+                  height="128"
                   preserveAspectRatio="none"
-                  height="64"
-                  width="128"
-                  clip-path="url(#clipPath7399)"
-                  style="display:inline;enable-background:new" />
+                  id="image3359"
+                  x="-57.644653"
+                  y="-22.879089" />
       </g>
-
-
 
     <g
        id="projectile-template">
@@ -2130,7 +2150,7 @@
          id="g4214"
          style="display:inline">
         <image
-           sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+           sodipodi:absref="..\..\Character\Tank\img\tank2.png"
            xlink:href="..\..\Character\Tank\img\tank2.png"
            style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
            y="-8.1124268"
@@ -2164,7 +2184,7 @@
         </g>
       </g>
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
          clip-path="url(#clipPath4524)"
          width="128"
@@ -2175,7 +2195,7 @@
          y="-10.1124268"
          style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new" />
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
          style="display:inline;fill:#000000;fill-opacity:0.49746195;enable-background:new"
          y="-8.1124268"

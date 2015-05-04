@@ -193,8 +193,8 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
     if(cannonAngle) {
         if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
         if(cannonAngle>70) cannonAngle = 70;
-        var cannonGroup = tankElement.getElementsByClassName('cannon-group')[0];
-        cannonGroup.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
+        var cannonRotate = tankElement.getElementsByClassName('cannon-rotate')[0];
+        cannonRotate.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
         angle -= cannonAngle % 360;
     }
 //     angle -= 7;
