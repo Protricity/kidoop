@@ -225,7 +225,7 @@ function addWind(amount) {
     if(WIND < -10) WIND = -10;
 
     var uiWindValue = document.getElementById('ui-wind-value');
-    uiWindValue.setAttribute('transform', 'translate(' + (WIND * 5) + ', 0)');
+    uiWindValue.setAttribute('transform', 'translate(' + (WIND) + ', 0)');
 
     var uiCannonAngleTextValue = document.getElementById('ui-wind-text-value');
     uiCannonAngleTextValue.innerHTML = 'Wind: ' + WIND + 'px/s';
@@ -244,19 +244,20 @@ function addWind(amount) {
 
     var windAnimations = document.getElementsByClassName('wind-animation');
     for(var wi=0; wi<windAnimations.length; wi++) {
+        var dur = (wi+1) * 1000;
         if(WIND == 0) {
-            windAnimations[wi].setAttribute('from', '1000 0');
-            windAnimations[wi].setAttribute('to', '-1000 0');
+            windAnimations[wi].setAttribute('from', dur + ' 0');
+            windAnimations[wi].setAttribute('to', -dur + ' 0');
             windAnimations[wi].setAttribute('dur', '100 s');
 
         } else if(WIND > 0) {
-            windAnimations[wi].setAttribute('from', '-1000 0');
-            windAnimations[wi].setAttribute('to', '1000 0');
+            windAnimations[wi].setAttribute('from', -dur + ' 0');
+            windAnimations[wi].setAttribute('to', dur + ' 0');
             windAnimations[wi].setAttribute('dur', 20 * (11-WIND) + 's');
 
         } else if(WIND < 0) {
-            windAnimations[wi].setAttribute('from', '1000 0');
-            windAnimations[wi].setAttribute('to', '-1000 0');
+            windAnimations[wi].setAttribute('from', dur + ' 0');
+            windAnimations[wi].setAttribute('to', -dur + ' 0');
             windAnimations[wi].setAttribute('dur', 20 * (11+WIND) + 's');
 
         }
