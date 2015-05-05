@@ -86,6 +86,8 @@ function renderTankPart(tankPart, duration) {
     testRectContainment(tankPart);
 }
 
+var transformRegex = /^translate\(([^)]+)\) rotate\(([^)]+)\) scale\(([^)]+)\)$/;
+
 function renderProjectile(projectile, duration) {
     if(duration > RENDER_INTERVAL_MAX)
         duration = RENDER_INTERVAL_MAX;
@@ -96,21 +98,25 @@ function renderProjectile(projectile, duration) {
     var svgTransform = projectile.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
-    var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
-    var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
+    var attrTransform = projectile.getAttribute('transform');
+    var match = transformRegex.exec(attrTransform);
+
+    
+    var scale = match ? match[3] : 1;
     var vectorAngle = (180 + Math.atan2(projectile.vy, projectile.vx) * 180 / Math.PI) % 360;
 
-    //svgTransform.setMatrix(matrix.translate(
     matrix.e += projectile.vx * duration / 1000;
     matrix.f += projectile.vy * duration / 1000;
-    //));
+//     svgTransform.setMatrix(matrix);
 
-    projectile.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scaleX + ', ' + scaleY + ')');
+
+    projectile.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scale + ')');
 
     var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
 
-    if(collisionElement === projectile || testNoHit(collisionElement))
+    if((collisionElement.classList && collisionElement.classList.contains('projectile'))
+        || testNoHit(collisionElement))
         return;
 
     if(collisionElement !== null || bb.bottom > 600)
@@ -289,7 +295,11 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     projectile.setAttributeNS(svgns, 'xlink:href', '#projectile-template');
     projectile.href.baseVal = '#projectile-template';
 
-    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ')');
+
+    var scaleX = Math.sqrt(tankMatrix.a * tankMatrix.a + tankMatrix.b * tankMatrix.b);
+    var scaleY = Math.sqrt(tankMatrix.c * tankMatrix.c + tankMatrix.d * tankMatrix.d);
+
+    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ') scale(' + scaleX + ', ' + scaleY + ')');
 
     projectile.classList.add('projectile');
     projectile.sourceTank = tankElement;
