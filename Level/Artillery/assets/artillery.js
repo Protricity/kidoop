@@ -115,7 +115,7 @@ function renderProjectile(projectile, duration) {
     var bb = projectile.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
 
-    if((collisionElement.classList && collisionElement.classList.contains('projectile'))
+    if((collisionElement && collisionElement.classList.contains('projectile'))
         || testNoHit(collisionElement))
         return;
 

@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank2.svg" afterPath="$PROJECT_DIR$/Character/Tank/tank2.svg" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,8 +92,8 @@
       <file leaf-file-name="artillery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7692308" vertical-offset="1376" max-vertical-offset="7038">
-              <caret line="118" column="8" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.74847376" vertical-offset="1376" max-vertical-offset="7038">
+              <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -787,6 +785,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="26309" max-vertical-offset="76500">
           <caret line="1566" column="23" selection-start-line="1566" selection-start-column="23" selection-end-line="1566" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7692308" vertical-offset="1376" max-vertical-offset="7038">
-          <caret line="118" column="8" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.74847376" vertical-offset="1376" max-vertical-offset="7038">
+          <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
           <folding />
         </state>
       </provider>
