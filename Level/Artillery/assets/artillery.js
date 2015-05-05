@@ -43,7 +43,7 @@ function replaceUseWithSource(useElement) {
     templateElement.setAttribute('class', useElement.getAttribute('class'));
     templateElement.setAttribute('transform', useElement.getAttribute('transform'));
     templateElement.setAttribute('id', useElement.getAttribute('id') || id + '_copy');
-    useElement.parentNode.appendChild(templateElement);
+    useElement.parentNode.insertBefore(templateElement, useElement)
     useElement.parentNode.removeChild(useElement);
     return templateElement;
 }
