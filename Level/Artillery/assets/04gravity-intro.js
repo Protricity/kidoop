@@ -110,7 +110,7 @@ function onMouse(e) {
                     var powerDistX = distX;
                     if(e.pageX < abb.left + abb.width/2)
                         powerDistX = -powerDistX;
-                    aimTank.lastPower = (aimTank.lastPower || 0.55) + powerDistX / 1000;
+                    aimTank.lastPower = (aimTank.lastPower || 0.95) + powerDistX / 1000;
                     if(aimTank.lastPower > 1)
                         aimTank.lastPower = 1;
                     if(aimTank.lastPower < 0.2)
@@ -152,7 +152,7 @@ function setPower(e, tankID) {
                 isPowerDragging = e.pageY;
 
                 var powerTank = document.getElementById(tankID);
-                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 200;
+                powerTank.lastPower = (powerTank.lastPower || 0.90) + distY / 200;
                 if(powerTank.lastPower > 1)
                     powerTank.lastPower = 1;
                 if(powerTank.lastPower < 0.2)
