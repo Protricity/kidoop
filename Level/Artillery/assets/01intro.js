@@ -5,7 +5,7 @@
 
 GRAVITY = 6;
 
-var DEFAULT_POWER = 0.1;
+var DEFAULT_POWER = 0.8;
 
 var doRender = function() {
     var renderEvent = createEvent('render');

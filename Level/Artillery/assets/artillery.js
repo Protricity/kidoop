@@ -65,10 +65,12 @@ function renderTankPart(tankPart, duration) {
 //     tankPart.va = (tankPart.va || 0) 
 
     var bb = tankPart.getBoundingClientRect();
+    if(tankPart.transform.baseVal.length === 0)
+        tankPart.setAttribute('transform', '');
     var svgTransform = tankPart.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
-    var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
-    var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
+    //var scaleX = Math.sqrt(matrix.a * matrix.a + matrix.b * matrix.b);
+    //var scaleY = Math.sqrt(matrix.c * matrix.c + matrix.d * matrix.d);
     var curAngle = (360 + Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI))) % 360;
 
     matrix.e += tankPart.vx * duration / 1000;

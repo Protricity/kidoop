@@ -8,6 +8,7 @@ GRAVITY = 16;
 CANNON_VELOCITY = [500,0];
 
 var DEFAULT_POWER = 1;
+var DEFAULT_ANGLE = 50;
 
 var doRender = function() {
     var renderEvent = createEvent('render');
@@ -100,7 +101,7 @@ function onMouse(e) {
                     fireTank.lastFlipped = fbb.left + fbb.width/2 > lastPoint[0];
 
                     fireTank.dispatchEvent(createEvent('fire', {
-                        angle: fireTank.lastAngle || 0,
+                        angle: fireTank.lastAngle || DEFAULT_ANGLE,
                         power: fireTank.lastPower || DEFAULT_POWER,
                         flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > pageX
                     }));
@@ -118,7 +119,7 @@ function onMouse(e) {
                     var aimTank = tanks[ai];
                     var abb = aimTank.getBoundingClientRect();
 
-                    aimTank.lastAngle = (aimTank.lastAngle || 0) - distY / 8;
+                    aimTank.lastAngle = (aimTank.lastAngle || DEFAULT_ANGLE) - distY / 8;
                     if(aimTank.lastAngle > 70)
                         aimTank.lastAngle = 70;
                     else if(aimTank.lastAngle < 0 || aimTank.lastAngle > 270)

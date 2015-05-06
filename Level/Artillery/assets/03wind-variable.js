@@ -3,10 +3,10 @@
  * User: Ari
  */
 
-WIND = 4;
+WIND = 3;
 GRAVITY = 4;
 
-var DEFAULT_POWER = 0.1;
+var DEFAULT_POWER = 0.25;
 
 var doRender = function() {
     var renderEvent = createEvent('render');

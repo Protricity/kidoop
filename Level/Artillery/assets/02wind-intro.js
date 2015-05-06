@@ -6,7 +6,7 @@
 WIND = -4;
 GRAVITY = 3;
 
-var DEFAULT_POWER = 0.1;
+var DEFAULT_POWER = 0.56;
 
 var doRender = function() {
     var renderEvent = createEvent('render');
