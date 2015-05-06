@@ -24,7 +24,7 @@ function testRectContainment(element) {
 function testNoHit(element) {
     while(element) {
         if(element.classList.contains('nohit')) {
-            console.log("No hit: ", element); 
+            //console.log("No hit: ", element);
             return element;
         }
         if(element === document || element === document.rootElement)

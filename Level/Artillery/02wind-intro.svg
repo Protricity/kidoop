@@ -1603,7 +1603,6 @@
            width="184.62512"
            class="ui-power-bk"
            style="display:inline;opacity:1;fill:url(#linearGradient8853-3);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient8855-0);stroke-width:1.54238486;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-           onclick="setPower"
            id="rect8851-6" />
         <path
            d="M 118.68891,99.999985 A 199.31108,199.31108 0 0 1 317.99998,299.31107 l -199.31108,0 z"
@@ -1660,7 +1659,6 @@
            xml:space="preserve"
            transform="matrix(0,-1,1,0,0,0)">Power: 100%</text>
         <rect
-           onclick="setPower"
            style="display:inline;opacity:1;fill:url(#linearGradient5630);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient5632);stroke-width:1.64616036;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
            class="ui-power-bk"
            width="182.48987"
@@ -1674,7 +1672,11 @@
            onmouseout="setPower(evt, 'usertank')"
            onmousedown="setPower(evt, 'usertank')"
            onmouseup="setPower(evt, 'usertank')"
-           onmousemove="setPower(evt, 'usertank')" />
+           onmousemove="setPower(evt, 'usertank')"
+           ontouchstart="setPower(evt, 'usertank')"
+           ontouchmove="setPower(evt, 'usertank')"
+           ontouchend="setPower(evt, 'usertank')"
+                />
         <rect
            id="ui-power-bk"
            onclick="setPower"
@@ -1689,7 +1691,10 @@
            onmouseout="setPower(evt, 'usertank')"
            onmousedown="setPower(evt, 'usertank')"
            onmouseup="setPower(evt, 'usertank')"
-           onmousemove="setPower(evt, 'usertank')" />
+           onmousemove="setPower(evt, 'usertank')"
+           ontouchstart="setPower(evt, 'usertank')"
+           ontouchmove="setPower(evt, 'usertank')"
+           ontouchend="setPower(evt, 'usertank')"/>
         <rect
            style="display:inline;opacity:0.84575189;fill:url(#linearGradient5596);fill-opacity:1;stroke:url(#linearGradient5885-0);stroke-width:0.52211553;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
            class="ui-cannon-power-value"
@@ -1699,14 +1704,17 @@
            height="100"
            rx="27"
            ry="11.764706"
-           onmousedown="setPower(evt, 'usertank')"
-           onclick=""
-           onmouseover=""
-           onmouseup="setPower(evt, 'usertank')"
-           onmousemove="setPower(evt, 'usertank')"
+
            id="ui-power-value"
            transform="scale(1,-2.51)"
-           onmouseout="setPower(evt, 'usertank')" />
+           onmouseout="setPower(evt, 'usertank')"
+           onmousedown="setPower(evt, 'usertank')"
+           onmouseup="setPower(evt, 'usertank')"
+           onmousemove="setPower(evt, 'usertank')"
+           ontouchstart="setPower(evt, 'usertank')"
+           ontouchmove="setPower(evt, 'usertank')"
+           ontouchend="setPower(evt, 'usertank')"
+                />
       </g>
       <g
          id="g6058"

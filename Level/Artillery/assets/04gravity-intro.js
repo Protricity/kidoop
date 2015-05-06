@@ -32,24 +32,37 @@ var userTanks = document.getElementsByClassName('usertank');
 function onMouse(e) {
     if(e.defaultPrevented)
         return;
-    var dist = 0;
+
+    e.preventDefault();
+    //var dist = 0;
     var distX = 0;
     var distY = 0;
-    if(lastPoint) {
-        distX = e.pageX - lastPoint[0];
-        distY = e.pageY - lastPoint[1];
-        dist = Math.sqrt(distX*distX + distY*distY);
+
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(!pageX && e.touches && e.touches.length) {
+//         if(e.touches.length === 0)
+//             return;
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
     }
-    lastPoint = [e.pageX, e.pageY];
+
+
+    if(lastPoint) {
+        distX = pageX - lastPoint[0];
+        distY = pageY - lastPoint[1];
+        //dist = Math.sqrt(distX*distX + distY*distY);
+    }
+    lastPoint = [pageX, pageY];
 
     var tanks = selectedTanks;
-    if(tanks.length === 0 && e.type === 'mousedown') {
+    if(tanks.length === 0 && (e.type === 'touchstart' || e.type === 'mousedown')) {
         var tankDist = 9999;
         tanks = selectedTanks = [userTanks[0]];
         if(userTanks.length>1) {
             for (var si = 0; si < userTanks.length; si++) {
                 var bb = userTanks[si].getBoundingClientRect();
-                var curTankDist = Math.sqrt(Math.pow(e.pageX - (bb.left + bb.width / 2), 2) + Math.pow(e.pageY - (bb.top + bb.height / 2), 2));
+                var curTankDist = Math.sqrt(Math.pow(pageX - (bb.left + bb.width / 2), 2) + Math.pow(pageY - (bb.top + bb.height / 2), 2));
                 if (curTankDist < tankDist) {
                     tankDist = curTankDist;
                     //noinspection JSValidateTypes
@@ -64,28 +77,28 @@ function onMouse(e) {
     var longpress = (endTime - lastTime >= 500);
 
     switch(e.type) {
-        case 'click':
-            isDragging = false;
-            break;
-
+        case 'touchstart':
         case 'mousedown':
             isDragging = true;
             lastTime = new Date().getTime();
             return;
 
+        case 'touchmove':
+        case 'touchend':
         case 'mouseup':
         case 'mousemove':
-            if(e.type === 'mouseup' && !longpress) {
+            if((e.type === 'mouseup' || e.type === 'touchend') && !longpress) {
                 for(var fi=0; fi<tanks.length; fi++) {
                     var fireTank = tanks[fi];
                     var fbb = fireTank.getBoundingClientRect();
 
-                    fireTank.lastFlipped = fbb.left + fbb.width/2 > e.pageX;
+                    if(pageX !== 0 && pageY !== 0)
+                        fireTank.lastFlipped = fbb.left + fbb.width/2 > pageX;
 
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,
                         power: fireTank.lastPower || 0.5,
-                        flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > e.pageX
+                        flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > pageX
                     }));
                 }
                 isDragging = false;
@@ -108,7 +121,7 @@ function onMouse(e) {
                         aimTank.lastAngle = 0;
 
                     var powerDistX = distX;
-                    if(e.pageX < abb.left + abb.width/2)
+                    if(pageX < abb.left + abb.width/2)
                         powerDistX = -powerDistX;
                     aimTank.lastPower = (aimTank.lastPower || 0.95) + powerDistX / 1000;
                     if(aimTank.lastPower > 1)
@@ -116,7 +129,7 @@ function onMouse(e) {
                     if(aimTank.lastPower < 0.2)
                         aimTank.lastPower = 0.2;
 
-                    aimTank.lastFlipped = abb.left + abb.width/2 > e.pageX;
+                    //aimTank.lastFlipped = abb.left + abb.width/2 > pageX;
 
                     aimTank.dispatchEvent(createEvent('aim', {
                         angle: aimTank.lastAngle,
@@ -142,14 +155,23 @@ function onMouse(e) {
 
 var isPowerDragging = false;
 function setPower(e, tankID) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
     switch(e.type) {
+        case 'touchstart':
         case 'mousedown':
-            isPowerDragging = e.pageY;
+            isPowerDragging = pageY;
             break;
+        case 'touchmove':
         case 'mousemove':
             if(typeof isPowerDragging === 'number') {
-                var distY = isPowerDragging - e.pageY;
-                isPowerDragging = e.pageY;
+                var distY = isPowerDragging - pageY;
+                isPowerDragging = pageY;
 
                 var powerTank = document.getElementById(tankID);
                 powerTank.lastPower = (powerTank.lastPower || 0.90) + distY / 200;
@@ -162,11 +184,12 @@ function setPower(e, tankID) {
                     angle: powerTank.lastAngle || 0,
                     power: powerTank.lastPower,
                     flipped: powerTank.lastFlipped
-//                     flipped: abb.left + abb.width/2 > e.pageX
+//                     flipped: abb.left + abb.width/2 > pageX
                 }));
             }
             break;
         default:
+        case 'touchend':
         case 'mouseout':
         case 'mouseup':
             isPowerDragging = false;
@@ -178,14 +201,23 @@ function setPower(e, tankID) {
 
 var isAngleDragging = false;
 function setAngle(e, tankID) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
     switch(e.type) {
         case 'mousedown':
-            isAngleDragging = e.pageY;
+        case 'touchstart':
+            isAngleDragging = pageY;
             break;
+        case 'touchmove':
         case 'mousemove':
             if(typeof isAngleDragging === 'number') {
-                var distY = isAngleDragging - e.pageY;
-                isAngleDragging = e.pageY;
+                var distY = isAngleDragging - pageY;
+                isAngleDragging = pageY;
 
                 var aimTank = document.getElementById(tankID);
                 aimTank.lastAngle = (aimTank.lastAngle || 0) + distY / 2;
@@ -198,11 +230,12 @@ function setAngle(e, tankID) {
                     angle: aimTank.lastAngle || 0,
                     power: aimTank.lastPower,
                     flipped: aimTank.lastFlipped
-//                     flipped: abb.left + abb.width/2 > e.pageX
+//                     flipped: abb.left + abb.width/2 > pageX
                 }));
             }
             break;
         default:
+        case 'touchend':
         case 'mouseout':
         case 'mouseup':
             isAngleDragging = false;
@@ -230,7 +263,7 @@ function addGravity(amount) {
             angle: gravityTank.lastAngle || 0,
             power: gravityTank.lastPower || 1,
             flipped: gravityTank.lastFlipped
-            //                     flipped: abb.left + abb.width/2 > e.pageX
+            //                     flipped: abb.left + abb.width/2 > pageX
         }));
     }
 
@@ -241,14 +274,23 @@ setTimeout(function() {addGravity(0)}, 100);
 
 var isGravityDragging = false;
 function setGravity(e) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
     switch(e.type) {
+        case 'touchstart':
         case 'mousedown':
-            isGravityDragging = e.pageY;
+            isGravityDragging = pageY;
             break;
+        case 'touchmove':
         case 'mousemove':
             if(typeof isGravityDragging === 'number') {
-                var distY = e.pageY - isGravityDragging;
-                isGravityDragging = e.pageY;
+                var distY = pageY - isGravityDragging;
+                isGravityDragging = pageY;
 
                 if(distY) {
                     addGravity(distY < 0 ? 1 : -1);
@@ -256,6 +298,7 @@ function setGravity(e) {
             }
             break;
         default:
+        case 'touchend':
         case 'mouseout':
         case 'mouseup':
             isGravityDragging = false;

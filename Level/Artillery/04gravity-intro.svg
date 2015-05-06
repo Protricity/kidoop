@@ -2192,11 +2192,14 @@
     <g
        id="ui-gravity"
        transform="matrix(0,-1.297154,1.297154,0,1030.8755,787.6078)"
-       onmouseover=""
        onmouseout="setGravity(evt);"
        onmousedown="setGravity(evt);"
        onmouseup="setGravity(evt);"
-       onmousemove="setGravity(evt);">
+       onmousemove="setGravity(evt);"
+       ontouchstart="setGravity(evt);"
+       ontouchmove="setGravity(evt);"
+       ontouchend="setGravity(evt);"
+            >
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21px;line-height:125%;font-family:Shruti;-inkscape-font-specification:'Shruti Bold';fill:#00ffff"
@@ -2243,11 +2246,7 @@
          x="83.576904"
          y="475.20386"
          rx="20.008425"
-         ry="19.649006"
-         onmousedown=""
-         onmouseup=""
-         onmousemove=""
-         onmouseout="" />
+         ry="19.649006" />
       <rect
          style="display:inline;opacity:1;fill:url(#linearGradient5863-3);fill-opacity:1;stroke:url(#linearGradient17381);stroke-width:2.52679157;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
          id="ui-gravity-value"
@@ -2257,11 +2256,13 @@
          y="-116.0337"
          rx="15"
          ry="15"
-         onmouseover=""
          onmouseout="setGravity(evt);"
          onmousedown="setGravity(evt);"
          onmouseup="setGravity(evt);"
-         onmousemove="setGravity(evt);" />
+         onmousemove="setGravity(evt);"
+         ontouchstart="setGravity(evt);"
+         ontouchmove="setGravity(evt);"
+         ontouchend="setGravity(evt);" />
     </g>
     <path
        inkscape:label=""
@@ -2284,9 +2285,6 @@
          xml:space="preserve">Angle: 35.3</text>
       <rect
          id="rect16885"
-         onmousemove=""
-         onmousedown=""
-         onmouseup=""
          style="display:inline;opacity:1;fill:url(#linearGradient16903);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient16905);stroke-width:1.54238486;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          class="ui-power-bk"
          width="184.62512"
@@ -2299,6 +2297,10 @@
          onmousemove="setAngle(evt, 'usertank')"
          onmousedown="setAngle(evt, 'usertank')"
          onmouseup="setAngle(evt, 'usertank')"
+         onmouseout="setAngle(evt, 'usertank')"
+         ontouchstart="setAngle(evt, 'usertank')"
+         ontouchmove="setAngle(evt, 'usertank')"
+         ontouchend="setAngle(evt, 'usertank')"
          id="path16887"
          style="fill:url(#linearGradient16907);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient16909);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          class="ui-angle-bk"
@@ -2310,7 +2312,7 @@
          sodipodi:start="4.712389"
          sodipodi:end="0"
          d="M 118.68891,99.999985 A 199.31108,199.31108 0 0 1 317.99998,299.31107 l -199.31108,0 z"
-         onmouseout="setAngle(evt, 'usertank')" />
+         />
       <g
          clip-path="url(#arc-90)"
          id="g16889">
@@ -2333,10 +2335,14 @@
          class="ui-angle-bk "
          style="opacity:0.56000001;fill:url(#linearGradient16915);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient16917);stroke-width:1.3778398px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          id="path16893"
-         onmouseout="setAngle(evt, 'usertank')"
          onmousedown="setAngle(evt, 'usertank')"
          onmouseup="setAngle(evt, 'usertank')"
-         onmousemove="setAngle(evt, 'usertank')" />
+         onmousemove="setAngle(evt, 'usertank')"
+         onmouseout="setAngle(evt, 'usertank')"
+         ontouchstart="setAngle(evt, 'usertank')"
+         ontouchmove="setAngle(evt, 'usertank')"
+         ontouchend="setAngle(evt, 'usertank')"
+              />
       <text
          transform="matrix(0,-1,1,0,0,0)"
          xml:space="preserve"
@@ -2357,10 +2363,15 @@
          width="182.48987"
          class="ui-power-bk"
          style="display:inline;opacity:1;fill:url(#linearGradient16919);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient16921);stroke-width:1.64616036;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-         onmouseover="setPower(evt, 'usertank')"
-         onmouseout="setPower(evt, 'usertank')"
-         onmousedown="setPower(evt, 'usertank')"
-         onmouseup="setPower(evt, 'usertank')" />
+
+         onmousedown="setAngle(evt, 'usertank')"
+         onmouseup="setAngle(evt, 'usertank')"
+         onmousemove="setAngle(evt, 'usertank')"
+         onmouseout="setAngle(evt, 'usertank')"
+         ontouchstart="setAngle(evt, 'usertank')"
+         ontouchmove="setAngle(evt, 'usertank')"
+         ontouchend="setAngle(evt, 'usertank')"
+         />
       <rect
          ry="30"
          rx="27"
@@ -2371,11 +2382,14 @@
          class="ui-power-bk"
          style="display:inline;opacity:1;fill:url(#linearGradient16923);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient16925);stroke-width:4.32643604;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          id="rect16899"
-         onmouseover=""
          onmouseout="setPower(evt, 'usertank')"
          onmousedown="setPower(evt, 'usertank')"
          onmouseup="setPower(evt, 'usertank')"
-         onmousemove="setPower(evt, 'usertank')" />
+         onmousemove="setPower(evt, 'usertank')"
+         ontouchstart="setPower(evt, 'usertank')"
+         ontouchmove="setPower(evt, 'usertank')"
+         ontouchend="setPower(evt, 'usertank')"
+              />
       <rect
          transform="scale(1,-2.51)"
          id="rect16901"
@@ -2387,10 +2401,14 @@
          x="69"
          class="ui-cannon-power-value"
          style="display:inline;opacity:0.84575189;fill:url(#linearGradient16927);fill-opacity:1;stroke:url(#linearGradient16929);stroke-width:0.52211553;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+         onmouseout="setPower(evt, 'usertank')"
          onmousedown="setPower(evt, 'usertank')"
          onmouseup="setPower(evt, 'usertank')"
          onmousemove="setPower(evt, 'usertank')"
-         onmouseout="setPower(evt, 'usertank')" />
+         ontouchstart="setPower(evt, 'usertank')"
+         ontouchmove="setPower(evt, 'usertank')"
+         ontouchend="setPower(evt, 'usertank')"
+              />
     </g>
   </g>
 

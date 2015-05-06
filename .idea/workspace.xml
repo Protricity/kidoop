@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21d56c6-af0a-4da6-873e-e5af682a35be" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\Dev\Server\WWW\kidoop\pages\02intro-wind.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/01intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" afterPath="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/04gravity-intro.html" afterPath="$PROJECT_DIR$/pages/04gravity-intro.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" afterPath="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" afterPath="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Character/Tank/tank2.svg" afterPath="$PROJECT_DIR$/Character/Tank/tank2.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kidoop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,41 +81,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="04gravity-intro.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg">
+      <file leaf-file-name="03wind-variable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-164.6" vertical-offset="7615" max-vertical-offset="40851">
-              <caret line="690" column="51" selection-start-line="690" selection-start-column="51" selection-end-line="690" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2964" max-vertical-offset="4335">
+              <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#setWind#0" expanded="false" />
+                <element signature="n#!!block;n#setPower#0" expanded="false" />
+                <element signature="n#!!block;n#setAngle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02wind-intro.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.28" vertical-offset="264" max-vertical-offset="1241">
+              <caret line="197" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#onMouse#0" expanded="false" />
+                <element signature="n#!!block;n#setPower#0" expanded="false" />
+                <element signature="n#!!block;n#setAngle#0" expanded="false" />
+                <element signature="n#!!block;n#createEvent#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="01intro.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2539" max-vertical-offset="3842">
+              <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#setAngle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="02wind-intro.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.32" vertical-offset="29069" max-vertical-offset="37179">
+              <caret line="1708" column="37" selection-start-line="1708" selection-start-column="37" selection-end-line="1708" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tank2.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Character/Tank/tank2.svg">
+      <file leaf-file-name="01intro.svg" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.2" vertical-offset="1138" max-vertical-offset="4012">
-              <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="90" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="artillery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.52" vertical-offset="1376" max-vertical-offset="7038">
-              <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="04gravity-intro.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85470086" vertical-offset="4417" max-vertical-offset="5236">
-              <caret line="301" column="2080" selection-start-line="301" selection-start-column="2079" selection-end-line="301" selection-end-column="2080" />
+            <state vertical-scroll-proportion="0.31257632" vertical-offset="29715" max-vertical-offset="32181">
+              <caret line="1763" column="19" selection-start-line="1763" selection-start-column="19" selection-end-line="1763" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -162,17 +195,17 @@
         <option value="$PROJECT_DIR$/pages/03wind-variable.html" />
         <option value="$PROJECT_DIR$/pages/02wind-intro.html" />
         <option value="$PROJECT_DIR$/pages/01intro.html" />
+        <option value="$PROJECT_DIR$/Character/Tank/tank2.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
         <option value="$PROJECT_DIR$/pages/04gravity-intro.html" />
-        <option value="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
-        <option value="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" />
+        <option value="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/02wind-intro.svg" />
         <option value="$PROJECT_DIR$/Level/Artillery/assets/01intro.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/03wind-variable.svg" />
-        <option value="$PROJECT_DIR$/Character/Tank/tank2.svg" />
-        <option value="$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg" />
-        <option value="$PROJECT_DIR$/Level/Artillery/assets/artillery.js" />
-        <option value="$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js" />
+        <option value="$PROJECT_DIR$/Level/Artillery/01intro.svg" />
       </list>
     </option>
   </component>
@@ -561,19 +594,17 @@
           <line>60</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js</url>
+          <line>29</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325554" vertical-offset="12227" max-vertical-offset="18700">
-          <caret line="736" column="18" selection-start-line="736" selection-start-column="18" selection-end-line="736" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1694" max-vertical-offset="2261">
@@ -822,25 +853,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/02intro-wind.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="905">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2694" max-vertical-offset="3995">
           <caret line="175" column="43" selection-start-line="175" selection-start-column="43" selection-end-line="175" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/03wind-variable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="510">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -858,95 +875,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/04gravity-intro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="510">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.56" vertical-offset="11799" max-vertical-offset="37043">
-          <caret line="739" column="10" selection-start-line="739" selection-start-column="10" selection-end-line="739" selection-end-column="10" />
-          <folding>
-            <marker date="1430716052398" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430716052398" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430716052398" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1430716052398" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.36" vertical-offset="2346" max-vertical-offset="5576">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2581" max-vertical-offset="3723">
-          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.08" vertical-offset="2555" max-vertical-offset="3434">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.84" vertical-offset="29008" max-vertical-offset="31722">
-          <caret line="1737" column="27" selection-start-line="1737" selection-start-column="19" selection-end-line="1737" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="38987" max-vertical-offset="43418">
-          <caret line="2311" column="103" selection-start-line="2311" selection-start-column="103" selection-end-line="2311" selection-end-column="103" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Character/Tank/img/tank2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Character/Tank/tank2.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.2" vertical-offset="1138" max-vertical-offset="4012">
-          <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="90" selection-end-column="40" />
+        <state vertical-scroll-proportion="275.28" vertical-offset="9058" max-vertical-offset="9877">
+          <caret line="128" column="54" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/03wind-variable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="510">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/04gravity-intro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="493">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/artillery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.52" vertical-offset="1376" max-vertical-offset="7038">
-          <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-164.6" vertical-offset="7615" max-vertical-offset="40851">
-          <caret line="690" column="51" selection-start-line="690" selection-start-column="51" selection-end-line="690" selection-end-column="51" />
+        <state vertical-scroll-proportion="-10.64" vertical-offset="2794" max-vertical-offset="7038">
+          <caret line="180" column="58" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/04gravity-intro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85470086" vertical-offset="4417" max-vertical-offset="5236">
-          <caret line="301" column="2080" selection-start-line="301" selection-start-column="2079" selection-end-line="301" selection-end-column="2080" />
+        <state vertical-scroll-proportion="-5.8" vertical-offset="331" max-vertical-offset="3910">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#onMouse#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/04gravity-intro.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.24" vertical-offset="38659" max-vertical-offset="41157">
+          <caret line="2295" column="11" selection-start-line="2295" selection-start-column="11" selection-end-line="2302" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/03wind-variable.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-220.96" vertical-offset="38013" max-vertical-offset="43707">
+          <caret line="2561" column="23" selection-start-line="2561" selection-start-column="23" selection-end-line="2561" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/03wind-variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2964" max-vertical-offset="4335">
+          <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#setWind#0" expanded="false" />
+            <element signature="n#!!block;n#setPower#0" expanded="false" />
+            <element signature="n#!!block;n#setAngle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/02wind-intro.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.32" vertical-offset="29069" max-vertical-offset="37179">
+          <caret line="1708" column="37" selection-start-line="1708" selection-start-column="37" selection-end-line="1708" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/02wind-intro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.28" vertical-offset="264" max-vertical-offset="1241">
+          <caret line="197" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#onMouse#0" expanded="false" />
+            <element signature="n#!!block;n#setPower#0" expanded="false" />
+            <element signature="n#!!block;n#setAngle#0" expanded="false" />
+            <element signature="n#!!block;n#createEvent#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/assets/01intro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2539" max-vertical-offset="3842">
+          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#setAngle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Level/Artillery/01intro.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31257632" vertical-offset="29715" max-vertical-offset="32181">
+          <caret line="1763" column="19" selection-start-line="1763" selection-start-column="19" selection-end-line="1763" selection-end-column="19" />
           <folding />
         </state>
       </provider>
