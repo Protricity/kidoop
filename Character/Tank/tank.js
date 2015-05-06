@@ -160,8 +160,8 @@
 
         var fontSize = parseFloat(window.getComputedStyle(projectile, null).getPropertyValue('font-size'));
 
-        explodeAt(projectile.parentElement, x, y, fontSize);
-        projectile.parentElement.removeChild(projectile);
+        explodeAt(projectile.parentNode, x, y, fontSize);
+        projectile.parentNode.removeChild(projectile);
     }
 
     function destroyTank(tankElement) {

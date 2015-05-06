@@ -8,7 +8,7 @@ GRAVITY = 6;
 var DEFAULT_POWER = 0.1;
 
 var doRender = function() {
-    var renderEvent = new CustomEvent('render');
+    var renderEvent = createEvent('render');
     document.dispatchEvent(renderEvent);
 };
 var renderInterval = setInterval(doRender, 30);
@@ -256,9 +256,14 @@ document.addEventListener('touchend', onMouse, false);
 
 
 function createEvent(name, data) {
-    if(typeof CustomEvent !== 'undefined')
-        return new CustomEvent(name, {detail:data});
-    var evt = document.createEvent('Event');
+    var evt;
+    if(document.createEventObject) {
+        evt = document.createEventObject('Event');
+        evt.eventType = name;
+        evt.detail = data;
+        return evt;
+    }
+    evt = document.createEvent('Event');
     evt.initEvent(name, true, true, data);
     evt.detail = data || {};
     return evt;

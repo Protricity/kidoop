@@ -9,7 +9,7 @@ GRAVITY = 3;
 var DEFAULT_POWER = 0.1;
 
 var doRender = function() {
-    var renderEvent = new CustomEvent('render');
+    var renderEvent = createEvent('render');
     document.dispatchEvent(renderEvent);
 };
 var renderInterval = setInterval(doRender, 30);
@@ -256,27 +256,16 @@ document.addEventListener('touchmove', onMouse, false);
 document.addEventListener('touchend', onMouse, false);
 
 
-
 function createEvent(name, data) {
-    if(typeof CustomEvent !== 'undefined')
-        return new CustomEvent(name, {detail:data});
-    var evt = document.createEvent('Event');
+    var evt;
+    if(document.createEventObject) {
+        evt = document.createEventObject('Event');
+        evt.eventType = name;
+        evt.detail = data;
+        return evt;
+    }
+    evt = document.createEvent('Event');
     evt.initEvent(name, true, true, data);
     evt.detail = data || {};
     return evt;
 }
-
-
-//document.addEventListener('xy', function(e) {
-//    var container = document.getElementsByClassName('artillery001')[0];
-//    container.dataset.ax = e.detail.percX * 20 - 10;
-//    container.dataset.ay = e.detail.percY * 20 - 10;
-//    e.detail.formatX = Math.round(container.dataset.ax*10)/10 + 'px/s';
-//    e.detail.formatY = Math.round(container.dataset.ay*10)/10 + 'px/s';
-//    e.detail.tankCount = document.getElementsByClassName('tank').length - 1;
-//});
-
-//document.addEventListener('touchmove', function(e) {
-//    e.preventDefault();
-//});
-
