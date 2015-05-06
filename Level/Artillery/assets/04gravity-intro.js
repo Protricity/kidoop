@@ -48,12 +48,14 @@ function onMouse(e) {
     }
 
 
-    if(lastPoint) {
-        distX = pageX - lastPoint[0];
-        distY = pageY - lastPoint[1];
+    if(pageX !== 0 && pageY !== 0) {
+        if(lastPoint) {
+            distX = pageX - lastPoint[0];
+            distY = pageY - lastPoint[1];
+        }
         //dist = Math.sqrt(distX*distX + distY*distY);
+        lastPoint = [pageX, pageY];
     }
-    lastPoint = [pageX, pageY];
 
     var tanks = selectedTanks;
     if(tanks.length === 0 && (e.type === 'touchstart' || e.type === 'mousedown')) {
@@ -92,8 +94,7 @@ function onMouse(e) {
                     var fireTank = tanks[fi];
                     var fbb = fireTank.getBoundingClientRect();
 
-                    if(pageX !== 0 && pageY !== 0)
-                        fireTank.lastFlipped = fbb.left + fbb.width/2 > pageX;
+                    fireTank.lastFlipped = fbb.left + fbb.width/2 > lastPoint[0];
 
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,

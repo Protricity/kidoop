@@ -41,7 +41,9 @@ function replaceUseWithSource(useElement) {
     var templateElement = document.getElementById(id).cloneNode(true);
     templateElement.setAttribute('style', useElement.getAttribute('style'));
     templateElement.setAttribute('class', useElement.getAttribute('class'));
-    templateElement.setAttribute('transform', useElement.getAttribute('transform'));
+    var transform = useElement.getAttribute('transform');
+    if(transform) 
+        templateElement.setAttribute('transform', transform);
     templateElement.setAttribute('id', useElement.getAttribute('id') || id + '_copy');
     useElement.parentNode.insertBefore(templateElement, useElement)
     useElement.parentNode.removeChild(useElement);
@@ -294,6 +296,17 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
     projectile.setAttributeNS(svgns, 'xlink:href', '#projectile-template');
     projectile.href.baseVal = '#projectile-template';
+    spriteGroup.insertBefore(projectile, spriteGroup.firstChild);
+
+//     projectile = replaceUseWithSource(projectile);
+
+//     projectile.innerHTML = '<animateTransform'
+//                       + ' xmlns="http://www.w3.org/2000/svg" attributeType="XML"'
+//                       + ' attributeName="transform"'
+//                       + ' type="scale" from="1" to="0.8"'
+//                       + ' begin="0s" dur="0.5s"'
+//                       + ' repeatCount="indefinite"/>"';
+
 
 
     var scaleX = Math.sqrt(tankMatrix.a * tankMatrix.a + tankMatrix.b * tankMatrix.b);
@@ -303,7 +316,6 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
     projectile.classList.add('projectile');
     projectile.sourceTank = tankElement;
-    spriteGroup.insertBefore(projectile, spriteGroup.firstChild);
 
     var velocity = CANNON_VELOCITY.slice();
 
