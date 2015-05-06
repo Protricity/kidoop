@@ -6,6 +6,8 @@
 WIND = -4;
 GRAVITY = 3;
 
+var DEFAULT_POWER = 0.1;
+
 var doRender = function() {
     var renderEvent = new CustomEvent('render');
     document.dispatchEvent(renderEvent);
@@ -96,7 +98,7 @@ function onMouse(e) {
 
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,
-                        power: fireTank.lastPower || 0.5,
+                        power: fireTank.lastPower || DEFAULT_POWER,
                         flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > pageX
                     }));
                 }
@@ -122,7 +124,7 @@ function onMouse(e) {
                     var powerDistX = distX;
                     if(pageX < abb.left + abb.width/2)
                         powerDistX = -powerDistX;
-                    aimTank.lastPower = (aimTank.lastPower || 0.95) + powerDistX / 1000;
+                    aimTank.lastPower = (aimTank.lastPower || DEFAULT_POWER) + powerDistX / 1000;
                     if(aimTank.lastPower > 1)
                         aimTank.lastPower = 1;
                     if(aimTank.lastPower < 0.2)

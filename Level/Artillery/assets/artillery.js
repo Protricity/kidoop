@@ -6,7 +6,7 @@ var RENDER_INTERVAL_MAX = 1000;
 var RENDER_INTERVAL = 100;
 var WALL_BOUNCE_COOEFICIENT = 0.20;
 
-var CANNON_VELOCITY = [100,0];
+var CANNON_VELOCITY = [200,0];
 
 var GRAVITY = 4;
 var WIND = 0;
@@ -179,14 +179,20 @@ function renderArtilleryElements(e) {
 }
 
 function onFire(e) {
-    if(e.target.classList.contains('flipped') !== e.detail.flipped)
-        e.detail.flipped ? e.target.classList.add('flipped') : e.target.classList.remove('flipped');
+    var cannonBody = e.target.getElementsByClassName('cannon-body')[0];
+    if(e.detail.flipped) {
+        e.target.classList.add('flipped');
+        cannonBody.setAttribute('transform', 'scale(-1,1)');
+    } else {
+        e.target.classList.remove('flipped');
+        cannonBody.setAttribute('transform', 'scale(1,1)');
+    }
     fireCannon(e.target, e.detail.angle, e.detail.power);
 }
 
 function onAim(e) {
-    if(e.target.classList.contains('flipped') !== e.detail.flipped)
-        e.detail.flipped ? e.target.classList.add('flipped') : e.target.classList.remove('flipped');
+//     if(e.target.classList.contains('flipped') !== e.detail.flipped)
+//         e.detail.flipped ? e.target.classList.add('flipped') : e.target.classList.remove('flipped');
     aimCannon(e.target, e.detail.angle, e.detail.power);
 }
 
@@ -196,34 +202,43 @@ function aimCannon(tankElement, cannonAngle, cannonPower) {
 
     var tankBB = tankElement.getBoundingClientRect();
     var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
-    var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
+
+    var scaleX = Math.sqrt(tankMatrix.a * tankMatrix.a + tankMatrix.b * tankMatrix.b);
+    var scaleY = Math.sqrt(tankMatrix.c * tankMatrix.c + tankMatrix.d * tankMatrix.d);
+
+    var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
+    var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
 
     if(cannonAngle) {
         if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
         if(cannonAngle>70) cannonAngle = 70;
         var cannonRotate = tankElement.getElementsByClassName('cannon-rotate')[0];
         cannonRotate.setAttribute('transform', 'rotate(' + -cannonAngle + ')');
-        angle -= cannonAngle % 360;
     }
-//     angle -= 7;
 
-    var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
-    var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
     if(cannonTip) {
         var bb = cannonTip.getBoundingClientRect();
         point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
     }
-
-    if(tankElement.classList.contains('flipped'))
-        angle += 180;
+    var cannonBase = tankElement.getElementsByClassName('cannon-base')[0];
 
     var velocity = CANNON_VELOCITY.slice();
+    if(cannonBase) {
+        var bb2 = cannonBase.getBoundingClientRect();
+        var point2 = [(bb2.right + bb2.left) / 2, (bb2.bottom + bb2.top) / 2];
+        var imp = Math.sqrt(velocity[0] * velocity[0] + velocity[1] * velocity[1]);
+        velocity = [point[0] - point2[0], point[1] - point2[1]];
+        var imp2 = Math.sqrt(velocity[0] * velocity[0] + velocity[1] * velocity[1]);
+        velocity[0] *= imp/imp2;
+        velocity[1] *= imp/imp2;
+    }
 
     if(cannonPower < 0.1) cannonPower = 0.1;
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
+    velocity[0] *= scaleX || 1;
+    velocity[1] *= scaleY || 1;
 
     var cannonProjection = document.getElementById('cannon-projection');
     var projVelocity = [velocity[0], velocity[1]];
@@ -274,21 +289,26 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
     var tankBB = tankElement.getBoundingClientRect();
     var tankMatrix = tankElement.transform.baseVal.getItem(0).matrix;
-    var angle = (360 + Math.round(Math.atan2(tankMatrix.b, tankMatrix.a) * (180/Math.PI))) % 360;
-
-    if(cannonAngle) {
-        if(cannonAngle<0 || cannonAngle>270) cannonAngle = 0;
-        if(cannonAngle>70) cannonAngle = 70;
-        angle -= cannonAngle % 360;
-    }
 
     var point = [(tankBB.right + tankBB.left) / 2, (tankBB.bottom + tankBB.top) / 2];
     var cannonTip = tankElement.getElementsByClassName('cannon-tip')[0];
+
     if(cannonTip) {
         var bb = cannonTip.getBoundingClientRect();
         point = [(bb.right + bb.left) / 2, (bb.bottom + bb.top) / 2];
     }
+    var cannonBase = tankElement.getElementsByClassName('cannon-base')[0];
 
+    var velocity = CANNON_VELOCITY.slice();
+    if(cannonBase) {
+        var bb2 = cannonBase.getBoundingClientRect();
+        var point2 = [(bb2.right + bb2.left) / 2, (bb2.bottom + bb2.top) / 2];
+        var imp = Math.sqrt(velocity[0] * velocity[0] + velocity[1] * velocity[1]);
+        velocity = [point[0] - point2[0], point[1] - point2[1]];
+        var imp2 = Math.sqrt(velocity[0] * velocity[0] + velocity[1] * velocity[1]);
+        velocity[0] *= imp/imp2;
+        velocity[1] *= imp/imp2;
+    }
 
     var xmlns = "http://www.w3.org/2000/svg";
     var svgns = 'http://www.w3.org/2000/xlink/namespace/';
@@ -317,22 +337,23 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     projectile.classList.add('projectile');
     projectile.sourceTank = tankElement;
 
-    var velocity = CANNON_VELOCITY.slice();
 
     if(cannonPower < 0.1) cannonPower = 0.1;
     if(cannonPower > 1) cannonPower = 1;
     velocity[0] *= cannonPower || 1;
     velocity[1] *= cannonPower || 1;
+    velocity[0] *= scaleX || 1;
+    velocity[1] *= scaleY || 1;
 
     //var pt = document.rootElement.createSVGPoint();
     //pt.x = velocity[0];
     //pt.y = velocity[1];
     //pt = pt.matrixTransform(tankMatrix);
 
-    if(tankElement.classList.contains('flipped'))
-        angle += 180;
+//     if(tankElement.classList.contains('flipped'))
+//         angle += 180;
 
-    velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
+//     velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
     projectile.vx = velocity[0];
     projectile.vy = velocity[1];
 

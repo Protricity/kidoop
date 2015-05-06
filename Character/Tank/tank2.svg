@@ -30,13 +30,13 @@
      inkscape:window-height="976"
      id="namedview3386"
      showgrid="false"
-     inkscape:zoom="2.2345679"
-     inkscape:cx="-17.974845"
-     inkscape:cy="61.207622"
+     inkscape:zoom="6.3203125"
+     inkscape:cx="46.86088"
+     inkscape:cy="71.092231"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="projectile-template" />
+     inkscape:current-layer="cannon-rotate" />
   <metadata
      id="metadata4269">
     <rdf:RDF>
@@ -160,6 +160,14 @@
            id="cannon-tip"
            class="cannon-tip"
            style="opacity:0.3942308;fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <rect
+           style="opacity:0.3942308;fill:#75791b;fill-opacity:1;stroke:#7a7a39;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           class="cannon-tip"
+           id="cannon-base"
+           width="1.9679996"
+           height="9.0753574"
+           x="0.052597046"
+           y="-6.2041359" />
       </g>
       <path
          inkscape:connector-curvature="0"
@@ -186,13 +194,5 @@
        inkscape:connector-curvature="0"
        d="m 4.956277,-3.9563222 0,7.9126 c -13.2167398,0 -13.2167398,-7.9126 0,-7.9126 z"
        style="fill-opacity:0.75813955;fill-rule:evenodd;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new;stroke-miterlimit:4;stroke-dasharray:none;stroke:none;fill:#502d16" />
-
-
-      <!--<animateTransform-->
-      <!--xmlns="http://www.w3.org/2000/svg" attributeType="XML"-->
-      <!--attributeName="transform"-->
-      <!--type="scale" from="1" to="0.8"-->
-      <!--begin="0s" dur="0.5s"-->
-      <!--repeatCount="indefinite"/>-->
   </g>
 </svg>
