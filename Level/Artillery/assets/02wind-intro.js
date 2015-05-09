@@ -6,8 +6,10 @@
 WIND = -4;
 GRAVITY = 3;
 
+var DEFAULT_POWER = 0.56;
+
 var doRender = function() {
-    var renderEvent = new CustomEvent('render');
+    var renderEvent = createEvent('render');
     document.dispatchEvent(renderEvent);
 };
 var renderInterval = setInterval(doRender, 30);
@@ -23,79 +25,124 @@ var resume = function() {
 
 var lastTime = new Date().getTime();
 var lastPoint = null;
-var lastAngle = 0;
-var lastPower = 0.55;
 var isDragging = false;
 // var lastPower = 1;
+var selectedTanks = document.getElementsByClassName('usertank selected');
+var userTanks = document.getElementsByClassName('usertank');
 function onMouse(e) {
-    var dist = 0;
+    if(e.defaultPrevented)
+        return;
+
+    e.preventDefault();
+    //var dist = 0;
     var distX = 0;
     var distY = 0;
-    if(lastPoint) {
-        distX = e.pageX - lastPoint[0];
-        distY = e.pageY - lastPoint[1];
-        dist = Math.sqrt(distX*distX + distY*distY);
-    }
-    lastPoint = [e.pageX, e.pageY];
 
-    var tanks = document.getElementsByClassName('usertank');
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(!pageX && e.touches && e.touches.length) {
+//         if(e.touches.length === 0)
+//             return;
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
+
+    if(pageX !== 0 && pageY !== 0) {
+        if(lastPoint) {
+            distX = pageX - lastPoint[0];
+            distY = pageY - lastPoint[1];
+        }
+        //dist = Math.sqrt(distX*distX + distY*distY);
+        lastPoint = [pageX, pageY];
+    }
+
+    var tanks = selectedTanks;
+    if(tanks.length === 0 && (e.type === 'touchstart' || e.type === 'mousedown')) {
+        var tankDist = 9999;
+        tanks = selectedTanks = [userTanks[0]];
+        if(userTanks.length>1) {
+            for (var si = 0; si < userTanks.length; si++) {
+                var bb = userTanks[si].getBoundingClientRect();
+                var curTankDist = Math.sqrt(Math.pow(pageX - (bb.left + bb.width / 2), 2) + Math.pow(pageY - (bb.top + bb.height / 2), 2));
+                if (curTankDist < tankDist) {
+                    tankDist = curTankDist;
+                    //noinspection JSValidateTypes
+                    tanks = selectedTanks = [userTanks[si]];
+                }
+            }
+        }
+    }
+
 
     var endTime = new Date().getTime();
     var longpress = (endTime - lastTime >= 500);
 
     switch(e.type) {
-        case 'click':
-            isDragging = false;
-            break;
-
+        case 'touchstart':
         case 'mousedown':
             isDragging = true;
             lastTime = new Date().getTime();
             return;
 
+        case 'touchmove':
+        case 'touchend':
         case 'mouseup':
         case 'mousemove':
-            if(e.type === 'mouseup' && !longpress) {
+            if((e.type === 'mouseup' || e.type === 'touchend') && !longpress) {
                 for(var fi=0; fi<tanks.length; fi++) {
                     var fireTank = tanks[fi];
-                    fireTank.dispatchEvent(new CustomEvent('fire', {
-                        detail: {
-                            angle: lastAngle,
-                            power: lastPower
-                        }
+                    var fbb = fireTank.getBoundingClientRect();
+
+                    fireTank.lastFlipped = fbb.left + fbb.width/2 > lastPoint[0];
+
+                    fireTank.dispatchEvent(createEvent('fire', {
+                        angle: fireTank.lastAngle || 0,
+                        power: fireTank.lastPower || DEFAULT_POWER,
+                        flipped: fireTank.lastFlipped || false // fbb.left + fbb.width/2 > pageX
                     }));
                 }
                 isDragging = false;
+                selectedTanks = document.getElementsByClassName('usertank selected');
                 lastTime = new Date().getTime();
                 return;
             }
 
             if(isDragging) {
 
-                lastAngle = lastAngle - distY / 8;
-                if(lastAngle > 70)
-                    lastAngle = 70;
-                else if(lastAngle < 0 || lastAngle > 270)
-                    lastAngle = 0;
-
-                lastPower = lastPower + distX / 1000;
-                if(lastPower > 1)
-                    lastPower = 1;
-                if(lastPower < 0.2)
-                    lastPower = 0.2;
 
                 for(var ai=0; ai<tanks.length; ai++) {
                     var aimTank = tanks[ai];
-                    aimTank.dispatchEvent(new CustomEvent('aim', {
-                        detail: {
-                            angle: lastAngle,
-                            power: lastPower
-                        }
+                    var abb = aimTank.getBoundingClientRect();
+
+                    aimTank.lastAngle = (aimTank.lastAngle || 0) - distY / 8;
+                    if(aimTank.lastAngle > 70)
+                        aimTank.lastAngle = 70;
+                    else if(aimTank.lastAngle < 0 || aimTank.lastAngle > 270)
+                        aimTank.lastAngle = 0;
+
+                    var powerDistX = distX;
+                    if(pageX < abb.left + abb.width/2)
+                        powerDistX = -powerDistX;
+                    aimTank.lastPower = (aimTank.lastPower || DEFAULT_POWER) + powerDistX / 1000;
+                    if(aimTank.lastPower > 1)
+                        aimTank.lastPower = 1;
+                    if(aimTank.lastPower < 0.2)
+                        aimTank.lastPower = 0.2;
+
+                    //aimTank.lastFlipped = abb.left + abb.width/2 > pageX;
+
+                    aimTank.dispatchEvent(createEvent('aim', {
+                        angle: aimTank.lastAngle,
+                        power: aimTank.lastPower,
+                        flipped: aimTank.lastFlipped
+
                     }));
                 }
 
                 if(e.type === 'mouseup') {
-                    isDragging = null;
+                    isDragging = false;
+                    selectedTanks = document.getElementsByClassName('usertank selected');
                 }
             }
             break;
@@ -106,29 +153,29 @@ function onMouse(e) {
 
 }
 
-//document.addEventListener('click', onMouse, true);
-document.addEventListener('mousemove', onMouse, true);
-document.addEventListener('mouseup', onMouse, true);
-document.addEventListener('mousedown', onMouse, true);
-
-document.addEventListener('touchstart', onMouse, true);
-document.addEventListener('touchmove', onMouse, true);
-document.addEventListener('touchend', onMouse, true);
-
 
 var isPowerDragging = false;
 function setPower(e, tankID) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
     switch(e.type) {
+        case 'touchstart':
         case 'mousedown':
-            isPowerDragging = e.pageY;
+            isPowerDragging = pageY;
             break;
+        case 'touchmove':
         case 'mousemove':
             if(typeof isPowerDragging === 'number') {
-                var distY = isPowerDragging - e.pageY;
-                isPowerDragging = e.pageY;
+                var distY = isPowerDragging - pageY;
+                isPowerDragging = pageY;
 
                 var powerTank = document.getElementById(tankID);
-                powerTank.lastPower = (powerTank.lastPower || 0.55) + distY / 100;
+                powerTank.lastPower = (powerTank.lastPower || 0.90) + distY / 200;
                 if(powerTank.lastPower > 1)
                     powerTank.lastPower = 1;
                 if(powerTank.lastPower < 0.2)
@@ -138,11 +185,12 @@ function setPower(e, tankID) {
                     angle: powerTank.lastAngle || 0,
                     power: powerTank.lastPower,
                     flipped: powerTank.lastFlipped
-//                     flipped: abb.left + abb.width/2 > e.pageX
+//                     flipped: abb.left + abb.width/2 > pageX
                 }));
             }
             break;
         default:
+        case 'touchend':
         case 'mouseout':
         case 'mouseup':
             isPowerDragging = false;
@@ -154,14 +202,23 @@ function setPower(e, tankID) {
 
 var isAngleDragging = false;
 function setAngle(e, tankID) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
     switch(e.type) {
         case 'mousedown':
-            isAngleDragging = e.pageY;
+        case 'touchstart':
+            isAngleDragging = pageY;
             break;
+        case 'touchmove':
         case 'mousemove':
             if(typeof isAngleDragging === 'number') {
-                var distY = isAngleDragging - e.pageY;
-                isAngleDragging = e.pageY;
+                var distY = isAngleDragging - pageY;
+                isAngleDragging = pageY;
 
                 var aimTank = document.getElementById(tankID);
                 aimTank.lastAngle = (aimTank.lastAngle || 0) + distY / 2;
@@ -174,11 +231,12 @@ function setAngle(e, tankID) {
                     angle: aimTank.lastAngle || 0,
                     power: aimTank.lastPower,
                     flipped: aimTank.lastFlipped
-//                     flipped: abb.left + abb.width/2 > e.pageX
+//                     flipped: abb.left + abb.width/2 > pageX
                 }));
             }
             break;
         default:
+        case 'touchend':
         case 'mouseout':
         case 'mouseup':
             isAngleDragging = false;
@@ -188,26 +246,26 @@ function setAngle(e, tankID) {
 }
 
 
+//document.addEventListener('click', onMouse, true);
+document.addEventListener('mousemove', onMouse, false);
+document.addEventListener('mouseup', onMouse, false);
+document.addEventListener('mousedown', onMouse, false);
+
+document.addEventListener('touchstart', onMouse, false);
+document.addEventListener('touchmove', onMouse, false);
+document.addEventListener('touchend', onMouse, false);
+
+
 function createEvent(name, data) {
-    if(typeof CustomEvent !== 'undefined')
-        return new CustomEvent(name, {detail:data});
-    var evt = document.createEvent('Event');
+    var evt;
+    if(document.createEventObject) {
+        evt = document.createEventObject('Event');
+        evt.eventType = name;
+        evt.detail = data;
+        return evt;
+    }
+    evt = document.createEvent('Event');
     evt.initEvent(name, true, true, data);
     evt.detail = data || {};
     return evt;
 }
-
-
-//document.addEventListener('xy', function(e) {
-//    var container = document.getElementsByClassName('artillery001')[0];
-//    container.dataset.ax = e.detail.percX * 20 - 10;
-//    container.dataset.ay = e.detail.percY * 20 - 10;
-//    e.detail.formatX = Math.round(container.dataset.ax*10)/10 + 'px/s';
-//    e.detail.formatY = Math.round(container.dataset.ay*10)/10 + 'px/s';
-//    e.detail.tankCount = document.getElementsByClassName('tank').length - 1;
-//});
-
-//document.addEventListener('touchmove', function(e) {
-//    e.preventDefault();
-//});
-
