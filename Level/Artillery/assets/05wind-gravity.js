@@ -4,7 +4,7 @@
  */
 
 WIND = 0;
-GRAVITY = 0;
+GRAVITY = 1;
 
 var DEFAULT_POWER = 0.22;
 var RENDER_INTERVAL = 20;
@@ -194,7 +194,7 @@ function addWind(amount) {
         var aimTank = windTanks[ai];
         aimTank.dispatchEvent(createEvent('aim', {
             angle: aimTank.lastAngle || 0,
-            power: aimTank.lastPower,
+            power: aimTank.lastPower || DEFAULT_POWER,
             flipped: aimTank.lastFlipped
             //                     flipped: abb.left + abb.width/2 > e.pageX
         }));
@@ -353,9 +353,69 @@ function setAngle(e, tankID) {
 }
 
 
-function setGravity(e) {
-//     e.preventDefault();
+function addGravity(amount) {
+    GRAVITY -= amount;
+    if(GRAVITY > 16) GRAVITY = 16;
+    if(GRAVITY < -16) GRAVITY = -16;
+
+    var uiGravityValue = document.getElementById('ui-gravity-value');
+    uiGravityValue.setAttribute('transform', 'translate(' + (-GRAVITY) + ', 0)');
+
+    var uiGravityTextValue = document.getElementById('ui-gravity-text-value');
+    uiGravityTextValue.innerHTML = GRAVITY + 'px/s';
+
+
+    var gravityTanks = document.getElementsByClassName('usertank');
+    for(var ai=0; ai<gravityTanks.length; ai++) {
+        var gravityTank = gravityTanks[ai];
+        gravityTank.dispatchEvent(createEvent('aim', {
+            angle: gravityTank.lastAngle || 0,
+            power: gravityTank.lastPower || 1,
+            flipped: gravityTank.lastFlipped
+            //                     flipped: abb.left + abb.width/2 > pageX
+        }));
+    }
+
+    
 }
+setTimeout(function() {addGravity(0)}, 100);
+
+
+var isGravityDragging = false;
+function setGravity(e) {
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+    if(e.touches && e.touches.length) {
+        pageX = e.touches[0].pageX;
+        pageY = e.touches[0].pageY;
+    }
+
+    switch(e.type) {
+        case 'touchstart':
+        case 'mousedown':
+            isGravityDragging = pageY;
+            break;
+        case 'touchmove':
+        case 'mousemove':
+            if(typeof isGravityDragging === 'number') {
+                var distY = pageY - isGravityDragging;
+                isGravityDragging = pageY;
+
+                if(distY) {
+                    addGravity(distY < 0 ? 1 : -1);
+                }
+            }
+            break;
+        default:
+        case 'touchend':
+        case 'mouseout':
+        case 'mouseup':
+            isGravityDragging = false;
+            break;
+    }
+    e.preventDefault();
+}
+
 
 
 //document.addEventListener('click', onMouse, true);

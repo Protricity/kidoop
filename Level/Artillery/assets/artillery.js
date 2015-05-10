@@ -406,6 +406,13 @@ function destroyTank(tankElement) {
 }
 
 function breakIntoQuarters(element) {
+    if(typeof element.length == 'number') {
+        var elements = [].slice.call(element);
+        var groups = [];
+        for(var ei=0; ei<elements.length; ei++)
+            groups[ei] = breakIntoQuarters(elements[ei]);
+        return groups;
+    }
     var bb = element.getBoundingClientRect();
     var parent = element.parentNode;
     var TL = element.cloneNode(true);
@@ -418,10 +425,11 @@ function breakIntoQuarters(element) {
 
     var w = (bb.width / 2);
     var h = (bb.height / 2);
-    TL.setAttribute('transform', TL.getAttribute('transform') + ' scale(0.5) translate(' + -w + ', ' + h + ')');
-    TR.setAttribute('transform', TR.getAttribute('transform') + ' scale(0.5) translate(' + w + ', ' + h + ')');
-    BL.setAttribute('transform', BL.getAttribute('transform') + ' scale(0.5) translate(' + -w + ', ' + -h + ')');
-    BR.setAttribute('transform', BR.getAttribute('transform') + ' scale(0.5) translate(' + w + ', ' + -h + ')');
+    var transform = element.getAttribute('transform') || '';
+    TL.setAttribute('transform', transform + ' scale(0.5) translate(' + -w + ', ' + h + ')');
+    TR.setAttribute('transform', transform + ' scale(0.5) translate(' + w + ', ' + h + ')');
+    BL.setAttribute('transform', transform + ' scale(0.5) translate(' + -w + ', ' + -h + ')');
+    BR.setAttribute('transform', transform + ' scale(0.5) translate(' + w + ', ' + -h + ')');
 
     for(var i=0; i<parts.length; i++) {
         parts[i].setAttribute('id', element.getAttribute('id') + '-' + i);
@@ -429,6 +437,8 @@ function breakIntoQuarters(element) {
     }
 
     parent.removeChild(element);
+
+    return parts;
 }
 
 function explodeAt(x, y, size) {
