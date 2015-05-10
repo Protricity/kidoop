@@ -585,9 +585,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         width="256"
+         id="image7057"
          height="128"
-         id="image7057" />
+         width="256" />
     </pattern>
     <g
        class="tank"
@@ -691,14 +691,14 @@
            fill="freeze" />
       </circle>
     </g>
-
-      <g
-              id="block-template">
+    <g
+       id="block-template">
       <rect
-          height="32"
-          width="32"
-          style="fill:url(#pattern5784);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none" />
-  </g>
+         height="64"
+         width="64"
+         style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+         id="rect7080" />
+    </g>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#ui-text-bk"
@@ -976,13 +976,13 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\ground.png"
          xlink:href="..\..\Terrain\Tiles\ground.png"
-         style="fill:url(#tank-image);fill-opacity:1"
-         width="16"
-         height="32"
-         preserveAspectRatio="none"
-         id="imageGround"
+         y="0"
          x="0"
-         y="0" />
+         id="imageGround"
+         preserveAspectRatio="none"
+         height="32"
+         width="16"
+         style="fill:url(#tank-image);fill-opacity:1" />
     </pattern>
     <pattern
        patternUnits="userSpaceOnUse"
@@ -993,12 +993,12 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\grass.png"
          xlink:href="..\..\Terrain\Tiles\grass.png"
-         y="0"
-         x="0"
-         id="imageGrass"
-         preserveAspectRatio="none"
+         width="16"
          height="32"
-         width="16" />
+         preserveAspectRatio="none"
+         id="imageGrass"
+         x="0"
+         y="0" />
     </pattern>
     <pattern
        patternUnits="userSpaceOnUse"
@@ -1009,12 +1009,12 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block-inside.png"
          xlink:href="..\..\Terrain\Tiles\block-inside.png"
-         y="0"
-         x="0"
-         id="imageBlock"
-         preserveAspectRatio="none"
+         width="32"
          height="32"
-         width="32" />
+         preserveAspectRatio="none"
+         id="imageBlock"
+         x="0"
+         y="0" />
     </pattern>
     <pattern
        patternUnits="userSpaceOnUse"
@@ -1025,12 +1025,12 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block.png"
          xlink:href="..\..\Terrain\Tiles\block.png"
-         y="0"
-         x="0"
-         id="image6570"
-         preserveAspectRatio="none"
+         width="32"
          height="32"
-         width="32" />
+         preserveAspectRatio="none"
+         id="image6570"
+         x="0"
+         y="0" />
     </pattern>
     <pattern
        patternUnits="userSpaceOnUse"
@@ -1041,12 +1041,12 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block-inside.png"
          xlink:href="..\..\Terrain\Tiles\block-inside.png"
-         width="32"
-         height="32"
-         preserveAspectRatio="none"
-         id="imageBlock-4"
+         y="0"
          x="0"
-         y="0" />
+         id="imageBlock-4"
+         preserveAspectRatio="none"
+         height="32"
+         width="32" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1061,9 +1061,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image7057-9"
+         width="256"
          height="128"
-         width="256" />
+         id="image7057-9" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1078,9 +1078,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6808"
+         width="256"
          height="128"
-         width="256" />
+         id="image6808" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1095,9 +1095,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6813"
+         width="256"
          height="128"
-         width="256" />
+         id="image6813" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1112,9 +1112,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6818"
+         width="256"
          height="128"
-         width="256" />
+         id="image6818" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1129,9 +1129,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6823"
+         width="256"
          height="128"
-         width="256" />
+         id="image6823" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1146,9 +1146,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image7057-6"
+         width="256"
          height="128"
-         width="256" />
+         id="image7057-6" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1163,9 +1163,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6876"
+         width="256"
          height="128"
-         width="256" />
+         id="image6876" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1180,9 +1180,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6881"
+         width="256"
          height="128"
-         width="256" />
+         id="image6881" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1197,9 +1197,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6886"
+         width="256"
          height="128"
-         width="256" />
+         id="image6886" />
     </pattern>
     <pattern
        inkscape:collect="always"
@@ -1214,9 +1214,9 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
          xlink:href="..\..\Character\Tank\img\tank2.png"
-         id="image6891"
+         width="256"
          height="128"
-         width="256" />
+         id="image6891" />
     </pattern>
   </defs>
   <sodipodi:namedview
@@ -1226,11 +1226,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="693.69003"
-     inkscape:cy="182.11438"
+     inkscape:zoom="0.7071068"
+     inkscape:cx="633.78548"
+     inkscape:cy="276.94323"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="controls"
      showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="976"
@@ -1300,142 +1300,138 @@
      inkscape:label="terrain"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline">
-    <path
-       style="display:inline;fill:url(#pattern5732);fill-opacity:1;fill-rule:evenodd;stroke:url(#pattern5734);stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-       d="m -31.86896,602.71484 c -56.34431,-13.99945 16.200795,43.90646 42.045578,-98.19606 25.844746,-142.10251 43.074573,-167.72755 60.304424,-167.72755 17.229828,0 1.722986,30.28413 65.473368,4.65909 63.75041,-25.62503 69.88143,176.4348 183.59839,183.42345 92.78497,37.30013 557.20979,65.14801 555.55847,-98.76276 0,-149.09118 -5.26532,-160.39993 36.18266,-163.06846 36.18267,-2.32954 53.41251,109.48882 93.04117,-25.62506 39.6286,-135.11386 165.9576,364.3541 165.9576,364.3541 z"
-       id="hill2"
-       class="hit-box"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csssccsscc"
-       inkscape:label="">
-      <animate
-         attributeName="stroke-width"
-         begin="0s"
-         from="0px"
-         to="2px"
-         dur="5s"
-         fill="freeze"
-         style="fill:url(#pattern5732);stroke:url(#pattern5734)" />
-      <!--<animate-->
-      <!--attributeName="stroke-dashoffset"-->
-      <!--begin="3s"-->
-      <!--from="5%"-->
-      <!--to="0%"-->
-      <!--dur="40s"-->
-      <!--fill="freeze"-->
-      <!--repeatCount="indefinite" />-->
-    </path>
-    <rect
-       xlink:href="#block-template" 
-       x="180"
-       y="272" />
+     style="display:inline"><path
+   style="display:inline;fill:url(#pattern5732);fill-opacity:1;fill-rule:evenodd;stroke:url(#pattern5734);stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+   d="m -31.86896,602.71484 c -56.34431,-13.99945 16.200795,43.90646 42.045578,-98.19606 25.844746,-142.10251 43.074573,-167.72755 60.304424,-167.72755 17.229828,0 1.722986,30.28413 65.473368,4.65909 63.75041,-25.62503 69.88143,176.4348 183.59839,183.42345 92.78497,37.30013 557.20979,65.14801 555.55847,-98.76276 0,-149.09118 -5.26532,-160.39993 36.18266,-163.06846 36.18267,-2.32954 53.41251,109.48882 93.04117,-25.62506 39.6286,-135.11386 165.9576,364.3541 165.9576,364.3541 z"
+   id="hill2"
+   class="hit-box"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="csssccsscc"
+   inkscape:label="">
+  <animate
+     attributeName="stroke-width"
+     begin="0s"
+     from="0px"
+     to="2px"
+     dur="5s"
+     fill="freeze"
+     style="fill:url(#pattern5732);stroke:url(#pattern5734)" />
+  <!--<animate-->
+  <!--attributeName="stroke-dashoffset"-->
+  <!--begin="3s"-->
+  <!--from="5%"-->
+  <!--to="0%"-->
+  <!--dur="40s"-->
+  <!--fill="freeze"-->
+  <!--repeatCount="indefinite" />-->
+</path>
+<rect
+   xlink:href="#block-template"
+   x="180"
+   y="272"
+   id="rect7159" />
+<use
+   y="304"
+   x="148"
+   xlink:href="#block-template"
+   id="use7161" />
+<use
+   x="148"
+   y="336"
+   xlink:href="#block-template"
+   id="use7163"
+   transform="translate(0,32)"
+   width="100%"
+   height="100%" />
+<use
+   xlink:href="#block-template"
+   x="20"
+   y="304"
+   id="use7167" />
+<use
+   xlink:href="#block-template"
+   x="20"
+   y="240"
+   id="use7171" />
+<use
+   y="240"
+   x="84"
+   xlink:href="#block-template"
+   id="use7175"
+   transform="translate(64,0)"
+   width="100%"
+   height="100%" />
+<use
+   y="368"
+   x="20"
+   xlink:href="#block-template"
+   id="use7183" />
+<use
+   inkscape:label=""
+   y="524"
+   x="432"
+   xlink:href="#block-template"
+   id="use7187"
+   transform="translate(0,-20)"
+   width="100%"
+   height="100%" />
+<use
+   y="460"
+   x="432"
+   xlink:href="#block-template"
+   id="use7191"
+   transform="translate(0,-20)"
+   width="100%"
+   height="100%" />
+<use
+   inkscape:label=""
+   y="460"
+   x="496"
+   xlink:href="#block-template"
+   id="use7195"
+   transform="translate(0,-20)"
+   width="100%"
+   height="100%" />
+<use
+   x="496"
+   y="428"
+   xlink:href="#block-template"
+   id="use7197"
+   transform="translate(0,-52)"
+   width="100%"
+   height="100%" />
+<use
+   y="460"
+   x="560"
+   xlink:href="#block-template"
+   id="use7203"
+   transform="translate(0,-20)"
+   width="100%"
+   height="100%" />
+<use
+   id="rect5726"
+   width="32"
+   height="32"
+   x="592"
+   y="460"
+   inkscape:label="" />
+<use
+   x="592"
+   y="524"
+   xlink:href="#block-template"
+   id="use7206"
+   transform="translate(-32,-20)"
+   width="100%"
+   height="100%" />
+ /&gt;
     <use
-       y="304"
-       x="148"
-       xlink:href="#block-template"  />
-    <use
-       x="148"
-       y="336"
-       xlink:href="#block-template"  />
-    <use
-       y="272"
-       x="20"
-       xlink:href="#block-template"  />
-    <use
-            xlink:href="#block-template" 
-        x="20"
-       y="304" />
-    <use
-       y="336"
-       x="20"
-       xlink:href="#block-template"  />
-      <use
-
-              xlink:href="#block-template" 
-      x="20"
-       y="240" />
-    <use
-       y="240"
-       x="52"
-       xlink:href="#block-template"  />
-      <use
-       y="240"
-       x="84"
-
-       xlink:href="#block-template"  />
-      <use
-       x="180"
-       y="336"
-
-       xlink:href="#block-template"  />
-      <use
-       y="272"
-       x="52"
-
-       xlink:href="#block-template"  /> <use
-       y="304"
-       x="180"
-       xlink:href="#block-template" />
-    <use
-       y="368"
-       x="20"
-
-       xlink:href="#block-template"  />    <use
-       y="400"
-       x="20"
-
-       xlink:href="#block-template"  />    <use
-       inkscape:label=""
-       y="524"
-       x="432"
-
-       xlink:href="#block-template"  />    <use
-
-          xlink:href="#block-template"         x="432"
-       y="492"/>
-    <use
-        y="460"
-       x="432"
-
-       xlink:href="#block-template"  />    <use
-       x="464"
-       y="460"
-       xlink:href="#block-template"  />
-    <use
-       inkscape:label=""
-       y="460"
-       x="496"
-       xlink:href="#block-template"  />    <use
-
-       x="496"
-       y="428"
-       xlink:href="#block-template"  />    <use
-       inkscape:label=""
-       y="428"
-       x="528"
-       xlink:href="#block-template"  />    <use
-
-       x="528"
-       y="460"
-       xlink:href="#block-template"  />    <use
-       y="460"
-       x="560"
-       xlink:href="#block-template"  />    <use
-       id="rect5726"
-       width="32"
-       height="32"
-       x="592"
-       y="460"
-       inkscape:label="" />
-    <use
-       x="592"
-       y="524"
-       xlink:href="#block-template"  /> />
-    <use
-       y="492"
-       x="592"
-       xlink:href="#block-template"  />  </g>
+   height="100%"
+   width="100%"
+   id="use7243"
+   xlink:href="#block-template"
+   x="84"
+   y="240" />
+</g>
   <g
      inkscape:groupmode="layer"
      id="sprites-front"
@@ -1448,7 +1444,7 @@
        class="usertank tank flipped"
        width="100%"
        height="100%"
-       transform="matrix(0.5504609,-8.8801433e-4,8.8801433e-4,0.5504609,103.45454,315.59598)"
+       transform="matrix(0.5504609,-8.8801433e-4,8.8801433e-4,0.5504609,75.45454,211.59598)"
        x="0"
        y="0"
        onclick=""
@@ -1458,7 +1454,7 @@
        xlink:href="#tank-template"
        id="enemy-3-3-2"
        class="tank enemy arc25"
-       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,451.36379,450.05065)"
+       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,453.36379,428.05065)"
        x="0"
        y="0"
        width="100%"
@@ -1468,7 +1464,7 @@
        xlink:href="#tank-template"
        id="enemy-3-3-2-8"
        class="tank enemy arc25"
-       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,499.36379,530.05065)"
+       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,525.36379,540.05065)"
        x="0"
        y="0"
        width="100%"
@@ -1478,7 +1474,7 @@
        xlink:href="#tank-template"
        id="enemy-3-3-2-8-4"
        class="tank enemy arc25"
-       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,601.36379,446.05065)"
+       transform="matrix(-0.24460402,0.02174427,0.02174427,0.24460402,603.36379,428.05065)"
        x="0"
        y="0"
        width="100%"
@@ -1490,7 +1486,7 @@
      inkscape:label="#controls">
     <g
        id="ui-wind"
-       transform="matrix(1.7582545,0,0,1.7582545,43.281323,591.64638)"
+       transform="matrix(1.7582545,0,0,1.7582545,-196.71868,251.64638)"
        onmouseover=""
        onmouseout="setWind(evt);"
        onmousedown="setWind(evt);"
@@ -1550,7 +1546,7 @@
        style="display:inline;opacity:0.84600004;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.13600004;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        transform="matrix(1.6675033,0,0,1.6675033,501.79945,-68.289218)" />
     <g
-       transform="matrix(0.59103865,0,0,0.59103865,7.931556,4.2040507)"
+       transform="matrix(0.59103865,0,0,0.59103865,9.93156,-21.795949)"
        id="ui-cannon-usertank">
       <text
          sodipodi:linespacing="125%"
@@ -1684,7 +1680,7 @@
     <g
        style="display:inline;opacity:0.79500002;enable-background:new"
        id="ui-gravity"
-       transform="matrix(0,-1.297154,1.297154,0,230.22749,1097.9745)"
+       transform="matrix(0,-1.297154,1.297154,0,870.22749,1015.9745)"
        onmouseout="setGravity(evt);"
        onmousedown="setGravity(evt);"
        onmouseup="setGravity(evt);"
