@@ -3,16 +3,35 @@
  * User: Ari
  */
 
-WIND = 3;
-GRAVITY = 4;
+WIND = 12;
+GRAVITY = 16;
 
-var DEFAULT_POWER = 0.25;
+var DEFAULT_POWER = 0.22;
+var RENDER_INTERVAL = 20;
+var RENDER_MAX = 1000;
 
+var lastRender = new Date().getTime();
+var lastPerformance = [0,0];
 var doRender = function() {
     var renderEvent = createEvent('render');
+
     document.dispatchEvent(renderEvent);
+
+    var duration = (new Date().getTime() - lastRender);
+    lastRender += duration;
+    var performance = 1 - (duration / RENDER_MAX);
+    if(performance < 0) performance = 0;
+    if(performance > 1) performance = 1;
+    performance = Math.round(performance * 2 + 1);
+    if(lastPerformance[0] !== performance && ((new Date().getTime() - lastPerformance[1]) > 10000)) {
+        document.rootElement.classList[performance === 1 ? 'add' : 'remove']('performance1');
+        document.rootElement.classList[performance === 2 ? 'add' : 'remove']('performance2');
+        document.rootElement.classList[performance === 3 ? 'add' : 'remove']('performance3');
+        console.log('performance: ', performance, duration);
+        lastPerformance = [performance, new Date().getTime()];
+    }
 };
-var renderInterval = setInterval(doRender, 30);
+var renderInterval = setInterval(doRender, RENDER_INTERVAL);
 
 var pause = function() {
     clearInterval(renderInterval);
@@ -150,13 +169,14 @@ function onMouse(e) {
             break;
 
         default:
-            throw new Error("Invalid Event: ", e);
+            throw new Error("Invalid Event: ", e.type);
     }
 
 }
 
 
 var isWindDragging = false;
+var changeWindTimeout = null;
 function addWind(amount) {
     WIND += amount;
     if(WIND > 10) WIND = 10;
@@ -180,27 +200,31 @@ function addWind(amount) {
         }));
     }
 
-    var windAnimations = document.getElementsByClassName('wind-animation');
-    for(var wi=0; wi<windAnimations.length; wi++) {
-        var dur = (wi+1) * 1000;
-        if(WIND == 0) {
-            windAnimations[wi].setAttribute('from', dur + ' 0');
-            windAnimations[wi].setAttribute('to', -dur + ' 0');
-            windAnimations[wi].setAttribute('dur', '100 s');
+    var changeWind = function() {
+        var windAnimations = document.getElementsByClassName('wind-animation');
+        for (var wi = 0; wi < windAnimations.length; wi++) {
+            var dur = (wi + 1) * 1000;
+            if (WIND == 0) {
+                windAnimations[wi].setAttribute('from', dur + ' 0');
+                windAnimations[wi].setAttribute('to', -dur + ' 0');
+                windAnimations[wi].setAttribute('dur', '100 s');
 
-        } else if(WIND > 0) {
-            windAnimations[wi].setAttribute('from', -dur + ' 0');
-            windAnimations[wi].setAttribute('to', dur + ' 0');
-            windAnimations[wi].setAttribute('dur', 20 * (11-WIND) + 's');
+            } else if (WIND > 0) {
+                windAnimations[wi].setAttribute('from', -dur + ' 0');
+                windAnimations[wi].setAttribute('to', dur + ' 0');
+                windAnimations[wi].setAttribute('dur', 20 * (11 - WIND) + 's');
 
-        } else if(WIND < 0) {
-            windAnimations[wi].setAttribute('from', dur + ' 0');
-            windAnimations[wi].setAttribute('to', -dur + ' 0');
-            windAnimations[wi].setAttribute('dur', 20 * (11+WIND) + 's');
+            } else if (WIND < 0) {
+                windAnimations[wi].setAttribute('from', dur + ' 0');
+                windAnimations[wi].setAttribute('to', -dur + ' 0');
+                windAnimations[wi].setAttribute('dur', 20 * (11 + WIND) + 's');
 
+            }
         }
-    }
-    
+    };
+    if(changeWindTimeout) clearTimeout(changeWindTimeout);
+    changeWindTimeout = setTimeout(changeWind, 300);
+
 }
 setTimeout(function() {addWind(0)}, 100);
 
@@ -330,7 +354,7 @@ function setAngle(e, tankID) {
 }
 
 
-function setGravity(e, tankID) {
+function setGravity(e) {
 //     e.preventDefault();
 }
 
@@ -339,6 +363,7 @@ function setGravity(e, tankID) {
 document.addEventListener('mousemove', onMouse, false);
 document.addEventListener('mouseup', onMouse, false);
 document.addEventListener('mousedown', onMouse, false);
+document.addEventListener('mouseout', onMouse, false);
 
 document.addEventListener('touchstart', onMouse, false);
 document.addEventListener('touchmove', onMouse, false);

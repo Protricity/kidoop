@@ -3,23 +3,42 @@
  * User: Ari
  */
 
-WIND = -4;
-GRAVITY = 3;
+WIND = -16;
+GRAVITY = 16;
 
-var DEFAULT_POWER = 0.56;
+var DEFAULT_POWER = 0.47;
+var RENDER_INTERVAL = 20;
+var RENDER_MAX = 1000;
 
+var lastRender = new Date().getTime();
+var lastPerformance = [0,0];
 var doRender = function() {
     var renderEvent = createEvent('render');
+
     document.dispatchEvent(renderEvent);
+
+    var duration = (new Date().getTime() - lastRender);
+    lastRender += duration;
+    var performance = 1 - (duration / RENDER_MAX);
+    if(performance < 0) performance = 0;
+    if(performance > 1) performance = 1;
+    performance = Math.round(performance * 2 + 1);
+    if(lastPerformance[0] !== performance && ((new Date().getTime() - lastPerformance[1]) > 10000)) {
+        document.rootElement.classList[performance === 1 ? 'add' : 'remove']('performance1');
+        document.rootElement.classList[performance === 2 ? 'add' : 'remove']('performance2');
+        document.rootElement.classList[performance === 3 ? 'add' : 'remove']('performance3');
+        console.log('performance: ', performance, duration);
+        lastPerformance = [performance, new Date().getTime()];
+    }
 };
-var renderInterval = setInterval(doRender, 30);
+var renderInterval = setInterval(doRender, RENDER_INTERVAL);
 
 var pause = function() {
     clearInterval(renderInterval);
 };
 var resume = function() {
     clearInterval(renderInterval);
-    renderInterval = setInterval(doRender, 30)
+    renderInterval = setInterval(doRender, RENDER_INTERVAL)
 };
 
 
@@ -94,7 +113,7 @@ function onMouse(e) {
                     var fireTank = tanks[fi];
                     var fbb = fireTank.getBoundingClientRect();
 
-                    fireTank.lastFlipped = fbb.left + fbb.width/2 > lastPoint[0];
+                    fireTank.lastFlipped = false; // fbb.left + fbb.width/2 > lastPoint[0];
 
                     fireTank.dispatchEvent(createEvent('fire', {
                         angle: fireTank.lastAngle || 0,
@@ -245,11 +264,16 @@ function setAngle(e, tankID) {
     e.preventDefault();
 }
 
+function setGravity(e) {
+
+}
+
 
 //document.addEventListener('click', onMouse, true);
 document.addEventListener('mousemove', onMouse, false);
 document.addEventListener('mouseup', onMouse, false);
 document.addEventListener('mousedown', onMouse, false);
+document.addEventListener('mouseout', onMouse, false);
 
 document.addEventListener('touchstart', onMouse, false);
 document.addEventListener('touchmove', onMouse, false);
@@ -268,4 +292,12 @@ function createEvent(name, data) {
     evt.initEvent(name, true, true, data);
     evt.detail = data || {};
     return evt;
+}
+
+
+function setGravity(e) {
+//     e.preventDefault();
+}
+function setWind(e) {
+//     e.preventDefault();
 }
