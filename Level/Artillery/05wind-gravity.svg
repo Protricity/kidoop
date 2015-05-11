@@ -591,8 +591,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          width="256"
          height="128"
          id="image7057" />
@@ -941,8 +941,8 @@
        patternTransform="scale(2)"
        id="patternGround">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\ground.png"
-         xlink:href="..\..\Terrain\Tiles\ground.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Terrain/Tiles/ground.png"
+         xlink:href="../../Terrain/Tiles/ground.png"
          style="fill:url(#tank-image);fill-opacity:1"
          width="16"
          height="32"
@@ -958,8 +958,7 @@
        patternTransform="scale(2)"
        id="patternGrass">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\grass.png"
-         xlink:href="..\..\Terrain\Tiles\grass.png"
+         xlink:href="../../Terrain/Tiles/grass.png"
          y="0"
          x="0"
          id="imageGrass"
@@ -974,8 +973,7 @@
        patternTransform="scale(2, 1)"
        id="patternBlockInside">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block-inside.png"
-         xlink:href="..\..\Terrain\Tiles\block-inside.png"
+         xlink:href="../../Terrain/Tiles/block-inside.png"
          y="0"
          x="0"
          id="imageBlock"
@@ -990,8 +988,7 @@
        patternTransform="scale(2, 1)"
        id="patternBlock">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block.png"
-         xlink:href="..\..\Terrain\Tiles\block.png"
+         xlink:href="../../Terrain/Tiles/block.png"
          y="0"
          x="0"
          id="image6570"
@@ -1006,8 +1003,8 @@
        patternTransform="scale(1, 0.5)"
        id="patternBlockInside-9">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Terrain\Tiles\block-inside.png"
-         xlink:href="..\..\Terrain\Tiles\block-inside.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Terrain/Tiles/block-inside.png"
+         xlink:href="../../Terrain/Tiles/block-inside.png"
          width="32"
          height="32"
          preserveAspectRatio="none"
@@ -1026,8 +1023,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image7057-9"
          height="128"
          width="256" />
@@ -1043,8 +1040,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6808"
          height="128"
          width="256" />
@@ -1060,8 +1057,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6813"
          height="128"
          width="256" />
@@ -1077,8 +1074,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6818"
          height="128"
          width="256" />
@@ -1094,8 +1091,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6823"
          height="128"
          width="256" />
@@ -1111,8 +1108,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image7057-6"
          height="128"
          width="256" />
@@ -1128,8 +1125,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6876"
          height="128"
          width="256" />
@@ -1145,8 +1142,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6881"
          height="128"
          width="256" />
@@ -1162,8 +1159,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6886"
          height="128"
          width="256" />
@@ -1179,8 +1176,8 @@
        width="256"
        height="128">
       <image
-         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\..\..\Character\Tank\img\tank2.png"
-         xlink:href="..\..\Character\Tank\img\tank2.png"
+         sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\../../Character/Tank/img/tank2.png"
+         xlink:href="../../Character/Tank/img/tank2.png"
          id="image6891"
          height="128"
          width="256" />

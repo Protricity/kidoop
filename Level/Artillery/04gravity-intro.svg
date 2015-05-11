@@ -341,8 +341,8 @@
               width="256"
               height="128">
           <image
-                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\..\..\Character\Tank\img\tank2.png"
-                  xlink:href="..\..\Character\Tank\img\tank2.png"
+                  sodipodi:absref="D:\Dev\Server\WWW\kidoop\Character\Tank\../../Character/Tank/img/tank2.png"
+                  xlink:href="../../Character/Tank/img/tank2.png"
                   id="image7057"
                   height="128"
                   width="256" />
