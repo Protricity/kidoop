@@ -426,10 +426,10 @@ function breakIntoQuarters(element) {
     var w = (bb.width / 2);
     var h = (bb.height / 2);
     var transform = element.getAttribute('transform') || '';
-    TL.setAttribute('transform', transform + ' scale(0.5) translate(' + -w + ', ' + h + ')');
-    TR.setAttribute('transform', transform + ' scale(0.5) translate(' + w + ', ' + h + ')');
-    BL.setAttribute('transform', transform + ' scale(0.5) translate(' + -w + ', ' + -h + ')');
-    BR.setAttribute('transform', transform + ' scale(0.5) translate(' + w + ', ' + -h + ')');
+    TL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + h + ') ' + transform);
+    TR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + h + ') ' + transform);
+    BL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + -h + ') ' + transform);
+    BR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + -h + ') ' + transform);
 
     for(var i=0; i<parts.length; i++) {
         parts[i].setAttribute('id', element.getAttribute('id') + '-' + i);
