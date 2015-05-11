@@ -730,8 +730,7 @@
      inkscape:label="sky"
      style="display:inline">
     <image
-       sodipodi:absref="D:\Dev\Server\WWW\kidoop\Level\Artillery\assets\apollo11-bk.jpg"
-       xlink:href="assets\apollo11-bk.jpg"
+       xlink:href="assets/apollo11-bk.jpg"
        id="bk"
        preserveAspectRatio="none"
        height="600"
