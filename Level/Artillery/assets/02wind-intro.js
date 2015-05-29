@@ -167,7 +167,7 @@ function onMouse(e) {
             break;
 
         default:
-            throw new Error("Invalid Event: ", e);
+            throw new Error("Invalid Event: ", e.type);
     }
 
 }
@@ -268,36 +268,16 @@ function setGravity(e) {
 
 }
 
+function setWind(e) {
+//     e.preventDefault();
+}
 
 //document.addEventListener('click', onMouse, true);
 document.addEventListener('mousemove', onMouse, false);
 document.addEventListener('mouseup', onMouse, false);
 document.addEventListener('mousedown', onMouse, false);
-document.addEventListener('mouseout', onMouse, false);
+// document.addEventListener('mouseout', onMouse, false);
 
 document.addEventListener('touchstart', onMouse, false);
 document.addEventListener('touchmove', onMouse, false);
 document.addEventListener('touchend', onMouse, false);
-
-
-function createEvent(name, data) {
-    var evt;
-    if(document.createEventObject) {
-        evt = document.createEventObject('Event');
-        evt.eventType = name;
-        evt.detail = data;
-        return evt;
-    }
-    evt = document.createEvent('Event');
-    evt.initEvent(name, true, true, data);
-    evt.detail = data || {};
-    return evt;
-}
-
-
-function setGravity(e) {
-//     e.preventDefault();
-}
-function setWind(e) {
-//     e.preventDefault();
-}

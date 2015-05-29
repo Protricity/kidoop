@@ -11,11 +11,17 @@ var CANNON_VELOCITY = [500,0];
 var GRAVITY = 16;
 var WIND = 0;
 
+
+
 document.addEventListener('render', renderArtilleryElements, false);
 //document.addEventListener('stats', onStats, true);
 document.addEventListener('fire', onFire, true);
 document.addEventListener('aim', onAim, true);
 //document.addEventListener('collision', onCollision, true);
+
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var projectileGain = audioCtx.createGain();
+var explosionGain = audioCtx.createGain();
 
 function testRectContainment(element) {
 }
@@ -39,11 +45,12 @@ function replaceUseWithSource(useElement) {
     if(url.charAt(0) !== '#') throw new Error("No #");
     var id = url.substr(1);
     var templateElement = document.getElementById(id).cloneNode(true);
-    templateElement.setAttribute('style', useElement.getAttribute('style'));
-    templateElement.setAttribute('class', useElement.getAttribute('class'));
-    var transform = useElement.getAttribute('transform');
-    if(transform) 
-        templateElement.setAttribute('transform', transform);
+    templateElement.setAttribute('style', useElement.getAttribute('style') || '');
+    templateElement.setAttribute('class', useElement.getAttribute('class') || '');
+    var x = useElement.getAttribute('x') || 0;
+    var y = useElement.getAttribute('y') || 0;
+    var transform = useElement.getAttribute('transform') + ' translate(' + x + ', ' + y + ')';
+    templateElement.setAttribute('transform', transform);
     templateElement.setAttribute('id', useElement.getAttribute('id') || id + '_copy');
     useElement.parentNode.insertBefore(templateElement, useElement)
     useElement.parentNode.removeChild(useElement);
@@ -63,7 +70,7 @@ function renderTankPart(tankPart, duration) {
     tankPart.vx = (tankPart.vx || 0) + WIND * duration / 1000;
     tankPart.vy = (tankPart.vy || 0) + GRAVITY * duration / 1000;
 
-    if(tankPart.transform.baseVal.length === 0)
+    if(!tankPart.transform || tankPart.transform.baseVal.length === 0)
         tankPart.setAttribute('transform', '');
     var svgTransform = tankPart.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
@@ -83,75 +90,119 @@ function renderTankPart(tankPart, duration) {
     testRectContainment(tankPart);
 }
 
-var transformRegex = /^translate\(([^)]+)\) rotate\(([^)]+)\) scale\(([^)]+)\)$/;
+function renderBlock(blockPiece, duration) {
 
-function renderProjectile(projectile, duration) {
-    projectile.vx = (projectile.vx || 0) + WIND * duration / 1000;
-    projectile.vy = (projectile.vy || 0) + GRAVITY * duration / 1000;
+//     blockPiece.vx = (blockPiece.vx || 0) + WIND * duration / 1000;
+    blockPiece.vy = (blockPiece.vy || 0) + GRAVITY * duration / 1000;
 
-    var svgTransform = projectile.transform.baseVal.getItem(0);
+    if(!blockPiece.transform || blockPiece.transform.baseVal.length === 0)
+        blockPiece.setAttribute('transform', '');
+    var svgTransform = blockPiece.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
-    var attrTransform = projectile.getAttribute('transform');
+    matrix.e += blockPiece.vx * duration / 1000;
+    matrix.f += blockPiece.vy * duration / 1000;
+    svgTransform.setMatrix(matrix.rotate(blockPiece.va * duration / 1000));
+
+    var bb = blockPiece.getBoundingClientRect();
+    var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
+
+    if(testHitBox(collisionElement) || bb.bottom > 600) {
+        blockPiece.parentNode.removeChild(blockPiece);
+        explodeAt((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
+    }
+
+    testRectContainment(blockPiece);
+}
+
+var transformRegex = /^translate\(([^)]+)\) rotate\(([^)]+)\) scale\(([^)]+)\)$/;
+
+function renderProjectile(projectileElement, duration) {
+    projectileElement.vx = (projectileElement.vx || 0) + WIND * duration / 1000;
+    projectileElement.vy = (projectileElement.vy || 0) + GRAVITY * duration / 1000;
+
+    var svgTransform = projectileElement.transform.baseVal.getItem(0);
+    var matrix = svgTransform.matrix;
+
+    var attrTransform = projectileElement.getAttribute('transform');
     var match = transformRegex.exec(attrTransform);
     var scale = match ? match[3] : 1;
 
-    var vectorAngle = (180 + Math.atan2(projectile.vy, projectile.vx) * 180 / Math.PI) % 360;
+    var vectorAngle = (180 + Math.atan2(projectileElement.vy, projectileElement.vx) * 180 / Math.PI) % 360;
 
-    matrix.e += projectile.vx * duration / 1000;
-    matrix.f += projectile.vy * duration / 1000;
+    matrix.e += projectileElement.vx * duration / 1000;
+    matrix.f += projectileElement.vy * duration / 1000;
 //     svgTransform.setMatrix(matrix);
 
 
-    projectile.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scale + ')');
+    projectileElement.setAttribute('transform', 'translate(' + matrix.e + ', ' + matrix.f + ') rotate(' + vectorAngle + ') scale(' + scale + ')');
 
-    var bb = projectile.getBoundingClientRect();
+    var bb = projectileElement.getBoundingClientRect();
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
 
-    if(collisionElement = testHitBox(collisionElement, 'enemy') || bb.bottom > 600)
-        detonateProjectile(projectile, collisionElement);
+    if(projectileElement.oscillator) {
+        projectileElement.oscillator.frequency.value = (projectileElement.startingPoint[1]) * 2 - matrix.f;
+    }
+
+    if (collisionElement = testHitBox(collisionElement, 'enemy') || bb.bottom > 600) {
+        detonateProjectile(projectileElement, collisionElement);
+    }
 }
 
 
-function renderExplosion(explosion, duration) {
-    explosion.vx = (explosion.vx || 0) + WIND * duration / 1000;
-    explosion.vy = (explosion.vy || 0) + -GRAVITY * duration / 1000;
+function renderExplosion(explosionElement, duration) {
+    explosionElement.vx = (explosionElement.vx || 0) + WIND * duration / 1000;
+    explosionElement.vy = (explosionElement.vy || 0) + -GRAVITY * duration / 1000;
 
-    if(explosion.transform.baseVal.length === 0)
-        explosion.setAttribute('transform', '');
-    var svgTransform = explosion.transform.baseVal.getItem(0);
+    if(explosionElement.transform.baseVal.length === 0)
+        explosionElement.setAttribute('transform', '');
+    var svgTransform = explosionElement.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
-    matrix.e += explosion.vx * duration / 1000;
-    matrix.f += explosion.vy * duration / 1000;
+    matrix.e += explosionElement.vx * duration / 1000;
+    matrix.f += explosionElement.vy * duration / 1000;
     //matrix = matrix.rotate(explosion.va * duration / 1000);
     svgTransform.setMatrix(matrix);
 
-    if(matrix.f > 600 || matrix.f < 0)
-        explosion.parentNode.removeChild(explosion);
+    if(explosionElement.oscillator) {
+        explosionElement.oscillator.frequency.value *= 0.95;
+        if(explosionElement.oscillator.frequency.value <= 0)
+            explosionElement.oscillator.frequency.value += Math.random() * 60 + 2;
+    }
+
+    if(explosionElement.frameCount++ > 50) {
+        explosionElement.parentNode.removeChild(explosionElement);
+        if(explosionElement.oscillator) {
+            explosionElement.oscillator.stop(0);
+        }   
+    }
 }
 
 var lastRender = new Date().getTime();
+var tanks = document.getElementsByClassName('tank'); //, '*', e.target);
+var projectiles = document.getElementsByClassName('projectile'); //, '*', e.target);
+var tankParts = document.getElementsByClassName('tank-part'); //, '*', e.target);
+var blocks = document.getElementsByClassName('block'); //, '*', e.target);
+var explosions = document.getElementsByClassName('explosion'); //, '*', e.target);
+
 function renderArtilleryElements(e) {
     var duration = (new Date().getTime() - lastRender);
     if(duration < RENDER_INTERVAL) duration = RENDER_INTERVAL;
     if(duration > RENDER_INTERVAL_MAX) duration = RENDER_INTERVAL_MAX;
 //console.log('duration: ', duration);
 
-
-    var tanks = document.getElementsByClassName('tank'); //, '*', e.target);
     for(var i=0; i<tanks.length; i++)
         renderTank(tanks[i], duration);
 
-    var projectiles = document.getElementsByClassName('projectile'); //, '*', e.target);
     for(i=0; i<projectiles.length; i++)
         renderProjectile(projectiles[i], duration);
 
-    var tankParts = document.getElementsByClassName('tank-part'); //, '*', e.target);
     for(i=0; i<tankParts.length; i++)
         renderTankPart(tankParts[i], duration);
 
-    var explosions = document.getElementsByClassName('explosion'); //, '*', e.target);
+    for(i=0; i<blocks.length; i++)
+        renderBlock(blocks[i], duration);
+
     for(i=0; i<explosions.length; i++)
         renderExplosion(explosions[i], duration);
 }
@@ -293,11 +344,11 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
     var xmlns = "http://www.w3.org/2000/svg";
     var svgns = 'http://www.w3.org/2000/xlink/namespace/';
-    var projectile = tankElement.ownerDocument.createElementNS(xmlns, 'use');
+    var projectileElement = tankElement.ownerDocument.createElementNS(xmlns, 'use');
 
-    projectile.setAttributeNS(svgns, 'xlink:href', '#projectile-template');
-    projectile.href.baseVal = '#projectile-template';
-    spriteGroup.insertBefore(projectile, spriteGroup.firstChild);
+    projectileElement.setAttributeNS(svgns, 'xlink:href', '#projectile-template');
+    projectileElement.href.baseVal = '#projectile-template';
+    spriteGroup.insertBefore(projectileElement, spriteGroup.firstChild);
 
 //     projectile = replaceUseWithSource(projectile);
 
@@ -313,11 +364,11 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     var scaleX = Math.sqrt(tankMatrix.a * tankMatrix.a + tankMatrix.b * tankMatrix.b);
     var scaleY = Math.sqrt(tankMatrix.c * tankMatrix.c + tankMatrix.d * tankMatrix.d);
 
-    projectile.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ') scale(' + scaleX + ', ' + scaleY + ')');
+    projectileElement.setAttribute('transform', 'translate(' + point[0] + ', ' + point[1] + ') rotate(' + 0 + ') scale(' + scaleX + ', ' + scaleY + ')');
 
-    projectile.classList.add('projectile');
-    projectile.sourceTank = tankElement;
-
+    projectileElement.classList.add('projectile');
+    projectileElement.sourceTank = tankElement;
+    projectileElement.startingPoint = point;
 
     if(cannonPower < 0.1) cannonPower = 0.1;
     if(cannonPower > 1) cannonPower = 1;
@@ -335,24 +386,63 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 //         angle += 180;
 
 //     velocity = rotate(0, 0, velocity[0], velocity[1], angle > 90 && angle < 180 ? -angle : angle);
-    projectile.vx = velocity[0];
-    projectile.vy = velocity[1];
+    projectileElement.vx = velocity[0];
+    projectileElement.vy = velocity[1];
 
+
+
+    explodeAt(point[0], point[1], 0.2);
+
+    var panner = audioCtx.createPanner();
+    panner.panningModel = 'equalpower';
+    panner.connect(audioCtx.destination);
+
+    var gainNode = audioCtx.createGain();
+    gainNode.gain.value = 0.9;
+    gainNode.connect(panner);
+
+    var oscillator = audioCtx.createOscillator();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = 1;
+    oscillator.connect(gainNode);
+
+    projectileElement.oscillator = oscillator;
+    projectileElement.gain = gainNode;
+    projectileElement.panner = panner;
+
+    oscillator.start(audioCtx.currentTime);
+
+//     noteEvent = createEvent('note', {
+//         frequency: 100, // point[1]
+//         length: 2,
+//         type: 'sawtooth'
+//     });
+
+//     projectile.dispatchEvent(noteEvent);
+//     if(noteEvent.detail.note) {
+//         noteEvent.detail.note.frequency.value=10;
+//     }
 }
 
 
-function detonateProjectile(projectile, tankElement) {
-    if(tankElement) {
+function detonateProjectile(projectile, collisionElement) {
+    if(collisionElement) {
         while(true) {
-            if(!tankElement.classList || tankElement === document) 
+            if(!collisionElement.classList || collisionElement === document)
                 break;
-            if(tankElement.classList.contains('tank') && !tankElement.classList.contains('usertank')) {
-                tankElement.vx = (tankElement.vx || 0) + projectile.vx / 4;
-                tankElement.vy = (tankElement.vy || 0) + projectile.vy / 4;
-                destroyTank(tankElement);
+            if(collisionElement.classList.contains('tank') && !collisionElement.classList.contains('usertank')) {
+                collisionElement.vx = (collisionElement.vx || 0) + projectile.vx / 4;
+                collisionElement.vy = (collisionElement.vy || 0) + projectile.vy / 4;
+                destroyTank(collisionElement);
                 break;
             }
-            tankElement = tankElement.parentNode;
+            if(collisionElement.classList.contains('block') && !collisionElement.classList.contains('usertank')) {
+                collisionElement.vx = (collisionElement.vx || 0) + projectile.vx / 4;
+                collisionElement.vy = (collisionElement.vy || 0) + projectile.vy / 4;
+                destroyBlock(collisionElement);
+                break;
+            }
+            collisionElement = collisionElement.parentNode;
         }
     }
 
@@ -363,25 +453,38 @@ function detonateProjectile(projectile, tankElement) {
 
     var attrTransform = projectile.getAttribute('transform');
     var match = transformRegex.exec(attrTransform);
-    var scale = match ? match[3] : 1;
+    var scale = match ? parseFloat(match[3]) : 1;
 
     explodeAt(x, y, scale);
     projectile.parentNode.removeChild(projectile);
+
+    if(projectile.oscillator)
+        projectile.oscillator.stop(0);
 }
 
 function destroyTank(tankElement) {
     if(!tankElement.classList.contains('tank'))
         throw new Error("Not a tank: ", tankElement);
+
+    if(tankElement.nodeName.toLowerCase() === 'use')
+        tankElement = replaceUseWithSource(tankElement);
     var parent = tankElement.parentNode;
     var paths = tankElement.querySelectorAll("*"); // ('path');
 
     var i = 0;
     var interval = setInterval(function() {
+        if(i >= paths.length-1 || !paths[i]) {
+            clearInterval(interval);
+            if(tankElement.parentNode)
+                tankElement.parentNode.removeChild(tankElement);
+            return;
+        }
 
-        var container = paths[i]; // document.createElement('g');
-
-        container.setAttribute('class', 'tank-part nohit'); //  + element.getAttribute('class'));
-        container.setAttribute('transform', tankElement.getAttribute('transform'));
+        var tankPath = paths[i];
+        var container = tankElement.cloneNode(false); // document.createElement('g');
+        container.appendChild(tankPath);
+        container.setAttribute('class', 'tank-part'); //  + element.getAttribute('class'));
+//         container.setAttribute('transform', tankElement.getAttribute('transform'));
         //container.setAttribute('style', tankElement.getAttribute('style'));
 
         container.va = (tankElement.va || 0) + Math.random() * 60 - 30;
@@ -393,60 +496,93 @@ function destroyTank(tankElement) {
 
         i++;
 
-        if(i >= paths.length-1 || !paths[i]) {
-            clearInterval(interval);
-            if(tankElement.parentNode)
-                tankElement.parentNode.removeChild(tankElement);
-            return;
-        }
         var bb = paths[i].getBoundingClientRect();
         explodeAt((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2, Math.random());
     }, 80);
 
 }
 
-function breakIntoQuarters(element) {
-    if(typeof element.length == 'number') {
-        var elements = [].slice.call(element);
-        var groups = [];
-        for(var ei=0; ei<elements.length; ei++)
-            groups[ei] = breakIntoQuarters(elements[ei]);
-        return groups;
-    }
-    var bb = element.getBoundingClientRect();
-    var parent = element.parentNode;
-    var TL = element.cloneNode(true);
-    var TR = element.cloneNode(true);
-    var BL = element.cloneNode(true);
-    var BR = element.cloneNode(true);
-    var parts = [TL, TR, BL, BR];
-    //var match = transformRegex.exec(element);
-    //var scale = match ? match[3] : 1;
+function destroyBlock(blockElement) {
+    if(!blockElement.classList.contains('block'))
+        throw new Error("Not a block: ", blockElement);
+    if(blockElement.nodeName.toLowerCase() === 'use')
+        blockElement = replaceUseWithSource(blockElement);
+    var parent = blockElement.parentNode;
+    var paths = blockElement.children; // querySelectorAll("*"); // ('path');
 
-    var w = (bb.width / 2);
-    var h = (bb.height / 2);
-    var transform = element.getAttribute('transform') || '';
-    TL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + h + ') ' + transform);
-    TR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + h + ') ' + transform);
-    BL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + -h + ') ' + transform);
-    BR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + -h + ') ' + transform);
+    var i = 0;
+    var interval = setInterval(function() {
+        if(i >= paths.length-1 || !paths[i]) {
+            clearInterval(interval);
+            if(blockElement.parentNode)
+                blockElement.parentNode.removeChild(blockElement);
+            return;
+        }
 
-    for(var i=0; i<parts.length; i++) {
-        parts[i].setAttribute('id', element.getAttribute('id') + '-' + i);
-        parent.insertBefore(parts[i], element);
-    }
+        var blockPath = paths[i];
+        var container =   blockElement.cloneNode(false); // document.createElement('g'); //
+        container.appendChild(blockPath);
+        container.setAttribute('class', 'block'); //  + element.getAttribute('class'));
+        container.setAttribute('transform', blockElement.getAttribute('transform'));
+        container.setAttribute('style', blockElement.getAttribute('style'));
 
-    parent.removeChild(element);
+        container.va = (blockElement.va || 0) + Math.random() * 60 - 30;
+        container.vx = (blockElement.vx || 0) + Math.random() * 60 - 30;
+        container.vy = (blockElement.vy || 0) + Math.random() * 60 - 50;
 
-    return parts;
+        parent.appendChild(container);
+
+        i++;
+
+        var bb = blockPath.getBoundingClientRect();
+        explodeAt((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2, Math.random());
+    }, 1);
+
 }
+//
+//function breakIntoQuarters(element) {
+//    if(typeof element.length == 'number') {
+//        var elements = [].slice.call(element);
+//        var groups = [];
+//        for(var ei=0; ei<elements.length; ei++)
+//            groups[ei] = breakIntoQuarters(elements[ei]);
+//        return groups;
+//    }
+//    var bb = element.getBoundingClientRect();
+//    var parent = element.parentNode;
+//    var TL = element.cloneNode(true);
+//    var TR = element.cloneNode(true);
+//    var BL = element.cloneNode(true);
+//    var BR = element.cloneNode(true);
+//    var parts = [TL, TR, BL, BR];
+//    //var match = transformRegex.exec(element);
+//    //var scale = match ? match[3] : 1;
+//
+//    var w = (bb.width / 2);
+//    var h = (bb.height / 2);
+//    var transform = element.getAttribute('transform') || '';
+//    TL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + h + ') ' + transform);
+//    TR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + h + ') ' + transform);
+//    BL.setAttribute('transform', 'scale(0.5) translate(' + -w + ', ' + -h + ') ' + transform);
+//    BR.setAttribute('transform', 'scale(0.5) translate(' + w + ', ' + -h + ') ' + transform);
+//
+//    for(var i=0; i<parts.length; i++) {
+//        parts[i].setAttribute('id', element.getAttribute('id') + '-' + i);
+//
+//        parent.insertBefore(parts[i], element);
+//    }
+//
+//    parent.removeChild(element);
+//
+//    return parts;
+//}
 
 function explodeAt(x, y, size) {
     if(!size) size = 2;
     var spriteGroup = document.getElementById('sky');
 
     var explosionElement = document.getElementById('explosion-template').cloneNode(true);
-
+    explosionElement.frameCount = 0;
     explosionElement.classList.add('explosion');
     explosionElement.setAttribute('transform', 'translate(' + x + ', ' + y + ') scale(' + size + ')');
     spriteGroup.appendChild(explosionElement);
@@ -460,6 +596,29 @@ function explodeAt(x, y, size) {
     animateTransform.setAttribute('repeatCount', 'indefinite');
 
     startAnimation(explosionElement);
+
+
+
+
+    var panner = audioCtx.createPanner();
+    panner.panningModel = 'equalpower';
+    panner.connect(audioCtx.destination);
+
+    var gainNode = audioCtx.createGain();
+    gainNode.gain.value = 0.8;
+    gainNode.connect(panner);
+
+    var oscillator = audioCtx.createOscillator();
+    oscillator.type = 'square';
+    var val = Math.random() * 300 * (size||1) + 100;
+    oscillator.frequency.value = val;
+    oscillator.connect(gainNode);
+
+    explosionElement.oscillator = oscillator;
+    explosionElement.gain = gainNode;
+    explosionElement.panner = panner;
+
+    oscillator.start(audioCtx.currentTime);
 }
 
 //function getTransformValues(element) {
@@ -494,6 +653,21 @@ function startAnimation(element) {
     for(var i=0; i<element.childNodes.length; i++)
         startAnimation(element.childNodes[i]);
 
+}
+
+
+function createEvent(name, data) {
+    var evt;
+    if(document.createEventObject) {
+        evt = document.createEventObject('Event');
+        evt.eventType = name;
+        evt.detail = data;
+        return evt;
+    }
+    evt = document.createEvent('Event');
+    evt.initEvent(name, true, true, data);
+    evt.detail = data || {};
+    return evt;
 }
 
 // Minify

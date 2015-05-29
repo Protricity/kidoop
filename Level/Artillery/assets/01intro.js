@@ -42,6 +42,12 @@ var resume = function() {
     renderInterval = setInterval(doRender, 30)
 };
 
+setTimeout(function() {
+
+    var playEvent = createEvent('play');
+    document.dispatchEvent(playEvent);
+
+}, 1000)
 
 var lastTime = new Date().getTime();
 var lastPoint = null;
@@ -288,20 +294,6 @@ document.addEventListener('touchmove', onMouse, false);
 document.addEventListener('touchend', onMouse, false);
 document.addEventListener('onContextMenu', function (e) { console.log('context menu: ' , e); e.preventDefault(); return false; });
 
-
-function createEvent(name, data) {
-    var evt;
-    if(document.createEventObject) {
-        evt = document.createEventObject('Event');
-        evt.eventType = name;
-        evt.detail = data;
-        return evt;
-    }
-    evt = document.createEvent('Event');
-    evt.initEvent(name, true, true, data);
-    evt.detail = data || {};
-    return evt;
-}
 
 function setGravity(e) {
 //     e.preventDefault();

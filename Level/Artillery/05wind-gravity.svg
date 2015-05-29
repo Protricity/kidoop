@@ -20,6 +20,9 @@
   <script
      xlink:href="assets/artillery.js"
      id="script3405" />
+    <script
+            xlink:href="music/01intro-music.js"
+            id="script3405" />
   <script
      xlink:href="assets/05wind-gravity.js"
      id="script5633" />
@@ -719,12 +722,86 @@
     </g>
     <g
        id="block-template">
-      <rect
-         height="64"
-         width="64"
-         style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-         id="rectBlockTemplate"
-         class="block hit-box" />
+        <rect
+                class="block hit-box"
+                id="rect4947"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                width="32"
+                height="16"
+                x="0"
+                y="0" />
+        <rect
+                y="0"
+                x="32"
+                height="16"
+                width="32"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                id="rect3361"
+                class="block hit-box" />
+        <rect
+                y="16"
+                x="16"
+                height="16"
+                width="32"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                id="rect3365"
+                class="block hit-box" />
+        <rect
+                y="16"
+                x="48"
+                height="16"
+                width="16"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                id="rect3432"
+                class="block hit-box" />
+        <rect
+                class="block hit-box"
+                id="rect3434"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                width="16"
+                height="16"
+                x="0"
+                y="16" />
+        <rect
+                y="32"
+                x="0"
+                height="16"
+                width="32"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                id="rect3565"
+                class="block hit-box" />
+        <rect
+                class="block hit-box"
+                id="rect3567"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                width="32"
+                height="16"
+                x="32"
+                y="32" />
+        <rect
+                class="block hit-box"
+                id="rect3569"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                width="32"
+                height="16"
+                x="16"
+                y="48" />
+        <rect
+                class="block hit-box"
+                id="rect3571"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                width="16"
+                height="16"
+                x="48"
+                y="48" />
+        <rect
+                y="48"
+                x="0"
+                height="16"
+                width="16"
+                style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+                id="rect3573"
+                class="block hit-box" />
     </g>
     <linearGradient
        inkscape:collect="always"

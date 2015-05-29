@@ -17,9 +17,12 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="01intro.svg"
    style="enable-background:new">
-  <script
-     xlink:href="assets/artillery.js"
-     id="script3405" />
+    <script
+            xlink:href="assets/artillery.js"
+            id="script3405" />
+    <script
+            xlink:href="music/01intro-music.js"
+            id="script3405" />
   <script
      xlink:href="assets/01intro.js"
      id="script5633" />

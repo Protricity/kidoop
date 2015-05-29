@@ -10,13 +10,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="128"
+   width="64"
    height="64"
-   viewBox="0 0 128 64"
+   viewBox="0 0 64 64"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="block.svg">
+   sodipodi:docname="block2.svg">
   <metadata
      id="metadata13">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,7 +43,7 @@
      id="namedview11"
      showgrid="true"
      inkscape:zoom="8"
-     inkscape:cx="42.456003"
+     inkscape:cx="26.393503"
      inkscape:cy="26.334736"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -68,21 +68,16 @@
       <image
          sodipodi:absref="D:\Dev\Server\WWW\kidoop\Terrain\Tiles\..\..\Terrain\Tiles\block.png"
          xlink:href="..\..\Terrain\Tiles\block.png"
-         y="0"
-         x="0"
-         id="image6570"
-         preserveAspectRatio="none"
+         width="32"
          height="32"
-         width="32" />
+         preserveAspectRatio="none"
+         id="image6570"
+         x="0"
+         y="0" />
     </pattern>
-    <pattern
-       patternTransform=" scale(2, 1) translate(-10,-16)"
-       inkscape:collect="always"
-       xlink:href="#patternBlock"
-       id="patternBlockOffset" />
   </defs>
   <g
-     id="block1"
+     id="block-template"
      inkscape:label="">
     <rect
        class="block hit-box"
@@ -98,70 +93,71 @@
        height="16"
        width="32"
        style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect5125"
+       id="rect3361"
        class="block hit-box" />
     <rect
        y="16"
-       x="10"
+       x="16"
        height="16"
        width="32"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect5139"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       id="rect3365"
        class="block hit-box" />
     <rect
        y="16"
-       x="42"
+       x="48"
        height="16"
-       width="22"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect5155"
+       width="16"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       id="rect3432"
        class="block hit-box" />
     <rect
        class="block hit-box"
-       id="rect5159"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       width="10"
+       id="rect3434"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       width="16"
        height="16"
+       x="0"
        y="16" />
     <rect
+       y="32"
+       x="0"
+       height="16"
+       width="32"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       id="rect3565"
+       class="block hit-box" />
+    <rect
        class="block hit-box"
-       id="rect3350"
+       id="rect3567"
        style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
        width="32"
        height="16"
-       x="0"
+       x="32"
        y="32" />
     <rect
-       y="32"
-       x="32"
-       height="16"
-       width="32"
+       class="block hit-box"
+       id="rect3569"
        style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect3352"
-       class="block hit-box" />
-    <rect
-       y="48"
-       x="10"
-       height="16"
        width="32"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect3354"
-       class="block hit-box" />
-    <rect
-       y="48"
-       x="42"
        height="16"
-       width="22"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       id="rect3356"
-       class="block hit-box" />
+       x="16"
+       y="48" />
     <rect
        class="block hit-box"
-       id="rect3358"
-       style="fill:url(#patternBlockOffset);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
-       width="10"
+       id="rect3571"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       width="16"
        height="16"
-       x="0"
+       x="48"
        y="48" />
+    <rect
+       y="48"
+       x="0"
+       height="16"
+       width="16"
+       style="fill:url(#patternBlock);fill-opacity:1;stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
+       id="rect3573"
+       class="block hit-box" />
   </g>
 </svg>
