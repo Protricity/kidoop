@@ -141,6 +141,9 @@ function renderProjectile(projectileElement, duration) {
     var collisionElement = document.elementFromPoint((bb.left + bb.right) / 2, (bb.top + bb.bottom) / 2);
 
     if(projectileElement.oscillator) {
+        var dw = document.firstChild.offsetWidth || 500;
+        var x = (matrix.e * 2 - dw)/dw, z = 1 - Math.abs(x);
+        projectileElement.panner.setPosition(x,0,z);
         projectileElement.oscillator.frequency.value = (projectileElement.startingPoint[1]) * 2 - matrix.f;
     }
 
@@ -165,6 +168,9 @@ function renderExplosion(explosionElement, duration) {
     svgTransform.setMatrix(matrix);
 
     if(explosionElement.oscillator) {
+        var dw = document.firstChild.offsetWidth || 500;
+        var x = (matrix.e * 2 - dw)/dw, z = 1 - Math.abs(x);
+        explosionElement.panner.setPosition(x,0,z);
         explosionElement.oscillator.frequency.value *= 0.95;
         if(explosionElement.oscillator.frequency.value <= 0)
             explosionElement.oscillator.frequency.value += Math.random() * 60 + 2;
