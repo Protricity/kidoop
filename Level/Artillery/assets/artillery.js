@@ -28,14 +28,14 @@ explosionGain.connect(audioCtx.destination);
 explosionGain.gain.value = 0.8;
 
 var synthDelay = audioCtx.createDelay(5.0);
-synthDelay.connect(audioCtx.destination);
 synthDelay.delayTime.value = 0.1;
 
 var synthDelayGain = audioCtx.createGain();
 synthDelayGain.connect(synthDelay);
-synthDelayGain.gain.value = 0.3;
+synthDelayGain.gain.value = 0.6;
 synthDelayGain.connect(synthDelay);
 synthDelay.connect(synthDelayGain);
+synthDelayGain.connect(audioCtx.destination);
 
 explosionGain.connect(synthDelay);
 projectileGain.connect(synthDelay);
@@ -425,18 +425,18 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
     panner.panningModel = 'equalpower';
     panner.connect(projectileGain);
 
-    //var gainNode = audioCtx.createGain();
-    //gainNode.gain.value = 0.9;
-    //gainNode.connect(panner);
+    var gain = audioCtx.createGain();
+    gain.gain.value = 0.9;
+    gain.connect(panner);
 
     var oscillator = audioCtx.createOscillator();
     oscillator.type = 'sine';
     oscillator.frequency.value = 1;
-    oscillator.connect(panner);
+    oscillator.connect(gain);
 
     projectileElement.oscillator = oscillator;
     projectileElement.panner = panner;
-    //projectileElement.gain = gainNode;
+    projectileElement.gain = gain;
 
     oscillator.start(audioCtx.currentTime);
 
@@ -630,20 +630,20 @@ function explodeAt(x, y, size) {
     panner.panningModel = 'equalpower';
     panner.connect(explosionGain);
 
-    //var gainNode = audioCtx.createGain();
-    //gainNode.gain.value = 0.8;
-    //gainNode.connect(panner);
+    var gain = audioCtx.createGain();
+    gain.gain.value = 0.8;
+    gain.connect(panner);
 
     var oscillator = audioCtx.createOscillator();
     oscillator.type = 'square';
     var val = Math.random() * 300 * (size||1) + 100;
     oscillator.frequency.value = val;
-    oscillator.connect(panner);
+    oscillator.connect(gain);
     oscillator.start(audioCtx.currentTime);
 
     explosionElement.oscillator = oscillator;
     explosionElement.panner = panner;
-//     explosionElement.gain = gainNode;
+    explosionElement.gain = gain;
 
 }
 
