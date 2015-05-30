@@ -22,6 +22,24 @@ document.addEventListener('aim', onAim, true);
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var projectileGain = audioCtx.createGain();
 var explosionGain = audioCtx.createGain();
+projectileGain.connect(audioCtx.destination);
+projectileGain.gain.value = 0.9;
+explosionGain.connect(audioCtx.destination);
+explosionGain.gain.value = 0.8;
+
+var synthDelay = audioCtx.createDelay(5.0);
+synthDelay.connect(audioCtx.destination);
+synthDelay.delayTime.value = 0.1;
+
+var synthDelayGain = audioCtx.createGain();
+synthDelayGain.connect(synthDelay);
+synthDelayGain.gain.value = 0.3;
+synthDelayGain.connect(synthDelay);
+synthDelay.connect(synthDelayGain);
+
+explosionGain.connect(synthDelay);
+projectileGain.connect(synthDelay);
+
 
 function testRectContainment(element) {
 }
@@ -157,8 +175,8 @@ function renderExplosion(explosionElement, duration) {
     explosionElement.vx = (explosionElement.vx || 0) + WIND * duration / 1000;
     explosionElement.vy = (explosionElement.vy || 0) + -GRAVITY * duration / 1000;
 
-    if(explosionElement.transform.baseVal.length === 0)
-        explosionElement.setAttribute('transform', '');
+//     if(explosionElement.transform.baseVal.length === 0)
+//         explosionElement.setAttribute('transform', '');
     var svgTransform = explosionElement.transform.baseVal.getItem(0);
     var matrix = svgTransform.matrix;
 
@@ -171,18 +189,21 @@ function renderExplosion(explosionElement, duration) {
         var dw = document.firstChild.offsetWidth || 500;
         var x = (matrix.e * 2 - dw)/dw, z = 1 - Math.abs(x);
         explosionElement.panner.setPosition(x,0,z);
-        explosionElement.oscillator.frequency.value *= 0.95;
+        explosionElement.oscillator.frequency.value *= 0.8;
         if(explosionElement.oscillator.frequency.value <= 0)
             explosionElement.oscillator.frequency.value += Math.random() * 60 + 2;
     }
 
-    if(explosionElement.frameCount++ > 50) {
+    if(explosionElement.frameCount++ > 30) {
         explosionElement.parentNode.removeChild(explosionElement);
         if(explosionElement.oscillator) {
             explosionElement.oscillator.stop(0);
         }   
     }
 }
+
+
+
 
 var lastRender = new Date().getTime();
 var tanks = document.getElementsByClassName('tank'); //, '*', e.target);
@@ -399,22 +420,23 @@ function fireCannon(tankElement, cannonAngle, cannonPower) {
 
     explodeAt(point[0], point[1], 0.2);
 
+    var audioCtx = projectileGain.context;
     var panner = audioCtx.createPanner();
     panner.panningModel = 'equalpower';
-    panner.connect(audioCtx.destination);
+    panner.connect(projectileGain);
 
-    var gainNode = audioCtx.createGain();
-    gainNode.gain.value = 0.9;
-    gainNode.connect(panner);
+    //var gainNode = audioCtx.createGain();
+    //gainNode.gain.value = 0.9;
+    //gainNode.connect(panner);
 
     var oscillator = audioCtx.createOscillator();
     oscillator.type = 'sine';
     oscillator.frequency.value = 1;
-    oscillator.connect(gainNode);
+    oscillator.connect(panner);
 
     projectileElement.oscillator = oscillator;
-    projectileElement.gain = gainNode;
     projectileElement.panner = panner;
+    //projectileElement.gain = gainNode;
 
     oscillator.start(audioCtx.currentTime);
 
@@ -603,28 +625,26 @@ function explodeAt(x, y, size) {
 
     startAnimation(explosionElement);
 
-
-
-
+    var audioCtx = explosionGain.context;
     var panner = audioCtx.createPanner();
     panner.panningModel = 'equalpower';
-    panner.connect(audioCtx.destination);
+    panner.connect(explosionGain);
 
-    var gainNode = audioCtx.createGain();
-    gainNode.gain.value = 0.8;
-    gainNode.connect(panner);
+    //var gainNode = audioCtx.createGain();
+    //gainNode.gain.value = 0.8;
+    //gainNode.connect(panner);
 
     var oscillator = audioCtx.createOscillator();
     oscillator.type = 'square';
     var val = Math.random() * 300 * (size||1) + 100;
     oscillator.frequency.value = val;
-    oscillator.connect(gainNode);
+    oscillator.connect(panner);
+    oscillator.start(audioCtx.currentTime);
 
     explosionElement.oscillator = oscillator;
-    explosionElement.gain = gainNode;
     explosionElement.panner = panner;
+//     explosionElement.gain = gainNode;
 
-    oscillator.start(audioCtx.currentTime);
 }
 
 //function getTransformValues(element) {
